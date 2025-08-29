@@ -13,7 +13,7 @@ import Project from "../sites/Project";
 
 function App() {
     return (
-        <Router basename="/ndr-poc">
+        <Router>
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/workspace" element={<Workspace />} />
