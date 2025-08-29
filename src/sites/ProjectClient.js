@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-import { Sidebar, Topbar, Notifications } from "./ui/Common";
+import { Sidebar, Topbar, Notifications } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
-function ProjektKlient(){
+function ProjectClient(){
   const [search, setSearch] = useState("");
   const [showAccount, setShowAccount] = useState(false);
   const accountMenuRef = useRef(null); const accountBtnRef = useRef(null);
@@ -240,4 +240,4 @@ function ProjectClientForm({ onCreate }){
   );
 }
 
-export default ProjektKlient;
+export default ProjectClient;

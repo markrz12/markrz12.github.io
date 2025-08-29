@@ -33,11 +33,13 @@ export function Sidebar({ search, setSearch }){
   const linkClass = (to) => "nav-link text-white" + (isActive(to) ? "" : "");
   const activeStyle = (to) => isActive(to) ? { background: 'rgba(255,255,255,0.12)', borderRadius: 4 } : undefined;
   return (
-    <div className="d-flex flex-column text-white" style={{ width:220, flex:'0 0 220px', backgroundColor:'#0a2b4c', padding:'1rem' }}>
-      <h5 style={{ marginBottom:0, marginTop:3 }}>Menu</h5>
+    <div className="d-flex flex-column text-white" style={{ width:240, flex:'0 0 240px', backgroundColor:'var(--ndr-bg-sidebar)', padding:'1.25rem' }}>
+      <h5 style={{ marginBottom:0, marginTop:3 }}>NDR</h5>
       <hr style={{ borderColor:'#fff', marginTop:'0.8rem', marginBottom:'0.75rem' }} />
       <div className="my-2" style={{ marginTop:'1rem' }}>
-        <input aria-label="Wyszukaj w menu" type="text" className="form-control form-control-sm" placeholder="Wyszukaj..." value={search} onChange={(e)=>setSearch(e.target.value)} />
+        <div className="input-group input-group-sm">
+          <input aria-label="Wyszukaj w menu" type="text" className="form-control" placeholder="Wyszukaj..." value={search} onChange={(e)=>setSearch(e.target.value)} style={{ borderColor:'rgba(255,255,255,0.25)' }} />
+        </div>
       </div>
       <ul className="nav flex-column">
         <li className="nav-item">
@@ -77,7 +79,7 @@ export function Sidebar({ search, setSearch }){
 
 export function Topbar({ breadcrumb, accountBtnRef, accountMenuRef, showAccount, setShowAccount, onLogout }){
   return (
-    <div className="shadow-sm" style={{ backgroundColor:'#005679', padding:'0.5rem' }}>
+    <div className="shadow-sm" style={{ backgroundColor:'var(--ndr-bg-topbar)', padding:'0.5rem' }}>
       <div className="d-flex align-items-center justify-content-between px-4 py-2">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb mb-0" style={{ color:'#fff', ['--bs-breadcrumb-divider']:"'/'", ['--bs-breadcrumb-divider-color']:'#fff' }}>
@@ -111,6 +113,22 @@ export function Topbar({ breadcrumb, accountBtnRef, accountMenuRef, showAccount,
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+export function SectionHeader({ title, action, subtitle }){
+  return (
+    <div className="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-2">
+      <div>
+        <h5 className="mb-0">{title}</h5>
+        {subtitle && (<div className="text-muted small">{subtitle}</div>)}
+      </div>
+      {action && (
+        <div className="ms-auto" style={{ whiteSpace:'nowrap' }}>
+          {action}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,0 +1,28 @@
+:root {
+  --ndr-navy: #0a2b4c;   /* dark navy */
+  --ndr-blue: #005679;   /* deep blue */
+  --ndr-teal: #008491;   /* teal */
+  --ndr-mint: #00b18f;   /* mint */
+
+  /* semantic mappings */
+  --ndr-bg-sidebar: var(--ndr-navy);
+  --ndr-bg-topbar: var(--ndr-blue);
+  --ndr-accent: var(--ndr-teal);
+  --ndr-accent-2: var(--ndr-mint);
+}
+
+/* Global resets/tweaks for better readability */
+html, body, #root { height: 100%; }
+body { background-color: #f6f8fb; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+a { color: var(--ndr-bg-topbar); }
+a:hover { color: var(--ndr-accent); }
+
+/* Utility classes */
+.bg-ndr-sidebar { background-color: var(--ndr-bg-sidebar) !important; }
+.bg-ndr-topbar { background-color: var(--ndr-bg-topbar) !important; }
+.text-ndr { color: var(--ndr-accent) !important; }
+.border-ndr { border-color: var(--ndr-navy) !important; }
+
+/* Square icon button helpers */
+.btn-square-sm { width: 32px; height: 32px; padding: 0 !important; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
+.btn-square-xs { width: 28px; height: 28px; padding: 0 !important; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-import { Sidebar, Topbar, Notifications } from "./ui/Common";
+import { Sidebar, Topbar, Notifications } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
 
@@ -47,7 +47,7 @@ function ProjektKonfiguracja(){
   return (
     <div className="d-flex min-vh-100" style={{ minHeight: '100vh' }}>
       {/* Sidebar */}
-      <div className="d-flex flex-column text-white" style={{ width:220, flex:'0 0 220px', backgroundColor:'#0a2b4c', padding:'1rem' }}>
+      <div className="d-flex flex-column text-white" style={{ width:220, flex:'0 0 220px', backgroundColor:'var(--ndr-bg-sidebar)', padding:'1rem' }}>
         <h5 style={{ marginBottom:0, marginTop:3 }}>Menu</h5>
         <hr style={{ borderColor:'#fff', marginTop:'0.8rem', marginBottom:'0.75rem' }} />
         <div className="my-2" style={{ marginTop:'1rem' }}>
@@ -70,7 +70,7 @@ function ProjektKonfiguracja(){
       {/* Main column */}
       <div className="flex-grow-1 d-flex flex-column" style={{ overflow:'hidden' }}>
         {/* Topbar */}
-        <div className="shadow-sm" style={{ backgroundColor:'#005679', padding:'0.5rem' }}>
+        <div className="shadow-sm" style={{ backgroundColor:'var(--ndr-bg-topbar)', padding:'0.5rem' }}>
           <div className="d-flex align-items-center justify-content-between px-4 py-2">
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb mb-0" style={{ color:'#fff', ['--bs-breadcrumb-divider']:"'/'", ['--bs-breadcrumb-divider-color']:'#fff' }}>

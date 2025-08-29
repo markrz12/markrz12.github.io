@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-import { Sidebar, Topbar, Notifications } from "./ui/Common";
+import { Sidebar, Topbar, Notifications } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
-function Uzytkownicy(){
+function Users(){
   const [search, setSearch] = useState("");
   const [showAccount, setShowAccount] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
@@ -52,8 +52,11 @@ function Uzytkownicy(){
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
               <div className="card-header d-flex align-items-center" style={{ gap:'0.5rem' }}>
                 <strong>Moduł użytkowników</strong>
-                <div className="ms-auto d-flex" style={{ gap:'0.5rem' }}>
-                  <input type="text" className="form-control form-control-sm" placeholder="Podaj maila lub imię i nazwisko" aria-label="Filtruj użytkowników po mailu lub imieniu i nazwisku" value={search} onChange={(e)=>setSearch(e.target.value)} style={{ minWidth:280 }} />
+                <div className="d-flex" style={{ gap:'0.5rem' }}>
+                  <div className="input-group input-group-sm" style={{ minWidth:280 }}>
+                    <span className="input-group-text" id="users-search-icon">🔍</span>
+                    <input type="text" className="form-control" placeholder="Podaj maila lub imię i nazwisko" aria-label="Filtruj użytkowników po mailu lub imieniu i nazwisku" value={search} onChange={(e)=>setSearch(e.target.value)} />
+                  </div>
                 </div>
               </div>
               <div className="table-responsive flex-grow-1 pt-2 ps-2" style={{ overflow:'auto' }}>
@@ -65,7 +68,6 @@ function Uzytkownicy(){
                       <th>Email</th>
                       <th>Status</th>
                       <th>Rola</th>
-                      <th>Akcje</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -76,15 +78,10 @@ function Uzytkownicy(){
                         <td style={{ wordBreak:'break-word' }}>{u.email}</td>
                         <td>{u.active? 'Aktywny':'Nieaktywny'}</td>
                         <td style={{ whiteSpace:'nowrap' }}>{u.role}</td>
-                        <td style={{ whiteSpace:'nowrap' }}>
-                          <button className="btn btn-sm btn-outline-primary me-2" onClick={(e)=>{ e.stopPropagation(); toggleActive(u.id,true); }}>Aktywuj</button>
-                          <button className="btn btn-sm btn-outline-danger me-2" onClick={(e)=>{ e.stopPropagation(); toggleActive(u.id,false); }}>Dezaktywuj</button>
-                          <button className="btn btn-sm btn-outline-secondary" onClick={(e)=>{ e.stopPropagation(); alert('Anonimizacja demo'); }}>Anonimizuj</button>
-                        </td>
                       </tr>
                     ))}
                     {filtered.length===0 && (
-                      <tr><td colSpan={6} className="text-center text-muted py-4">Brak wyników</td></tr>
+                      <tr><td colSpan={5} className="text-center text-muted py-4">Brak wyników</td></tr>
                     )}
                   </tbody>
                 </table>
@@ -93,7 +90,7 @@ function Uzytkownicy(){
           </div>
 
           {/* Prawa część: przypisane projekty i daty */}
-          <div className="d-none d-lg-block" style={{ width:320, paddingLeft:12 }}>
+          <div className="d-none d-lg-block" style={{ width:360, paddingLeft:12 }}>
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
               <div className="card-header"><strong>Szczegóły użytkownika</strong></div>
               <div className="card-body flex-grow-1" style={{ overflowY:'auto' }}>
@@ -104,6 +101,15 @@ function Uzytkownicy(){
                   <div>
                     <h6 className="mb-2">{selectedUser.name}</h6>
                     <div className="mb-3 small" style={{ wordBreak:'break-word' }}><strong>Email:</strong> {selectedUser.email}</div>
+                    <hr />
+                    <div className="mb-2">
+                      <div className="fw-semibold mb-2" style={{ fontSize:'0.95rem' }}>Akcje</div>
+                      <div className="d-flex flex-wrap" style={{ gap:'0.5rem' }}>
+                        <button className="btn btn-sm btn-outline-primary" disabled={selectedUser.active} onClick={()=>toggleActive(selectedUser.id,true)}>Aktywuj</button>
+                        <button className="btn btn-sm btn-outline-danger" disabled={!selectedUser.active} onClick={()=>toggleActive(selectedUser.id,false)}>Dezaktywuj</button>
+                        <button className="btn btn-sm btn-outline-secondary" onClick={()=>alert('Anonimizacja demo')}>Anonimizuj</button>
+                      </div>
+                    </div>
                     <hr />
                     <div className="fw-semibold mb-2">Przypisane projekty</div>
                     <ul className="list-unstyled small">
@@ -128,4 +134,4 @@ function Uzytkownicy(){
   );
 }
 
-export default Uzytkownicy;
+export default Users;

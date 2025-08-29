@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-import { Sidebar, Topbar } from "./ui/Common";
+import { Sidebar, Topbar } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
-function Klienci() {
+function Clients() {
   const [search, setSearch] = useState("");
   const [selectedId, setSelectedId] = useState(null);
   const [showAdd, setShowAdd] = useState(false);
@@ -127,22 +127,24 @@ function Klienci() {
             {/* Lewa kolumna: tabela */}
             <div className="flex-grow-1 d-flex flex-column" style={{ minHeight: 0, minWidth: 0 }}>
               <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: 'hidden', minHeight: 0 }}>
-                <div className="card-header d-flex align-items-center justify-content-between" style={{ gap: '0.5rem' }}>
+                <div className="card-header d-flex align-items-center" style={{ gap: '0.5rem' }}>
                   <div className="d-flex align-items-center gap-2">
                     <strong>Lista klientów</strong>
                   </div>
-                  <div className="d-flex align-items-center ms-auto" style={{ gap: '0.5rem' }}>
-                    <input
-                      type="text"
-                      className="form-control form-control-sm"
-                      placeholder="Podaj nazwę firmy, NIP, KRS lub REGON"
-                      aria-label="Filtruj listę klientów po nazwie, NIP, KRS lub REGON"
-                      style={{ width: '100%', minWidth:270 }}
-                      value={search}
-                      onChange={(e) => setSearch(e.target.value)}
-                    />
+                  <div className="d-flex align-items-center flex-grow-1" style={{ gap: '0.75rem' }}>
+                    <div className="input-group input-group-sm" style={{ minWidth: 300 }}>
+                      <span className="input-group-text" id="clients-search-icon">🔍</span>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Podaj nazwę firmy, NIP, KRS lub REGON"
+                        aria-label="Filtruj listę klientów po nazwie, NIP, KRS lub REGON"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                      />
+                    </div>
                     <button
-                      className="btn btn-success"
+                      className="btn btn-success ms-auto ms-1"
                       style={{ whiteSpace: 'nowrap', flexShrink: 0 }}
                       onClick={() => setShowAdd(true)}
                     >
@@ -275,7 +277,6 @@ function Klienci() {
                         <th>NIP</th>
                         <th>KRS</th>
                         <th>REGON</th>
-                        <th>Akcje</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -290,15 +291,11 @@ function Klienci() {
                           <td>{c.nip}</td>
                           <td>{c.krs}</td>
                           <td>{c.regon}</td>
-                          <td>
-                            <button className="btn btn-sm btn-outline-primary me-2" onClick={(e) => { e.stopPropagation(); setEditTargetId(c.id); setEditForm({ name: c.name, nip: c.nip, krs: c.krs, regon: c.regon }); setShowEdit(true); }}>Edytuj</button>
-                            <button className="btn btn-sm btn-outline-danger" onClick={(e) => { e.stopPropagation(); setDeleteTargetId(c.id); setDeleteTargetName(c.name); setShowDelete(true); }}>Usuń</button>
-                          </td>
                         </tr>
                       ))}
                       {filtered.length === 0 && (
                         <tr>
-                          <td colSpan={6} className="text-center text-muted py-4">Brak wyników</td>
+                          <td colSpan={5} className="text-center text-muted py-4">Brak wyników</td>
                         </tr>
                       )}
                     </tbody>
@@ -308,7 +305,7 @@ function Klienci() {
             </div>
 
             {/* Prawa kolumna: szczegóły */}
-            <div className="d-none d-lg-block" style={{ width: 320, paddingLeft: 12 }}>
+            <div className="d-none d-lg-block" style={{ width: 360, paddingLeft: 12 }}>
               <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: 'hidden', minHeight: 0 }}>
                 <div className="card-header"><strong>Szczegóły klienta</strong></div>
                 <div className="card-body flex-grow-1" style={{ overflowY: "auto", overflowX: "hidden" }}>
@@ -324,6 +321,14 @@ function Klienci() {
                           <span><strong>NIP:</strong> {selectedClient.nip}</span>
                           <span><strong>KRS:</strong> {selectedClient.krs}</span>
                           <span><strong>REGON:</strong> {selectedClient.regon}</span>
+                        </div>
+                        <hr className="my-2" />
+                        <div className="mb-2">
+                          <div className="fw-semibold mb-2" style={{ fontSize:'0.95rem' }}>Akcje</div>
+                          <div className="d-flex flex-wrap" style={{ gap:'0.5rem' }}>
+                            <button className="btn btn-sm btn-outline-primary" onClick={()=>{ setEditTargetId(selectedClient.id); setEditForm({ name: selectedClient.name, nip: selectedClient.nip, krs: selectedClient.krs, regon: selectedClient.regon }); setShowEdit(true); }}>Edytuj klienta</button>
+                            <button className="btn btn-sm btn-outline-danger" onClick={()=>{ setDeleteTargetId(selectedClient.id); setDeleteTargetName(selectedClient.name); setShowDelete(true); }}>Usuń klienta</button>
+                          </div>
                         </div>
                       </div>
 
@@ -384,4 +389,4 @@ function Klienci() {
   );
 }
 
-export default Klienci;
+export default Clients;

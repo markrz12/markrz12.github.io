@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-import { Sidebar, Topbar, Notifications } from "./ui/Common";
+import { Sidebar, Topbar, Notifications } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
-function Szablony(){
+function Templates(){
   const [search, setSearch] = useState("");
   const [showAccount, setShowAccount] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
@@ -84,7 +84,7 @@ function Szablony(){
           </div>
 
           {/* Right panel with short info/help */}
-          <div className="d-none d-lg-block" style={{ width:320, paddingLeft:12 }}>
+          <div className="d-none d-lg-block" style={{ width:360, paddingLeft:12 }}>
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
               <div className="card-header"><strong>Informacje</strong></div>
               <div className="card-body small" style={{ overflowY:'auto' }}>
@@ -151,4 +151,4 @@ function Szablony(){
   );
 }
 
-export default Szablony;
+export default Templates;

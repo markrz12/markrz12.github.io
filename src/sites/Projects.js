@@ -1,21 +1,21 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-import { Sidebar, Topbar, Notifications } from "./ui/Common";
+import { Sidebar, Topbar, Notifications } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
 function ProgressBar({ value }){
   return (
     <div className="flex-grow-1 position-relative" role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={100}
       style={{ height: 12, background: '#eaf0f6', borderRadius: 999, border: '1px solid #d2dbea', boxShadow: 'inset 0 1px 1px rgba(0,0,0,0.04)', minWidth:80 }}>
-      <div style={{ width: `${value}%`, height: '100%', borderRadius: 999, background: '#005679', transition: 'width 300ms ease', position:'relative' }}>
+      <div style={{ width: `${value}%`, height: '100%', borderRadius: 999, background: 'var(--ndr-bg-topbar)', transition: 'width 300ms ease', position:'relative' }}>
         <span style={{ position:'absolute', right: -2, top: -2, bottom: -2, width: 4, background:'#ffffff55', borderRadius: 2 }} />
       </div>
     </div>
   );
 }
 
-function Projekty(){
+function Projects(){
   const [search, setSearch] = useState("");
   const [showAccount, setShowAccount] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
@@ -73,17 +73,19 @@ function Projekty(){
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
               <div className="card-header d-flex align-items-center" style={{ gap:'0.5rem' }}>
                 <strong>Lista projektów</strong>
-                <div className="ms-auto d-flex" style={{ gap:'0.5rem' }}>
-                  <input
-                    type="text"
-                    className="form-control form-control-sm"
-                    placeholder="Podaj ID projektu, klienta, status lub użytkownika"
-                    aria-label="Filtruj listę projektów po ID, kliencie, statusie lub użytkowniku"
-                    value={search}
-                    onChange={(e)=>setSearch(e.target.value)}
-                    style={{ minWidth: 280 }}
-                  />
-                  <button className="btn btn-success" onClick={()=>navigate('/projekt-klient')} style={{ whiteSpace:'nowrap', minWidth: 160, flexShrink: 0 }}>
+                <div className="d-flex align-items-center flex-grow-1" style={{ gap:'0.75rem' }}>
+                  <div className="input-group input-group-sm" style={{ minWidth:300 }}>
+                    <span className="input-group-text" id="projects-search-icon">🔍</span>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Podaj ID projektu, klienta, status lub użytkownika"
+                      aria-label="Filtruj listę projektów po ID, kliencie, statusie lub użytkowniku"
+                      value={search}
+                      onChange={(e)=>setSearch(e.target.value)}
+                    />
+                  </div>
+                  <button className="btn btn-success ms-auto ms-1" onClick={()=>navigate('/projekt-klient')} style={{ whiteSpace:'nowrap', minWidth: 160, flexShrink: 0 }} >
                     Utwórz projekt
                   </button>
                 </div>
@@ -97,14 +99,17 @@ function Projekty(){
                       <th>Klient</th>
                       <th>Aktualny status</th>
                       <th>Postęp</th>
-                      <th>Akcje</th>
                     </tr>
                   </thead>
                   <tbody>
                     {filtered.map((r, idx)=> (
                       <tr key={r.pid} onClick={()=>setSelectedId(r.pid)} style={{ cursor:'pointer', backgroundColor: r.pid===selectedId? '#e7f1ff': undefined }}>
                         <td>{idx+1}</td>
-                        <td style={{ whiteSpace:'nowrap' }}>{r.id}</td>
+                        <td style={{ whiteSpace:'nowrap' }}>
+                          <Link to={`/projekty/${encodeURIComponent(r.id)}`} onClick={(e)=>e.stopPropagation()} style={{ textDecoration:'underline' }}>
+                              {r.id}
+                            </Link>
+                        </td>
                         <td>{r.client}</td>
                         <td style={{ whiteSpace:'nowrap' }}>{r.status}</td>
                         <td>
@@ -113,14 +118,10 @@ function Projekty(){
                             <span className="small text-muted" style={{ width:38, textAlign:'right' }}>{r.progress}%</span>
                           </div>
                         </td>
-                        <td style={{ whiteSpace:'nowrap' }}>
-                          <button className="btn btn-sm btn-outline-primary me-2" onClick={(e)=>{ e.stopPropagation(); openEdit(r); }}>Edytuj</button>
-                          <button className="btn btn-sm btn-outline-danger" onClick={(e)=>{ e.stopPropagation(); confirmDelete(r); }}>Usuń</button>
-                        </td>
                       </tr>
                     ))}
                     {filtered.length===0 && (
-                      <tr><td colSpan={6} className="text-center text-muted py-4">Brak wyników</td></tr>
+                      <tr><td colSpan={5} className="text-center text-muted py-4">Brak wyników</td></tr>
                     )}
                   </tbody>
                 </table>
@@ -129,7 +130,7 @@ function Projekty(){
           </div>
 
           {/* Right: details */}
-          <div className="d-none d-lg-block" style={{ width:320, paddingLeft:12 }}>
+          <div className="d-none d-lg-block" style={{ width:360, paddingLeft:12 }}>
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
               <div className="card-header"><strong>Szczegóły projektu</strong></div>
               <div className="card-body flex-grow-1" style={{ overflowY:'auto' }}>
@@ -138,13 +139,19 @@ function Projekty(){
                 )}
                 {selected && (
                   <div className="small" style={{ lineHeight: 1.2 }}>
-                    <div className="mb-2 d-flex flex-column align-items-start" style={{ gap:'0.5rem' }}>
-
-                    </div>
-
-                    <div className="mb-3">
-                      <div className="fw-semibold" style={{ fontSize: '1rem' }}>{selected.id}</div>
-                      <div style={{ fontSize: '0.95rem' }}>{selected.client}</div>
+                    <div className="mb-2">
+                      <div className="fw-semibold" style={{ fontSize: '1.15rem' }}>{selected.id}</div>
+                      <div className="text-muted" style={{ fontSize: '1.05rem' }}>{selected.client}</div>
+                      {/* Sekcja Akcje pod nazwą projektu i firmy */}
+                      <div className="mt-2">
+                        <hr className="my-2" />
+                        <div className="fw-semibold mb-2" style={{ fontSize:'0.95rem' }}>Akcje</div>
+                        <div className="d-flex flex-wrap" style={{ gap:'0.5rem' }}>
+                          <button className="btn btn-sm btn-outline-primary" onClick={()=> openEdit(selected)}>Edytuj projekt</button>
+                          <button className="btn btn-sm btn-outline-danger" onClick={()=> confirmDelete(selected)}>Usuń projekt</button>
+                          {/* Usunięto górny przycisk konfiguracji użytkowników, aby uniknąć duplikacji */}
+                        </div>
+                      </div>
                     </div>
 
                     <hr />
@@ -332,4 +339,4 @@ function Projekty(){
   );
 }
 
-export default Projekty;
+export default Projects;
