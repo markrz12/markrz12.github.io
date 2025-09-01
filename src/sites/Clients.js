@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import { Sidebar, Topbar } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
@@ -132,17 +131,6 @@ function Clients() {
                     <strong>Lista klientów</strong>
                   </div>
                   <div className="d-flex align-items-center flex-grow-1" style={{ gap: '0.75rem' }}>
-                    <div className="input-group input-group-sm" style={{ minWidth: 300 }}>
-                      <span className="input-group-text" id="clients-search-icon">🔍</span>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Podaj nazwę firmy, NIP, KRS lub REGON"
-                        aria-label="Filtruj listę klientów po nazwie, NIP, KRS lub REGON"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                      />
-                    </div>
                     <button
                       className="btn btn-success ms-auto ms-1"
                       style={{ whiteSpace: 'nowrap', flexShrink: 0 }}
@@ -307,7 +295,22 @@ function Clients() {
             {/* Prawa kolumna: szczegóły */}
             <div className="d-none d-lg-block" style={{ width: 360, paddingLeft: 12 }}>
               <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: 'hidden', minHeight: 0 }}>
-                <div className="card-header"><strong>Szczegóły klienta</strong></div>
+                <div className="card-header">
+                  <div className="d-flex align-items-center"><strong className="me-auto">Szczegóły klienta</strong></div>
+                  <div className="mt-2">
+                    <div className="input-group input-group-sm">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Szukaj: nazwa, NIP, KRS, REGON"
+                        aria-label="Szukaj klientów"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                      />
+                      <span className="input-group-text" id="clients-search-icon-right">🔍</span>
+                    </div>
+                  </div>
+                </div>
                 <div className="card-body flex-grow-1" style={{ overflowY: "auto", overflowX: "hidden" }}>
                   {!selectedClient && (
                     <div className="text-muted">Wybierz klienta z listy po lewej, aby wyświetlić szczegóły.</div>

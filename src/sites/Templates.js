@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import { Sidebar, Topbar, Notifications } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
@@ -50,7 +49,7 @@ function Templates(){
                 <strong>Lista szablonów</strong>
 
               </div>
-              <div className="table-responsive flex-grow-1 pt-2 ps-2" style={{ overflow:'auto' }}>
+              <div className="table-responsive flex-grow-1 pt-2 ps-2 pb-5" style={{ overflow:'auto' }}>
                 <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
                   <thead className="table-light" style={{ position:'sticky', top:0, zIndex:1, whiteSpace:'nowrap' }}>
                     <tr>
@@ -145,7 +144,7 @@ function Templates(){
           </div>
         )}
 
-        <div className="px-3 py-2 text-end small text-muted">2 szablony</div>
+
       </div>
     </div>
   );

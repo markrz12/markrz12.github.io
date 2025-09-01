@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import { Sidebar, Topbar, Notifications } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
@@ -52,14 +51,8 @@ function Users(){
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
               <div className="card-header d-flex align-items-center" style={{ gap:'0.5rem' }}>
                 <strong>Moduł użytkowników</strong>
-                <div className="d-flex" style={{ gap:'0.5rem' }}>
-                  <div className="input-group input-group-sm" style={{ minWidth:280 }}>
-                    <span className="input-group-text" id="users-search-icon">🔍</span>
-                    <input type="text" className="form-control" placeholder="Podaj maila lub imię i nazwisko" aria-label="Filtruj użytkowników po mailu lub imieniu i nazwisku" value={search} onChange={(e)=>setSearch(e.target.value)} />
-                  </div>
-                </div>
               </div>
-              <div className="table-responsive flex-grow-1 pt-2 ps-2" style={{ overflow:'auto' }}>
+              <div className="table-responsive flex-grow-1 pt-2 ps-2 pb-5" style={{ overflow:'auto' }}>
                 <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
                   <thead className="table-light" style={{ position:'sticky', top:0, zIndex:1, whiteSpace:'nowrap' }}>
                     <tr>
@@ -92,7 +85,15 @@ function Users(){
           {/* Prawa część: przypisane projekty i daty */}
           <div className="d-none d-lg-block" style={{ width:360, paddingLeft:12 }}>
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
-              <div className="card-header"><strong>Szczegóły użytkownika</strong></div>
+              <div className="card-header">
+                <div className="d-flex align-items-center"><strong className="me-auto">Szczegóły użytkownika</strong></div>
+                <div className="mt-2">
+                  <div className="input-group input-group-sm">
+                    <input type="text" className="form-control" placeholder="Szukaj: mail, imię i nazwisko" aria-label="Szukaj użytkowników" value={search} onChange={(e)=>setSearch(e.target.value)} />
+                    <span className="input-group-text" id="users-search-icon-right">🔍</span>
+                  </div>
+                </div>
+              </div>
               <div className="card-body flex-grow-1" style={{ overflowY:'auto' }}>
                 {!selectedUser && (
                   <div className="text-muted">Wybierz użytkownika z listy po lewej, aby wyświetlić szczegóły.</div>
@@ -128,7 +129,7 @@ function Users(){
           </div>
         </div>
 
-        <div className="px-3 py-2 text-end small text-muted">Strona 1/20</div>
+
       </div>
     </div>
   );

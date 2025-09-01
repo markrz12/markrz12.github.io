@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import { Sidebar, Topbar, Notifications } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 

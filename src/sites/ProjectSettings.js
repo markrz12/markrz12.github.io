@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
-import { Sidebar, Topbar, Notifications } from "../ui/Common";
+import { Sidebar, Topbar, Notifications, InitialsAvatar } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
+
 
 
 function SmallSelect({ label, value, onChange, options }){
@@ -83,12 +83,12 @@ function ProjektKonfiguracja(){
             <div className="d-flex align-items-center position-relative" style={{ gap:'0.25rem' }}>
               <Notifications />
               <button ref={accountBtnRef} className="btn btn-link p-0 border-0" aria-haspopup="menu" aria-expanded={showAccount? 'true':'false'} onClick={()=>setShowAccount(v=>!v)} onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setShowAccount(v=>!v);} }} title="Konto">
-                <FaUserCircle size={24} color="#ffffff" />
+                <InitialsAvatar name="Jan Użytkownik" size={24} />
               </button>
               {showAccount && (
                 <div ref={accountMenuRef} className="card shadow-sm" style={{ position:'absolute', right:0, top:'100%', marginTop:'0.5rem', minWidth:220, zIndex:2000 }} role="menu">
                   <div className="card-body py-2">
-                    <div className="d-flex align-items-center mb-2"><FaUserCircle size={28} className="me-2" /><div><div className="fw-semibold">Jan Użytkownik</div><div className="text-muted small">jan@example.com</div></div></div>
+                    <div className="d-flex align-items-center mb-2"><InitialsAvatar name="Jan Użytkownik" size={28} /><div><div className="fw-semibold">Jan Użytkownik</div><div className="text-muted small">jan@example.com</div></div></div>
                     <hr className="my-2" />
                     <button className="dropdown-item btn btn-link text-start w-100 px-0" onClick={()=>setShowAccount(false)}>Profil</button>
                     <button className="dropdown-item btn btn-link text-start w-100 px-0" onClick={()=>setShowAccount(false)}>Ustawienia</button>

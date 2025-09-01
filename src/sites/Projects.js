@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import { Sidebar, Topbar, Notifications } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
@@ -74,23 +73,12 @@ function Projects(){
               <div className="card-header d-flex align-items-center" style={{ gap:'0.5rem' }}>
                 <strong>Lista projektów</strong>
                 <div className="d-flex align-items-center flex-grow-1" style={{ gap:'0.75rem' }}>
-                  <div className="input-group input-group-sm" style={{ minWidth:300 }}>
-                    <span className="input-group-text" id="projects-search-icon">🔍</span>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Podaj ID projektu, klienta, status lub użytkownika"
-                      aria-label="Filtruj listę projektów po ID, kliencie, statusie lub użytkowniku"
-                      value={search}
-                      onChange={(e)=>setSearch(e.target.value)}
-                    />
-                  </div>
                   <button className="btn btn-success ms-auto ms-1" onClick={()=>navigate('/projekt-klient')} style={{ whiteSpace:'nowrap', minWidth: 160, flexShrink: 0 }} >
                     Utwórz projekt
                   </button>
                 </div>
               </div>
-              <div className="table-responsive flex-grow-1 pt-2 ps-2" style={{ overflow:'auto' }}>
+              <div className="table-responsive flex-grow-1 pt-2 ps-2 pb-5" style={{ overflow:'auto' }}>
                 <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
                   <thead className="table-light" style={{ position:'sticky', top:0, zIndex:1, whiteSpace:'nowrap' }}>
                     <tr>
@@ -115,7 +103,7 @@ function Projects(){
                         <td>
                           <div className="d-flex align-items-center" style={{ gap:'0.5rem' }}>
                             <ProgressBar value={r.progress} />
-                            <span className="small text-muted" style={{ width:38, textAlign:'right' }}>{r.progress}%</span>
+                            <span className="small text-muted me-3" style={{ width:38, textAlign:'right' }}>{r.progress}%</span>
                           </div>
                         </td>
                       </tr>
@@ -132,7 +120,24 @@ function Projects(){
           {/* Right: details */}
           <div className="d-none d-lg-block" style={{ width:360, paddingLeft:12 }}>
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
-              <div className="card-header"><strong>Szczegóły projektu</strong></div>
+              <div className="card-header">
+                <div className="d-flex align-items-center" style={{ gap:'0.5rem' }}>
+                  <strong className="me-auto">Szczegóły projektu</strong>
+                </div>
+                <div className="mt-2">
+                  <div className="input-group input-group-sm">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Szukaj: ID, klient, status, użytkownik"
+                      aria-label="Szukaj po ID, kliencie, statusie lub użytkowniku"
+                      value={search}
+                      onChange={(e)=>setSearch(e.target.value)}
+                    />
+                    <span className="input-group-text" id="projects-search-icon-right">🔍</span>
+                  </div>
+                </div>
+              </div>
               <div className="card-body flex-grow-1" style={{ overflowY:'auto' }}>
                 {!selected && (
                   <div className="text-muted">Wybierz projekt z listy po lewej, aby wyświetlić szczegóły.</div>
@@ -333,7 +338,7 @@ function Projects(){
           </div>
         )}
 
-        <div className="px-3 py-2 text-end small text-muted">{rows.length} projektów</div>
+
       </div>
     </div>
   );
