@@ -12,8 +12,12 @@ import Questionnaire from "../sites/Questionnaire";
 import Project from "../sites/Project";
 
 function App() {
+    // Derive basename from the document base URI so it works at root or under a repo path (GitHub Project Pages)
+    let baseName = new URL(document.baseURI).pathname;
+    baseName = baseName === "/" ? "" : baseName.replace(/\/$/, "");
+
     return (
-        <Router>
+        <Router basename={baseName}>
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/workspace" element={<Workspace />} />
