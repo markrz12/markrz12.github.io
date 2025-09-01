@@ -95,7 +95,7 @@ export function Sidebar({ search, setSearch }){
       </ul>
       <div className="mt-auto">
         <ul className="nav flex-column">
-          <li className="nav-item"><a className="nav-link text-white" href="#"><BsGear className="me-2"/> Admin</a></li>
+          <li className="nav-item"><button type="button" className="nav-link btn btn-link text-white p-0 text-start"><BsGear className="me-2"/> Admin</button></li>
         </ul>
       </div>
     </div>
@@ -107,7 +107,7 @@ export function Topbar({ breadcrumb, accountBtnRef, accountMenuRef, showAccount,
     <div className="shadow-sm" style={{ backgroundColor:'var(--ndr-bg-topbar)', padding:'0.5rem' }}>
       <div className="d-flex align-items-center justify-content-between px-4 py-2">
         <nav aria-label="breadcrumb">
-          <ol className="breadcrumb mb-0" style={{ color:'#fff', ['--bs-breadcrumb-divider']:"'/'", ['--bs-breadcrumb-divider-color']:'#fff' }}>
+          <ol className="breadcrumb mb-0" style={{ color:'#fff', "--bs-breadcrumb-divider":"'/'", "--bs-breadcrumb-divider-color":'#fff' }}>
             {breadcrumb.map((item, idx)=> (
               <li key={idx} className={"breadcrumb-item" + (item.active? ' active':'')} aria-current={item.active? 'page': undefined}>
                 {item.to && !item.active? (<Link to={item.to} style={{ color:'#fff', textDecoration:'underline' }}>{item.label}</Link>): (<span style={{ color:'#fff' }}>{item.label}</span>)}

@@ -14,7 +14,7 @@ function Login() {
             <div className="card p-4 shadow" style={{ width: "350px" }}>
                 <h3 className="text-center mb-2">Logowanie</h3>
                 <p className="text-center text-muted mt-1">
-                    <a>Zaloguj się aby kontynuować</a>
+                    <span>Zaloguj się aby kontynuować</span>
                 </p>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
@@ -26,7 +26,7 @@ function Login() {
                         <input type="password" className="form-control" placeholder="Wpisz hasło" required />
                     </div>
                     <p className="text-start mb-3">
-                        Nie pamiętasz hasła? <a href="#">Kliknij tutaj</a>
+                        Nie pamiętasz hasła? <button type="button" className="btn btn-link p-0 align-baseline">Kliknij tutaj</button>
                     </p>
                     <button type="submit" className="btn btn-primary w-100 mb-3">Zaloguj</button>
 
@@ -42,7 +42,7 @@ function Login() {
                 </form>
 
                 <p className="text-start text-muted mt-3">
-                    Nie masz konta? <a href="#">Zarejestruj się</a>
+                    Nie masz konta? <button type="button" className="btn btn-link p-0 align-baseline">Zarejestruj się</button>
                 </p>
             </div>
         </div>

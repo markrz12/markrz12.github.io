@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Sidebar, Topbar, Notifications } from "../ui/Common";
-import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
+import { Sidebar, Topbar } from "../ui/Common";
 
 function ProgressBar({ value }){
   return (

@@ -1,7 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { Sidebar, Topbar, Notifications } from "../ui/Common";
-import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
+import { Sidebar, Topbar } from "../ui/Common";
 
 function Users(){
   const [search, setSearch] = useState("");
@@ -115,7 +113,7 @@ function Users(){
                     <div className="fw-semibold mb-2">Przypisane projekty</div>
                     <ul className="list-unstyled small">
                       {selectedUser.projects.map((pid, i)=> (
-                        <li key={i}><a href="#">{pid}</a></li>
+                        <li key={i}><button type="button" className="btn btn-link p-0 align-baseline">{pid}</button></li>
                       ))}
                     </ul>
                     <hr />

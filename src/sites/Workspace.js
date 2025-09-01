@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Sidebar, Topbar } from "../ui/Common";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Workspace() {
     const [search, setSearch] = useState("");
@@ -104,7 +104,7 @@ function Workspace() {
                             <div className="col-12 col-md-6 col-xl-4" key={i}>
                               <div className="card h-100 shadow-sm" style={{ borderColor: 'var(--ndr-navy)', borderWidth: 1, borderStyle: 'solid', borderRadius: 10 }}>
                                 <div className="card-body d-flex align-items-center" style={{ gap: '0.75rem' }}>
-                                  <a href="#" className="text-decoration-underline" aria-label={`Projekt ${p.id}`}>{p.id}</a>
+                                  <Link to={`/projekty/${encodeURIComponent(p.id)}`} className="text-decoration-underline" aria-label={`Projekt ${p.id}`}>{p.id}</Link>
                                   <div
                                     className="flex-grow-1 position-relative"
                                     role="progressbar"
@@ -146,7 +146,7 @@ function Workspace() {
                             {/* Użyj nagłówka sekcji, aby tytuł i akcja były w jednej linii i nie zawijały się niezgrabnie */}
                             <div className="d-flex align-items-center justify-content-between flex-wrap gap-2">
                               <h5 className="mb-0">Ostatnio przesłane dokumenty</h5>
-                              <a href="#" className="small text-decoration-underline" style={{ whiteSpace:'nowrap' }}>Zobacz wszystkie</a>
+                              <Link to="/projekty" className="small text-decoration-underline" style={{ whiteSpace:'nowrap' }}>Zobacz wszystkie</Link>
                             </div>
                           </div>
                         </div>

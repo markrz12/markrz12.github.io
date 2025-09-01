@@ -1,21 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Sidebar, Topbar, Notifications, InitialsAvatar } from "../ui/Common";
+import { Notifications, InitialsAvatar } from "../ui/Common";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
-
-
-
-function SmallSelect({ label, value, onChange, options }){
-  return (
-    <div className="mb-2">
-      <label className="form-label mb-1 small">{label}</label>
-      <select className="form-select form-select-sm" value={value} onChange={e=>onChange(e.target.value)}>
-        <option value="">— wybierz —</option>
-        {options.map((o,i)=>(<option key={i} value={o}>{o}</option>))}
-      </select>
-    </div>
-  );
-}
 
 function ProjektKonfiguracja(){
   const [search, setSearch] = useState("");
@@ -62,7 +48,7 @@ function ProjektKonfiguracja(){
         </ul>
         <div className="mt-auto">
           <ul className="nav flex-column">
-            <li className="nav-item"><a className="nav-link text-white" href="#"><BsGear className="me-2"/> Admin</a></li>
+            <li className="nav-item"><button type="button" className="nav-link btn btn-link text-white p-0 text-start"><BsGear className="me-2"/> Admin</button></li>
           </ul>
         </div>
       </div>
@@ -73,7 +59,7 @@ function ProjektKonfiguracja(){
         <div className="shadow-sm" style={{ backgroundColor:'var(--ndr-bg-topbar)', padding:'0.5rem' }}>
           <div className="d-flex align-items-center justify-content-between px-4 py-2">
             <nav aria-label="breadcrumb">
-              <ol className="breadcrumb mb-0" style={{ color:'#fff', ['--bs-breadcrumb-divider']:"'/'", ['--bs-breadcrumb-divider-color']:'#fff' }}>
+              <ol className="breadcrumb mb-0" style={{ color:'#fff', "--bs-breadcrumb-divider":"'/'", "--bs-breadcrumb-divider-color":'#fff' }}>
                 <li className="breadcrumb-item"><Link to="/" style={{ color:'#fff', textDecoration:'underline' }}>Home</Link></li>
                 <li className="breadcrumb-item"><Link to="/workspace" style={{ color:'#fff', textDecoration:'underline' }}>Workspace</Link></li>
                 <li className="breadcrumb-item"><Link to="/projekty" style={{ color:'#fff', textDecoration:'underline' }}>Projekty</Link></li>

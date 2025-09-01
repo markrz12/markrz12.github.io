@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Sidebar, Topbar, Notifications } from "../ui/Common";
-import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import { Sidebar, Topbar } from "../ui/Common";
 
 function ProjectClient(){
   const [search, setSearch] = useState("");
@@ -42,7 +41,7 @@ function ProjectClientForm({ onCreate }){
   const toggle=(k)=>setOpen(prev=>({...prev,[k]:!prev[k]}));
 
   // Mock KRS-like dataset (different data per entity)
-  const DATA = [
+  const DATA = React.useMemo(()=>[ 
     {
       name:'Acme Retail Sp. z o.o. (DEMO)',
       reg:'Rejestr Przedsiębiorców',
@@ -74,7 +73,7 @@ function ProjectClientForm({ onCreate }){
       contact:{ email:'kontakt@example.com', phone:'+48 32 222 11 00', www:'www.example.com' },
       repr:[{name:'Tomasz Próbny', role:'Prezes', sposob:'samodzielnie'},{name:'Ewa Testowa', role:'Wiceprezes', sposob:'łącznie z Prezesem'}]
     }
-  ];
+  ], []);
 
   // Choose first as default
   React.useEffect(()=>{ if(!selected) setSelected(DATA[0]); },[]);

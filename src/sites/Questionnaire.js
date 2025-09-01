@@ -182,7 +182,7 @@ function Kwestionariusz(){
                     <div className="card-body p-0">
                       <ul className="list-group list-group-flush">
                         <li className="list-group-item">
-                          <a href="#" target="_blank" rel="noreferrer" className="text-decoration-underline small" style={{ fontSize: '0.85em' }} onClick={()=>setShowDocMenu(false)}>Otwórz dokument</a>
+                          <button className="btn btn-link p-0 align-baseline text-decoration-underline small" style={{ fontSize: '0.85em' }} onClick={()=>setShowDocMenu(false)}>Otwórz dokument</button>
                         </li>
                       </ul>
                     </div>
@@ -305,7 +305,7 @@ function Kwestionariusz(){
                 {/* Dokumenty first */}
                 <div className="d-flex align-items-center justify-content-between mb-2">
                   <div className="fw-semibold">Dokumenty</div>
-                  <a href="#" className="small text-decoration-underline">Zobacz wszystkie</a>
+                  <button type="button" className="btn btn-link p-0 align-baseline small text-decoration-underline">Zobacz wszystkie</button>
                 </div>
                 <div className="card shadow-sm" style={{ fontSize:'0.85rem' }}>
                   <ul className="list-group list-group-flush">
@@ -321,7 +321,7 @@ function Kwestionariusz(){
                           <span className="badge bg-light text-dark border">PDF</span>
                           <div className="me-auto">
                             <div className="fw-semibold" style={{ fontSize:'0.9em' }}>
-                              <a href="#" target="_blank" rel="noreferrer" className="text-decoration-underline">{d.name}</a>
+                              <button type="button" className="btn btn-link p-0 align-baseline text-decoration-underline">{d.name}</button>
                             </div>
                             <div className="text-muted" style={{ fontSize:'0.85em' }}>{timeAgo(new Date(d.date))}</div>
                           </div>
@@ -434,7 +434,7 @@ function Kwestionariusz(){
                               </div>
                             )}
                           </div>
-                          <div className="mt-2 d-flex flex-wrap align-items-center" style={{ gap:'0.375rem' }} aria-label={`Akcje dla: ${'${r.type}'}`}>
+                          <div className="mt-2 d-flex flex-wrap align-items-center" style={{ gap:'0.375rem' }} aria-label={`Akcje dla: ${r.type}`}>
                             <button className="btn btn-sm btn-outline-secondary" onClick={()=>sendReminder(r.id)} disabled={r.status==='Otrzymano'}>Przypomnij</button>
                             <button className="btn btn-outline-danger btn-sm" onClick={()=>cancelRequest(r.id)} disabled={r.status==='Otrzymano'}>Anuluj</button>
                           </div>

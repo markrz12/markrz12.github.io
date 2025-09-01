@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Sidebar, Topbar } from "../ui/Common";
-import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
 function Clients() {
   const [search, setSearch] = useState("");
@@ -84,7 +83,6 @@ function Clients() {
   // Helper to generate fake details for the right panel
   const deriveDetails = (c) => {
     if (!c) return null;
-    const slug = String(c.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '');
     const city = c.city && c.city !== '—' ? c.city : 'Warszawa';
     return {
       addressLines: [
