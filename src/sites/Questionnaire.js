@@ -137,10 +137,6 @@ function Kwestionariusz(){
     const ts = new Date().toISOString();
     setRequests(prev => prev.map(r => r.id === id ? { ...r, lastReminderAt: ts } : r));
   };
-  const markReceived = (id) => {
-    const ts = new Date().toISOString();
-    setRequests(prev => prev.map(r => r.id === id ? { ...r, status: 'Otrzymano', receivedAt: ts, receivedFile: r.receivedFile || { name: 'dokument.pdf', url: '#' } } : r));
-  };
   const cancelRequest = (id) => {
     // Remove the request from the list instead of marking as canceled
     setRequests(prev => prev.filter(r => r.id !== id));

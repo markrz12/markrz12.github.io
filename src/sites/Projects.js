@@ -45,7 +45,6 @@ function Projects(){
 
   const handleLogout = () => { navigate('/'); setShowAccount(false); };
 
-  const openAdd = () => { setForm({ id:"DR/2025/", client:"", status:"W toku", progress:10, users:"", contactName:"", contactEmail:"", contactPhone:"" }); setShowAdd(true); };
   const openEdit = (r) => { setEditTarget(r); setForm({ id:r.id, client:r.client, status:r.status, progress:r.progress, users:r.users.join('; '), contactName:r.contact.name, contactEmail:r.contact.email, contactPhone:r.contact.phone }); setShowEdit(true); };
   const confirmDelete = (r) => { setDeleteTarget(r); setShowDelete(true); };
 

@@ -76,7 +76,7 @@ function ProjectClientForm({ onCreate }){
   ], []);
 
   // Choose first as default
-  React.useEffect(()=>{ if(!selected) setSelected(DATA[0]); },[]);
+  React.useEffect(()=>{ if(!selected) setSelected(DATA[0]); },[selected, DATA]);
 
   // Live suggestions by name/nip/krs/regon
   React.useEffect(()=>{
@@ -84,7 +84,7 @@ function ProjectClientForm({ onCreate }){
     if(!q){ setSuggestions([]); return; }
     const res = DATA.filter(e=> [e.name,e.nip,e.krs,e.regon].some(v=>String(v).toLowerCase().includes(q))).slice(0,5);
     setSuggestions(res);
-  },[krsQuery]);
+  },[krsQuery, DATA]);
 
   const fetchFromKRS = () => {
     // Demo: pick first suggestion or cycle through dataset
