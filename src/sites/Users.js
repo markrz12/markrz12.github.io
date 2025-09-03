@@ -5,7 +5,6 @@ function Users(){
   const [search, setSearch] = useState("");
   const [showAccount, setShowAccount] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
-  const [showRoleMenu, setShowRoleMenu] = useState(false);
   const [showRoleModal, setShowRoleModal] = useState(false);
   const accountMenuRef = useRef(null); const accountBtnRef = useRef(null);
   useEffect(()=>{ function onDoc(e){ if(!showAccount) return; const m=accountMenuRef.current,b=accountBtnRef.current; if(m&&!m.contains(e.target)&&b&&!b.contains(e.target)) setShowAccount(false);} function onKey(e){ if(e.key==='Escape') setShowAccount(false);} document.addEventListener('mousedown',onDoc); document.addEventListener('keydown',onKey); return ()=>{ document.removeEventListener('mousedown',onDoc); document.removeEventListener('keydown',onKey); }; },[showAccount]);
