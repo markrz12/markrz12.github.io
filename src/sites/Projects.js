@@ -68,19 +68,28 @@ function Projects(){
           {/* Left: table */}
           <div className="flex-grow-1 d-flex flex-column" style={{ minWidth:0 }}>
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
-              <div className="card-header d-flex align-items-center" style={{ gap:'0.5rem' }}>
-                <strong>Lista projektów</strong>
-                <div className="d-flex align-items-center flex-grow-1" style={{ gap:'0.75rem' }}>
-                  <button className="btn btn-success ms-auto ms-1" onClick={()=>navigate('/projekt-klient')} style={{ whiteSpace:'nowrap', minWidth: 160, flexShrink: 0 }} >
-                    Utwórz projekt
-                  </button>
+              <div className="card-header">
+                <div className="d-flex align-items-center" style={{ gap:'0.5rem' }}>
+                  <strong className="me-auto">Lista projektów</strong>
+                  <div className="input-group input-group-sm" style={{ maxWidth: 420 }}>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Szukaj: ID, klient, status, użytkownik"
+                      aria-label="Szukaj po ID, kliencie, statusie lub użytkowniku"
+                      value={search}
+                      onChange={(e)=>setSearch(e.target.value)}
+                    />
+                    {search && (<button className="btn btn-outline-secondary" type="button" onClick={()=>setSearch("")} title="Wyczyść" aria-label="Wyczyść">×</button>)}
+                    <span className="input-group-text" id="projects-search-icon-top">🔍</span>
+                  </div>
                 </div>
+
               </div>
               <div className="table-responsive flex-grow-1 pt-2 ps-2 pb-5" style={{ overflow:'auto' }}>
                 <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
                   <thead className="table-light" style={{ position:'sticky', top:0, zIndex:1, whiteSpace:'nowrap' }}>
                     <tr>
-                      <th style={{ width:40 }}>#</th>
                       <th>Projekt</th>
                       <th>Klient</th>
                       <th>Aktualny status</th>
@@ -90,7 +99,6 @@ function Projects(){
                   <tbody>
                     {filtered.map((r, idx)=> (
                       <tr key={r.pid} onClick={()=>setSelectedId(r.pid)} style={{ cursor:'pointer', backgroundColor: r.pid===selectedId? '#e7f1ff': undefined }}>
-                        <td>{idx+1}</td>
                         <td style={{ whiteSpace:'nowrap' }}>
                           <Link to={`/projekty/${encodeURIComponent(r.id)}`} onClick={(e)=>e.stopPropagation()} style={{ textDecoration:'underline' }}>
                               {r.id}
@@ -107,7 +115,7 @@ function Projects(){
                       </tr>
                     ))}
                     {filtered.length===0 && (
-                      <tr><td colSpan={5} className="text-center text-muted py-4">Brak wyników</td></tr>
+                      <tr><td colSpan={4} className="text-center text-muted py-4">Brak wyników</td></tr>
                     )}
                   </tbody>
                 </table>
@@ -118,25 +126,17 @@ function Projects(){
           {/* Right: details */}
           <div className="d-none d-lg-block" style={{ width:360, paddingLeft:12 }}>
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
-              <div className="card-header">
-                <div className="d-flex align-items-center" style={{ gap:'0.5rem' }}>
-                  <strong className="me-auto">Szczegóły projektu</strong>
+                <div className="text-center mb-2">
+                    <button className="btn btn-success w-100" onClick={()=>navigate('/projekt-klient')} style={{ whiteSpace:'nowrap', minWidth: 220 }}>
+                        Utwórz projekt
+                    </button>
                 </div>
-                <div className="mt-2">
-                  <div className="input-group input-group-sm">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Szukaj: ID, klient, status, użytkownik"
-                      aria-label="Szukaj po ID, kliencie, statusie lub użytkowniku"
-                      value={search}
-                      onChange={(e)=>setSearch(e.target.value)}
-                    />
-                    <span className="input-group-text" id="projects-search-icon-right">🔍</span>
-                  </div>
-                </div>
+              <div className="card-header d-flex align-items-center" style={{ gap:'0.5rem' }}>
+
+                <strong className="me-auto">Szczegóły projektu</strong>
               </div>
               <div className="card-body flex-grow-1" style={{ overflowY:'auto' }}>
+
                 {!selected && (
                   <div className="text-muted">Wybierz projekt z listy po lewej, aby wyświetlić szczegóły.</div>
                 )}

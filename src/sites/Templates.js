@@ -10,6 +10,7 @@ function Templates(){
   const [form, setForm] = useState({ name: "", url: "" });
   const [showDelete, setShowDelete] = useState(false);
   const [deleteItem, setDeleteItem] = useState(null);
+  const [showAdd, setShowAdd] = useState(false);
   const accountMenuRef = useRef(null); const accountBtnRef = useRef(null);
   const navigate = useNavigate();
 
@@ -44,15 +45,16 @@ function Templates(){
         <div className="flex-grow-1 bg-light d-flex pt-2 px-2" style={{ minHeight:0 }}>
           <div className="flex-grow-1 d-flex flex-column" style={{ minWidth:0 }}>
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
-              <div className="card-header d-flex align-items-center" style={{ gap:'0.5rem' }}>
-                <strong>Lista szablonów</strong>
+              <div className="card-header">
+                <div className="d-flex align-items-center justify-content-between" style={{ gap:'0.5rem' }}>
+                  <strong>Lista szablonów</strong>
 
+                </div>
               </div>
               <div className="table-responsive flex-grow-1 pt-2 ps-2 pb-5" style={{ overflow:'auto' }}>
                 <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
                   <thead className="table-light" style={{ position:'sticky', top:0, zIndex:1, whiteSpace:'nowrap' }}>
                     <tr>
-                      <th style={{ width:40 }}>#</th>
                       <th>Nazwa</th>
                       <th>Źródło</th>
                       <th>Akcje</th>
@@ -61,7 +63,6 @@ function Templates(){
                   <tbody>
                     {filtered.map((r, idx)=> (
                       <tr key={r.id}>
-                        <td>{idx+1}</td>
                         <td style={{ whiteSpace:'nowrap' }}>{r.name}</td>
                         <td style={{ wordBreak:'break-word' }}>
                           <a href={r.url} target="_blank" rel="noreferrer">{r.url}</a>
@@ -73,7 +74,7 @@ function Templates(){
                       </tr>
                     ))}
                     {filtered.length===0 && (
-                      <tr><td colSpan={4} className="text-center text-muted py-4">Brak wyników</td></tr>
+                      <tr><td colSpan={3} className="text-center text-muted py-4">Brak wyników</td></tr>
                     )}
                   </tbody>
                 </table>
@@ -84,6 +85,11 @@ function Templates(){
           {/* Right panel with short info/help */}
           <div className="d-none d-lg-block" style={{ width:360, paddingLeft:12 }}>
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
+                <div className="text-center mb-2">
+                    <button className="btn btn-success w-100" onClick={()=>setShowAdd(true)} style={{ whiteSpace:'nowrap', minWidth: 220 }}>
+                        Dodaj szablon
+                    </button>
+                </div>
               <div className="card-header"><strong>Informacje</strong></div>
               <div className="card-body small" style={{ overflowY:'auto' }}>
                 <p className="mb-2">Szablony dokumentów używane w projektach. Kliknij link Źródło, aby otworzyć wzór w zewnętrznym serwisie.</p>
@@ -138,6 +144,37 @@ function Templates(){
               <div className="card-footer d-flex justify-content-end gap-2">
                 <button className="btn btn-light" onClick={()=>setShowDelete(false)}>Anuluj</button>
                 <button className="btn btn-danger" onClick={()=>{ if(deleteItem){ setRows(prev=> prev.filter(r=> r.id!==deleteItem.id)); } setShowDelete(false); }}>Usuń</button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Add modal */}
+        {showAdd && (
+          <div className="position-fixed top-0 start-0 w-100 h-100" style={{ background:"rgba(0,0,0,0.35)", zIndex:1050 }} onClick={()=>setShowAdd(false)}>
+            <div className="card shadow" style={{ maxWidth:520, margin:"10vh auto", padding:0 }} onClick={(e)=>e.stopPropagation()}>
+              <div className="card-header d-flex justify-content-between align-items-center">
+                <strong>Dodaj szablon</strong>
+                <button className="btn btn-sm btn-outline-secondary" onClick={()=>setShowAdd(false)}>Zamknij</button>
+              </div>
+              <div className="card-body">
+                <div className="mb-2">
+                  <label className="form-label mb-1">Nazwa</label>
+                  <input className="form-control" value={form.name} onChange={(e)=>setForm(prev=>({...prev, name: e.target.value}))} />
+                </div>
+                <div className="mb-2">
+                  <label className="form-label mb-1">Adres Źródła (URL)</label>
+                  <input className="form-control" value={form.url} onChange={(e)=>setForm(prev=>({...prev, url: e.target.value}))} />
+                </div>
+              </div>
+              <div className="card-footer d-flex justify-content-end gap-2">
+                <button className="btn btn-light" onClick={()=>setShowAdd(false)}>Anuluj</button>
+                <button className="btn btn-primary" onClick={()=>{
+                  const name=form.name.trim(); const url=form.url.trim(); if(!name){ alert('Podaj nazwę'); return;} if(!url){ alert('Podaj URL'); return;}
+                  const newId = (rows[rows.length-1]?.id || 0) + 1;
+                  setRows(prev=>[...prev, { id: newId, key: name.toLowerCase(), name, url }]);
+                  setShowAdd(false); setForm({ name: "", url: "" });
+                }}>Dodaj</button>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Sidebar, Topbar } from '../ui/Common';
+import { Sidebar, Topbar } from '../ui/Common_project.js';
 
 function ProgressMini({ value }){
   const v = Math.max(0, Math.min(100, Math.round(value)));

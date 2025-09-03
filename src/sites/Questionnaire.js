@@ -1,5 +1,7 @@
 import React, { useMemo, useRef, useState, useEffect } from "react";
-import { Sidebar, Topbar, CloseX, InitialsAvatar } from "../ui/Common";
+import { Sidebar, Topbar, CloseX, InitialsAvatar} from "../ui/Common_project.js";
+import { BsThreeDots} from "react-icons/bs";
+
 
 function timeAgo(input){
   const now = new Date();
@@ -143,11 +145,11 @@ function Kwestionariusz(){
   };
 
   const rows = useMemo(()=>[
-    { id:1, q:'Czy oświadczenie kierownika jednostki jest kompletne?', author:'KM', approver:'MM', date:'2025-08-20', status:'Zatwierdzone', sent:['📎','✖'], recv:['❌','📥'] },
-    { id:2, q:'Czy strategia i plan badania są spójne z informacją o księgowości i systemie kontroli wewnętrznej jednostki?', author:'KK', approver:'MM', date:'2025-08-21', status:'Zatwierdzone', sent:['📎'], recv:['✔'] },
-    { id:3, q:'Czy dokumentacja badania jest objęta spisem?', author:'KM', approver:'—', date:'2025-08-22', status:'Do zatwierdzenia', sent:[], recv:[] },
-    { id:4, q:'Czy sprawozdanie z badania zawiera wszystkie wymagane elementy?', author:'KM', approver:'—', date:'2025-08-23', status:'W trakcie', sent:[], recv:[] },
-    { id:5, q:'Czy z dokumentacji wynika, że badający zbadał transakcje z jednostkami powiązanymi?', author:'KM', approver:'—', date:'2025-08-24', status:'Odrzucone', sent:[], recv:[] },
+    { id:1, q:'Czy oświadczenie kierownika jednostki jest kompletne?', author:'K M', approver:'M M', date:'2025-08-20', status:'Zatwierdzone', sent:['📎','✖'], recv:['❌','📥'] },
+    { id:2, q:'Czy strategia i plan badania są spójne z informacją o księgowości i systemie kontroli wewnętrznej jednostki?', author:'K K', approver:'M M', date:'2025-08-21', status:'Zatwierdzone', sent:['📎'], recv:['✔'] },
+    { id:3, q:'Czy dokumentacja badania jest objęta spisem?', author:'K M', approver:'—', date:'2025-08-22', status:'Do zatwierdzenia', sent:[], recv:[] },
+    { id:4, q:'Czy sprawozdanie z badania zawiera wszystkie wymagane elementy?', author:'K M', approver:'—', date:'2025-08-23', status:'W trakcie', sent:[], recv:[] },
+    { id:5, q:'Czy z dokumentacji wynika, że badający zbadał transakcje z jednostkami powiązanymi?', author:'K M', approver:'—', date:'2025-08-24', status:'Odrzucone', sent:[], recv:[] },
   ],[]);
 
   return (
@@ -155,7 +157,7 @@ function Kwestionariusz(){
       <Sidebar search={search} setSearch={setSearch} />
       <div className="flex-grow-1 d-flex flex-column" style={{ overflow:'hidden' }}>
         <Topbar
-          breadcrumb={[{label:'Home', to:'/'},{label:'Projekty', to:'/projekty'},{label:'Kwestionariusz DR14.0', active:true}]}
+          breadcrumb={[{label:'Home', to:'/'},{label:'Projekty', to:'/projekty'},{label:'Projekt', to:'/projekt'},{label:'Kwestionariusz DR14.0', active:true}]}
           accountBtnRef={accountBtnRef}
           accountMenuRef={accountMenuRef}
           showAccount={showAccount}
@@ -168,12 +170,33 @@ function Kwestionariusz(){
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
               <div className="card-header d-flex align-items-center justify-content-between position-relative">
                 <strong>Kwestionariusz DR 14.9 - protokół kontroli jakości</strong>
-                <div className="d-flex align-items-center" style={{ gap:'0.5rem' }}>
-                  <button ref={docBtnRef} className="btn btn-outline-secondary btn-sm rounded-circle" aria-haspopup="menu" aria-expanded={showDocMenu? 'true':'false'} title="Więcej" onClick={()=>setShowDocMenu(v=>!v)} onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setShowDocMenu(v=>!v);} }} style={{ width:28, height:28, lineHeight:1 }}>
-                    ...
-                  </button>
-                </div>
-                {showDocMenu && (
+                  <div className="d-flex align-items-center" style={{ gap: '0.5rem' }}>
+                      <button
+                          ref={docBtnRef}
+                          className="btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle"
+                          aria-haspopup="menu"
+                          aria-expanded={showDocMenu ? 'true' : 'false'}
+                          title="Więcej"
+                          onClick={() => setShowDocMenu(v => !v)}
+                          onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                  e.preventDefault();
+                                  setShowDocMenu(v => !v);
+                              }
+                          }}
+                          style={{
+                              width: 28,
+                              height: 28,
+                              border: '1px solid #ced4da', // subtle border for visibility
+                              fontSize: '1rem',
+                              color: '#212529',             // dark icon for maximum contrast
+                          }}
+                      >
+                          <BsThreeDots size={16} />
+                      </button>
+                  </div>
+
+                  {showDocMenu && (
                   <div ref={docMenuRef} className="card shadow-sm" style={{ position:'absolute', right:0, top:'100%', marginTop:'0.5rem', minWidth:220, zIndex:2000 }} role="menu">
                     <div className="card-body p-0">
                       <ul className="list-group list-group-flush">
@@ -188,25 +211,23 @@ function Kwestionariusz(){
                   </div>
                 )}
               </div>
-              <div className="table-responsive flex-grow-1" style={{ overflow:'auto' }}>
-                <table className="table table-sm table-hover align-middle mb-0" style={{ fontSize:'0.92rem', verticalAlign:'middle' }}>
-                  <thead className="table-light" style={{ position:'sticky', top:0, zIndex:1, boxShadow:'0 2px 4px rgba(0,0,0,0.04)' }}>
+                <div className="table-responsive flex-grow-1" style={{ overflow: 'auto', minHeight: 0, flexBasis: 0 }} >
+                    <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
+                        <thead className="table-light" style={{ position: "sticky", top: 0, zIndex: 1, whiteSpace:'nowrap' }}>
                     <tr>
-                      <th style={{ width: 40 }}>#</th>
-                      <th style={{ width: '40%' }}>Opis</th>
-                      <th style={{ width: 200 }}>Odpowiedź</th>
-                      <th style={{ width: 160 }}>Sporządził</th>
-                      <th style={{ width: 160 }}>Zatwierdził</th>
+                      <th style={{ width: '43%', paddingLeft: '1rem', paddingBottom: "0.5rem", paddingTop: "0.5rem"  }}>Opis</th>
+                      <th style={{ paddingBottom: "0.5rem", paddingLeft: '0.7rem', paddingTop: "0.5rem"   }}>Odpowiedź</th>
+                      <th style={{  paddingBottom: "0.5rem", paddingLeft: '0.35rem', paddingTop: "0.5rem"   }}>Sporządził</th>
+                      <th style={{  paddingBottom: "0.5rem", paddingLeft: '1.2rem',  paddingTop: "0.5rem"   }}>Zatwierdził</th>
                     </tr>
                   </thead>
                   <tbody style={{ scrollBehavior:'smooth' }}>
                     {rows.map((r)=> (
                       <tr key={r.id}>
-                        <td>{r.id}</td>
-                        <td style={{ whiteSpace:'normal' }}><span id={`q-label-${r.id}`}>{r.q}</span></td>
-                        <td>
-                          <div className="d-flex align-items-center" role="radiogroup" aria-labelledby={`q-label-${r.id}`} style={{ gap:'0.5rem' }}>
-                            <div className="form-check form-check-inline mb-0">
+                        <td style={{ whiteSpace:'normal', fontSize: '0.82rem', paddingLeft: '1rem', paddingRight: '0.8rem', paddingTop: '0.3rem', paddingBottom : "0.3rem" }}><span id={`q-label-${r.id}`}>{r.q}</span></td>
+                        <td style={{ fontSize: '0.82rem' }}>
+                          <div className="d-flex align-items-center" role="radiogroup" aria-labelledby={`q-label-${r.id}`} style={{ gap:'0.07rem' }}>
+                            <div className="form-check form-check-inline mt-2">
                               <input
                                 className="form-check-input"
                                 type="radio"
@@ -218,7 +239,7 @@ function Kwestionariusz(){
                               />
                               <label className="form-check-label" htmlFor={`a1-${r.id}`}>Tak</label>
                             </div>
-                            <div className="form-check form-check-inline mb-0">
+                            <div className="form-check form-check-inline mt-2">
                               <input
                                 className="form-check-input"
                                 type="radio"
@@ -230,7 +251,7 @@ function Kwestionariusz(){
                               />
                               <label className="form-check-label" htmlFor={`a2-${r.id}`}>Nie</label>
                             </div>
-                            <div className="form-check form-check-inline mb-0">
+                            <div className="form-check form-check-inline mt-2">
                               <input
                                 className="form-check-input"
                                 type="radio"
@@ -244,22 +265,22 @@ function Kwestionariusz(){
                             </div>
                             <CloseX
                               size={20}
-                              className="ms-1 me-2"
+                              className="ms-0 me-4 mt-2"
                               title="Wyczyść odpowiedź"
                               ariaLabel={`Wyczyść odpowiedź dla pytania ${r.id}`}
                               onClick={()=> setAnswers(prev => ({ ...prev, [r.id]: undefined }))}
                             />
                           </div>
                         </td>
-                        <td style={{ fontSize:'0.82rem' }}>
-                          <div className="d-flex align-items-center" style={{ gap:'0.375rem' }}>
-                            <InitialsAvatar name={r.author} size={24} />
+                        <td style={{ fontSize:'0.80rem' }}>
+                          <div className="d-flex align-items-center" style={{ gap:'0.4rem', paddingLeft: '0.0rem' }}>
+                            <InitialsAvatar name={r.author} size={23} />
                             <span className="text-muted small" style={{ whiteSpace:'nowrap' }}>{timeAgo(new Date(r.date))}</span>
                           </div>
                         </td>
-                        <td style={{ fontSize:'0.82rem' }}>
-                          <div className="d-flex align-items-center" style={{ gap:'0.375rem' }}>
-                            {r.approver && r.approver !== '—' && (<InitialsAvatar name={r.approver} size={24} />)}
+                        <td style={{ fontSize:'0.80rem' }}>
+                          <div className="d-flex align-items-center" style={{ gap:'0.4rem', paddingRight: '1rem', paddingLeft: '0.8rem'  }}>
+                            {r.approver && r.approver !== '—' && (<InitialsAvatar name={r.approver} size={23} />)}
                             {r.approver && r.approver !== '—' && (
                               <span className="text-muted small" style={{ whiteSpace:'nowrap' }}>{timeAgo(new Date(r.date))}</span>
                             )}
@@ -268,10 +289,10 @@ function Kwestionariusz(){
                       </tr>
                     ))}
                   </tbody>
-                </table>
+                    </table>
                 {/* Under-table controls, placed inside the same scroll container to sit right under the table */}
                 <div className="px-3 py-2 border-top bg-white" style={{ position:'sticky', bottom:0, zIndex:2, boxShadow:'0 -2px 6px rgba(0,0,0,0.06)' }}>
-                  <div className="d-flex justify-content-end mt-3">
+                  <div className="d-flex justify-content-end mt-1">
                     <button className="btn btn-sm" style={{ backgroundColor:'var(--ndr-mint)', borderColor:'var(--ndr-mint)', color:'#fff', boxShadow:'0 2px 4px rgba(0,0,0,0.08)' }}>Zatwierdź wszystko</button>
                   </div>
                   <div className="mt-4" style={{ marginTop: '3rem' }}>
@@ -301,9 +322,15 @@ function Kwestionariusz(){
                 {/* Dokumenty first */}
                 <div className="d-flex align-items-center justify-content-between mb-2">
                   <div className="fw-semibold">Dokumenty</div>
-                  <button type="button" className="btn btn-link p-0 align-baseline small text-decoration-underline">Zobacz wszystkie</button>
+                    <button
+                        type="button"
+                        className="btn btn-link p-0 align-baseline text-decoration-underline"
+                        style={{ fontSize: "0.9rem" }}
+                    >
+                        Zobacz wszystkie
+                    </button>
                 </div>
-                <div className="card shadow-sm" style={{ fontSize:'0.85rem' }}>
+                <div className="card shadow-sm" style={{ fontSize:'0.75rem' }}>
                   <ul className="list-group list-group-flush">
                     {[{
                       name:'Employee master.csv', date:'2024-09-24', entity:'Entity Name', type:'Procurement'
@@ -312,12 +339,18 @@ function Kwestionariusz(){
                     },{
                       name:'Financial Statement.pdf', date:'2024-09-21', entity:'Entity Name', type:'Finance'
                     }].map((d, i)=> (
-                      <li key={i} className="list-group-item d-flex align-items-center" style={{ gap:'0.75rem' }}>
+                      <li key={i} className="list-group-item d-flex align-items-center" style={{ gap:'0.1rem' }}>
                         <div className="d-flex align-items-center flex-grow-1" style={{ gap:'0.75rem' }}>
                           <span className="badge bg-light text-dark border">PDF</span>
                           <div className="me-auto">
-                            <div className="fw-semibold" style={{ fontSize:'0.9em' }}>
-                              <button type="button" className="btn btn-link p-0 align-baseline text-decoration-underline">{d.name}</button>
+                            <div className="fw-semibold" style={{ fontSize:'0.1em' }}>
+                                <button
+                                    type="button"
+                                    className="btn btn-link p-0 align-baseline text-decoration-underline"
+                                    style={{ fontSize: "0.9rem" }}
+                                >
+                                    {d.name}
+                                </button>
                             </div>
                             <div className="text-muted" style={{ fontSize:'0.85em' }}>{timeAgo(new Date(d.date))}</div>
                           </div>

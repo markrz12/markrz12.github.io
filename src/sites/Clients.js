@@ -13,6 +13,9 @@ function Clients() {
   const [showDelete, setShowDelete] = useState(false);
   const [deleteTargetId, setDeleteTargetId] = useState(null);
   const [deleteTargetName, setDeleteTargetName] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(15);
+  const maxPageButtons = 5;
 
   // account menu state
   const [showAccount, setShowAccount] = useState(false);
@@ -75,6 +78,13 @@ function Clients() {
     );
   }, [clients, search]);
 
+  const totalPages = useMemo(() => Math.ceil(filtered.length / itemsPerPage), [filtered.length, itemsPerPage]);
+  const paginatedClients = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return filtered.slice(startIndex, endIndex);
+  }, [filtered, currentPage, itemsPerPage]);
+
   const selectedClient = useMemo(
     () => clients.find((c) => c.id === selectedId) || null,
     [clients, selectedId]
@@ -124,18 +134,26 @@ function Clients() {
             {/* Lewa kolumna: tabela */}
             <div className="flex-grow-1 d-flex flex-column" style={{ minHeight: 0, minWidth: 0 }}>
               <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: 'hidden', minHeight: 0 }}>
-                <div className="card-header d-flex align-items-center" style={{ gap: '0.5rem' }}>
-                  <div className="d-flex align-items-center gap-2">
-                    <strong>Lista klientów</strong>
-                  </div>
-                  <div className="d-flex align-items-center flex-grow-1" style={{ gap: '0.75rem' }}>
-                    <button
-                      className="btn btn-success ms-auto ms-1"
-                      style={{ whiteSpace: 'nowrap', flexShrink: 0 }}
-                      onClick={() => setShowAdd(true)}
-                    >
-                      Dodaj klienta
-                    </button>
+                <div className="card-header">
+                  <div className="row g-2 align-items-center">
+                    <div className="col-12 col-lg-6 d-flex align-items-center" style={{ gap: '0.5rem' }}>
+                      <strong>Lista klientów</strong>
+
+                    </div>
+                    <div className="col-12 col-lg-6">
+                      <div className="input-group input-group-sm ms-auto" style={{ maxWidth: 420 }}>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Szukaj: nazwa, NIP, KRS, REGON"
+                          aria-label="Szukaj klientów"
+                          value={search}
+                          onChange={(e) => setSearch(e.target.value)}
+                        />
+                        {search && (<button className="btn btn-outline-secondary" type="button" onClick={()=>setSearch("")} title="Wyczyść" aria-label="Wyczyść">×</button>)}
+                        <span className="input-group-text" id="clients-search-icon-top">🔍</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -258,7 +276,6 @@ function Clients() {
                   <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
                     <thead className="table-light" style={{ position: "sticky", top: 0, zIndex: 1, whiteSpace:'nowrap' }}>
                       <tr>
-                        <th style={{ width: 40 }}>#</th>
                         <th>Nazwa</th>
                         <th>NIP</th>
                         <th>KRS</th>
@@ -266,13 +283,12 @@ function Clients() {
                       </tr>
                     </thead>
                     <tbody>
-                      {filtered.map((c, idx) => (
+                      {paginatedClients.map((c, idx) => (
                         <tr
                           key={c.id}
                           onClick={() => setSelectedId(c.id)}
                           style={{ cursor: "pointer", backgroundColor: c.id === selectedId ? "#e7f1ff" : undefined }}
                         >
-                          <td>{idx + 1}</td>
                           <td>{c.name}</td>
                           <td>{c.nip}</td>
                           <td>{c.krs}</td>
@@ -281,11 +297,43 @@ function Clients() {
                       ))}
                       {filtered.length === 0 && (
                         <tr>
-                          <td colSpan={5} className="text-center text-muted py-4">Brak wyników</td>
+                          <td colSpan={4} className="text-center text-muted py-4">Brak wyników</td>
                         </tr>
                       )}
                     </tbody>
                   </table>
+                  <nav aria-label="Page navigation">
+                    <ul className="pagination justify-content-center my-3">
+                      <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+                        <button className="page-link" onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))} aria-label="Previous">&laquo; Poprzednia</button>
+                      </li>
+                      {[...Array(totalPages)].map((_, i) => {
+                        const pageNum = i + 1;
+                        if (totalPages <= maxPageButtons ||
+                            pageNum === 1 ||
+                            pageNum === totalPages ||
+                            (pageNum >= currentPage - Math.floor(maxPageButtons / 2) &&
+                             pageNum <= currentPage + Math.floor(maxPageButtons / 2) - (maxPageButtons % 2 === 0 ? 1 : 0))) {
+                          return (
+                            <li key={i} className={`page-item ${currentPage === pageNum ? 'active' : ''}`}>
+                              <button className="page-link" onClick={() => setCurrentPage(pageNum)} aria-current={currentPage === pageNum ? 'page' : undefined}>{pageNum}</button>
+                            </li>
+                          );
+                        } else if (pageNum === currentPage - Math.floor(maxPageButtons / 2) - (maxPageButtons % 2 === 0 ? 0 : 1) ||
+                                   pageNum === currentPage + Math.floor(maxPageButtons / 2) + (maxPageButtons % 2 === 0 ? 1 : 0)) {
+                          return (
+                            <li key={i} className="page-item disabled">
+                              <span className="page-link">...</span>
+                            </li>
+                          );
+                        }
+                        return null;
+                      })}
+                      <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+                                                <button className="page-link" onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))} aria-label="Next">Następna &raquo;</button>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
               </div>
             </div>
@@ -293,23 +341,21 @@ function Clients() {
             {/* Prawa kolumna: szczegóły */}
             <div className="d-none d-lg-block" style={{ width: 360, paddingLeft: 12 }}>
               <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: 'hidden', minHeight: 0 }}>
-                <div className="card-header">
-                  <div className="d-flex align-items-center"><strong className="me-auto">Szczegóły klienta</strong></div>
-                  <div className="mt-2">
-                    <div className="input-group input-group-sm">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Szukaj: nazwa, NIP, KRS, REGON"
-                        aria-label="Szukaj klientów"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                      />
-                      <span className="input-group-text" id="clients-search-icon-right">🔍</span>
-                    </div>
+
+                  <div className="text-center mb-2">
+                      <button
+                          className="btn btn-success w-100"
+                          style={{ whiteSpace: 'nowrap', flexShrink: 0, minWidth: 220 }}
+                          onClick={() => setShowAdd(true)}
+                      >
+                          Dodaj klienta
+                      </button>
                   </div>
+                <div className="card-header d-flex align-items-center">
+                  <strong className="me-auto">Szczegóły klienta</strong>
                 </div>
                 <div className="card-body flex-grow-1" style={{ overflowY: "auto", overflowX: "hidden" }}>
+
                   {!selectedClient && (
                     <div className="text-muted">Wybierz klienta z listy po lewej, aby wyświetlić szczegóły.</div>
                   )}
