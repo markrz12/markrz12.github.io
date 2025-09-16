@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Notifications, InitialsAvatar, Sidebar } from "../ui/Common_project";
 
 function ProjektKonfiguracja(){
-  const [search, setSearch] = useState("");
+  //const [search, setSearch] = useState("");
   const [showAccount, setShowAccount] = useState(false);
   const accountMenuRef = useRef(null); const accountBtnRef = useRef(null);
   const navigate = useNavigate();

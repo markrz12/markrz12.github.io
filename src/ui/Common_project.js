@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {BsPlayCircle, BsFileText, BsBarChart, BsLightbulb, BsShieldCheck, BsGear, BsChatDots, BsClipboardCheck, BsBell, BsHouse, BsPerson, BsChevronRight} from "react-icons/bs";
+import {BsPlayCircle, BsFileText, BsBarChart, BsLightbulb, BsShieldCheck, BsGear, BsChatDots, BsClipboardCheck, BsBell, BsHouse, BsChevronRight} from "react-icons/bs";
 
 export function InitialsAvatar({ name="Jan Użytkownik", size=26 }){
   const initials = String(name || "")
