@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Sidebar, Topbar } from '../ui/Common_project.js';
 
@@ -26,12 +26,54 @@ export default function Project(){
 
   useEffect(()=>{ function onDoc(e){ if(!showAccount) return; const m=accountMenuRef.current,b=accountBtnRef.current; if(m&&!m.contains(e.target)&&b&&!b.contains(e.target)) setShowAccount(false);} function onKey(e){ if(e.key==='Escape') setShowAccount(false);} document.addEventListener('mousedown',onDoc); document.addEventListener('keydown',onKey); return ()=>{ document.removeEventListener('mousedown',onDoc); document.removeEventListener('keydown',onKey); }; },[showAccount]);
 
-  const kwests = [
-    { name:'Kwestionariusz 1', code:'DR 14.1', progress: 80, to:'/kwestionariusz' },
-    { name:'Kwestionariusz 2', code:'DR 14.2', progress: 45, to:'/kwestionariusz' },
-    { name:'Kwestionariusz 4', code:'DR 14.4', progress: 70, to:'/kwestionariusz' },
-    { name:'Kwestionariusz 5', code:'DR 14.5', progress: 20, to:'/kwestionariusz' },
-  ];
+  const [activeTab, setActiveTab] = useState('Rozpoczęcie');
+
+  const tabData = useMemo(() => [
+    {
+      label: 'Rozpoczęcie',
+      questionnaires: [
+        { name:'Zapis dokumentacji w wersji elektronicznej', code:'DR 1.0', progress: 70, to:'/kwestionariusz' },
+        { name:'Wybór Audytora', code:'DR 2.0', progress: 80, to:'/kwestionariusz' },
+      ]
+    },
+
+    {
+      label: 'Oświadczenie',
+      questionnaires: [
+        { name:'Kwestionariusz 2', code:'DR 14.2', progress: 45, to:'/kwestionariusz' },
+      ]
+    },
+    {
+      label: 'Analizy',
+      questionnaires: [
+        { name:'Kwestionariusz 3', code:'DR 14.3', progress: 60, to:'/kwestionariusz' },
+      ]
+    },
+    {
+      label: 'Strategia',
+      questionnaires: [
+        { name:'Kwestionariusz 4', code:'DR 14.4', progress: 70, to:'/kwestionariusz' },
+      ]
+    },
+    {
+      label: 'Poziom Ryzyka',
+      questionnaires: [
+        { name:'Kwestionariusz 5', code:'DR 14.5', progress: 20, to:'/kwestionariusz' },
+      ]
+    },
+    {
+      label: 'Procedury',
+      questionnaires: []
+    },
+    {
+      label: 'Komunikacja',
+      questionnaires: []
+    },
+    {
+      label: 'Podsumowanie',
+      questionnaires: []
+    },
+  ], []);
 
   const breadcrumb = [
     { label:'Home', to:'/' },
@@ -48,23 +90,59 @@ export default function Project(){
           <div className="container-fluid" style={{ maxWidth: 1100 }}>
             <div className="d-flex align-items-center justify-content-between mb-3 flex-wrap" style={{ gap:'0.5rem' }}>
               <h4 className="mb-0">Projekt {id}</h4>
-              <Link className="btn btn-outline-secondary btn-sm" to="/projekty">↩ Wróć do projektów</Link>
+
             </div>
 
             <div className="card shadow-sm">
-              <div className="card-header"><strong>Kwestionariusze</strong></div>
-              <ul className="list-group list-group-flush">
-                {kwests.map((k,i)=> (
-                  <li key={i} className="list-group-item d-flex align-items-center justify-content-between flex-wrap" style={{ gap:'0.5rem' }}>
-                    <div className="me-auto" style={{ minWidth:0 }}>
-                      <div className="fw-semibold">{k.name}</div>
-                      <div className="text-muted small">{k.code}</div>
+              <div className="card-header pt-2 px-3">
+                  <ul className="nav nav-tabs card-header-tabs mb-0">
+                  {tabData.map((tab, idx) => (
+                    <li className="nav-item" key={idx}>
+                      <button
+                          className={`nav-link ${activeTab === tab.label ? 'active fw-semibold' : ''}`}
+                          onClick={() => setActiveTab(tab.label)}
+                        style={{
+                          borderTopLeftRadius: '0.35rem',
+                          borderTopRightRadius: '0.35rem',
+                          borderBottom: 'none',
+                          margin: '0 1px',
+                          padding: '0.5rem 1rem',
+                          fontWeight: activeTab === tab.label ? '600' : 'normal',
+                            color: activeTab === tab.label ? 'var(--bs-primary)' : '#6c757d',
+                            backgroundColor: activeTab === tab.label ? '#fff' : 'transparent',
+                          borderColor: activeTab === tab.label ? '#dee2e6 #dee2e6 #fff' : 'transparent transparent #dee2e6',
+                        }}
+                      >
+                        {tab.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="card-body">
+                {tabData.map((tab, idx) => (
+                  activeTab === tab.label && (
+                    <div key={idx} className="tab-pane fade show active">
+                      {tab.questionnaires.length > 0 ? (
+                        <ul className="list-group list-group-flush">
+                          {tab.questionnaires.map((k, i) => (
+                            <li key={i} className="list-group-item d-flex align-items-center justify-content-between flex-wrap" style={{ gap:'0.5rem' }}>
+                              <div className="me-auto" style={{ minWidth:0 }}>
+                                <div className="fw-semibold">{k.name}</div>
+                                <div className="text-muted small">{k.code}</div>
+                              </div>
+                              <ProgressMini value={k.progress} />
+                              <Link to={k.to} className="btn btn-sm btn-outline-primary" style={{ whiteSpace:'nowrap' }}>Otwórz</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <div className="text-muted py-4 text-center">Brak kwestionariuszy dla tej sekcji.</div>
+                      )}
                     </div>
-                    <ProgressMini value={k.progress} />
-                    <Link to={k.to} className="btn btn-sm btn-outline-primary" style={{ whiteSpace:'nowrap' }}>Otwórz</Link>
-                  </li>
+                  )
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>
