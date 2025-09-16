@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Notifications, InitialsAvatar } from "../ui/Common";
+import { Notifications, InitialsAvatar, Sidebar } from "../ui/Common_project";
 import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
 function ProjektKonfiguracja(){
@@ -33,26 +33,7 @@ function ProjektKonfiguracja(){
   return (
     <div className="d-flex min-vh-100" style={{ minHeight: '100vh' }}>
       {/* Sidebar */}
-      <div className="d-flex flex-column text-white" style={{ width:220, flex:'0 0 220px', backgroundColor:'var(--ndr-bg-sidebar)', padding:'1rem' }}>
-        <h5 style={{ marginBottom:0, marginTop:3 }}>Menu</h5>
-        <hr style={{ borderColor:'#fff', marginTop:'0.8rem', marginBottom:'0.75rem' }} />
-        <div className="my-2" style={{ marginTop:'1rem' }}>
-          <input type="text" className="form-control form-control-sm" placeholder="Wyszukaj..." aria-label="Wyszukaj w menu" value={search} onChange={(e)=>setSearch(e.target.value)} />
-        </div>
-        <ul className="nav flex-column">
-          <li className="nav-item"><Link className="nav-link text-white" to="/workspace"><BsHouse className="me-2"/> Dashboard</Link></li>
-          <li className="nav-item"><Link className="nav-link text-white" to="/klienci"><BsPeople className="me-2"/> Klienci</Link></li>
-          <li className="nav-item"><Link className="nav-link text-white" to="/szablony"><BsFileText className="me-2"/> Szablony</Link></li>
-          <li className="nav-item"><Link className="nav-link text-white" to="/projekty"><BsFolder className="me-2"/> Projekty</Link></li>
-          <li className="nav-item"><Link className="nav-link text-white" to="/uzytkownicy"><BsPerson className="me-2"/> Użytkownicy</Link></li>
-        </ul>
-        <div className="mt-auto">
-          <ul className="nav flex-column">
-            <li className="nav-item"><button type="button" className="nav-link btn btn-link text-white p-0 text-start"><BsGear className="me-2"/> Admin</button></li>
-          </ul>
-        </div>
-      </div>
-
+        <Sidebar />
       {/* Main column */}
       <div className="flex-grow-1 d-flex flex-column" style={{ overflow:'hidden' }}>
         {/* Topbar */}

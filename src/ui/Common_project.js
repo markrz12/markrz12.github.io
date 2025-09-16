@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {BsPlayCircle, BsFileText, BsBarChart, BsLightbulb, BsShieldCheck, BsGear, BsChatDots, BsClipboardCheck, BsBell, BsHouse, BsPerson} from "react-icons/bs";
+import {BsPlayCircle, BsFileText, BsBarChart, BsLightbulb, BsShieldCheck, BsGear, BsChatDots, BsClipboardCheck, BsBell, BsHouse, BsPerson, BsChevronRight} from "react-icons/bs";
 
 export function InitialsAvatar({ name="Jan Użytkownik", size=26 }){
   const initials = String(name || "")
@@ -139,18 +139,67 @@ export function Sidebar({ search, setSearch }) {
   const linkClass = (to) => "nav-link text-white" + (isActive(to) ? " active" : "");
   const activeStyle = (to) => isActive(to) ? { background: 'rgba(255,255,255,0.12)', borderRadius: 4 } : undefined;
 
+    const questionnaireCategories = useMemo(() => [
+        {
+            label: 'Rozpoczęcie',
+            icon: <BsPlayCircle className="me-2" />,
+            questionnaires: [
+                { name: 'DR 1. Zapis dokumentacji w wersji elektronicznej', to: '/kwestionariusz' },
+                { name: 'DR 2. Wybór Audytora', to: '/kwestionariusz' },
+            ]
+        },
+        {
+            label: 'Oświadczenie',
+            icon: <BsFileText className="me-2" />,
+            questionnaires: [
+                { name: 'DR 14.2', to: '/kwestionariusz' },
+            ]
+        },
+        {
+            label: 'Analizy',
+            icon: <BsBarChart className="me-2" />,
+            questionnaires: [
+                { name: 'DR 14.3', to: '/kwestionariusz' },
+            ]
+        },
+        {
+            label: 'Strategia',
+            icon: <BsLightbulb className="me-2" />,
+            questionnaires: [
+                { name: 'DR 14.4', to: '/kwestionariusz' },
+            ]
+        },
+        {
+            label: 'Poziom Ryzyka',
+            icon: <BsShieldCheck className="me-2" />,
+            questionnaires: [
+                { name: 'DR 14.5', to: '/kwestionariusz' },
+            ]
+        },
+        {
+            label: 'Procedury',
+            icon: <BsGear className="me-2" />,
+            questionnaires: []
+        },
+        {
+            label: 'Komunikacja',
+            icon: <BsChatDots className="me-2" />,
+            questionnaires: []
+        },
+        {
+            label: 'Podsumowanie',
+            icon: <BsClipboardCheck className="me-2" />,
+            questionnaires: []
+        },
+    ], []);
+
+    const [openCategory, setOpenCategory] = useState(null); // State to manage which category is open
+
     const menuItems = [
-        { label: 'Dashboard', to: '/workspace', icon: <BsHouse className="me-2" /> },
-        { label: 'Użytkownicy', to: '/uzytkownicy', icon: <BsPerson className="me-2" /> },
-        { label: 'Rozpoczęcie', to: '#', icon: <BsPlayCircle className="me-2" /> },
-        { label: 'Oświadczenie', to: '#', icon: <BsFileText className="me-2" /> },
-        { label: 'Analizy', to: '#', icon: <BsBarChart className="me-2" /> },
-        { label: 'Strategia', to: '#', icon: <BsLightbulb className="me-2" /> },
-        { label: 'Poziom Ryzyka', to: '#', icon: <BsShieldCheck className="me-2" /> },
-        { label: 'Procedury', to: '#', icon: <BsGear className="me-2" /> },
-        { label: 'Komunikacja', to: '#', icon: <BsChatDots className="me-2" /> },
-        { label: 'Podsumowanie', to: '#', icon: <BsClipboardCheck className="me-2" /> },
+        { label: 'Dashboard', to: '/projekty/r', icon: <BsHouse className="me-2" /> },
+        { label: 'Użytkownicy', to: '/projekt-konfiguracja', icon: <BsGear className="me-2" /> },
     ];
+
 
   return (
     <div className="d-flex flex-column text-white" style={{ width:240, flex:'0 0 240px', backgroundColor:'var(--ndr-bg-sidebar)', padding:'1.25rem' }}>
@@ -160,18 +209,49 @@ export function Sidebar({ search, setSearch }) {
         <div className="input-group input-group-sm">
           <input aria-label="Wyszukaj w menu" type="text" className="form-control" placeholder="Wyszukaj..." value={search} onChange={(e)=>setSearch(e.target.value)} style={{ borderColor:'rgba(255,255,255,0.25)' }} />
         </div>
+          <div className="d-flex align-items-center justify-content-between mt-3 flex-wrap">
+              <Link
+                  className="btn btn-light btn-sm"
+                  to="/projekty"
+                  style={{
+                      color: "#000",
+                      minWidth: "200px",
+                      fontWeight: 500,
+                  }}
+              >
+                  ↩ Wróć do projektów
+              </Link>
+          </div>
+
       </div>
       <ul className="nav flex-column">
         {menuItems.map((item, idx) => (
           <li key={idx} className="nav-item">
-            {item.to ? (
-              <Link className={linkClass(item.to)} to={item.to} aria-current={isActive(item.to) ? 'page' : undefined} style={activeStyle(item.to)} title={item.label}>
-                {item.icon} {item.label}
-              </Link>
-            ) : (
-              <span className="nav-link text-white-50" style={{ cursor: 'not-allowed' }}>
-                {item.icon} {item.label}
-              </span>
+            <Link className={linkClass(item.to)} to={item.to} aria-current={isActive(item.to) ? 'page' : undefined} style={activeStyle(item.to)} title={item.label}>
+              {item.icon} {item.label}
+            </Link>
+          </li>
+        ))}
+        {questionnaireCategories.map((category, idx) => (
+          <li key={`cat-${idx}`} className="nav-item">
+            <button
+              className={`nav-link text-white w-100 text-start d-flex align-items-center ${openCategory === category.label ? 'active' : ''}`}
+              onClick={() => setOpenCategory(openCategory === category.label ? null : category.label)}
+              style={activeStyle(category.label)}
+            >
+              {category.icon} {category.label}
+              <BsChevronRight className="ms-auto" style={{ transform: openCategory === category.label ? 'rotate(90deg)' : 'none', transition: 'transform 0.2s ease-in-out', fontSize: '0.75rem' }} />
+            </button>
+            {openCategory === category.label && category.questionnaires.length > 0 && (
+              <ul className="nav flex-column ps-4">
+                {category.questionnaires.map((q, qIdx) => (
+                  <li key={`q-${qIdx}`} className="nav-item">
+                    <Link className={linkClass(q.to)} to={q.to} aria-current={isActive(q.to) ? 'page' : undefined} style={{ ...activeStyle(q.to), fontSize: '0.8rem' }} title={q.name}>
+                      {q.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             )}
           </li>
         ))}
