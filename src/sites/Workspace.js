@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Sidebar, Topbar } from "../ui/Common";
 import { Link, useNavigate } from "react-router-dom";
-import { Hourglass, CheckCircle, AlertCircle, Filter, Search } from "lucide-react";
+import { Hourglass, CheckCircle, AlertCircle } from "lucide-react";
 
 function Workspace() {
     const [search, setSearch] = useState("");
