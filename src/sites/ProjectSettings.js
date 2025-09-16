@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Notifications, InitialsAvatar, Sidebar } from "../ui/Common_project";
-import { BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear } from "react-icons/bs";
 
 function ProjektKonfiguracja(){
   const [search, setSearch] = useState("");
