@@ -72,60 +72,124 @@ function ProjektKonfiguracja(){
           <div className="container-fluid">
             <h5 className="mb-3">Konfiguracja użytkowników projektu</h5>
 
-            <div className="mb-3" style={{ maxWidth:520 }}>
-              <label className="form-label mb-1">Kierownik</label>
-              <select className="form-select" value={manager} onChange={e=>setManager(e.target.value)}>
-                <option value="">Wybierz kierownika</option>
-                {allUsers.map((u,i)=> (<option key={i} value={u}>{u}</option>))}
-              </select>
-            </div>
+              <div className="mb-3 d-flex" style={{ maxWidth: 520 }}>
+                  <label
+                      className="form-label mb-0 text-white fw-bold d-flex align-items-center justify-content-center"
+                      style={{
+                          backgroundColor: "#0a2b4c",
+                          padding: '0.75rem 1rem',
+                          borderTopLeftRadius: '0.25rem',
+                          borderBottomLeftRadius: '0.25rem',
+                          minWidth: '130px',
+                          textAlign: 'center',
+                          marginRight: '0px'
+                      }}
+                  >
+                      Kierownik
+                  </label>
+                  <select
+                      className="form-select"
+                      value={manager}
+                      onChange={e=>setManager(e.target.value)}
+                      style={{
+                          flexGrow: 1,
+                          borderTopLeftRadius: 0,
+                          borderBottomLeftRadius: 0,
+                          padding: '0.75rem 1rem',   // dopasowane do label
+                          height: '100%'             // dopasowanie do label
+                      }}
+                  >
+                      <option value="">Wybierz kierownika</option>
+                      {allUsers.map((u,i)=> (<option key={i} value={u}>{u}</option>))}
+                  </select>
+              </div>
 
-            <div className="row g-4">
+
+              <div className="row g-4">
               <div className="col-12 col-lg-6">
-                <div className="card shadow-sm h-100 d-flex flex-column">
-                  <div className="card-header"><strong>Asystenci</strong></div>
-                  <div className="card-body p-0">
-                    <div className="table-responsive">
-                      <table className="table table-sm table-hover mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
-                        <thead className="table-light" style={{ position:'sticky', top:0, zIndex:1 }}>
-                          <tr><th>Osoba</th><th style={{ width:120 }}>Akcja</th></tr>
-                        </thead>
-                        <tbody>
-                          {assistants.map((a,idx)=> (
-                            <tr key={idx}>
-                              <td>{a}</td>
-                              <td>
-                                <button className="btn btn-sm btn-outline-danger" onClick={()=>setAssistants(prev=>prev.filter(x=>x!==a))}>Usuń</button>
-                              </td>
-                            </tr>
-                          ))}
-                          {assistants.length===0 && (
-                            <tr><td colSpan={2} className="text-muted text-center small py-3">Brak asystentów</td></tr>
-                          )}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div className="card-footer">
-                    <button className="btn btn-secondary" onClick={addAssistant}>Dodaj asystenta</button>
-                  </div>
+                  <div className="card shadow-sm h-100 d-flex flex-column">
+                      <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
+                          <strong>Asystenci</strong>
+                      </div>
+
+
+
+                      <div className="card-body p-0">
+                          <div className="table-responsive">
+                              <table className="table table-sm table-hover mb-0 align-middle w-100" style={{ fontSize: "0.9rem" }}>
+                                  <thead style={{position: "sticky", top: 0, zIndex: 1,}}>
+                                  <tr>
+                                      <th style={{ padding: "0.5rem 1rem", }}>Osoba</th>
+                                      <th style={{ width: 120, padding: "0.5rem 1rem" }}>Akcja</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  {assistants.map((a, idx) => (
+                                      <tr key={idx}>
+                                          <td style={{ padding: "0.5rem 1rem" }}>{a}</td>
+                                          <td style={{ padding: "0.5rem 1rem" }}>
+                                              <button
+                                                  className="btn btn-sm btn-outline-danger"
+                                                  onClick={() => setAssistants(prev => prev.filter(x => x !== a))}
+                                              >
+                                                  Usuń
+                                              </button>
+                                          </td>
+                                      </tr>
+                                  ))}
+                                  {assistants.length === 0 && (
+                                      <tr>
+                                          <td colSpan={2} className="text-muted text-center small py-3">
+                                              Brak asystentów
+                                          </td>
+                                      </tr>
+                                  )}
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+
+
+                      <div className="card-footer d-flex justify-content-end">
+                          <button
+                              className="btn"
+                              style={{
+                                  backgroundColor: '#0a2b4c',
+                                  color: '#ffffff',
+                                  borderRadius: '0.35rem',
+                                  padding: '0.5rem 1rem',
+                                  boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
+                                  border: 'none'
+                              }}
+                              onClick={addAssistant}
+                          >
+                              Dodaj asystenta
+                          </button>
+                      </div>
                 </div>
               </div>
 
               <div className="col-12 col-lg-6">
-                <div className="card shadow-sm h-100 d-flex flex-column">
-                  <div className="card-header"><strong>Klienci</strong></div>
-                  <div className="card-body p-0">
+                  <div className="card shadow-sm h-100 d-flex flex-column">
+                      <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
+                          <strong>Klienci</strong>
+                      </div>
+
+                      <div className="card-body p-0">
                     <div className="table-responsive">
                       <table className="table table-sm table-hover mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
-                        <thead className="table-light" style={{ position:'sticky', top:0, zIndex:1 }}>
-                          <tr><th>Osoba</th><th style={{ width:120 }}>Akcja</th></tr>
-                        </thead>
+                          <thead style={{position: "sticky", top: 0, zIndex: 1,}}>
+                          <tr>
+                              <th style={{ padding: "0.5rem 1rem", }}>Osoba</th>
+                              <th style={{ width: 120, padding: "0.5rem 1rem" }}>Akcja</th>
+                          </tr>
+                          </thead>
                         <tbody>
                           {clients.map((c,idx)=> (
                             <tr key={idx}>
-                              <td>{c}</td>
-                              <td>
+                                <td style={{ padding: "0.5rem 1rem" }}>{c}</td>
+                                <td style={{ padding: "0.5rem 1rem" }}>
+
                                 <button className="btn btn-sm btn-outline-danger" onClick={()=>setClients(prev=>prev.filter(x=>x!==c))}>Usuń</button>
                               </td>
                             </tr>
@@ -137,9 +201,22 @@ function ProjektKonfiguracja(){
                       </table>
                     </div>
                   </div>
-                  <div className="card-footer">
-                    <button className="btn btn-secondary" onClick={addClient}>Dodaj klienta</button>
-                  </div>
+                          <div className="card-footer d-flex justify-content-end">
+                              <button
+                                  className="btn"
+                                  style={{
+                                      backgroundColor: '#0a2b4c',
+                                      color: '#ffffff',
+                                      borderRadius: '0.35rem',
+                                      padding: '0.5rem 1rem',
+                                      boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
+                                      border: 'none'
+                                  }}
+                                  onClick={addClient}
+                              >
+                                  Dodaj klienta
+                              </button>
+                          </div>
                 </div>
               </div>
             </div>
@@ -175,7 +252,6 @@ function ProjektKonfiguracja(){
           </div>
         )}
 
-        <div className="px-3 py-2 text-end small text-muted">Zapis jest automatyczny (demo)</div>
       </div>
     </div>
   );
