@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
-import { Sidebar, Topbar, CloseX, InitialsAvatar } from "../ui/Common_project.js";
+import { Sidebar, Topbar, InitialsAvatar } from "../ui/Common_project.js";
 
 function timeAgo(input) {
     const now = new Date();
@@ -23,13 +23,7 @@ function timeAgo(input) {
     return `${yr} ${plural(yr, ["rok", "lata", "lat"])} temu`;
 }
 
-function statusBadgeClass(status){
-    const s = String(status||'').toLowerCase();
-    if (s.includes('otrzymano') || s.includes('zatwierdzone') || s.includes('zaakcept')) return 'badge bg-success-subtle text-dark border';
-    if (s.includes('oczek') || s.includes('w trakcie') || s.includes('pending')) return 'badge bg-warning-subtle text-dark border';
-    if (s.includes('odrz')) return 'badge bg-danger-subtle text-dark border';
-    return 'badge bg-secondary-subtle text-dark border';
-}
+
 
 function ProgressMeter({ percent }) {
     const pct = Math.max(0, Math.min(100, Math.round(percent)));
@@ -117,34 +111,7 @@ function KwestionariuszFull() {
         ];
     });
 
-    const addRequest = () => {
-        const type = String(reqForm.type || '').trim();
-        const desc = String(reqForm.desc || '').trim();
-        const due = String(reqForm.due || '').trim();
-        if (!type && !desc) { alert('Wybierz typ lub wpisz opis zapotrzebowania'); return; }
-        const now = new Date();
-        const id = (requests[requests.length-1]?.id || 0) + 1;
-        setRequests(prev => [...prev, {
-            id,
-            type: type || 'Inne',
-            desc,
-            due,
-            status: 'Oczekiwanie',
-            createdAt: now.toISOString(),
-            lastReminderAt: null,
-            receivedAt: null
-        }]);
-        setReqForm({ type:'Wyciąg bankowy', desc:'', due:'' });
-    };
 
-    const sendReminder = (id) => {
-        const ts = new Date().toISOString();
-        setRequests(prev => prev.map(r => r.id === id ? { ...r, lastReminderAt: ts } : r));
-    };
-    const cancelRequest = (id) => {
-        // Remove the request from the list instead of marking as canceled
-        setRequests(prev => prev.filter(r => r.id !== id));
-    };
 
     const accountBtnRef = useRef(null);
     const accountMenuRef = useRef(null);
