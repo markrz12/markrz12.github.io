@@ -14,7 +14,7 @@ import ActivityLog from "./Activitylog";
 function KwestionariuszFull() {
     const [activeTab, setActiveTab] = useState("Kwestionariusz");
 
-    const [logs, setLogs] = useState([
+    const [logs] = useState([
         { date: "2025-09-24 14:32", user: "K M", action: "Dodał komentarz", details: "Komentarz do pytania 3" },
         { date: "2025-09-23 10:15", user: "J K", action: "Zatwierdził odpowiedź", details: "Pytanie 1" },
         { date: "2025-09-22 09:00", user: "A N", action: "Dodał plik", details: "umowa-najmu.pdf" },
