@@ -107,7 +107,7 @@ function Workspace() {
                                 {/* Header with Projekty title and search */}
                                 <div className="card-header">
                                     <div className="d-flex align-items-center justify-content-between">
-                                        <h5 className="text-lg font-semibold mb-1">Projekty</h5>
+                                        <h5 className="text-lg font-semibold mb-1 ms-2">Projekty</h5>
 
                                         <div className="input-group input-group-sm mb-1" style={{ maxWidth: 400 }}>
                                             <input
@@ -135,7 +135,7 @@ function Workspace() {
                                 </div>
 
                                 {/* Tabs */}
-                                <div className="flex gap-2 mb-3 mt-3">
+                                <div className="flex gap-1 mb-2 mt-2">
                                     {[
                                         { key: "all", label: `Wszystkie (${projects.length})` },
                                         { key: "active", label: `Aktywne (${counts.active})` },
@@ -152,7 +152,7 @@ function Workspace() {
                                                     padding: "0.5rem 1.25rem",
                                                     borderRadius: "50px",
                                                     border: `1px solid ${isActive ? "#005679" : "#dee2e6"}`,
-                                                    backgroundColor: isActive ? "#005679" : "#f8f9fa",
+                                                    backgroundColor: isActive ? "#0a2b4c" : "#f8f9fa",
                                                     color: isActive ? "#fff" : "#495057",
                                                     fontWeight: 500,
                                                     transition: "all 0.2s ease-in-out",
@@ -162,7 +162,7 @@ function Workspace() {
                                                     if (!isActive) e.currentTarget.style.backgroundColor = "#e2e6ea";
                                                 }}
                                                 onMouseLeave={(e) => {
-                                                    e.currentTarget.style.backgroundColor = isActive ? "#005679" : "#f8f9fa";
+                                                    e.currentTarget.style.backgroundColor = isActive ? "#0a2b4c" : "#f8f9fa";
                                                 }}
                                             >
                                                 {tab.label}
@@ -175,20 +175,19 @@ function Workspace() {
                                 <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
                                     <thead className="table-light" style={{ position:'sticky', top:0, zIndex:1, whiteSpace:'nowrap' }}>
                                     <tr className="text-gray-600 text-sm border-b">
-                                        <th className="py-2">Projekt</th>
-                                        <th>Klient</th>
-                                        <th>Status</th>
-                                        <th>Postęp</th>
-                                        <th>Deadline</th>
-                                        <th>Akcje</th>
+                                        <th style={{border: "1px solid #dee2e6", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem"}}> Projekt</th>
+                                        <th style={{border: "1px solid #dee2e6", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem"}}> Klient</th>
+                                        <th style={{border: "1px solid #dee2e6", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem"}}> Status </th>
+                                        <th style={{border: "1px solid #dee2e6", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem"}}> Postęp </th>
+                                        <th style={{border: "1px solid #dee2e6", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem"}}> Deadline </th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {filtered.map((p) => (
                                         <tr key={p.id} className="border-b last:border-0">
-                                            <td className="py-3">{p.name}</td>
-                                            <td>{p.klient}</td>
-                                            <td>
+                                            <td className="py-3" style={{ border: "1px solid #dee2e6", padding: "0.5rem 1rem" }}>{p.name}</td>
+                                            <td style={{ border: "1px solid #dee2e6", padding: "0.5rem 1rem" }}>{p.klient}</td>
+                                            <td style={{ border: "1px solid #dee2e6", padding: "0.5rem 1rem" }}>
                                                 <span
                                                     className={`badge fw-normal ${
                                                         p.status === "completed"
@@ -200,18 +199,14 @@ function Workspace() {
                                                     {statusLabel[p.status].text}
                                                 </span>
                                             </td>
-                                            <td className="w-40">
+                                            <td className="w-40" style={{ border: "1px solid #dee2e6", padding: "0.5rem 1rem" }}>
                                                 <div className="d-flex align-items-center" style={{ gap:'0.2rem' }}>
                                                     <ProgressBar value={p.progress} />
                                                     <span className="small text-muted me-3" style={{ width:38, textAlign:'right' }}>{p.progress}%</span>
                                                 </div>
                                             </td>
-                                            <td>{p.deadline}</td>
-                                            <td>
-                                                <button className="btn btn-sm btn-outline-primary me-2">
-                                                    Wejdź do projektu
-                                                </button>
-                                            </td>
+                                            <td style={{ border: "1px solid #dee2e6", padding: "0.5rem 1rem" }}>{p.deadline}</td>
+
                                         </tr>
                                     ))}
                                     {filtered.length === 0 && (
@@ -226,31 +221,56 @@ function Workspace() {
                             </div>
 
                             {/* Prawy sidebar - Moje zadania */}
-                            <div className="bg-white rounded-2xl shadow-sm p-3" style={{ width: "320px", flexShrink: 0 }}>
-                                <h5 className="text-lg font-semibold mb-3">Moje zadania</h5>
-                                <ul className="list-unstyled mb-0 d-flex flex-column gap-2">
+                            <div
+                                className="bg-white rounded-2xl shadow-sm p-3"
+                                style={{ width: "320px", flexShrink: 0 }}
+                            >
+                                <h5 className="text-lg fw-semibold mb-3">Moje zadania</h5>
 
+                                <ul className="list-unstyled mb-0 d-flex flex-column gap-2">
                                     {tasks.map((task) => {
                                         const statusMap = {
-                                            urgent: { label: "🔴 Pilne", class: "text-danger fw-semibold" },
-                                            pending: { label: "🟡 Oczekujące", class: "text-warning fw-semibold" },
-                                            "in-progress": { label: "🟢 W trakcie", class: "text-success fw-semibold" },
+                                            urgent: {
+                                                label: "Pilne",
+                                                style: { background: "#fde2e1", color: "#b91c1c" }, // pastelowy czerwony
+                                            },
+                                            pending: {
+                                                label: "Oczekujące",
+                                                style: { background: "#fff7e0", color: "#a16207" }, // pastelowy żółty
+                                            },
+                                            "in-progress": {
+                                                label: "W trakcie",
+                                                style: { background: "#e1f6ed", color: "#166534" }, // pastelowy zielony
+                                            },
                                         };
-                                        const statusInfo = statusMap[task.status] || { label: "—", class: "text-muted" };
+                                        const statusInfo =
+                                            statusMap[task.status] || {
+                                                label: "—",
+                                                style: { background: "#f1f3f5", color: "#495057" },
+                                            };
 
                                         return (
                                             <li
                                                 key={task.id}
-                                                className="p-3 rounded-2xl border"
-                                                style={{ transition: "all 0.2s ease", backgroundColor: "#fff" }}
+                                                className="p-3 rounded-3 border"
+                                                style={{
+                                                    transition: "all 0.2s ease",
+                                                    backgroundColor: "#fff",
+                                                }}
                                             >
-                                                {/* Title */}
-                                                <div className="fw-medium" style={{ fontSize: "0.9rem", lineHeight: "1.3" }}>
+                                                {/* Tytuł */}
+                                                <div
+                                                    className="fw-medium mb-1"
+                                                    style={{ fontSize: "0.95rem", lineHeight: "1.4" }}
+                                                >
                                                     {task.title}
                                                 </div>
 
-                                                {/* Project/Task ID link */}
-                                                <div className="mb-2 mt-1" style={{ fontSize: "0.9rem" }}>
+                                                {/* Projekt */}
+                                                <div
+                                                    className="mb-2 small"
+                                                    style={{ fontSize: "0.85rem", color: "#0d6efd" }}
+                                                >
                                                     <Link
                                                         to={`/projekty/${encodeURIComponent(task.project)}`}
                                                         onClick={(e) => e.stopPropagation()}
@@ -260,16 +280,26 @@ function Workspace() {
                                                 </div>
 
                                                 {/* Status + deadline */}
-                                                <div className="d-flex justify-content-between align-items-center small text-muted mt-1">
-                                                    <span className={statusInfo.class}>{statusInfo.label}</span>
-                                                    <span>{new Date(task.deadline).toLocaleDateString("pl-PL")}</span>
+                                                <div className="d-flex justify-content-between align-items-center small">
+            <span
+                className="px-2 py-1 rounded-pill fw-medium"
+                style={{
+                    fontSize: "0.75rem",
+                    ...statusInfo.style,
+                }}
+            >
+              {statusInfo.label}
+            </span>
+                                                    <span className="text-muted">
+              {new Date(task.deadline).toLocaleDateString("pl-PL")}
+            </span>
                                                 </div>
                                             </li>
                                         );
                                     })}
-
                                 </ul>
                             </div>
+
 
                         </div>
                     </div>

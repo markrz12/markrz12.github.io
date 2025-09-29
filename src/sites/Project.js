@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Sidebar, Topbar } from '../ui/Common_project.js';
+import {BsChevronRight} from "react-icons/bs";
+
 
 function ProgressMini({ value }) {
     const v = Math.max(0, Math.min(100, Math.round(value)));
@@ -52,30 +54,68 @@ function ProgressMini({ value }) {
 
 // Rekurencyjna funkcja renderująca sekcje
 function RenderSection({ section, level = 0 }) {
+    const [open, setOpen] = useState(false);
     const indent = { marginLeft: `${level * 20}px` };
 
     return (
-        <div className="mb-2">
-            {section.label && <div className="fw-bold mb-1" style={indent}>{section.label}</div>}
+        <div style={{padding: "3px" }}>
+            {section.label && (
+                <div
+                    onClick={() => setOpen(!open)}
+                    className="fw-semibold"
+                    style={{borderRadius: '0.35rem', backgroundColor: '#f7f9fa'}}>
 
-            {section.items && section.items.map((item, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
-                    <div style={{ marginLeft: `${level * 20}px`, flex: 1 }} className="fw-semibold">
-                        {item.name}
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <span>{section.label}</span>
+                    <BsChevronRight
+                        style={{
+                            marginLeft: '0.4rem',
+                            transform: open ? 'rotate(90deg)' : 'rotate(0deg)',
+                            transition: 'transform 0.2s ease-in-out',
+                            fontSize: '0.9rem'
+                        }}
+                    />
+                </div>
+            )}
+
+            {open && section.items && section.items.map((item, idx) => (
+                <div
+                    key={idx}
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        marginTop: 6,
+                        padding: 7,
+                        background: '#f7f9fa',
+                        ...indent
+                    }}>
+                    <div>{item.name}</div>
+                    <div className="d-flex align-items-center gap-2">
                         <ProgressMini value={item.progress} />
-                        <Link to={item.to} className="btn btn-sm btn-outline-primary">Otwórz</Link>
+                        <Link
+                            to={item.to}
+                            className="btn btn-sm"
+                            style={{
+                                backgroundColor: '#005679',
+                                color: '#ffffff',
+                                border: 'none',
+                                borderRadius: '0.35rem',
+                                padding: '0.25rem 0.75rem'
+                            }}
+                        >
+                            Otwórz
+                        </Link>
                     </div>
                 </div>
             ))}
 
-            {section.sections && section.sections.map((subsection, idx) => (
+            {open && section.sections && section.sections.map((subsection, idx) => (
                 <RenderSection key={idx} section={subsection} level={level + 1} />
             ))}
         </div>
     );
 }
+
 
 
 export default function Project() {
@@ -111,7 +151,6 @@ export default function Project() {
                 { name:'I.3 Rola partnera odpowiedzialnego za zlecenie', code:'', progress: 30, to:'/kwestionariusz' },
                 { name:'I.4 Rozpoznanie zagrożenia', code:'', progress: 20, to:'/kwestionariusz' },
                 { name:'I.5 Wyznaczenie zespołu badającego', code:'', progress: 70, to:'/kwestionariusz' },
-                { name:'I.6 Wniosek', code:'', progress: 10, to:'/kwestionariusz' },
             ],
         },
         {
@@ -152,7 +191,7 @@ export default function Project() {
                     ]
                 },
                 {
-                    label: 'II.4 Macierz ryzyk',
+                    label: 'II.4. Macierz ryzyk',
                     items: [
                         { name: 'II.4 Macierz ryzyk', code: 'DR 14.21', progress: 0, to: '/kwestionariusz' }
                     ]
@@ -234,7 +273,7 @@ export default function Project() {
 
                         <div className="card shadow-sm">
                             {/* Karty Tabów w nagłówku */}
-                            <div className="card-header p-0" style={{ backgroundColor: '#0a2b4c', borderBottom: '1px solid #004b63' }}>
+                            <div className="card-header p-0" style={{ backgroundColor: '#0a2b4c' }}>
                                 <div className="d-flex">
                                     {tabData.map((tab, idx) => (
                                         <button
@@ -264,7 +303,11 @@ export default function Project() {
                                         <div key={idx} className="d-flex flex-column gap-3">
                                             {tab.sections
                                                 ? tab.sections.map((section, sidx) => (
-                                                    <div key={sidx} className="card shadow-sm p-3" style={{ borderRadius: '0.35rem' }}>
+                                                    <div
+                                                        key={sidx}
+                                                        className="p-2 shadow-sm"
+                                                        style={{ borderRadius: '0.35rem', backgroundColor: '#f7f9fa' }}
+                                                    >
                                                         <RenderSection section={section} />
                                                     </div>
                                                 ))

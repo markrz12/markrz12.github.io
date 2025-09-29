@@ -1,73 +1,42 @@
 import React, { useState } from "react";
 import { Sidebar, Topbar, InitialsAvatar } from "../ui/Common_project.js";
 import { BsTrash } from "react-icons/bs";
-
-// Funkcja pomocnicza - ile czasu temu
-function timeAgo(input) {
-    const now = new Date();
-    const d = input instanceof Date ? input : new Date(input);
-    const diffMs = now - d;
-    const sec = Math.floor(diffMs / 1000);
-    if (isNaN(sec)) return "";
-    const min = Math.floor(sec / 60);
-    const hr = Math.floor(min / 60);
-    const day = Math.floor(hr / 24);
-    if (sec < 45) return "przed chwilą";
-    if (min < 60) return `${min} min temu`;
-    if (hr < 24) return `${hr} h temu`;
-    return `${day} dni temu`;
-}
-
-// Pasek postępu
-function ProgressMeter({ percent }) {
-    const pct = Math.max(0, Math.min(100, Math.round(percent)));
-    const trackStyle = {
-        height: 24,
-        background: "#f4f7fb",
-        border: "1px solid #e2e8f3",
-        borderRadius: 999,
-        boxShadow: "inset 0 1px 2px rgba(0,0,0,0.04)",
-        width: "100%",
-        maxWidth: 720,
-        margin: "0 auto",
-    };
-    const fillStyle = {
-        width: `${pct}%`,
-        height: "100%",
-        borderRadius: 999,
-        background: "linear-gradient(90deg, #0a2b4c, #005679, #008491)",
-        transition: "width 300ms ease",
-        position: "relative",
-    };
-    const labelStyle = {
-        position: "absolute",
-        left: "50%",
-        top: "50%",
-        transform: "translate(-50%, -50%)",
-        fontSize: "0.8rem",
-        color: "#fff",
-        fontWeight: 600,
-    };
-    return (
-        <div className="d-flex align-items-center justify-content-center">
-            <div
-                className="position-relative"
-                style={trackStyle}
-                aria-valuenow={pct}
-                aria-valuemin={0}
-                aria-valuemax={100}
-                role="progressbar"
-            >
-                <div style={fillStyle} />
-                <div style={labelStyle}>{pct}%</div>
-            </div>
-        </div>
-    );
-}
+import { timeAgo, ProgressMeter } from "./Functions";
+import TabNavigation from "./TabNavigation";
+import RequestsTable from "./Request";
+import FilesTable from "./Files";
+import ActivityLog from "./Activitylog";
 
 
+// -------------------------------
+// Główny komponent KwestionariuszFull
+// -------------------------------
 function KwestionariuszFull() {
     const [activeTab, setActiveTab] = useState("Kwestionariusz");
+
+    const [logs, setLogs] = useState([
+        { date: "2025-09-24 14:32", user: "K M", action: "Dodał komentarz", details: "Komentarz do pytania 3" },
+        { date: "2025-09-23 10:15", user: "J K", action: "Zatwierdził odpowiedź", details: "Pytanie 1" },
+        { date: "2025-09-22 09:00", user: "A N", action: "Dodał plik", details: "umowa-najmu.pdf" },
+    ]);
+
+    const [requests, setRequests] = useState(() => {
+        const now = new Date();
+        const earlier = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+        return [
+            {
+                id: 1, type: "Wyciąg bankowy", desc: "Wyciągi za Q2 2025 (miesięczne zestawienia)", due: "2025-09-05",
+                status: "Oczekiwanie", createdAt: earlier.toISOString(), lastReminderAt: null, receivedAt: null, urgent: false
+            },
+            {
+                id: 2, type: "Umowa najmu", desc: "Aktualna umowa wraz z aneksami", due: "2025-09-10",
+                status: "Otrzymano", createdAt: earlier.toISOString(), lastReminderAt: earlier.toISOString(),
+                receivedAt: now.toISOString(), receivedFile: { name: "umowa-najmu.pdf", url: "#" }, urgent: true
+            },
+        ];
+    });
+
+    const [files, setFiles] = useState([]);
 
     // --- wiersze edytowalne ---
     const [rows, setRows] = useState([
@@ -76,29 +45,22 @@ function KwestionariuszFull() {
             zagrozenie: "Przykładowe zagrożenie",
             srodek: "Przykładowy środek",
             author: "K M",
-            approver: "M M",
             date: "2025-08-20",
+            approver: "_",
+            approvedAt: null,
         },
     ]);
 
+    // --- Funkcje obsługi wierszy ---
     const handleChange = (id, field, value) => {
-        setRows((prev) =>
-            prev.map((r) => (r.id === id ? { ...r, [field]: value } : r))
-        );
+        setRows((prev) => prev.map((r) => (r.id === id ? { ...r, [field]: value } : r)));
     };
 
     const handleAddRow = () => {
         const newId = rows.length ? Math.max(...rows.map((r) => r.id)) + 1 : 1;
         setRows([
             ...rows,
-            {
-                id: newId,
-                zagrozenie: "",
-                srodek: "",
-                author: "K M",
-                approver: "—",
-                date: new Date().toISOString(),
-            },
+            { id: newId, zagrozenie: "", srodek: "", author: "_", date: null, approver: "_", approvedAt: null },
         ]);
     };
 
@@ -108,13 +70,15 @@ function KwestionariuszFull() {
 
     const tabs = ["Kwestionariusz", "Zapotrzebowanie", "Pliki", "Dziennik"];
 
-
     return (
         <div className="d-flex min-vh-100">
             <Sidebar />
+
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: "hidden" }}>
+                {/* Topbar */}
                 <Topbar breadcrumb={[{ label: "Home", to: "/" }, { label: "Projekt", active: true }]} />
 
+                {/* Nagłówek projektu */}
                 <div className="px-3 py-2 mt-2 mb-1 border-bottom d-flex justify-content-between align-items-center flex-wrap">
                     <div className="d-flex align-items-baseline gap-2 flex-wrap">
                         <h4 className="fw-semibold mb-0">DR/2025/123456</h4>
@@ -126,50 +90,16 @@ function KwestionariuszFull() {
                     </div>
                 </div>
 
+                {/* Sekcja + Progress */}
                 <div className="mb-2 mt-2 px-3 d-flex align-items-center justify-content-between">
-                    <h5 className="fw-semibold fs-5 mb-2 mt-2">
-                        I.4 Rozpoznanie zagrożenia
-                    </h5>
-                    <div style={{ width: "350px", minWidth: "150px" }}>
-                        <ProgressMeter percent={65} />
+                    <h5 className="fw-semibold fs-5 mb-2 mt-2">I.4 Rozpoznanie zagrożenia</h5>
+                    <div style={{ width: "250px", minWidth: "150px" }}>
+                        <ProgressMeter percent={70} />
                     </div>
                 </div>
 
                 {/* Tabs */}
-                <div className="mb-2 mt-2 px-3 d-flex align-items-center justify-content-between">
-                    <div className="card-header">
-                        <ul className="nav nav-tabs card-header-tabs mb-0">
-                            {tabs.map((tab) => (
-                                <li key={tab} className="nav-item">
-                                    <button
-                                        className={`nav-link ${activeTab === tab ? "active fw-semibold" : "fw-medium"}`}
-                                        onClick={() => setActiveTab(tab)}
-                                        style={{
-                                            cursor: "pointer",
-                                            padding: "0.5rem 1.25rem",
-                                            borderRadius: "50px",
-                                            border: "1px solid",
-                                            borderColor: activeTab === tab ? "#005679" : "#dee2e6",
-                                            backgroundColor: activeTab === tab ? "#005679" : "#f8f9fa",
-                                            color: activeTab === tab ? "#fff" : "#495057",
-                                            fontWeight: 500,
-                                            transition: "all 0.2s ease-in-out",
-                                            marginRight: "0.5rem",
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            if (activeTab !== tab) e.currentTarget.style.backgroundColor = "#e2e6ea";
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            if (activeTab !== tab) e.currentTarget.style.backgroundColor = activeTab === tab ? "#007bff" : "#f8f9fa";
-                                        }}
-                                    >
-                                        {tab}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+                <TabNavigation tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
 
                 {/* Content */}
                 <div className="px-3 flex-grow-1 overflow-auto">
@@ -177,14 +107,14 @@ function KwestionariuszFull() {
                         <div className="p-0">
                             <div className="table-responsive">
                                 <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize: "0.85rem" }}>
-                                    <thead className="table-light">
+                                    <thead className="table-light" style={{ position: "sticky", top: 0, zIndex: 15 }}>
                                     <tr>
-                                        <th style={{ textAlign: "center", width: "5%" }}>Lp.</th>
-                                        <th style={{ width: "30%" }}>Rozpoznane zagrożenie</th>
-                                        <th style={{ width: "30%" }}>Wdrożony środek zaradczy</th>
-                                        <th style={{ textAlign: "center", width: "10%" }}>Sporządził</th>
-                                        <th style={{ textAlign: "center", width: "10%" }}>Zatwierdził</th>
-                                        <th style={{ textAlign: "center", width: "10%" }}>Akcje</th>
+                                        <th style={{ textAlign: "center", width: "5%", border: "1px solid #dee2e6", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem" }}>Lp.</th>
+                                        <th style={{ width: "30%", border: "1px solid #dee2e6", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem" }}>Rozpoznane zagrożenie</th>
+                                        <th style={{ width: "30%", border: "1px solid #dee2e6", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem" }}>Wdrożony środek zaradczy</th>
+                                        <th style={{ textAlign: "center", border: "1px solid #dee2e6", width: "10%", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem" }}>Sporządził</th>
+                                        <th style={{ textAlign: "center", border: "1px solid #dee2e6", width: "10%", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem" }}>Zatwierdził</th>
+                                        <th style={{ textAlign: "center", border: "1px solid #dee2e6", width: "10%", backgroundColor: "#0a2b4c", color: "#fff", padding: "0.75rem" }}>Akcje</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -192,35 +122,71 @@ function KwestionariuszFull() {
                                         <tr key={r.id}>
                                             <td style={{ textAlign: "center" }}>{idx + 1}</td>
                                             <td>
-    <textarea
-        className="form-control form-control-sm"
-        style={{ whiteSpace: "pre-wrap", resize: "vertical", minHeight: "60px" }}
-        value={r.zagrozenie}
-        onChange={(e) => handleChange(r.id, "zagrozenie", e.target.value)}
-    />
+                          <textarea
+                              className="form-control form-control-sm mt-1 mb-1"
+                              style={{ whiteSpace: "pre-wrap", resize: "vertical", minHeight: "60px" }}
+                              value={r.zagrozenie}
+                              onChange={(e) => handleChange(r.id, "zagrozenie", e.target.value)}
+                          />
                                             </td>
                                             <td>
-    <textarea
-        className="form-control form-control-sm"
-        style={{ whiteSpace: "pre-wrap", resize: "vertical", minHeight: "60px" }}
-        value={r.srodek}
-        onChange={(e) => handleChange(r.id, "srodek", e.target.value)}
-    />
+                          <textarea
+                              className="form-control form-control-sm"
+                              style={{ whiteSpace: "pre-wrap", resize: "vertical", minHeight: "60px" }}
+                              value={r.srodek}
+                              onChange={(e) => handleChange(r.id, "srodek", e.target.value)}
+                          />
                                             </td>
-                                            <td style={{ textAlign: "center", fontSize: "0.8rem" }}>
-                                                <div className="d-flex align-items-center justify-content-center gap-2">
-                                                    <InitialsAvatar name={r.author} size={23} />
-                                                    <span className="text-muted small">{timeAgo(new Date(r.date))}</span>
-                                                </div>
-                                            </td>
-                                            <td style={{ textAlign: "center", fontSize: "0.8rem" }}>
-                                                {r.approver !== "—" && (
-                                                    <div className="d-flex align-items-center justify-content-center gap-2">
-                                                        <InitialsAvatar name={r.approver} size={23} />
-                                                        <span className="text-muted small">{timeAgo(new Date(r.date))}</span>
+
+                                            {/* Kolumna Sporządził */}
+                                            <td style={{ fontSize: "0.8rem", textAlign: "center" }}>
+                                                {r.author !== "_" ? (
+                                                    <div className="d-flex align-items-center gap-2 justify-content-center">
+                                                        <InitialsAvatar name={r.author} size={23} />
+                                                        <span className="text-muted small">{r.date ? timeAgo(new Date(r.date)) : "-"}</span>
                                                     </div>
+                                                ) : (
+                                                    <button
+                                                        className="btn btn-sm btn-outline-primary"
+                                                        onClick={() =>
+                                                            setRows((prev) =>
+                                                                prev.map((row) =>
+                                                                    row.id === r.id
+                                                                        ? { ...row, author: "Jan Kowalski", date: new Date().toISOString() }
+                                                                        : row
+                                                                )
+                                                            )
+                                                        }
+                                                    >
+                                                        Zatwierdź
+                                                    </button>
                                                 )}
                                             </td>
+
+                                            {/* Kolumna Zatwierdził */}
+                                            <td style={{ fontSize: "0.8rem", textAlign: "center" }}>
+                                                {r.approver !== "_" ? (
+                                                    <div className="d-flex align-items-center gap-2 justify-content-center">
+                                                        <InitialsAvatar name={r.approver} size={23} />
+                                                        <span className="text-muted small">{r.approvedAt ? timeAgo(new Date(r.approvedAt)) : "-"}</span>
+                                                    </div>
+                                                ) : (
+                                                    <button
+                                                        className="btn btn-sm btn-outline-success"
+                                                        onClick={() =>
+                                                            setRows((prev) =>
+                                                                prev.map((row) =>
+                                                                    row.id === r.id ? { ...row, approver: "Jan Kowalski", approvedAt: new Date().toISOString() } : row
+                                                                )
+                                                            )
+                                                        }
+                                                    >
+                                                        Zatwierdź
+                                                    </button>
+                                                )}
+                                            </td>
+
+                                            {/* Akcje */}
                                             <td style={{ textAlign: "center" }}>
                                                 <button
                                                     className="btn btn-sm btn-outline-danger"
@@ -245,16 +211,21 @@ function KwestionariuszFull() {
                             </div>
                         </div>
                     )}
-
-
-
+                    {activeTab === "Zapotrzebowanie" && <RequestsTable requests={requests} setRequests={setRequests} />}
+                    {activeTab === "Pliki" && <FilesTable files={files} setFiles={setFiles} />}
+                    {activeTab === "Dziennik" && (
+                        <div className="p-0 flex-grow-1" style={{ overflow: "auto" }}>
+                            <ActivityLog logs={logs} />
+                        </div>
+                    )}
 
                 </div>
-                <div className="d-flex justify-content-between p-3 border-top mt-auto">
-                    <button className="btn btn-outline-secondary">«« Poprzedni kwestionariusz</button>
-                    <button className="btn btn-outline-secondary">Następny kwestionariusz »»</button>
-                </div>
 
+                {/* Nawigacja dolna */}
+                <div className="d-flex justify-content-between p-2 border-top mt-2" style={{ backgroundColor: "var(--ndr-bg-topbar)" }}>
+                    <button className="btn btn-outline-light">«« Poprzedni kwestionariusz</button>
+                    <button className="btn btn-outline-light">Następny kwestionariusz »»</button>
+                </div>
             </div>
         </div>
     );

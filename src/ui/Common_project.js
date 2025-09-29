@@ -90,10 +90,9 @@ export function Sidebar({ search, setSearch }) {
             questionnaires: [
                 { name: 'I.1 Test niezależności kluczowego biegłego rewidenta', to: '/kwestionariusz-prosty' },
                 { name: 'I.2 Test niezależności dla firmy audytorskiej', to: '/kwestionariusz-dynamiczny' },
-                { name: 'I.3 Rola partnera odpowiedzialnego za zlecenie', to: '/kwestionariusz' },
-                { name: 'I.4 Rozpoznanie zagrożenia', to: '/kwestionariusz' },
+                { name: 'I.3 Rola partnera odpowiedzialnego za zlecenie', to: '/kwestionariusz-tekstowy' },
+                { name: 'I.4 Rozpoznanie zagrożenia', to: '/kwestionariusz-check' },
                 { name: 'I.5 Wyznaczenie zespołu badającego', to: '/kwestionariusz' },
-                { name: 'I.6 Wniosek', to: '/kwestionariusz' },
             ]
         },
         {
@@ -103,7 +102,7 @@ export function Sidebar({ search, setSearch }) {
                 {
                     name: "II.1 Wstępne zagadnienia",
                     subQuestionnaires: [
-                        { name: 'II.1.1 Plan badania', to: '/kwestionariusz' },
+                        { name: 'II.1.1 Plan badania', to: '/kwestionariusz-tabela' },
                         { name: 'II.1.2 Poznanie jednostki i otoczenia',  to: '/kwestionariusz' },
                         { name: 'II.1.3 Wstępny przegląd analityczny',  to: '/kwestionariusz' },
                         { name: 'II.1.4 Kontynuacja działalności',  to: '/kwestionariusz' },
