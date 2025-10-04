@@ -242,7 +242,7 @@ function KwestionariuszRyzyka() {
         },
     ]);
 
-    const [celeBadania, setCeleBadania] = useState([
+    const [celeBadania] = useState([
         {
             nr: 1,
             nazwa: `Przy przeprowadzaniu badania sprawozdania finansowego twoim celem jest uzyskanie wystarczającej pewności, czy sprawozdanie finansowe jako całość nie zawiera istotnego zniekształcenia, niezależnie od tego, czy zostało ono spowodowane błędem lub oszustwem, co umożliwi ci wyrażenie opinii o tym, czy sprawozdanie finansowe jest, we wszystkich istotnych aspektach, sporządzone zgodnie z mającymi zastosowanie ramowymi założeniami sprawozdawczości finansowej.
