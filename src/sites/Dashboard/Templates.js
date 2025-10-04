@@ -1,5 +1,8 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import axios from "axios";
 import { Sidebar, Topbar } from "../../ui/Common";
+
+const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 
 function Templates(){
   const [search, setSearch] = useState("");
@@ -10,14 +13,72 @@ function Templates(){
   const [deleteItem, setDeleteItem] = useState(null);
   const [showAdd, setShowAdd] = useState(false);
 
-  const initial = useMemo(()=>[
-    { id: 1, key: 'dr', name: 'DR', url: 'https://example.com/szablony/dr' },
-    { id: 2, key: 'mbp', name: 'MBP', url: 'https://example.com/szablony/mbp' },
-  ],[]);
-
-  const [rows, setRows] = useState(initial);
+  const [rows, setRows] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const filtered = useMemo(()=>{ const q=search.trim().toLowerCase(); if(!q) return rows; return rows.filter(r=>[r.key,r.name,r.url].some(v=>String(v).toLowerCase().includes(q))); },[rows,search]);
+
+  useEffect(()=>{
+    let alive = true;
+    setLoading(true);
+    setError("");
+    axios.get(`${API_BASE}/templates`).then(res=>{
+      if(!alive) return;
+      setRows(res.data || []);
+    }).catch(err=>{
+      if(!alive) return;
+      console.error(err);
+      setError("Nie udało się pobrać listy szablonów. Upewnij się, że mock serwer działa.");
+    }).finally(()=> alive && setLoading(false));
+    return ()=>{ alive=false };
+  },[]);
+
+  async function handleSaveEdit(){
+    if(!editItem) return;
+    const name=form.name.trim(); const url=form.url.trim();
+    if(!name){ alert('Podaj nazwę'); return; }
+    if(!url){ alert('Podaj URL'); return; }
+    const updated = { ...editItem, name, url };
+    try{
+      const res = await axios.put(`${API_BASE}/templates/${editItem.id}`, updated);
+      const saved = res.data || updated;
+      setRows(prev=> prev.map(r=> r.id===editItem.id? saved : r));
+      setShowEdit(false); setEditItem(null);
+    }catch(err){
+      console.error(err);
+      alert('Nie udało się zapisać zmian.');
+    }
+  }
+
+  async function handleConfirmDelete(){
+    if(!deleteItem) return;
+    try{
+      await axios.delete(`${API_BASE}/templates/${deleteItem.id}`);
+      setRows(prev=> prev.filter(r=> r.id!==deleteItem.id));
+      setShowDelete(false); setDeleteItem(null);
+    }catch(err){
+      console.error(err);
+      alert('Nie udało się usunąć elementu.');
+    }
+  }
+
+  async function handleAdd(){
+    const name=form.name.trim(); const url=form.url.trim();
+    if(!name){ alert('Podaj nazwę'); return; }
+    if(!url){ alert('Podaj URL'); return; }
+    const key = name.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
+    const toCreate = { key, name, url };
+    try{
+      const res = await axios.post(`${API_BASE}/templates`, toCreate);
+      const created = res.data || { ...toCreate };
+      setRows(prev=> [...prev, created]);
+      setShowAdd(false); setForm({ name: "", url: "" });
+    }catch(err){
+      console.error(err);
+      alert('Nie udało się dodać szablonu.');
+    }
+  }
 
   return (
     <div className="d-flex min-vh-100" style={{ minHeight: '100vh' }}>
@@ -49,7 +110,13 @@ function Templates(){
                     </tr>
                   </thead>
                   <tbody>
-                    {filtered.map((r, idx)=> (
+                    {loading && (
+                      <tr><td colSpan={3} className="text-center text-muted py-4">Ładowanie...</td></tr>
+                    )}
+                    {error && !loading && (
+                      <tr><td colSpan={3} className="text-center text-danger py-4">{error}</td></tr>
+                    )}
+                    {!loading && !error && filtered.map((r)=> (
                       <tr key={r.id}>
                         <td style={tdDescription}>{r.name}</td>
                         <td style={tdDescription}>
@@ -61,7 +128,7 @@ function Templates(){
                         </td>
                       </tr>
                     ))}
-                    {filtered.length===0 && (
+                    {!loading && !error && filtered.length===0 && (
                       <tr><td colSpan={3} className="text-center text-muted py-4">Brak wyników</td></tr>
                     )}
                   </tbody>
@@ -107,11 +174,7 @@ function Templates(){
               </div>
               <div className="card-footer d-flex justify-content-end gap-2">
                 <button className="btn btn-light" onClick={()=>setShowEdit(false)}>Anuluj</button>
-                <button className="btn btn-primary" onClick={()=>{
-                  if(!editItem) return; const name=form.name.trim(); const url=form.url.trim(); if(!name){ alert('Podaj nazwę'); return;} if(!url){ alert('Podaj URL'); return;}
-                  setRows(prev=> prev.map(r=> r.id===editItem.id? { ...r, name, url }: r));
-                  setShowEdit(false); setEditItem(null);
-                }}>Zapisz</button>
+                <button className="btn btn-primary" onClick={handleSaveEdit}>Zapisz</button>
               </div>
             </div>
           </div>
@@ -131,7 +194,7 @@ function Templates(){
               </div>
               <div className="card-footer d-flex justify-content-end gap-2">
                 <button className="btn btn-light" onClick={()=>setShowDelete(false)}>Anuluj</button>
-                <button className="btn btn-danger" onClick={()=>{ if(deleteItem){ setRows(prev=> prev.filter(r=> r.id!==deleteItem.id)); } setShowDelete(false); }}>Usuń</button>
+                <button className="btn btn-danger" onClick={handleConfirmDelete}>Usuń</button>
               </div>
             </div>
           </div>
@@ -157,12 +220,7 @@ function Templates(){
               </div>
               <div className="card-footer d-flex justify-content-end gap-2">
                 <button className="btn btn-light" onClick={()=>setShowAdd(false)}>Anuluj</button>
-                <button className="btn btn-primary" onClick={()=>{
-                  const name=form.name.trim(); const url=form.url.trim(); if(!name){ alert('Podaj nazwę'); return;} if(!url){ alert('Podaj URL'); return;}
-                  const newId = (rows[rows.length-1]?.id || 0) + 1;
-                  setRows(prev=>[...prev, { id: newId, key: name.toLowerCase(), name, url }]);
-                  setShowAdd(false); setForm({ name: "", url: "" });
-                }}>Dodaj</button>
+                <button className="btn btn-primary" onClick={handleAdd}>Dodaj</button>
               </div>
             </div>
           </div>
