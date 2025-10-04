@@ -1,15 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Sidebar, Topbar, InitialsAvatar } from "../ui/Common_project.js";
-import { timeAgo, ProgressMeter } from "./Functions";
-import FilesTable from "./Files";
-import RequestsTable from "./Request";
-import ActivityLog from "./Activitylog";
-import TabNavigation from "./TabNavigation";
-import Application from "./Application";
+import React, {useState} from "react";
+import { Sidebar, Topbar, InitialsAvatar } from "../../../ui/Common_project.js";
+import { timeAgo, ProgressMeter } from "../../Functions";
+import FilesTable from "../Tabs/Files";
+import RequestsTable from "../Tabs/Request";
+import ActivityLog from "../Tabs/Activitylog";
+import TabNavigation from "../Tabs/TabNavigation";
+import Application from "../Tabs/Application";
 
 function KwestionariuszFull() {
     const [activeTab, setActiveTab] = useState("Kwestionariusz");
-    const [showAccount, setShowAccount] = useState(false);
     const [files, setFiles] = useState([]);
     const [answers, setAnswers] = useState({});
     const [logs] = useState([
@@ -33,9 +32,6 @@ function KwestionariuszFull() {
             },
         ];
     });
-
-    const accountBtnRef = useRef(null);
-    const accountMenuRef = useRef(null);
 
     const tabs = ["Kwestionariusz", "Zapotrzebowanie", "Pliki", "Dziennik", "Wniosek"];
 
@@ -114,24 +110,6 @@ function KwestionariuszFull() {
         ], []
     );
 
-    useEffect(() => {
-        const handleClick = (e) => {
-            if (!showAccount) return;
-            if (
-                accountMenuRef.current && !accountMenuRef.current.contains(e.target) &&
-                accountBtnRef.current && !accountBtnRef.current.contains(e.target)
-            ) setShowAccount(false);
-        };
-        const handleKey = (e) => e.key === "Escape" && setShowAccount(false);
-        document.addEventListener("mousedown", handleClick);
-        document.addEventListener("keydown", handleKey);
-        return () => {
-            document.removeEventListener("mousedown", handleClick);
-            document.removeEventListener("keydown", handleKey);
-        };
-    }, [showAccount]);
-
-
     return (
         <div className="d-flex min-vh-100">
             <Sidebar />
@@ -141,13 +119,9 @@ function KwestionariuszFull() {
                         { label: "Home", to: "/" },
                         { label: "Projekty", to: "/projekty" },
                         { label: "Projekt", to: "/projekt" },
-                        { label: activeTab, active: true },
-                    ]}
-                    accountBtnRef={accountBtnRef}
-                    accountMenuRef={accountMenuRef}
-                    showAccount={showAccount}
-                    setShowAccount={setShowAccount}
+                        { label: activeTab, active: true },]}
                 />
+
                 <div className="d-flex flex-grow-1" style={{ overflow: "hidden" }}>
                     <div className="flex-grow-1 d-flex flex-column" style={{ minWidth: 0 }}>
                         <ProjectHeader />

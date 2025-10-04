@@ -1,13 +1,8 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Notifications, InitialsAvatar, Sidebar } from "../ui/Common_project";
+import React, { useMemo, useState } from "react";
+import { Sidebar, Topbar } from '../../ui/Common_project.js';
 
 function ProjektKonfiguracja(){
   //const [search, setSearch] = useState("");
-  const [showAccount, setShowAccount] = useState(false);
-  const accountMenuRef = useRef(null); const accountBtnRef = useRef(null);
-  const navigate = useNavigate();
-  useEffect(()=>{ function onDoc(e){ if(!showAccount) return; const m=accountMenuRef.current,b=accountBtnRef.current; if(m&&!m.contains(e.target)&&b&&!b.contains(e.target)) setShowAccount(false);} function onKey(e){ if(e.key==='Escape') setShowAccount(false);} document.addEventListener('mousedown',onDoc); document.addEventListener('keydown',onKey); return ()=>{ document.removeEventListener('mousedown',onDoc); document.removeEventListener('keydown',onKey); }; },[showAccount]);
 
   const allUsers = useMemo(()=>[
     'Jan Kowalski','Anna Kowalska','Piotr Nowak','Ewa Jabłońska','Katarzyna Malinowska','Robert Kamiński','Janina Zielińska','Tomasz Nowak'
@@ -29,43 +24,23 @@ function ProjektKonfiguracja(){
     if(candidate) setClients(prev=>[...prev, candidate]);
   };
 
-  return (
+    const breadcrumb = [
+        { label: 'Home', to: '/' },
+        { label: 'Projekty', to: '/projekty' },
+        { label: `Projekt`, active: true },
+    ];
+
+    const [search, setSearch] = useState('');
+
+
+    return (
     <div className="d-flex min-vh-100" style={{ minHeight: '100vh' }}>
       {/* Sidebar */}
-        <Sidebar />
-      {/* Main column */}
+        <Sidebar search={search} setSearch={setSearch} />
+        {/* Main column */}
       <div className="flex-grow-1 d-flex flex-column" style={{ overflow:'hidden' }}>
         {/* Topbar */}
-        <div className="shadow-sm" style={{ backgroundColor:'var(--ndr-bg-topbar)', padding:'0.5rem' }}>
-          <div className="d-flex align-items-center justify-content-between px-4 py-2">
-            <nav aria-label="breadcrumb">
-              <ol className="breadcrumb mb-0" style={{ color:'#fff', "--bs-breadcrumb-divider":"'/'", "--bs-breadcrumb-divider-color":'#fff' }}>
-                <li className="breadcrumb-item"><Link to="/" style={{ color:'#fff', textDecoration:'underline' }}>Home</Link></li>
-                <li className="breadcrumb-item"><Link to="/workspace" style={{ color:'#fff', textDecoration:'underline' }}>Workspace</Link></li>
-                <li className="breadcrumb-item"><Link to="/projekty" style={{ color:'#fff', textDecoration:'underline' }}>Projekty</Link></li>
-                <li className="breadcrumb-item active" aria-current="page" style={{ color:'#fff' }}>Projekt: Konfiguracja</li>
-              </ol>
-            </nav>
-            <div className="d-flex align-items-center position-relative" style={{ gap:'0.25rem' }}>
-              <Notifications />
-              <button ref={accountBtnRef} className="btn btn-link p-0 border-0" aria-haspopup="menu" aria-expanded={showAccount? 'true':'false'} onClick={()=>setShowAccount(v=>!v)} onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setShowAccount(v=>!v);} }} title="Konto">
-                <InitialsAvatar name="Jan Użytkownik" size={24} />
-              </button>
-              {showAccount && (
-                <div ref={accountMenuRef} className="card shadow-sm" style={{ position:'absolute', right:0, top:'100%', marginTop:'0.5rem', minWidth:220, zIndex:2000 }} role="menu">
-                  <div className="card-body py-2">
-                    <div className="d-flex align-items-center mb-2"><InitialsAvatar name="Jan Użytkownik" size={28} /><div><div className="fw-semibold">Jan Użytkownik</div><div className="text-muted small">jan@example.com</div></div></div>
-                    <hr className="my-2" />
-                    <button className="dropdown-item btn btn-link text-start w-100 px-0" onClick={()=>setShowAccount(false)}>Profil</button>
-                    <button className="dropdown-item btn btn-link text-start w-100 px-0" onClick={()=>setShowAccount(false)}>Ustawienia</button>
-                    <hr className="my-2" />
-                    <button className="dropdown-item btn btn-link text-start w-100 px-0 text-danger" onClick={()=>{ navigate('/'); setShowAccount(false); }}>Wyloguj</button>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
+          <Topbar breadcrumb={breadcrumb}/>
 
         {/* Content */}
         <div className="flex-grow-1 bg-light d-flex pt-3 px-3" style={{ minHeight:0 }}>

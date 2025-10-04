@@ -1,13 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Sidebar, Topbar, InitialsAvatar } from "../ui/Common";
+import React, { useMemo, useState } from "react";
+import { Sidebar, Topbar, InitialsAvatar } from "../../ui/Common";
 
 function Users(){
   const [search, setSearch] = useState("");
-  const [showAccount, setShowAccount] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
   const [showRoleModal, setShowRoleModal] = useState(false);
-  const accountMenuRef = useRef(null); const accountBtnRef = useRef(null);
-  useEffect(()=>{ function onDoc(e){ if(!showAccount) return; const m=accountMenuRef.current,b=accountBtnRef.current; if(m&&!m.contains(e.target)&&b&&!b.contains(e.target)) setShowAccount(false);} function onKey(e){ if(e.key==='Escape') setShowAccount(false);} document.addEventListener('mousedown',onDoc); document.addEventListener('keydown',onKey); return ()=>{ document.removeEventListener('mousedown',onDoc); document.removeEventListener('keydown',onKey); }; },[showAccount]);
 
   const data = useMemo(()=>[
     { id:1, name:'Anna Kowalska', email:'anna.kowalska@example.com', active:true, role:'Administrator', last:'2025-08-21', actFrom:'2024-11-05', actTo:'2025-03-20', projects:['DR/2025/123456','DR/2025/123356','DR/2025/123357'] },
@@ -40,10 +37,6 @@ function Users(){
       <div className="flex-grow-1 d-flex flex-column" style={{ overflow:'hidden' }}>
         <Topbar
           breadcrumb={[{label:'Home', to:'/'},{label:'Workspace', to:'/workspace'},{label:'Użytkownicy', active:true}]}
-          accountBtnRef={accountBtnRef}
-          accountMenuRef={accountMenuRef}
-          showAccount={showAccount}
-          setShowAccount={setShowAccount}
         />
 
         {/* Zawartość: lewa tabela + prawa sekcja info */}
@@ -51,9 +44,9 @@ function Users(){
           {/* Lewa część: tabela */}
           <div className="flex-grow-1 d-flex flex-column" style={{ minWidth:0 }}>
             <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow:'hidden' }}>
-              <div className="card-header">
-                <div className="d-flex align-items-center" style={{ gap:'0.5rem' }}>
-                  <strong className="me-auto">Moduł użytkowników</strong>
+              <div className="card-header" style ={{ backgroundColor: "#0a2b4c", color: "#ffffff",}}>
+                <div className="d-flex align-items-center" style={{padding: '0.5rem 0.3rem' }}>
+                  <strong className="me-auto" style ={{fontSize: "1.1rem"}}>Moduł użytkowników</strong>
                   <div className="input-group input-group-sm" style={{ maxWidth: 420 }}>
                     <input type="text" className="form-control" placeholder="Szukaj: mail, imię i nazwisko" aria-label="Szukaj użytkowników" value={search} onChange={(e)=>setSearch(e.target.value)} />
                     {search && (<button className="btn btn-outline-secondary" type="button" onClick={()=>setSearch("")} title="Wyczyść" aria-label="Wyczyść">×</button>)}
@@ -61,28 +54,28 @@ function Users(){
                   </div>
                 </div>
               </div>
-              <div className="table-responsive flex-grow-1 pt-2 ps-2 pb-5" style={{ overflow:'auto' }}>
+              <div className="table-responsive flex-grow-1" style={{ overflow:'auto' }}>
                 <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
                   <thead className="table-light" style={{ position:'sticky', top:0, zIndex:1, whiteSpace:'nowrap' }}>
                     <tr>
-                      <th style={{ whiteSpace:'nowrap' }}>Imię i nazwisko</th>
-                      <th>Email</th>
-                      <th>Status</th>
-                      <th>Rola</th>
+                      <th style={headerStyle}>Imię i nazwisko</th>
+                      <th style={headerStyle}>Email</th>
+                      <th style={headerStyle}>Status</th>
+                      <th style={headerStyle}>Rola</th>
                     </tr>
                   </thead>
                   <tbody>
                     {filtered.map((u, idx)=> (
                       <tr key={u.id} onClick={()=>setSelectedId(u.id)} style={{ cursor:'pointer', backgroundColor: u.id===selectedId? '#e7f1ff': undefined }}>
-                        <td>
+                        <td style = {tdDescription}>
                           <div className="d-flex align-items-center" style={{ gap:'0.5rem' }}>
                             <InitialsAvatar name={u.name} size={24} />
                             <span>{u.name}</span>
                           </div>
                         </td>
-                        <td style={{ wordBreak:'break-word' }}>{u.email}</td>
-                        <td><span className={`badge fw-normal ${u.active ? 'bg-success-subtle text-dark' : 'bg-secondary-subtle text-dark'}`}>{u.active ? 'Aktywny' : 'Nieaktywny'}</span></td>
-                        <td style={{ whiteSpace:'nowrap' }}>{u.role}</td>
+                        <td style = {tdDescription}>{u.email}</td>
+                        <td style = {tdDescription}><span className={`badge fw-normal ${u.active ? 'bg-success-subtle text-dark' : 'bg-secondary-subtle text-dark'}`}>{u.active ? 'Aktywny' : 'Nieaktywny'}</span></td>
+                        <td style = {tdDescription}>{u.role}</td>
                       </tr>
                     ))}
                     {filtered.length===0 && (
@@ -100,7 +93,7 @@ function Users(){
                 <div className="text-center mb-2">
                     <button className="btn btn-success w-100" onClick={()=>alert('Dodawanie użytkownika (demo)')} style={{ whiteSpace:'nowrap', minWidth: 220 }}>Dodaj użytkownika</button>
                 </div>
-              <div className="card-header">
+              <div className="card-header" style ={{ padding: '0.6rem 1rem', fontSize: "1rem", backgroundColor: "#0a2b4c", color: "#ffffff",}}>
 
                 <div className="d-flex align-items-center"><strong className="me-auto">Szczegóły użytkownika</strong></div>
               </div>
@@ -181,5 +174,9 @@ function Users(){
     </React.Fragment>
   );
 }
+
+const headerStyle = { border: "1px solid #dee2e6", paddingLeft: "1rem", backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem" };
+const tdDescription = { border: "1px solid #dee2e6", fontSize: "0.9rem", paddingLeft: "1rem", paddingTop:"0.5rem", paddingBottom:"0.5rem" };
+
 
 export default Users;

@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Sidebar, Topbar, CloseX, InitialsAvatar } from "../ui/Common_project.js";
-import { timeAgo, ProgressMeter } from "./Functions";
-import FilesTable from "./Files";
-import RequestsTable from "./Request";
-import ActivityLog from "./Activitylog";
-import TabNavigation from "./TabNavigation";
+import React, { useState} from "react";
+import { Sidebar, Topbar, CloseX, InitialsAvatar } from "../../../ui/Common_project.js";
+import { timeAgo, ProgressMeter } from "../../Functions";
+import FilesTable from "../Tabs/Files";
+import RequestsTable from "../Tabs/Request";
+import ActivityLog from "../Tabs/Activitylog";
+import TabNavigation from "../Tabs/TabNavigation";
 
 function KwestionariuszFull() {
     // --- Dane początkowe ---
@@ -18,7 +18,6 @@ function KwestionariuszFull() {
 
     // --- Stany ---
     const [activeTab, setActiveTab] = useState("Kwestionariusz");
-    const [showAccount, setShowAccount] = useState(false);
     const [files, setFiles] = useState([]);
     const [answers, setAnswers] = useState({});
     const [logs] = useState([
@@ -31,76 +30,29 @@ function KwestionariuszFull() {
         const now = new Date();
         const earlier = new Date(now.getTime() - 24 * 60 * 60 * 1000);
         return [
-            {
-                id: 1, type: "Wyciąg bankowy", desc: "Wyciągi za Q2 2025 (miesięczne zestawienia)", due: "2025-09-05",
-                status: "Oczekiwanie", createdAt: earlier.toISOString(), lastReminderAt: null, receivedAt: null, urgent: false
-            },
-            {
-                id: 2, type: "Umowa najmu", desc: "Aktualna umowa wraz z aneksami", due: "2025-09-10",
+            {id: 1, type: "Wyciąg bankowy", desc: "Wyciągi za Q2 2025 (miesięczne zestawienia)", due: "2025-09-05",
+                status: "Oczekiwanie", createdAt: earlier.toISOString(), lastReminderAt: null, receivedAt: null, urgent: false},
+            {id: 2, type: "Umowa najmu", desc: "Aktualna umowa wraz z aneksami", due: "2025-09-10",
                 status: "Otrzymano", createdAt: earlier.toISOString(), lastReminderAt: earlier.toISOString(),
-                receivedAt: now.toISOString(), receivedFile: { name: "umowa-najmu.pdf", url: "#" }, urgent: true
-            },
+                receivedAt: now.toISOString(), receivedFile: { name: "umowa-najmu.pdf", url: "#" }, urgent: true},
         ];
     });
 
-    const accountBtnRef = useRef(null);
-    const accountMenuRef = useRef(null);
-
     const tabs = ["Kwestionariusz", "Zapotrzebowanie", "Pliki", "Dziennik"];
 
-    // --- Zamknięcie menu konta ---
-    useEffect(() => {
-        const handleClick = e => {
-            if (!showAccount) return;
-            if (accountMenuRef.current && !accountMenuRef.current.contains(e.target) &&
-                accountBtnRef.current && !accountBtnRef.current.contains(e.target)) {
-                setShowAccount(false);
-            }
-        };
-        const handleKey = e => e.key === "Escape" && setShowAccount(false);
-        document.addEventListener("mousedown", handleClick);
-        document.addEventListener("keydown", handleKey);
-        return () => {
-            document.removeEventListener("mousedown", handleClick);
-            document.removeEventListener("keydown", handleKey);
-        };
-    }, [showAccount]);
-
-    // --- Render ---
     return (
         <div className="d-flex min-vh-100">
             <Sidebar />
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: "hidden" }}>
                 <Topbar
                     breadcrumb={[{ label: "Home", to: "/" }, { label: "Projekty", to: "/projekty" }, { label: "Projekt", to: "/projekt" }, { label: activeTab, active: true }]}
-                    accountBtnRef={accountBtnRef}
-                    accountMenuRef={accountMenuRef}
-                    showAccount={showAccount}
-                    setShowAccount={setShowAccount}
                 />
 
                 {/* Content */}
                 <div className="d-flex flex-grow-1" style={{ overflow: "hidden" }}>
                     <div className="flex-grow-1 d-flex flex-column" style={{ minWidth: 0 }}>
-                        {/* Header */}
-                        <div className="px-3 py-2 mt-2 mb-1 border-bottom d-flex justify-content-between align-items-center flex-wrap">
-                            <div className="d-flex align-items-baseline gap-2 flex-wrap">
-                                <h4 className="fw-semibold mb-0">DR/2025/123456</h4>
-                                <span className="fs-5 text-secondary">Alphatech Sp. z o.o.</span>
-                            </div>
-                            <div className="text-muted gap-4" style={{ fontSize: "0.9rem" }}>
-                                <div>Kierownik: Jan Kowalski</div>
-                                <div>Okres: 01.01.2025 – 31.12.2025</div>
-                            </div>
-                        </div>
-
-                        {/* Subheader + progress */}
-                        <div className="mb-2 mt-2 px-3 d-flex align-items-center justify-content-between">
-                            <h5 className="fw-semibold fs-5 mb-2 mt-2">II.1.4 Kontynuacja działalności (wstępne rozpoznanie)</h5>
-                            <div style={{ width: "250px", minWidth: "150px" }}><ProgressMeter percent={70} /></div>
-                        </div>
-
-                        {/* Tabs */}
+                        <ProjectHeader />
+                        <SubHeader />
                         <TabNavigation tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
 
                         {/* Tab content */}
@@ -326,5 +278,27 @@ function KwestionariuszFull() {
         </div>
     );
 }
+
+const ProjectHeader = () => (
+    <div className="px-3 py-2 mt-2 mb-1 border-bottom d-flex justify-content-between align-items-center flex-wrap">
+        <div className="d-flex align-items-baseline gap-2 flex-wrap">
+            <h4 className="fw-semibold mb-0">DR/2025/123456</h4>
+            <span className="fs-5 text-secondary">Alphatech Sp. z o.o.</span>
+        </div>
+        <div className="text-muted gap-4" style={{ fontSize: "0.9rem" }}>
+            <div>Kierownik: Jan Kowalski</div>
+            <div>Okres: 01.01.2025 – 31.12.2025</div>
+        </div>
+    </div>
+);
+
+const SubHeader = () => (
+    <div className="mb-2 mt-2 px-3 d-flex align-items-center justify-content-between">
+        <h5 className="fw-semibold fs-5 mb-2 mt-2">II.1.4 Kontynuacja działalności (wstępne rozpoznanie)</h5>
+        <div style={{ width: "250px", minWidth: "150px" }}>
+            <ProgressMeter percent={70} />
+        </div>
+    </div>
+);
 
 export default KwestionariuszFull;

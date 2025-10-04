@@ -28,7 +28,89 @@ export function InitialsAvatar({ name = "Jan Użytkownik", size = 26 }) {
         </div>
     );
 }
-export function Topbar({ breadcrumb, accountBtnRef, accountMenuRef, showAccount, setShowAccount, onLogout }){ const [openNotifications, setOpenNotifications] = useState(false); const notificationsPopRef = useRef(null); const notificationsBtnRef = useRef(null); useEffect(()=>{ function onDoc(e){ if(!openNotifications) return; const p=notificationsPopRef.current,b=notificationsBtnRef.current; if(p&&!p.contains(e.target)&&b&&!b.contains(e.target)) setOpenNotifications(false);} function onKey(e){ if(e.key==='Escape') setOpenNotifications(false);} document.addEventListener('mousedown',onDoc); document.addEventListener('keydown',onKey); return ()=>{ document.removeEventListener('mousedown',onDoc); document.removeEventListener('keydown',onKey); }; },[openNotifications]); return ( <div className="shadow-sm" style={{ backgroundColor:'var(--ndr-bg-topbar)', padding:'0.5rem' }}> <div className="d-flex align-items-center justify-content-between px-4 py-2"> <nav aria-label="breadcrumb"> <ol className="breadcrumb mb-0" style={{ color:'#fff', "--bs-breadcrumb-divider":"'/'", "--bs-breadcrumb-divider-color":'#fff' }}> {breadcrumb.map((item, idx)=> ( <li key={idx} className={"breadcrumb-item" + (item.active? ' active':'')} aria-current={item.active? 'page': undefined}> {item.to && !item.active? (<Link to={item.to} style={{ color:'#fff', textDecoration:'underline' }}>{item.label}</Link>): (<span style={{ color:'#fff' }}>{item.label}</span>)} </li> ))} </ol> </nav> <div className="d-flex align-items-center position-relative" style={{ gap:'0.25rem' }}> <Notifications open={openNotifications} setOpen={setOpenNotifications} popRef={notificationsPopRef} btnRef={notificationsBtnRef} /> <button ref={accountBtnRef} className="btn p-0 border-0" aria-haspopup="menu" aria-expanded={showAccount? 'true':'false'} onClick={()=>setShowAccount(v=>!v)} onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setShowAccount(v=>!v);} }} title="Konto" style={{ padding:'2px 8px', border:'1px solid rgba(255,255,255,0.35)', borderRadius:999, color:'#fff', display:'flex', alignItems:'center', gap:6, background:'transparent' }} onMouseOver={(e)=>{ e.currentTarget.style.background='rgba(255,255,255,0.12)'; }} onMouseOut={(e)=>{ e.currentTarget.style.background='transparent'; }} > <InitialsAvatar name="Jan Użytkownik" size={26} /> <span aria-hidden="true" style={{ fontSize:12, opacity:0.9, lineHeight:1, transform:'translateY(1px)' }}>▾</span> </button> {showAccount && ( <div ref={accountMenuRef} className="card shadow-sm" style={{ position:'absolute', right:0, top:'100%', marginTop:'0.5rem', minWidth:260, zIndex:2000 }} role="menu" > <div className="card-body py-2"> <div className="d-flex align-items-center mb-2" style={{ gap:'0.5rem' }}> <InitialsAvatar name="Jan Użytkownik" size={28} /> <div> <div className="text-muted small mb-1" style={{ lineHeight:1 }}>Zalogowano jako</div> <div className="fw-semibold mb-1" style={{ lineHeight:1.1 }}>Jan Użytkownik</div> <div className="text-muted small">jan@example.com</div> </div> </div> <hr className="my-2" /> <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center" onClick={()=>setShowAccount(false)}> <span className="me-2">👤</span> Profil </button> <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center" onClick={()=>setShowAccount(false)}> <span className="me-2">⚙️</span> Ustawienia </button> <hr className="my-2" /> {onLogout ? ( <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" onClick={onLogout}> <span className="me-2">🚪</span> Wyloguj </button> ) : ( <a role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" href="/"> <span className="me-2">🚪</span> Wyloguj </a> )} </div> </div> )} </div> </div> </div> ); }
+export function Topbar({ breadcrumb, onLogout }){
+    const [openNotifications, setOpenNotifications] = useState(false);
+
+    const [showAccount, setShowAccount] = useState(false);
+    const accountBtnRef = useRef(null);
+    const accountMenuRef = useRef(null);
+
+    const notificationsPopRef = useRef(null);
+    const notificationsBtnRef = useRef(null);
+
+    // obsługa powiadomień
+    useEffect(() => {
+        if (!openNotifications) return;
+
+        const handleClick = (e) => {
+            if (
+                notificationsPopRef.current &&
+                !notificationsPopRef.current.contains(e.target) &&
+                notificationsBtnRef.current &&
+                !notificationsBtnRef.current.contains(e.target)
+            ) {
+                setOpenNotifications(false);
+            }
+        };
+
+        const handleKey = (e) => {
+            if (e.key === "Escape") setOpenNotifications(false);
+        };
+
+        document.addEventListener("mousedown", handleClick);
+        document.addEventListener("keydown", handleKey);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClick);
+            document.removeEventListener("keydown", handleKey);
+        };
+    }, [openNotifications]);
+
+// obsługa konta
+    useEffect(() => {
+        if (!showAccount) return;
+
+        const handleClick = (e) => {
+            if (
+                accountMenuRef.current &&
+                !accountMenuRef.current.contains(e.target) &&
+                accountBtnRef.current &&
+                !accountBtnRef.current.contains(e.target)
+            ) {
+                setShowAccount(false);
+            }
+        };
+
+        const handleKey = (e) => {
+            if (e.key === "Escape") setShowAccount(false);
+        };
+
+        document.addEventListener("mousedown", handleClick);
+        document.addEventListener("keydown", handleKey);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClick);
+            document.removeEventListener("keydown", handleKey);
+        };
+    }, [showAccount]);
+
+
+    return (
+        <div className="shadow-sm" style={{ backgroundColor:'var(--ndr-bg-topbar)', padding:'0.5rem' }}>
+        <div className="d-flex align-items-center justify-content-between px-4 py-2">
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb mb-0" style={{ color:'#fff', "--bs-breadcrumb-divider":"'/'", "--bs-breadcrumb-divider-color":'#fff' }}>
+                {breadcrumb.map((item, idx)=> (
+                    <li key={idx} className={"breadcrumb-item" + (item.active? ' active':'')} aria-current={item.active? 'page': undefined}>
+                    {item.to && !item.active? (<Link to={item.to} style={{ color:'#fff', textDecoration:'underline' }}>{item.label}</Link>): (<span style={{ color:'#fff' }}>{item.label}</span>)}
+                </li> ))}
+                </ol>
+            </nav>
+            <div className="d-flex align-items-center position-relative" style={{ gap:'0.25rem' }}>
+                <Notifications open={openNotifications} setOpen={setOpenNotifications} popRef={notificationsPopRef} btnRef={notificationsBtnRef} />
+                <button ref={accountBtnRef} className="btn p-0 border-0" aria-haspopup="menu" aria-expanded={showAccount? 'true':'false'} onClick={()=>setShowAccount(v=>!v)}
+                        onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setShowAccount(v=>!v);} }} title="Konto"
+                        style={{ padding:'2px 8px', border:'1px solid rgba(255,255,255,0.35)', borderRadius:999, color:'#fff', display:'flex', alignItems:'center', gap:6, background:'transparent' }} onMouseOver={(e)=>{ e.currentTarget.style.background='rgba(255,255,255,0.12)'; }} onMouseOut={(e)=>{ e.currentTarget.style.background='transparent'; }} > <InitialsAvatar name="Jan Użytkownik" size={26} /> <span aria-hidden="true" style={{ fontSize:12, opacity:0.9, lineHeight:1, transform:'translateY(1px)' }}>▾</span> </button> {showAccount && ( <div ref={accountMenuRef} className="card shadow-sm" style={{ position:'absolute', right:0, top:'100%', marginTop:'0.5rem', minWidth:260, zIndex:2000 }} role="menu" > <div className="card-body py-2"> <div className="d-flex align-items-center mb-2" style={{ gap:'0.5rem' }}> <InitialsAvatar name="Jan Użytkownik" size={28} /> <div> <div className="text-muted small mb-1" style={{ lineHeight:1 }}>Zalogowano jako</div> <div className="fw-semibold mb-1" style={{ lineHeight:1.1 }}>Jan Użytkownik</div> <div className="text-muted small">jan@example.com</div> </div> </div> <hr className="my-2" /> <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center" onClick={()=>setShowAccount(false)}> <span className="me-2">👤</span> Profil </button> <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center" onClick={()=>setShowAccount(false)}> <span className="me-2">⚙️</span> Ustawienia </button> <hr className="my-2" /> {onLogout ? ( <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" onClick={onLogout}> <span className="me-2">🚪</span> Wyloguj </button> ) : ( <a role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" href="/"> <span className="me-2">🚪</span> Wyloguj </a> )} </div> </div> )} </div> </div> </div> ); }
 
 export function Notifications({ open, setOpen, popRef, btnRef }) {
     return (
@@ -60,8 +142,6 @@ export function Notifications({ open, setOpen, popRef, btnRef }) {
         </div>
     );
 }
-
-
 
 export function Sidebar({ search, setSearch }) {
     const location = useLocation();

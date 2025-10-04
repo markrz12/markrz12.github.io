@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar, Topbar } from "../ui/Common_project.js";
+import { Sidebar, Topbar, } from "../../../ui/Common_project.js";
 
 function InformacjeMSB() {
     const rows = [

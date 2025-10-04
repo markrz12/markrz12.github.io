@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Sidebar, Topbar } from "../ui/Common";
+import { Sidebar, Topbar } from "../../ui/Common";
 
 function ProjectClient(){
   const [search, setSearch] = useState("");
-  const [showAccount, setShowAccount] = useState(false);
-  const accountMenuRef = useRef(null); const accountBtnRef = useRef(null);
   const navigate = useNavigate();
-  useEffect(()=>{ function onDoc(e){ if(!showAccount) return; const m=accountMenuRef.current,b=accountBtnRef.current; if(m&&!m.contains(e.target)&&b&&!b.contains(e.target)) setShowAccount(false);} function onKey(e){ if(e.key==='Escape') setShowAccount(false);} document.addEventListener('mousedown',onDoc); document.addEventListener('keydown',onKey); return ()=>{ document.removeEventListener('mousedown',onDoc); document.removeEventListener('keydown',onKey); }; },[showAccount]);
 
   return (
     <div className="d-flex min-vh-100" style={{ minHeight: '100vh' }}>
@@ -16,11 +13,6 @@ function ProjectClient(){
       <div className="flex-grow-1 d-flex flex-column" style={{ overflow:'hidden' }}>
         <Topbar
           breadcrumb={[{label:'Home', to:'/'},{label:'Workspace', to:'/workspace'},{label:'Projekty', to:'/projekty'},{label:'Projekt: Klient', active:true}]}
-          accountBtnRef={accountBtnRef}
-          accountMenuRef={accountMenuRef}
-          showAccount={showAccount}
-          setShowAccount={setShowAccount}
-          onLogout={()=>{ navigate('/'); setShowAccount(false); }}
         />
 
         <div className="flex-grow-1 bg-light d-flex pt-3 px-3" style={{ minHeight:0 }}>

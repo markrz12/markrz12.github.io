@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { Sidebar, Topbar, InitialsAvatar } from "../ui/Common_project.js";
+import { Sidebar, Topbar, InitialsAvatar } from "../../../ui/Common_project.js";
 import { BsChevronRight, BsChevronDown, BsPaperclip, BsX } from "react-icons/bs";
-import { timeAgo, ProgressMeter } from "./Functions";
-import TabNavigation from "./TabNavigation";
-import RequestsTable from "./Request";
-import FilesTable from "./Files";
-import ActivityLog from "./Activitylog";
+import { timeAgo, ProgressMeter } from "../../Functions";
+import TabNavigation from "../Tabs/TabNavigation";
+import RequestsTable from "../Tabs/Request";
+import FilesTable from "../Tabs/Files";
+import ActivityLog from "../Tabs/Activitylog";
+
+
 
 // Hierarchia dokumentów (Checklist)
-
 const checklistData = [ { id: "1", label: "1. Dokumenty założycielskie", children: [ { id: "1a", label: "a) Akt założycielski" }, { id: "1b", label: "b) Inne, np.", children: [ { id: "1b-i", label: "i. Umowa/statut spółki kapitałowej" }, { id: "1b-ii", label: "ii. Umowa spółki osobowej" }, ], }, ], }, { id: "2", label: "2. Informacje ustawowe", children: [ { id: "2a", label: "a) Kopia ostatniego dostępnego rocznego zeznania podatkowego" }, { id: "2b", label: "b) Zarząd" }, { id: "2c", label: "c) Właściciele" }, { id: "2d", label: "d) Protokoły z posiedzeń organów jednostki" }, { id: "2e", label: "e) Książka kontroli (protokoły kontroli zewnętrznych)" }, ], }, { id: "3", label: "3. Kopie umów", children: [ { id: "3a", label: "a) Akty własności" }, { id: "3b", label: "b) Umowy z podmiotami powiązanymi" }, { id: "3c", label: "c) Pożyczki, kredyty hipoteczne i skrypty dłużne" }, { id: "3d", label: "d) Leasing (finansowy i operacyjny)" }, { id: "3e", label: "e) Ubezpieczenia" }, ], }, { id: "4", label: "4. Dane dotyczące organizacji", children: [ { id: "4a", label: "a) Dokumenty rejestracyjne (NIP, REGON, CEDiG, KRS etc.)" }, { id: "4b", label: "b) Główna działalność, lokalizacje - charakterystyka" }, { id: "4c", label: "c) Przepisy prawne i regulacyjne mające szczególne zastosowanie w przypadku danego klienta" }, { id: "4d", label: "d) Schemat organizacyjny, regulamin organizacyjny" }, { id: "4e", label: "e) Instrukcja obiegu dokumentów" }, { id: "4f", label: "f) Struktura grupy kapitałowej do której należy badana jednostka" }, ], }, { id: "5", label: "5. Systemy księgowe", children: [ { id: "5a", label: "a) Polityka rachunkowości (również aneksy, zmiany)" }, { id: "5b", label: "b) Opis stosowanych systemów księgowości (w tym zakładowego planu kont) wraz z ich oceną" }, { id: "5c", label: "c) Schematy księgowe, rodzaje dowodów księgowych" }, { id: "5d", label: "d) Procedury i mechanizmy kontroli wewnętrznej" }, { id: "5e", label: "e) Opis środowiska informatycznego" }, { id: "5f", label: "f) Przykładowe dokumenty" }, { id: "5g", label: "g) Uprawnienia/procedury jednostki dot. operacji kasowych i bankowych" }, ], }, { id: "6", label: "6. Inne ważne informacje", children: [ { id: "6a", label: "a) Oferta, umowa" }, { id: "6b", label: "b) Formularz oceny nowego klienta" }, { id: "6c", label: "c) Oświadczenie kierownictwa klienta" }, { id: "6d", label: "d) Uchwała o wyborze audytora" }, { id: "6e", label: "e) Zatwierdzenie sprawozdania finansowego za rok ubiegły oraz podział wyniku – odpowiednia uchwała" }, { id: "6f", label: "f) Opinia i raport biegłego rewidenta z lat ubiegłych" }, { id: "6g", label: "g) Informacje z dok. „Poznanie jednostki i jej otoczenia”" }, { id: "6h", label: "h) Kopia pisma z zapytaniami dot. kwestii zawodowych do poprzedniego audytora" }, { id: "6i", label: "i) Pismo do osób sprawujących nadzór wraz z odpowiedziami" }, { id: "6j", label: "j) Ważna korespondencja" }, { id: "6k", label: "k) Notatki ze spotkań" }, { id: "6l", label: "l) Dane dotyczące partnera/kluczowego biegłego rewidenta i zespołu badania oraz weryfikatora/osoby dokonującej przeglądu jakości zlecenia" }, { id: "6m", label: "m) Lista kontrolna dot. usług innych niż badanie sprawozdania finansowego świadczonych dla klienta (jednostki)" }, { id: "6n", label: "n) Pozostałe (np. list od prawników)" }, ], }, { id: "7", label: "7. Informacje ze sprawozdania i przeglądu analitycznego", children: [ { id: "7a", label: "a) Zestawienie obrotów i sald" }, { id: "7b", label: "b) Wstępna wersja sprawozdania finansowego" }, { id: "7c", label: "c) Wskaźniki" }, { id: "7d", label: "d) Informacje z przeglądu analitycznego" }, { id: "7e", label: "e) Informacje branżowe" }, ], }, ];
-
 
 // Komponent rekursywny ChecklistRow
 
@@ -149,7 +149,7 @@ function KwestionariuszFull() {
     const [activeTab, setActiveTab] = useState("Kwestionariusz");
     const [checked, setChecked] = useState({});
 
-    const [logs] = useState([
+    const [logs, setLogs] = useState([
         { date: "2025-09-24 14:32", user: "K M", action: "Dodał komentarz", details: "Komentarz do pytania 3" },
         { date: "2025-09-23 10:15", user: "J K", action: "Zatwierdził odpowiedź", details: "Pytanie 1" },
         { date: "2025-09-22 09:00", user: "A N", action: "Dodał plik", details: "umowa-najmu.pdf" },

@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Sidebar, Topbar, InitialsAvatar } from "../ui/Common_project.js";
-import { timeAgo } from "./Functions";
-import { ProgressMeter } from "./Functions";
-import TabNavigation from "./TabNavigation";
-import RequestsTable from "./Request";
-import FilesTable from "./Files";
-import ActivityLog from "./Activitylog";
+import { Sidebar, Topbar, InitialsAvatar } from "../../../ui/Common_project.js";
+import { timeAgo } from "../../Functions";
+import { ProgressMeter } from "../../Functions";
+import TabNavigation from "../Tabs/TabNavigation";
+import RequestsTable from "../Tabs/Request";
+import FilesTable from "../Tabs/Files";
+import ActivityLog from "../Tabs/Activitylog";
 
 
 const initialAuditQuestions = [

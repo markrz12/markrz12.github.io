@@ -1,6 +1,5 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Sidebar, Topbar } from "../ui/Common";
+import React, { useMemo, useState } from "react";
+import { Sidebar, Topbar } from "../../ui/Common";
 
 function Clients() {
   const [search, setSearch] = useState("");
@@ -14,34 +13,9 @@ function Clients() {
   const [deleteTargetId, setDeleteTargetId] = useState(null);
   const [deleteTargetName, setDeleteTargetName] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(15);
+  const [itemsPerPage] = useState(16);
   const maxPageButtons = 5;
 
-  // account menu state
-  const [showAccount, setShowAccount] = useState(false);
-  const accountMenuRef = useRef(null);
-  const accountBtnRef = useRef(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    function onDocClick(e){
-      if (!showAccount) return;
-      const m = accountMenuRef.current;
-      const b = accountBtnRef.current;
-      if (m && !m.contains(e.target) && b && !b.contains(e.target)) {
-        setShowAccount(false);
-      }
-    }
-    function onKey(e){ if (e.key === 'Escape') setShowAccount(false); }
-    document.addEventListener('mousedown', onDocClick);
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('mousedown', onDocClick);
-      document.removeEventListener('keydown', onKey);
-    };
-  }, [showAccount]);
-
-  const handleLogout = () => { navigate('/'); setShowAccount(false); };
 
   const initialClients = useMemo(
     () => [
@@ -121,23 +95,18 @@ function Clients() {
       <div className="flex-grow-1 d-flex flex-column" style={{ overflow: 'hidden' }}>
         <Topbar
           breadcrumb={[{label:'Home', to:'/'},{label:'Workspace', to:'/workspace'},{label:'Klienci', active:true}]}
-          accountBtnRef={accountBtnRef}
-          accountMenuRef={accountMenuRef}
-          showAccount={showAccount}
-          setShowAccount={setShowAccount}
-          onLogout={handleLogout}
         />
 
         {/* Główna zawartość: lewy panel (tabela) + prawy panel (szczegóły) */}
-        <div className="flex-grow-1 bg-light d-flex flex-column" style={{ minHeight: 0, padding: '0.75rem 1rem' }}>
+        <div className="flex-grow-1 bg-light d-flex flex-column pt-2 px-2" style={{ minHeight: 0}}>
           <div className="flex-grow-1 d-flex h-100" style={{ minHeight: 0 }}>
             {/* Lewa kolumna: tabela */}
             <div className="flex-grow-1 d-flex flex-column" style={{ minHeight: 0, minWidth: 0 }}>
               <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: 'hidden', minHeight: 0 }}>
-                <div className="card-header">
+                <div className="card-header" style ={{ backgroundColor: "#0a2b4c", color: "#ffffff",}}>
                   <div className="row g-2 align-items-center">
-                    <div className="col-12 col-lg-6 d-flex align-items-center" style={{ gap: '0.5rem' }}>
-                      <strong>Lista klientów</strong>
+                    <div className="col-12 col-lg-6 d-flex align-items-center" style={{padding: '0.5rem 0.3rem' }}>
+                      <strong style ={{fontSize: "1.1rem"}}>Lista klientów</strong>
 
                     </div>
                     <div className="col-12 col-lg-6">
@@ -276,10 +245,10 @@ function Clients() {
                   <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
                     <thead className="table-light" style={{ position: "sticky", top: 0, zIndex: 1, whiteSpace:'nowrap' }}>
                       <tr>
-                        <th>Nazwa</th>
-                        <th>NIP</th>
-                        <th>KRS</th>
-                        <th>REGON</th>
+                        <th style={headerStyle}>Nazwa</th>
+                        <th style={headerStyle} >NIP</th>
+                        <th style={headerStyle}>KRS</th>
+                        <th style={headerStyle}>REGON</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -289,10 +258,10 @@ function Clients() {
                           onClick={() => setSelectedId(c.id)}
                           style={{ cursor: "pointer", backgroundColor: c.id === selectedId ? "#e7f1ff" : undefined }}
                         >
-                          <td>{c.name}</td>
-                          <td>{c.nip}</td>
-                          <td>{c.krs}</td>
-                          <td>{c.regon}</td>
+                          <td style = {tdDescription}>{c.name}</td>
+                          <td style = {tdDescription}>{c.nip}</td>
+                          <td style = {tdDescription}>{c.krs}</td>
+                          <td style = {tdDescription}>{c.regon}</td>
                         </tr>
                       ))}
                       {filtered.length === 0 && (
@@ -302,38 +271,89 @@ function Clients() {
                       )}
                     </tbody>
                   </table>
-                  <nav aria-label="Page navigation">
-                    <ul className="pagination justify-content-center my-3">
-                      <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                        <button className="page-link" onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))} aria-label="Previous">&laquo; Poprzednia</button>
-                      </li>
-                      {[...Array(totalPages)].map((_, i) => {
-                        const pageNum = i + 1;
-                        if (totalPages <= maxPageButtons ||
-                            pageNum === 1 ||
-                            pageNum === totalPages ||
-                            (pageNum >= currentPage - Math.floor(maxPageButtons / 2) &&
-                             pageNum <= currentPage + Math.floor(maxPageButtons / 2) - (maxPageButtons % 2 === 0 ? 1 : 0))) {
-                          return (
-                            <li key={i} className={`page-item ${currentPage === pageNum ? 'active' : ''}`}>
-                              <button className="page-link" onClick={() => setCurrentPage(pageNum)} aria-current={currentPage === pageNum ? 'page' : undefined}>{pageNum}</button>
+                    <nav aria-label="Page navigation">
+                        <ul className="pagination justify-content-center my-1" style={{ backgroundColor: '#0a2b4c', borderRadius: '8px', padding: '8px' }}>
+                            <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+                                <button
+                                    className="page-link"
+                                    onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                                    aria-label="Previous"
+                                    style={{
+                                        backgroundColor: '#0a2b4c',
+                                        color: '#ffffff',
+                                        border: 'none',
+                                        cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
+                                    }}
+                                >
+                                    &laquo; Poprzednia
+                                </button>
                             </li>
-                          );
-                        } else if (pageNum === currentPage - Math.floor(maxPageButtons / 2) - (maxPageButtons % 2 === 0 ? 0 : 1) ||
-                                   pageNum === currentPage + Math.floor(maxPageButtons / 2) + (maxPageButtons % 2 === 0 ? 1 : 0)) {
-                          return (
-                            <li key={i} className="page-item disabled">
-                              <span className="page-link">...</span>
+
+                            {[...Array(totalPages)].map((_, i) => {
+                                const pageNum = i + 1;
+                                if (
+                                    totalPages <= maxPageButtons ||
+                                    pageNum === 1 ||
+                                    pageNum === totalPages ||
+                                    (pageNum >= currentPage - Math.floor(maxPageButtons / 2) &&
+                                        pageNum <= currentPage + Math.floor(maxPageButtons / 2) - (maxPageButtons % 2 === 0 ? 1 : 0))
+                                ) {
+                                    return (
+                                        <li key={i} className={`page-item ${currentPage === pageNum ? 'active' : ''}`}>
+                                            <button
+                                                className="page-link"
+                                                onClick={() => setCurrentPage(pageNum)}
+                                                aria-current={currentPage === pageNum ? 'page' : undefined}
+                                                style={{
+                                                    backgroundColor: currentPage === pageNum ? '#ffffff' : '#0a2b4c',
+                                                    color: currentPage === pageNum ? '#0a2b4c' : '#ffffff',
+                                                    border: 'none',
+                                                    margin: '0 2px',
+                                                    borderRadius: '4px',
+                                                    cursor: 'pointer',
+                                                }}
+                                                onMouseOver={e => (e.currentTarget.style.opacity = 0.8)}
+                                                onMouseOut={e => (e.currentTarget.style.opacity = 1)}
+                                            >
+                                                {pageNum}
+                                            </button>
+                                        </li>
+                                    );
+                                } else if (
+                                    pageNum === currentPage - Math.floor(maxPageButtons / 2) - (maxPageButtons % 2 === 0 ? 0 : 1) ||
+                                    pageNum === currentPage + Math.floor(maxPageButtons / 2) + (maxPageButtons % 2 === 0 ? 1 : 0)
+                                ) {
+                                    return (
+                                        <li key={i} className="page-item disabled">
+                                            <span
+                                                className="page-link"
+                                                  style={{ backgroundColor: '#0a2b4c', color: '#ffffff', border: 'none', margin: '0 2px' }}>
+                                                ...
+                                            </span>
+                                        </li>
+                                    );
+                                }
+                                return null;
+                            })}
+
+                            <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+                                <button
+                                    className="page-link"
+                                    onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                                    aria-label="Next"
+                                    style={{
+                                        backgroundColor: '#0a2b4c',
+                                        color: '#ffffff',
+                                        border: 'none',
+                                        cursor: currentPage === totalPages ? 'not-allowed' : 'pointer',
+                                    }}
+                                >
+                                    Następna &raquo;
+                                </button>
                             </li>
-                          );
-                        }
-                        return null;
-                      })}
-                      <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-                                                <button className="page-link" onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))} aria-label="Next">Następna &raquo;</button>
-                      </li>
-                    </ul>
-                  </nav>
+                        </ul>
+                    </nav>
+
                 </div>
               </div>
             </div>
@@ -351,8 +371,8 @@ function Clients() {
                           Dodaj klienta
                       </button>
                   </div>
-                <div className="card-header d-flex align-items-center">
-                  <strong className="me-auto">Szczegóły klienta</strong>
+                <div className="card-header d-flex align-items-center" style ={{ padding: '0.6rem 1rem', textAlign:"center" , fontSize: "1rem", backgroundColor: "#0a2b4c", color: "#ffffff",}}>
+                  <strong className="me-auto" >Szczegóły klienta</strong>
                 </div>
                 <div className="card-body flex-grow-1" style={{ overflowY: "auto", overflowX: "hidden" }}>
 
@@ -435,5 +455,7 @@ function Clients() {
     </div>
   );
 }
+const headerStyle = { border: "1px solid #dee2e6", paddingLeft: "1rem", backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem" };
+const tdDescription = { border: "1px solid #dee2e6", fontSize: "0.9rem", paddingLeft: "1rem", paddingTop:"0.5rem", paddingBottom:"0.5rem" };
 
 export default Clients;

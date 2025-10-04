@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Sidebar, Topbar } from '../ui/Common_project.js';
+import React, { useState, useMemo } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { Sidebar, Topbar } from '../../ui/Common_project.js';
 import {BsChevronRight} from "react-icons/bs";
 
 
@@ -121,26 +121,8 @@ function RenderSection({ section, level = 0 }) {
 export default function Project() {
     const { id } = useParams();
     const [search, setSearch] = useState('');
-    const [showAccount, setShowAccount] = useState(false);
-    const accountMenuRef = useRef(null);
-    const accountBtnRef = useRef(null);
-    const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('I. Czynności wstępne');
 
-    useEffect(() => {
-        function onDoc(e) {
-            if (!showAccount) return;
-            const m = accountMenuRef.current, b = accountBtnRef.current;
-            if (m && !m.contains(e.target) && b && !b.contains(e.target)) setShowAccount(false);
-        }
-        function onKey(e) { if (e.key === 'Escape') setShowAccount(false); }
-        document.addEventListener('mousedown', onDoc);
-        document.addEventListener('keydown', onKey);
-        return () => {
-            document.removeEventListener('mousedown', onDoc);
-            document.removeEventListener('keydown', onKey);
-        };
-    }, [showAccount]);
 
     const tabData = useMemo(() => [
         {
@@ -259,13 +241,7 @@ export default function Project() {
             <Sidebar search={search} setSearch={setSearch} />
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: 'hidden' }}>
                 <Topbar
-                    breadcrumb={breadcrumb}
-                    accountBtnRef={accountBtnRef}
-                    accountMenuRef={accountMenuRef}
-                    showAccount={showAccount}
-                    setShowAccount={setShowAccount}
-                    onLogout={() => { navigate('/'); setShowAccount(false); }}
-                />
+                    breadcrumb={breadcrumb}/>
 
                 <div className="flex-grow-1 bg-light p-3" style={{ minHeight: 0, overflow: 'auto' }}>
                     <div className="container-fluid" style={{ maxWidth: 1100 }}>

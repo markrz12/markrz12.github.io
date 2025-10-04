@@ -1,23 +1,23 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "../sites/Login";
-import Workspace from "../sites/Workspace";
-import Clients from "../sites/Clients";
-import Users from "../sites/Users";
-import Templates from "../sites/Templates";
-import Projects from "../sites/Projects";
-import ProjectSettings from "../sites/ProjectSettings";
-import ProjectClient from "../sites/ProjectClient";
-import Questionnaire from "../sites/Questionnaire";
-import QuestionnaireSimple from "../sites/QuestionnaireSimple";
-import QuestionnaireDynamic from "../sites/QuestionnaireDynamic";
-import QuestionnaireText from "../sites/QuestionnaireText";
-import QuestionnaireCheck from "../sites/QuestionnaireCheck";
-import QuestionnaireTable from "../sites/QuestionnaireTable";
+import Workspace from "../sites/Dashboard/Workspace";
+import Clients from "../sites/Dashboard/Clients";
+import Users from "../sites/Dashboard/Users";
+import Templates from "../sites/Dashboard/Templates";
+import Projects from "../sites/Dashboard/Projects";
+import ProjectSettings from "../sites/Project/ProjectSettings";
+import ProjectClient from "../sites/Dashboard/ProjectClient";
+import Questionnaire from "../sites/Project/Questionnaires/Questionnaire";
+import QuestionnaireSimple from "../sites/Project/Questionnaires/QuestionnaireSimple";
+import QuestionnaireDynamic from "../sites/Project/Questionnaires/QuestionnaireDynamic";
+import QuestionnaireText from "../sites/Project/Questionnaires/QuestionnaireText";
+import QuestionnaireCheck from "../sites/Project/Questionnaires/QuestionnaireCheck";
+import QuestionnaireTable from "../sites/Project/Questionnaires/QuestionnaireTable";
 
 
-import Project from "../sites/Project";
-import InformationMSB from "../sites/InformationMSB";
+import Project from "../sites/Project/Project";
+import InformationMSB from "../sites/Project/Questionnaires/InformationMSB";
 
 function App() {
     // Derive basename from the document base URI so it works at root or under a repo path (GitHub Project Pages)

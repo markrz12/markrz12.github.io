@@ -1,15 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Sidebar, Topbar } from "../ui/Common";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Sidebar, Topbar } from "../../ui/Common";
+import { Link } from "react-router-dom";
 import { Hourglass, CheckCircle, AlertCircle } from "lucide-react";
 
 function Workspace() {
     const [search, setSearch] = useState("");
-    const [showAccount, setShowAccount] = useState(false);
     const [activeTab, setActiveTab] = useState("all");
-    const menuRef = useRef(null);
-    const btnRef = useRef(null);
-    const navigate = useNavigate();
 
     function ProgressBar({ value }){
         return (
@@ -21,32 +17,6 @@ function Workspace() {
             </div>
         );
     }
-
-    // Close on outside click
-    useEffect(() => {
-        function onDocClick(e) {
-            if (!showAccount) return;
-            const m = menuRef.current;
-            const b = btnRef.current;
-            if (m && !m.contains(e.target) && b && !b.contains(e.target)) {
-                setShowAccount(false);
-            }
-        }
-        function onKey(e) {
-            if (e.key === "Escape") setShowAccount(false);
-        }
-        document.addEventListener("mousedown", onDocClick);
-        document.addEventListener("keydown", onKey);
-        return () => {
-            document.removeEventListener("mousedown", onDocClick);
-            document.removeEventListener("keydown", onKey);
-        };
-    }, [showAccount]);
-
-    const handleLogout = () => {
-        navigate("/");
-        setShowAccount(false);
-    };
 
     const projects = [
         { id: 1, name: "DR/2025/123456", status: "active", progress: 60, deadline: "2025-09-30", klient: "Alphatech Sp. z o.o." },
@@ -88,13 +58,7 @@ function Workspace() {
                     breadcrumb={[
                         { label: "Home", to: "/" },
                         { label: "Workspace", to: "/workspace" },
-                        { label: "Dashboard", active: true },
                     ]}
-                    accountBtnRef={btnRef}
-                    accountMenuRef={menuRef}
-                    showAccount={showAccount}
-                    setShowAccount={setShowAccount}
-                    onLogout={handleLogout}
                 />
 
                 <div className="flex-grow-1 p-4 bg-light">
@@ -107,9 +71,9 @@ function Workspace() {
                                 {/* Header with Projekty title and search */}
                                 <div className="card-header">
                                     <div className="d-flex align-items-center justify-content-between">
-                                        <h5 className="text-lg font-semibold mb-1 ms-2">Projekty</h5>
+                                        <h5 className="text-lg font-semibold mb-2 ms-2">Projekty</h5>
 
-                                        <div className="input-group input-group-sm mb-1" style={{ maxWidth: 400 }}>
+                                        <div className="input-group input-group-sm mb-2" style={{ maxWidth: 400 }}>
                                             <input
                                                 type="text"
                                                 className="form-control"

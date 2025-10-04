@@ -1,0 +1,320 @@
+{"title": "Kwestionariusz niezależności",
+  "questions": [
+    {
+      "id": 1,
+      "q": "Czy FA posiada instrumenty finansowe, w tym udziały w kapitale własnym, papiery\nwartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie\ninstrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym\nprawa i obowiązki do nabycia tych instrumentów finansowych oraz instrumentów\npochodnych bezpośrednio powiązanych z tymi instrumentami finansowymi,\nwyemitowane przez badaną jednostkę?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 2,
+      "q": "Czy FA posiada instrumenty finansowe, w tym udziały w kapitale własnym, papiery\nwartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie\ninstrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym\nprawa i obowiązki do nabycia tych instrumentów finansowych oraz instrumentów\npochodnych bezpośrednio powiązanych z tymi instrumentami finansowymi,\nwyemitowane przez jednostkę powiązaną z jednostką badaną?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 3,
+      "q": "Czy FA uczestniczy/-yła w transakcjach, których przedmiotem są instrumenty finansowe określone w pkt. 1-4?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 4,
+      "q": "Czy FA łączy lub łączył z badaną jednostką stosunek gospodarczy lub inny stosunek, który może/mógł spowodować konflikt interesów?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+
+    {
+      "id": 5,
+      "q": "Czy FA łączy lub łączył z badaną jednostką stosunek gospodarczy lub inny stosunek,który może/mógł być postrzegany jako powodujący konflikt interesów?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 6,
+      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w prowadzeniu ksiąg rachunkowych badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 7,
+      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w sporządzaniu dokumentacji księgowej badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 8,
+      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w sporządzaniu sprawozdań finansowych badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 9,
+      "q": "Czy FA jest / była przedstawicielem prawnym (pełnomocnikiem) badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 10,
+      "q": "Czy FA jest / była członkiem organów nadzorczych badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 11,
+      "q": "Czy FA jest / była członkiem organów zarządzających badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 12,
+      "q": "Czy uczestniczysz / uczestniczyłeś w okresach określonych w pkt. 10 w sporządzaniu sprawozdań finansowych badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 13,
+      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych w pkt. 10 w prowadzeniu ksiąg rachunkowych badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 14,
+      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w sporządzaniu dokumentacji księgowej badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 15,
+      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w sporządzaniu sprawozdań finansowych badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 16,
+      "q": "Czy jesteś / byłeś przedstawicielem prawnym (pełnomocnikiem) badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 17,
+      "q": "Czy jesteś / byłeś członkiem organów nadzorczych badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 18,
+      "q": "Czy jesteś / byłeś członkiem organów zarządzających badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 19,
+      "q": "Czy jesteś / byłeś pracownikiem badanej jednostki?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    {
+      "id": 20,
+      "q": "Czy jesteś / byłeś przedstawicielem prawnym (pełnomocnikiem) jednostki powiązanej z badaną jednostką?",
+      "answer": {
+        "value": "Nie",
+        "comment": null
+      },
+      "author": null,
+      "approver": null,
+      "date": null,
+      "approvedAt": null
+    },
+    { "id": 21, "q": "Czy jesteś / byłeś członkiem organów nadzorczych jednostki powiązanej z badaną jednostką?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 22, "q": "Czy jesteś / byłeś członkiem organów zarządzających jednostki powiązanej z badaną jednostką?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 23, "q": "Czy jesteś / byłeś pracownikiem jednostki powiązanej z badaną jednostką?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 24, "q": "Czy osoby blisko z Tobą związane są / były przedstawicielem prawnym (pełnomocnikiem) badanej jednostki?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 25, "q": "Czy osoby blisko z Tobą związane są / były członkiem organów nadzorczych badanej jednostki?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 26, "q": "Czy osoby blisko z Tobą związane są / były członkiem organów zarządzających badanej jednostki?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 27, "q": "Czy osoby blisko z Tobą związane są / były pracownikiem badanej jednostki?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 28, "q": "Czy osoby blisko z Tobą związane są / były przedstawicielem prawnym (pełnomocnikiem) jednostki powiązanej z badaną jednostką?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 29, "q": "Czy osoby blisko z Tobą związane są / były członkiem organów nadzorczych jednostki powiązanej z badaną jednostką?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 30, "q": "Czy osoby blisko z Tobą związane są / były członkiem organów zarządzających jednostki powiązanej z badaną jednostką?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 31, "q": "Czy osoby blisko z Tobą związane są / były pracownikiem jednostki powiązanej z badaną jednostką?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 32, "q": "Czy bierzesz / brałeś udział w procesie zarządzania badaną jednostką?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 33, "q": "Czy bierzesz / brałeś udział w procesie podejmowania decyzji przez badaną jednostkę?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 34, "q": "Czy przyjąłeś / posiadasz od badanej jednostki, będącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki udzieloną z pominięciem zwykłych procedur, warunków i wymogów kredytowych – podaj wartość kredytu/pożyczki?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 35, "q": "Czy osoby blisko związane przyjęły / posiadają od badanej jednostki, będącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki udzieloną z pominięciem zwykłych procedur, warunków i wymogów kredytowych – podaj wartość kredytu/pożyczki?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 36, "q": "Czy przyjąłeś / posiadasz od badanej jednostki, niebędącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki stanowiącą istotną wartość dla Ciebie oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 37, "q": "Czy osoby blisko związane przyjęły / posiadają od badanej jednostki, niebędącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki stanowiącą istotną wartość dla pożyczkobiorcy oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 38, "q": "Czy udzieliłeś badanej jednostce niebędącej bankiem lub podobną instytucją / masz należność od badanej jednostki z tytułu pożyczki lub poręczenia pożyczki stanowiącej istotną wartość dla pożyczkobiorcy oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 39, "q": "Czy osoby blisko związane udzieliły badanej jednostce niebędącej bankiem lub podobną instytucją / mają należność od badanej jednostki z tytułu pożyczki lub poręczenia pożyczki stanowiącej istotną wartość dla pożyczkobiorcy oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    {
+      "id": 40,
+      "q": "Czy posiadasz / posiadałeś bliskie powiązania gospodarcze z badaną jednostką lub z jego kierownictwem?",
+      "subquestions": [
+        {
+          "id": "40a",
+          "q": "Czy posiadasz / posiadałeś istotny udział finansowy we wspólnym przedsięwzięciu z badaną jednostką, jego właścicielem posiadającym pakiet kontrolny, członkiem zarządu lub kierownictwa wyższego szczebla badanej jednostki?",
+          "answer": { "value": "", "comment": "" }
+        },
+        {
+          "id": "40b",
+          "q": "Czy występuje / występowało istotne powiązanie usług lub produktów z usługami lub produktami badanej jednostki i wprowadzanie ich na rynek pod wspólnym szyldem?",
+          "answer": { "value": "", "comment": "" }
+        },
+        {
+          "id": "40c",
+          "q": "Czy ma / miało miejsce prowadzenie przez podmiot dystrybucji lub marketingu produktów lub usług badanej jednostki (i odwrotnie)?",
+          "answer": { "value": "", "comment": "" }
+        }
+      ],
+      "author": "",
+      "approver": "",
+      "date": "",
+      "approvedAt": null
+    },
+    {
+      "id": 41,
+      "q": "Czy osoby blisko związane posiadają / posiadały bliskie powiązania gospodarcze z badaną jednostką lub z jej kierownictwem?",
+      "subquestions": [
+        {
+          "id": "41a",
+          "q": "Czy posiadają / posiadały istotny udział finansowy we wspólnym przedsięwzięciu z badaną jednostką, jego właścicielem posiadającym pakiet kontrolny, członkiem zarządu lub kierownictwa wyższego szczebla badanej jednostki?",
+          "answer": { "value": "", "comment": "" }
+        },
+        {
+          "id": "41b",
+          "q": "Czy występuje / występowało istotne powiązanie usług lub produktów z usługami lub produktami badanej jednostki i wprowadzanie ich na rynek pod wspólnym szyldem?",
+          "answer": { "value": "", "comment": "" }
+        },
+        {
+          "id": "41c",
+          "q": "Czy ma / miało miejsce prowadzenie przez podmiot dystrybucji lub marketingu produktów lub usług badanej jednostki (i odwrotnie)?",
+          "answer": { "value": "", "comment": "" }
+        }
+      ],
+      "author": "",
+      "approver": "",
+      "date": "",
+      "approvedAt": null
+    },
+    { "id": 42, "q": "Czy żądałeś / przyjąłeś od badanej jednostki jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 43, "q": "Czy osoby blisko związane żądały / przyjęły od badanej jednostki jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 44, "q": "Czy żądałeś / przyjąłeś od jednostki powiązanej z badaną jednostką jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 45, "q": "Czy osoby blisko związane żądały / przyjęły od jednostki powiązanej z badaną jednostką jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 46, "q": "Czy istnieją jakiekolwiek inne okoliczności ograniczające Twoją bezstronność i niezależność od badanej jednostki? Określ jakie.", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 47, "q": "Czy okres współpracy z klientem przekroczy dozwolony dla jzp okres 5 lat lub inny okres jeśli jest określony w wewnętrznych procedurach?", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null },
+    { "id": 48, "q": "Czy istnieją jakiekolwiek inne okoliczności ograniczające Twoją bezstronność i niezależność od badanej jednostki, w szczególności dotyczące wymogów Kodeksu Etyki Zawodowych Księgowych IFAC.", "answer": { "value": "", "comment": "" }, "author": "", "approver": "", "date": "", "approvedAt": null }  ]
+}

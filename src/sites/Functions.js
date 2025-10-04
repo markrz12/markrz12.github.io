@@ -24,7 +24,6 @@ export function timeAgo(input) {
 
 export function ProgressMeter({ percent }) {
     const pct = Math.max(0, Math.min(100, Math.round(percent)));
-
     return (
         <div className="d-flex align-items-center gap-2">
             <div

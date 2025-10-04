@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import { Sidebar, Topbar, InitialsAvatar } from "../ui/Common_project.js";
+import { Sidebar, Topbar, InitialsAvatar} from "../../../ui/Common_project.js";
 import { BsTrash } from "react-icons/bs";
-import { timeAgo, ProgressMeter } from "./Functions";
-import TabNavigation from "./TabNavigation";
-import RequestsTable from "./Request";
-import FilesTable from "./Files";
-import ActivityLog from "./Activitylog";
+import { timeAgo, ProgressMeter } from "../../Functions";
+import TabNavigation from "../Tabs/TabNavigation";
+import RequestsTable from "../Tabs/Request";
+import FilesTable from "../Tabs/Files";
+import ActivityLog from "../Tabs/Activitylog";
 
-
-// -------------------------------
 // Główny komponent KwestionariuszFull
-// -------------------------------
+
 function KwestionariuszFull() {
     const [activeTab, setActiveTab] = useState("Kwestionariusz");
 
