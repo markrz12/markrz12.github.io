@@ -186,10 +186,12 @@ function Workspace() {
 
                             {/* Prawy sidebar - Moje zadania */}
                             <div
-                                className="bg-white rounded-2xl shadow-sm p-3"
-                                style={{ width: "320px", flexShrink: 0 }}
+                                className="rounded-2xl shadow-sm p-3"
+                                style={{ width: "320px", flexShrink: 0,
+                                    background: "#0a2b4c"}}
                             >
-                                <h5 className="text-lg fw-semibold mb-3">Moje zadania</h5>
+                                <h5 className="text-lg fw-semibold mb-2" style={{color: "#ffff", padding:"10px"}}>
+                                    Moje zadania</h5>
 
                                 <ul className="list-unstyled mb-0 d-flex flex-column gap-2">
                                     {tasks.map((task) => {
@@ -216,7 +218,7 @@ function Workspace() {
                                         return (
                                             <li
                                                 key={task.id}
-                                                className="p-3 rounded-3 border"
+                                                className="p-3 rounded-4 border"
                                                 style={{
                                                     transition: "all 0.2s ease",
                                                     backgroundColor: "#fff",

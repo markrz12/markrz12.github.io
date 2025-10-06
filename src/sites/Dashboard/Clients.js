@@ -13,7 +13,7 @@ function Clients() {
   const [deleteTargetId, setDeleteTargetId] = useState(null);
   const [deleteTargetName, setDeleteTargetName] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(16);
+  const [itemsPerPage] = useState(12);
   const maxPageButtons = 5;
 
 

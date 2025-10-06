@@ -635,5 +635,833 @@
       "name": "MBP",
       "url": "https://example.com/szablony/mbp"
     }
+  ],
+  "InformationMSB": [
+    {
+      "type": "section",
+      "title": "Zasady ogólne i odpowiedzialność"
+    },
+    {
+      "lp": 1,
+      "standard": "KSRF 200 – Ogólne cele niezależnego biegłego rewidenta oraz przeprowadzenie badania zgodnie z Międzynarodowymi Standardami Badania",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Przy przeprowadzaniu badania sprawozdań finansowych ogólne cele biegłego rewidenta stanowią:\na) uzyskanie wystarczającej pewności, czy sprawozdania finansowe jako całość nie zawierają istotnego zniekształcenia, niezależnie od tego, czy zostało ono spowodowane błędem lub oszustwem, co umożliwi biegłemu rewidentowi wyrażenie opinii o tym, czy sprawozdania finansowe zostały, we wszystkich istotnych aspektach, sporządzone zgodnie z mającymi zastosowanie ramowymi zasadami sprawozdawczości finansowej,\nb) sporządzenie sprawozdania na temat sprawozdań finansowych i przekazanie stosownie do wymogów MSB informacji zgodnych z ustaleniami biegłego rewidenta.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/516,KRBR-uchwala-2783-52-2015-KSRF-200.pdf"
+    },
+    {
+      "lp": 2,
+      "standard": "KSRF 210 – Uzgadnianie warunków zlecenia badania",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest przyjęcie lub kontynuacja zlecenia badania tylko wtedy, gdy zasady, w oparciu o które zlecenie badania będzie wykonane, zostały uzgodnione przez:\na) ustalenie, czy istnieją wstępne warunki badania oraz\nb) potwierdzenie, że pomiędzy biegłym rewidentem a kierownictwem oraz – tam gdzie to odpowiednie – osobami sprawującymi nadzór istnieje wzajemne zrozumienie co do warunków zlecenia badania.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/497,KRBR-uchwala-2783-52-2015-KSRF-210.pdf"
+    },
+    {
+      "lp": 3,
+      "standard": "KSRF 220 – Kontrola jakości badania sprawozdań finansowych",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest wdrożenie procedur kontroli jakości na poziomie zlecenia badania, które dostarczą biegłemu rewidentowi wystarczającą pewność, że:\na) badanie spełnia zawodowe standardy oraz obowiązujące wymogi prawne i regulacyjne oraz\nb) sprawozdanie biegłego rewidenta jest odpowiednie do okoliczności.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/498,KRBR-uchwala-2783-52-2015-KSRF-220.pdf"
+    },
+    {
+      "lp": 4,
+      "standard": "KSRF 230 – Dokumentacja badania",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest sporządzenie dokumentacji, która zawiera:\na) wystarczające i odpowiednie zapisy uzasadniające sprawozdanie biegłego rewidenta oraz\nb) dowody na to, że badanie zostało zaplanowane i przeprowadzone zgodnie z MSB oraz mającymi zastosowanie wymogami prawnymi i regulacyjnymi.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/510,KRBR-uchwala-2783-52-2015-KSRF-230.pdf"
+    },
+    {
+      "lp": 5,
+      "standard": "KSRF 240 – Odpowiedzialność biegłego rewidenta podczas badania sprawozdań finansowych",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celami biegłego rewidenta są:\na) zidentyfikowanie i ocena ryzyka istotnego zniekształcenia sprawozdań finansowych spowodowanego oszustwem,\nb) uzyskanie wystarczających i odpowiednich dowodów oszustw badania na temat oszacowanego ryzyka istotnego zniekształcenia spowodowanego oszustwem, poprzez zaprojektowanie i zastosowanie właściwej reakcji oraz\nc) właściwa reakcja na wykryte lub domniemane oszustwo zidentyfikowane podczas badania.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/503,KRBR-uchwala-2783-52-2015-KSRF-240.pdf"
+    },
+    {
+      "lp": 6,
+      "standard": "KSRF 250 – Uwzględnienie prawa i regulacji podczas badania sprawozdań finansowych",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest:\na) uzyskanie wystarczających i odpowiednich dowodów badania dotyczących przestrzegania tych praw i regulacji, które ogólnie uznaje się za mające bezpośredni wpływ na ustalanie istotnych kwot i ujawnień w sprawozdaniach finansowych,\nb) przeprowadzenie określonych procedur badania pomocnych w rozpoznaniu przypadków naruszenia innych praw i regulacji, które mogą mieć istotny wpływ na sprawozdania finansowe oraz\nc) właściwa reakcja na rozpoznane podczas badania przypadki naruszenia lub podejrzenia naruszenia prawa i regulacji.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/504,KRBR-uchwala-2783-52-2015-KSRF-250.pdf"
+    },
+    {
+      "lp": 7,
+      "standard": "KSRF 260 – Komunikowanie się z osobami sprawującymi nadzór",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest:\na) komunikowanie się w sposób jasny z osobami sprawującymi nadzór w sprawach związanych z odpowiedzialnością biegłego rewidenta za badanie sprawozdań finansowych jak również przeglądem zaplanowanego zakresu i rozłożenia w czasie badania,\nb) uzyskanie od osób sprawujących nadzór informacji ważnych dla badania,\nc) przekazanie osobom sprawującym nadzór bez zwłoki wynikających z badania spostrzeżeń, które są znaczące i odpowiednie z uwagi na odpowiedzialność tych osób za nadzorowanie procesu sprawozdawczości finansowej oraz\nd) promowanie skutecznego dwustronnego komunikowania się biegłego rewidenta z osobami sprawującymi nadzór.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/515,KRBR-uchwala-2783-52-2015-KSRF-260.pdf"
+    },
+    {
+      "lp": 8,
+      "standard": "KSRF 265 – Komunikowanie się z osobami sprawującymi nadzór i kierownictwem w sprawie słabości kontroli wewnętrznej",
+      "zastosowanie": "Stosuje się w każdym badaniu, jeżeli zidentyfikowane zostaną słabości kontroli wewnętrznej",
+      "cele": "Celem biegłego rewidenta jest odpowiednie informowanie osób sprawujących nadzór i kierownictwa o słabości kontroli wewnętrznej, którą biegły rewident rozpoznał podczas badania, i która, zgodnie z jego zawodowym osądem, ma na tyle duże znaczenie, że zasługuje na poświęcenie jej uwagi.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/513,KRBR-uchwala-2783-52-2015-KSRF-265.pdf"
+    },
+    {
+      "type": "section",
+      "title": "Szacowanie ryzyk i wynikająca z tego reakcja rewizyjna"
+    },
+    {
+      "lp": 9,
+      "standard": "KSRF 300 – Planowanie badania sprawozdań finansowych",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest takie zaplanowanie badania, aby badanie zostało przeprowadzone w sposób efektywny.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/502,KRBR-uchwala-2783-52-2015-KSRF-300.pdf"
+    },
+    {
+      "lp": 10,
+      "standard": "KSRF 315 – Identyfikacja i ocena ryzyk istotnego zniekształcenia dzięki zrozumieniu jednostki i jej otoczenia",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest identyfikacja i ocena ryzyk istotnego zniekształcenia, niezależnie od tego, czy powstało ono na skutek oszustwa lub błędu na poziomie sprawozdania finansowego, czy stwierdzeń, dzięki zrozumieniu jednostki i jej otoczenia, w tym kontroli wewnętrznej jednostki, co stanowi podstawę do zaprojektowania i wdrożenia reakcji na ocenione ryzyka istotnego zniekształcenia.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/518,KRBR-uchwala-2783-52-2015-KSRF-315.pdf"
+    },
+    {
+      "lp": 11,
+      "standard": "KSRF 320 – Istotność przy planowaniu i przeprowadzaniu badania",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest odpowiednie zastosowanie koncepcji istotności przy planowaniu i przeprowadzaniu badania.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/507,KRBR-uchwala-2783-52-2015-KSRF-320.pdf"
+    },
+    {
+      "lp": 12,
+      "standard": "KSRF 330 – Postępowanie biegłego rewidenta w odpowiedzi na ocenę ryzyka",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest uzyskanie wystarczających i odpowiednich dowodów badania ocenionego ryzyka istotnego zniekształcenia dzięki zaprojektowaniu i zastosowaniu odpowiednich do tego ryzyka reakcji.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/508,KRBR-uchwala-2783-52-2015-KSRF-330.pdf"
+    },
+    {
+      "lp": 13,
+      "standard": "KSRF 402 – Okoliczności wymagające uwzględnienia przy badaniu jednostki korzystającej z organizacji usługowej",
+      "zastosowanie": "Stosuje się, gdy badana jednostka korzysta z organizacji usługowych.",
+      "cele": "Celem biegłego rewidenta jednostki korzystającej z usług organizacji usługowej jest:\na) poznanie istoty i znaczenia usług organizacji usługowej oraz ich wpływu na mającą znaczenie dla badania kontrolę wewnętrzną jednostki korzystającej z usług organizacji usługowej w zakresie wystarczającym do rozpoznania i oceny ryzyka istotnego zniekształcenia,\nb) zaprojektowanie oraz przeprowadzenie procedur badania, będących odpowiedzią na to ryzyko.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/505,KRBR-uchwala-2783-52-2015-KSRF-402.pdf"
+    },
+    {
+      "lp": 14,
+      "standard": "KSRF 450 – Ocena zniekształceń rozpoznanych w trakcie badania",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest ocena:\na) wpływu rozpoznanych zniekształceń na badanie oraz\nb) wpływu nieskorygowanych zniekształceń, jeśli takie występują, na sprawozdania finansowe.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/496,KRBR-uchwala-2783-52-2015-KSRF-450.pdf"
+    },
+    {
+      "type": "section",
+      "title": "Dowody badania"
+    },
+    {
+      "lp": 15,
+      "standard": "KSRF 500 – Dowody badania",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest zaprojektowanie i przeprowadzenie procedur badania w sposób, który zapewni uzyskanie wystarczających i odpowiednich dowodów badania, umożliwiających sformułowanie racjonalnych wniosków leżących u podstaw opinii biegłego rewidenta.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/517,KRBR-uchwala-2783-52-2015-KSRF-500.pdf"
+    },
+    {
+      "lp": 16,
+      "standard": "KSRF 501 – Dowody badania – szczególne zagadnienia: wybrane pozycje",
+      "zastosowanie": "Stosuje się, jeśli dotyczą jednostki badanej zapasy, roszczenia z tytułu sporów sądowych lub informacje pochodzące od osób trzecich.",
+      "cele": "Cele biegłego rewidenta to uzyskanie wystarczających i odpowiednich dowodów badania dotyczących:\na) istnienia i stanu zapasów,\nb) kompletności ujawnień dotyczących sporów sądowych oraz\nc) prawidłowości informacji uzyskanych od osób trzecich.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/499,KRBR-uchwala-2783-52-2015-KSRF-501.pdf"
+    },
+    {
+      "lp": 17,
+      "standard": "KSRF 505 – Potwierdzenia zewnętrzne",
+      "zastosowanie": "Stosuje się w każdym badaniu, jeśli wykorzystywane są potwierdzenia zewnętrzne.",
+      "cele": "Celem biegłego rewidenta jest zaprojektowanie i przeprowadzenie procedur potwierdzeń zewnętrznych, które pozwolą uzyskać wystarczające i odpowiednie dowody badania oraz właściwie ocenić ich wiarygodność.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/506,KRBR-uchwala-2783-52-2015-KSRF-505.pdf"
+    },
+    {
+      "lp": 18,
+      "standard": "KSRF 510 – Pierwsze badanie – salda otwarcia",
+      "zastosowanie": "Stosuje się przy pierwszym badaniu jednostki.",
+      "cele": "Celem biegłego rewidenta jest uzyskanie wystarczających i odpowiednich dowodów badania, że:\na) salda otwarcia nie zawierają istotnych zniekształceń, które wpływałyby na sprawozdania finansowe bieżącego okresu,\nb) zasady rachunkowości stosowane przy sporządzaniu sald otwarcia zostały prawidłowo przeniesione oraz są konsekwentnie stosowane.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/500,KRBR-uchwala-2783-52-2015-KSRF-510.pdf"
+    },
+    {
+      "lp": 19,
+      "standard": "KSRF 520 – Procedury analityczne",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest stosowanie procedur analitycznych jako procedur:\na) analitycznych na etapie planowania,\nb) analitycznych jako procedur wiarygodności (jeśli są stosowane),\nc) analitycznych na zakończenie badania w celu całościowej oceny sprawozdań finansowych.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/511,KRBR-uchwala-2783-52-2015-KSRF-520.pdf"
+    },
+    {
+      "lp": 20,
+      "standard": "KSRF 530 – Dobór próby do badania",
+      "zastosowanie": "Stosuje się, jeśli biegły rewident stosuje podejście oparte na próbie.",
+      "cele": "Celem biegłego rewidenta jest zaprojektowanie i zastosowanie próby badania w sposób, który pozwala na uzyskanie wystarczających i odpowiednich dowodów badania, dających podstawę do wnioskowania o całej populacji.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/512,KRBR-uchwala-2783-52-2015-KSRF-530.pdf"
+    },
+    {
+      "lp": 21,
+      "standard": "KSRF 540 – Badanie szacunków księgowych i ujawnień",
+      "zastosowanie": "Stosuje się, jeśli sprawozdanie finansowe zawiera szacunki księgowe.",
+      "cele": "Celem biegłego rewidenta jest uzyskanie wystarczających i odpowiednich dowodów badania dotyczących tego, czy szacunki księgowe, w tym szacunki wartości godziwej, oraz związane z nimi ujawnienia są wolne od istotnych zniekształceń.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/501,KRBR-uchwala-2783-52-2015-KSRF-540.pdf"
+    },
+    {
+      "lp": 22,
+      "standard": "KSRF 550 – Podmioty powiązane",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest uzyskanie wystarczających i odpowiednich dowodów badania, że:\na) wszystkie relacje i transakcje z podmiotami powiązanymi zostały rozpoznane i ujawnione zgodnie z mającymi zastosowanie ramowymi zasadami sprawozdawczości finansowej,\nb) skutki tych relacji i transakcji zostały prawidłowo ujęte w sprawozdaniach finansowych.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/509,KRBR-uchwala-2783-52-2015-KSRF-550.pdf"
+    },
+    {
+      "lp": 23,
+      "standard": "KSRF 560 – Zdarzenia następujące po dniu bilansowym",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Cele biegłego rewidenta to:\na) uzyskanie wystarczających i odpowiednich dowodów badania, że zdarzenia po dniu bilansowym zostały prawidłowo ujęte i ujawnione,\nb) odpowiednia reakcja na fakty ujawnione po dacie sprawozdania biegłego rewidenta, które mogłyby wpłynąć na jego opinię.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/514,KRBR-uchwala-2783-52-2015-KSRF-560.pdf"
+    },
+    {
+      "lp": 24,
+      "standard": "KSRF 570 – Kontynuacja działalności",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Cele biegłego rewidenta to:\na) uzyskanie wystarczających i odpowiednich dowodów badania co do zasadności założenia kontynuacji działalności,\nb) ustalenie, czy istnieją istotne niepewności w tym zakresie,\nc) odpowiednie ujęcie i ujawnienie informacji o kontynuacji działalności.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/519,KRBR-uchwala-2783-52-2015-KSRF-570.pdf"
+    },
+    {
+      "lp": 25,
+      "standard": "KSRF 580 – Oświadczenia kierownictwa",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Celem biegłego rewidenta jest uzyskanie pisemnych oświadczeń od kierownictwa potwierdzających odpowiedzialność za sprawozdania finansowe i dostarczone informacje, oraz reagowanie w przypadku odmowy ich podpisania.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/520,KRBR-uchwala-2783-52-2015-KSRF-580.pdf"
+    },
+    {
+      "type": "section",
+      "title": "Wnioski i sprawozdawczość"
+    },
+    {
+      "lp": 26,
+      "standard": "KSRF 600 – Wykorzystanie pracy innego biegłego rewidenta",
+      "zastosowanie": "Stosuje się, jeśli badanie obejmuje jednostki zależne lub skonsolidowane.",
+      "cele": "Celem biegłego rewidenta jest ustalenie, czy praca innego biegłego rewidenta dostarcza wystarczających i odpowiednich dowodów badania dotyczących sprawozdań finansowych jednostki, dla której wydaje opinię.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/523,KRBR-uchwala-2783-52-2015-KSRF-600.pdf"
+    },
+    {
+      "lp": 27,
+      "standard": "KSRF 610 – Wykorzystanie pracy audytorów wewnętrznych",
+      "zastosowanie": "Stosuje się, jeśli jednostka posiada audyt wewnętrzny.",
+      "cele": "Celem biegłego rewidenta jest ustalenie, w jakim zakresie może polegać na pracy audytorów wewnętrznych przy planowaniu i przeprowadzaniu badania.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/524,KRBR-uchwala-2783-52-2015-KSRF-610.pdf"
+    },
+    {
+      "lp": 28,
+      "standard": "KSRF 620 – Wykorzystanie pracy eksperta",
+      "zastosowanie": "Stosuje się, jeśli biegły rewident korzysta z pracy eksperta.",
+      "cele": "Celem biegłego rewidenta jest ustalenie, czy praca eksperta jest odpowiednia do celów badania.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/525,KRBR-uchwala-2783-52-2015-KSRF-620.pdf"
+    },
+    {
+      "lp": 29,
+      "standard": "KSRF 700 – Formułowanie opinii i sprawozdania z badania",
+      "zastosowanie": "Stosuje się w każdym badaniu.",
+      "cele": "Cele biegłego rewidenta to:\na) sformułowanie opinii na temat sprawozdania finansowego,\nb) sporządzenie sprawozdania biegłego rewidenta zgodnie z wymaganiami MSB.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/526,KRBR-uchwala-2783-52-2015-KSRF-700.pdf"
+    },
+    {
+      "lp": 30,
+      "standard": "KSRF 705 – Modyfikacje opinii w sprawozdaniu biegłego rewidenta",
+      "zastosowanie": "Stosuje się, gdy zachodzą przesłanki do modyfikacji opinii.",
+      "cele": "Celem biegłego rewidenta jest wyrażenie odpowiedniego rodzaju zmodyfikowanej opinii, jeśli sprawozdania finansowe zawierają istotne zniekształcenia lub jeśli nie uzyskał wystarczających i odpowiednich dowodów badania.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/527,KRBR-uchwala-2783-52-2015-KSRF-705.pdf"
+    },
+    {
+      "lp": 31,
+      "standard": "KSRF 706 – Akapity objaśniające i inne akapity w sprawozdaniu biegłego rewidenta",
+      "zastosowanie": "Stosuje się, gdy istnieje potrzeba dodatkowego podkreślenia określonych kwestii.",
+      "cele": "Celem biegłego rewidenta jest właściwe uwzględnienie w sprawozdaniu akapitów objaśniających lub innych akapitów, które zwracają uwagę użytkowników na istotne sprawy.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/528,KRBR-uchwala-2783-52-2015-KSRF-706.pdf"
+    },
+    {
+      "lp": 32,
+      "standard": "KSRF 710 – Informacje porównawcze",
+      "zastosowanie": "Stosuje się, jeśli sprawozdania finansowe zawierają dane porównawcze.",
+      "cele": "Celem biegłego rewidenta jest uzyskanie wystarczających i odpowiednich dowodów badania, że informacje porównawcze zostały ujęte i ujawnione zgodnie z obowiązującymi zasadami.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/529,KRBR-uchwala-2783-52-2015-KSRF-710.pdf"
+    },
+    {
+      "lp": 33,
+      "standard": "KSRF 810 – Badanie skróconych sprawozdań finansowych",
+      "zastosowanie": "Stosuje się, jeśli biegły rewident bada skrócone sprawozdanie finansowe.",
+      "cele": "Celem biegłego rewidenta jest wyrażenie opinii, czy skrócone sprawozdanie finansowe jest zgodne z pełnym sprawozdaniem finansowym, które zostało wcześniej zbadane.",
+      "czy": "TAK",
+      "link": "https://www.pibr.org.pl/assets/file/530,KRBR-uchwala-2783-52-2015-KSRF-810.pdf"
+    }
+  ],
+  "Users": [
+    {
+      "id": 1,
+      "name": "Anna Kowalska",
+      "email": "anna.kowalska@example.com",
+      "active": true,
+      "role": "Administrator",
+      "last": "2025-08-21",
+      "actFrom": "2024-11-05",
+      "actTo": "2025-03-20",
+      "projects": [
+        "DR/2025/123456",
+        "DR/2025/123356",
+        "DR/2025/123357"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jan Nowak",
+      "email": "jan.nowak@example.com",
+      "active": false,
+      "role": "Kierownik",
+      "last": "2025-08-17",
+      "actFrom": "2024-10-01",
+      "actTo": "2025-03-01",
+      "projects": [
+        "DR/2025/123111"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Katarzyna Wiśniewska",
+      "email": "katarzyna.wisniewska@example.com",
+      "active": true,
+      "role": "Asystent",
+      "last": "2025-08-23",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-03-10",
+      "projects": [
+        "DR/2025/123222"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Piotr Zieliński",
+      "email": "piotr.zielinski@example.com",
+      "active": true,
+      "role": "Asystent",
+      "last": "2025-08-01",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-03-15",
+      "projects": [
+        "DR/2025/123333"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Magdalena Lewandowska",
+      "email": "magdalena.lewandowska@example.com",
+      "active": false,
+      "role": "Klient",
+      "last": "2025-07-11",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-02-01",
+      "projects": [
+        "DR/2025/123444"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Tomasz Kamiński",
+      "email": "tomasz.kaminski@example.com",
+      "active": true,
+      "role": "Asystent",
+      "last": "2025-08-27",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-03-30",
+      "projects": [
+        "DR/2025/123555"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Agnieszka Dąbrowska",
+      "email": "agnieszka.dabrowska@example.com",
+      "active": true,
+      "role": "Asystent",
+      "last": "2025-08-26",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-03-30",
+      "projects": [
+        "DR/2025/123666"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Marek Wojciechowski",
+      "email": "marek.wojciechowski@example.com",
+      "active": false,
+      "role": "Asystent",
+      "last": "2025-08-15",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-03-30",
+      "projects": [
+        "DR/2025/123777"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Joanna Kaczmarek",
+      "email": "joanna.kaczmarek@example.com",
+      "active": true,
+      "role": "Administrator",
+      "last": "2025-08-25",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-03-30",
+      "projects": [
+        "DR/2025/123888"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Paweł Grabowski",
+      "email": "pawel.grabowski@example.com",
+      "active": true,
+      "role": "Klient",
+      "last": "2025-08-25",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-03-30",
+      "projects": [
+        "DR/2025/123999"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Ewa Majewska",
+      "email": "ewa.majewska@example.com",
+      "active": true,
+      "role": "Asystent",
+      "last": "2025-08-20",
+      "actFrom": "2024-10-15",
+      "actTo": "2025-03-22",
+      "projects": [
+        "DR/2025/124000"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Krzysztof Bąk",
+      "email": "krzysztof.bak@example.com",
+      "active": false,
+      "role": "Kierownik",
+      "last": "2025-08-18",
+      "actFrom": "2024-10-01",
+      "actTo": "2025-03-02",
+      "projects": [
+        "DR/2025/124001"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Monika Sikora",
+      "email": "monika.sikora@example.com",
+      "active": true,
+      "role": "Asystent",
+      "last": "2025-08-19",
+      "actFrom": "2024-09-20",
+      "actTo": "2025-03-15",
+      "projects": [
+        "DR/2025/124002"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Robert Górski",
+      "email": "robert.gorski@example.com",
+      "active": true,
+      "role": "Asystent",
+      "last": "2025-08-21",
+      "actFrom": "2024-09-15",
+      "actTo": "2025-03-20",
+      "projects": [
+        "DR/2025/124003"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Sylwia Król",
+      "email": "sylwia.krol@example.com",
+      "active": false,
+      "role": "Klient",
+      "last": "2025-07-25",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-02-15",
+      "projects": [
+        "DR/2025/124004"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Łukasz Pawlak",
+      "email": "lukasz.pawlak@example.com",
+      "active": true,
+      "role": "Asystent",
+      "last": "2025-08-24",
+      "actFrom": "2024-09-12",
+      "actTo": "2025-03-25",
+      "projects": [
+        "DR/2025/124005"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Natalia Woźniak",
+      "email": "natalia.wozniak@example.com",
+      "active": true,
+      "role": "Asystent",
+      "last": "2025-08-26",
+      "actFrom": "2024-09-18",
+      "actTo": "2025-03-28",
+      "projects": [
+        "DR/2025/124006"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Marcin Ostrowski",
+      "email": "marcin.ostrowski@example.com",
+      "active": false,
+      "role": "Asystent",
+      "last": "2025-08-15",
+      "actFrom": "2024-09-20",
+      "actTo": "2025-03-30",
+      "projects": [
+        "DR/2025/124007"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Patrycja Czerwińska",
+      "email": "patrycja.czerwinska@example.com",
+      "active": true,
+      "role": "Administrator",
+      "last": "2025-08-27",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-03-30",
+      "projects": [
+        "DR/2025/124008"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Tadeusz Jankowski",
+      "email": "tadeusz.jankowski@example.com",
+      "active": true,
+      "role": "Klient",
+      "last": "2025-08-28",
+      "actFrom": "2024-09-10",
+      "actTo": "2025-03-30",
+      "projects": [
+        "DR/2025/124009"
+      ]
+    }
+  ],
+  "Projects": [
+    {
+      "id": 1,
+      "name": "DR/2025/123456",
+      "status": "active",
+      "progress": 60,
+      "deadline": "2025-09-30",
+      "klient": "Alphatech Sp. z o.o.",
+      "users": [
+        "Anna Kowalska",
+        "Jan Nowak"
+      ],
+      "contact": {
+        "name": "Jan Kowalski",
+        "email": "jan.kowalski@alphatech.com",
+        "phone": "22 123 45 67"
+      }
+    },
+    {
+      "id": 2,
+      "name": "DR/2025/123454",
+      "status": "completed",
+      "progress": 100,
+      "deadline": "2025-06-15",
+      "klient": "Gamma Demo Logistics",
+      "users": [
+        "Katarzyna Wiśniewska"
+      ],
+      "contact": {
+        "name": "Maria Wiśniewska",
+        "email": "maria.wisniewska@gammalogistics.com",
+        "phone": "12 234 56 78"
+      }
+    },
+    {
+      "id": 3,
+      "name": "MBP/2025/000111",
+      "status": "active",
+      "progress": 45,
+      "deadline": "2024-12-20",
+      "klient": "BetaConsulting S.A.",
+      "users": [
+        "Piotr Zieliński",
+        "Magdalena Lewandowska"
+      ],
+      "contact": {
+        "name": "Piotr Zieliński",
+        "email": "piotr.zielinski@betaconsulting.com",
+        "phone": "33 345 67 89"
+      }
+    },
+    {
+      "id": 4,
+      "name": "DR/2025/123444",
+      "status": "delayed",
+      "progress": 20,
+      "deadline": "2025-03-15",
+      "klient": "Upsilon Design",
+      "users": [
+        "Tomasz Kamiński"
+      ],
+      "contact": {
+        "name": "Tomasz Kamiński",
+        "email": "tomasz.kaminski@upsilondesign.com",
+        "phone": "44 456 78 90"
+      }
+    },
+    {
+      "id": 5,
+      "name": "DR/2025/123457",
+      "status": "active",
+      "progress": 55,
+      "deadline": "2025-08-10",
+      "klient": "Delta Solutions",
+      "users": [
+        "Agnieszka Dąbrowska",
+        "Marek Wojciechowski"
+      ],
+      "contact": {
+        "name": "Agnieszka Dąbrowska",
+        "email": "a.dabrowska@deltasolutions.com",
+        "phone": "55 567 89 01"
+      }
+    },
+    {
+      "id": 6,
+      "name": "DR/2025/123458",
+      "status": "completed",
+      "progress": 100,
+      "deadline": "2025-05-20",
+      "klient": "Epsilon Sp. z o.o.",
+      "users": [
+        "Joanna Kaczmarek"
+      ],
+      "contact": {
+        "name": "Joanna Kaczmarek",
+        "email": "joanna.kaczmarek@epsilon.com",
+        "phone": "66 678 90 12"
+      }
+    },
+    {
+      "id": 7,
+      "name": "DR/2025/123459",
+      "status": "delayed",
+      "progress": 10,
+      "deadline": "2025-02-28",
+      "klient": "Zeta Systems",
+      "users": [
+        "Paweł Grabowski",
+        "Magdalena Lewandowska"
+      ],
+      "contact": {
+        "name": "Paweł Grabowski",
+        "email": "pawel.grabowski@zetasystems.com",
+        "phone": "77 789 01 23"
+      }
+    },
+    {
+      "id": 8,
+      "name": "MBP/2025/000112",
+      "status": "active",
+      "progress": 75,
+      "deadline": "2025-10-10",
+      "klient": "Theta Corp.",
+      "users": [
+        "Tomasz Kamiński",
+        "Anna Kowalska"
+      ],
+      "contact": {
+        "name": "Tomasz Kamiński",
+        "email": "t.kaminski@thetacorp.com",
+        "phone": "88 890 12 34"
+      }
+    },
+    {
+      "id": 9,
+      "name": "DR/2025/123460",
+      "status": "active",
+      "progress": 50,
+      "deadline": "2025-07-25",
+      "klient": "Iota Group",
+      "users": [
+        "Jan Nowak"
+      ],
+      "contact": {
+        "name": "Jan Nowak",
+        "email": "jan.nowak@iotagroup.com",
+        "phone": "99 901 23 45"
+      }
+    },
+    {
+      "id": 10,
+      "name": "DR/2025/123461",
+      "status": "completed",
+      "progress": 100,
+      "deadline": "2025-06-30",
+      "klient": "Kappa Enterprises",
+      "users": [
+        "Katarzyna Wiśniewska",
+        "Piotr Zieliński"
+      ],
+      "contact": {
+        "name": "Katarzyna Wiśniewska",
+        "email": "k.wisniewska@kappa.com",
+        "phone": "11 112 34 56"
+      }
+    },
+    {
+      "id": 11,
+      "name": "DR/2025/123462",
+      "status": "delayed",
+      "progress": 30,
+      "deadline": "2025-04-15",
+      "klient": "Lambda Innovations",
+      "users": [
+        "Agnieszka Dąbrowska"
+      ],
+      "contact": {
+        "name": "Agnieszka Dąbrowska",
+        "email": "a.dabrowska@lambdainnovations.com",
+        "phone": "22 223 45 67"
+      }
+    },
+    {
+      "id": 12,
+      "name": "DR/2025/123463",
+      "status": "active",
+      "progress": 65,
+      "deadline": "2025-09-01",
+      "klient": "Mu Tech",
+      "users": [
+        "Marek Wojciechowski"
+      ],
+      "contact": {
+        "name": "Marek Wojciechowski",
+        "email": "marek.wojciechowski@mutech.com",
+        "phone": "33 334 56 78"
+      }
+    },
+    {
+      "id": 13,
+      "name": "DR/2025/123464",
+      "status": "active",
+      "progress": 80,
+      "deadline": "2025-10-20",
+      "klient": "Nu Industries",
+      "users": [
+        "Joanna Kaczmarek",
+        "Paweł Grabowski"
+      ],
+      "contact": {
+        "name": "Joanna Kaczmarek",
+        "email": "joanna.k@nuindustries.com",
+        "phone": "44 445 67 89"
+      }
+    },
+    {
+      "id": 14,
+      "name": "MBP/2025/000113",
+      "status": "delayed",
+      "progress": 25,
+      "deadline": "2025-03-30",
+      "klient": "Xi Solutions",
+      "users": [
+        "Tomasz Kamiński"
+      ],
+      "contact": {
+        "name": "Tomasz Kamiński",
+        "email": "t.kaminski@xisolutions.com",
+        "phone": "55 556 78 90"
+      }
+    },
+    {
+      "id": 15,
+      "name": "DR/2025/123465",
+      "status": "completed",
+      "progress": 100,
+      "deadline": "2025-07-10",
+      "klient": "Omicron Corp.",
+      "users": [
+        "Anna Kowalska",
+        "Jan Nowak"
+      ],
+      "contact": {
+        "name": "Anna Kowalska",
+        "email": "anna.kowalska@omicron.com",
+        "phone": "66 667 89 01"
+      }
+    },
+    {
+      "id": "027a",
+      "name": "DR/2025/123456",
+      "klient": "Alphatech Sp. z o.o.",
+      "status": "active",
+      "progress": 60,
+      "users": [
+        "Anna Kowalska",
+        "Jan Nowak"
+      ],
+      "contact": {
+        "name": "Jan Kowalski",
+        "email": "jan.kowalski@alphatech.com",
+        "phone": "22 123 45 67"
+      }
+    },
+    {
+      "id": "c425",
+      "name": "DR/2025/123456",
+      "klient": "Alphatech Sp. z o.o.",
+      "status": "active",
+      "progress": 60,
+      "users": [
+        "Anna Kowalska",
+        "Jan Nowak"
+      ],
+      "contact": {
+        "name": "Jan Kowalski",
+        "email": "jan.kowalski@alphatech.com",
+        "phone": "22 123 45 67"
+      }
+    }
   ]
 }
