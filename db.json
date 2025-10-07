@@ -1,627 +1,4 @@
 {
-  "title": "Kwestionariusz niezależności",
-  "questions": [
-    {
-      "id": "1",
-      "q": "Czy FA posiada instrumenty finansowe, w tym udziały w kapitale własnym, papiery\nwartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie\ninstrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym\nprawa i obowiązki do nabycia tych instrumentów finansowych oraz instrumentów\npochodnych bezpośrednio powiązanych z tymi instrumentami finansowymi,\nwyemitowane przez badaną jednostkę?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "2",
-      "q": "Czy FA posiada instrumenty finansowe, w tym udziały w kapitale własnym, papiery\nwartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie\ninstrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym\nprawa i obowiązki do nabycia tych instrumentów finansowych oraz instrumentów\npochodnych bezpośrednio powiązanych z tymi instrumentami finansowymi,\nwyemitowane przez jednostkę powiązaną z jednostką badaną?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "3",
-      "q": "Czy FA uczestniczy/-yła w transakcjach, których przedmiotem są instrumenty finansowe określone w pkt. 1-4?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "4",
-      "q": "Czy FA łączy lub łączył z badaną jednostką stosunek gospodarczy lub inny stosunek, który może/mógł spowodować konflikt interesów?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "5",
-      "q": "Czy FA łączy lub łączył z badaną jednostką stosunek gospodarczy lub inny stosunek,który może/mógł być postrzegany jako powodujący konflikt interesów?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "6",
-      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w prowadzeniu ksiąg rachunkowych badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "7",
-      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w sporządzaniu dokumentacji księgowej badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "8",
-      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w sporządzaniu sprawozdań finansowych badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "9",
-      "q": "Czy FA jest / była przedstawicielem prawnym (pełnomocnikiem) badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "10",
-      "q": "Czy FA jest / była członkiem organów nadzorczych badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "11",
-      "q": "Czy FA jest / była członkiem organów zarządzających badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "12",
-      "q": "Czy uczestniczysz / uczestniczyłeś w okresach określonych w pkt. 10 w sporządzaniu sprawozdań finansowych badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "13",
-      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych w pkt. 10 w prowadzeniu ksiąg rachunkowych badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "14",
-      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w sporządzaniu dokumentacji księgowej badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "15",
-      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w sporządzaniu sprawozdań finansowych badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "16",
-      "q": "Czy jesteś / byłeś przedstawicielem prawnym (pełnomocnikiem) badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "17",
-      "q": "Czy jesteś / byłeś członkiem organów nadzorczych badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "18",
-      "q": "Czy jesteś / byłeś członkiem organów zarządzających badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "19",
-      "q": "Czy jesteś / byłeś pracownikiem badanej jednostki?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "20",
-      "q": "Czy jesteś / byłeś przedstawicielem prawnym (pełnomocnikiem) jednostki powiązanej z badaną jednostką?",
-      "answer": {
-        "value": "Nie",
-        "comment": null
-      },
-      "author": null,
-      "approver": null,
-      "date": null,
-      "approvedAt": null
-    },
-    {
-      "id": "21",
-      "q": "Czy jesteś / byłeś członkiem organów nadzorczych jednostki powiązanej z badaną jednostką?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "22",
-      "q": "Czy jesteś / byłeś członkiem organów zarządzających jednostki powiązanej z badaną jednostką?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "23",
-      "q": "Czy jesteś / byłeś pracownikiem jednostki powiązanej z badaną jednostką?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "24",
-      "q": "Czy osoby blisko z Tobą związane są / były przedstawicielem prawnym (pełnomocnikiem) badanej jednostki?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "25",
-      "q": "Czy osoby blisko z Tobą związane są / były członkiem organów nadzorczych badanej jednostki?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "26",
-      "q": "Czy osoby blisko z Tobą związane są / były członkiem organów zarządzających badanej jednostki?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "27",
-      "q": "Czy osoby blisko z Tobą związane są / były pracownikiem badanej jednostki?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "28",
-      "q": "Czy osoby blisko z Tobą związane są / były przedstawicielem prawnym (pełnomocnikiem) jednostki powiązanej z badaną jednostką?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "29",
-      "q": "Czy osoby blisko z Tobą związane są / były członkiem organów nadzorczych jednostki powiązanej z badaną jednostką?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "30",
-      "q": "Czy osoby blisko z Tobą związane są / były członkiem organów zarządzających jednostki powiązanej z badaną jednostką?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "31",
-      "q": "Czy osoby blisko z Tobą związane są / były pracownikiem jednostki powiązanej z badaną jednostką?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "32",
-      "q": "Czy bierzesz / brałeś udział w procesie zarządzania badaną jednostką?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "33",
-      "q": "Czy bierzesz / brałeś udział w procesie podejmowania decyzji przez badaną jednostkę?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "34",
-      "q": "Czy przyjąłeś / posiadasz od badanej jednostki, będącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki udzieloną z pominięciem zwykłych procedur, warunków i wymogów kredytowych – podaj wartość kredytu/pożyczki?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "35",
-      "q": "Czy osoby blisko związane przyjęły / posiadają od badanej jednostki, będącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki udzieloną z pominięciem zwykłych procedur, warunków i wymogów kredytowych – podaj wartość kredytu/pożyczki?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "36",
-      "q": "Czy przyjąłeś / posiadasz od badanej jednostki, niebędącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki stanowiącą istotną wartość dla Ciebie oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "37",
-      "q": "Czy osoby blisko związane przyjęły / posiadają od badanej jednostki, niebędącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki stanowiącą istotną wartość dla pożyczkobiorcy oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "38",
-      "q": "Czy udzieliłeś badanej jednostce niebędącej bankiem lub podobną instytucją / masz należność od badanej jednostki z tytułu pożyczki lub poręczenia pożyczki stanowiącej istotną wartość dla pożyczkobiorcy oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "39",
-      "q": "Czy osoby blisko związane udzieliły badanej jednostce niebędącej bankiem lub podobną instytucją / mają należność od badanej jednostki z tytułu pożyczki lub poręczenia pożyczki stanowiącej istotną wartość dla pożyczkobiorcy oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "40",
-      "q": "Czy posiadasz / posiadałeś bliskie powiązania gospodarcze z badaną jednostką lub z jego kierownictwem?",
-      "subquestions": [
-        {
-          "id": "40a",
-          "q": "Czy posiadasz / posiadałeś istotny udział finansowy we wspólnym przedsięwzięciu z badaną jednostką, jego właścicielem posiadającym pakiet kontrolny, członkiem zarządu lub kierownictwa wyższego szczebla badanej jednostki?",
-          "answer": {
-            "value": "",
-            "comment": ""
-          }
-        },
-        {
-          "id": "40b",
-          "q": "Czy występuje / występowało istotne powiązanie usług lub produktów z usługami lub produktami badanej jednostki i wprowadzanie ich na rynek pod wspólnym szyldem?",
-          "answer": {
-            "value": "",
-            "comment": ""
-          }
-        },
-        {
-          "id": "40c",
-          "q": "Czy ma / miało miejsce prowadzenie przez podmiot dystrybucji lub marketingu produktów lub usług badanej jednostki (i odwrotnie)?",
-          "answer": {
-            "value": "",
-            "comment": ""
-          }
-        }
-      ],
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "41",
-      "q": "Czy osoby blisko związane posiadają / posiadały bliskie powiązania gospodarcze z badaną jednostką lub z jej kierownictwem?",
-      "subquestions": [
-        {
-          "id": "41a",
-          "q": "Czy posiadają / posiadały istotny udział finansowy we wspólnym przedsięwzięciu z badaną jednostką, jego właścicielem posiadającym pakiet kontrolny, członkiem zarządu lub kierownictwa wyższego szczebla badanej jednostki?",
-          "answer": {
-            "value": "",
-            "comment": ""
-          }
-        },
-        {
-          "id": "41b",
-          "q": "Czy występuje / występowało istotne powiązanie usług lub produktów z usługami lub produktami badanej jednostki i wprowadzanie ich na rynek pod wspólnym szyldem?",
-          "answer": {
-            "value": "",
-            "comment": ""
-          }
-        },
-        {
-          "id": "41c",
-          "q": "Czy ma / miało miejsce prowadzenie przez podmiot dystrybucji lub marketingu produktów lub usług badanej jednostki (i odwrotnie)?",
-          "answer": {
-            "value": "",
-            "comment": ""
-          }
-        }
-      ],
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "42",
-      "q": "Czy żądałeś / przyjąłeś od badanej jednostki jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "43",
-      "q": "Czy osoby blisko związane żądały / przyjęły od badanej jednostki jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "44",
-      "q": "Czy żądałeś / przyjąłeś od jednostki powiązanej z badaną jednostką jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "45",
-      "q": "Czy osoby blisko związane żądały / przyjęły od jednostki powiązanej z badaną jednostką jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "46",
-      "q": "Czy istnieją jakiekolwiek inne okoliczności ograniczające Twoją bezstronność i niezależność od badanej jednostki? Określ jakie.",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "47",
-      "q": "Czy okres współpracy z klientem przekroczy dozwolony dla jzp okres 5 lat lub inny okres jeśli jest określony w wewnętrznych procedurach?",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    },
-    {
-      "id": "48",
-      "q": "Czy istnieją jakiekolwiek inne okoliczności ograniczające Twoją bezstronność i niezależność od badanej jednostki, w szczególności dotyczące wymogów Kodeksu Etyki Zawodowych Księgowych IFAC.",
-      "answer": {
-        "value": "",
-        "comment": ""
-      },
-      "author": "",
-      "approver": "",
-      "date": "",
-      "approvedAt": null
-    }
-  ],
   "templates": [
     {
       "id": "1",
@@ -1871,60 +1248,1265 @@
               ]
             },
             {
-              "id": -2,
+              "id": 2,
               "title": "I.2 Test niezależności dla firmy audytorskiej",
-              "columns": [
+              "tabs": [
                 {
-                  "type": "no",
-                  "label": "Lp."
+                  "title:": "Kwestionariusz",
+                  "type": "CUSTOM",
+                  "columns": [
+                    {
+                      "type": "no",
+                      "label": "Lp."
+                    },
+                    {
+                      "type": "description",
+                      "label": "Opis"
+                    },
+                    {
+                      "type": "yes_no",
+                      "label": "Odpowiedź",
+                      "default": "no"
+                    },
+                    {
+                      "type": "comment",
+                      "label": "Komentarz"
+                    },
+                    {
+                      "type": "author",
+                      "label": "Zatwierdź"
+                    }
+                  ],
+                  "rows": [
+                    {
+                      "id": "1",
+                      "q": "Czy FA posiada instrumenty finansowe, w tym udziały w kapitale własnym, papiery wartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie instrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym prawa i obowiązki do nabycia tych instrumentów finansowych oraz instrumentów pochodnych bezpośrednio powiązanych z tymi instrumentami finansowymi, wyemitowane przez badaną jednostkę? Uwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział w zdywersyfikowanych programach zbiorowego inwestowania, w szczególności funduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych funduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile programy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane, lub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne, na które wpływ masz Ty lub osoby blisko z Tobą związane.",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "2",
+                      "q": "Czy FA posiada instrumenty finansowe, w tym udziały w kapitale własnym, papiery wartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie instrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym prawa i obowiązki do nabycia tych instrumentów finansowych oraz instrumentów pochodnych bezpośrednio powiązanych z tymi instrumentami finansowymi, wyemitowane przez jednostkę powiązaną z jednostką badaną? Uwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział w zdywersyfikowanych programach zbiorowego inwestowania, w szczególności funduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych funduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile programy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane, lub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne, na które wpływ masz Ty lub osoby blisko z Tobą związane.",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "3",
+                      "q": "Czy FA uczestniczy/-yła w transakcjach, których przedmiotem są instrumenty finansowe określone w pkt. 1–4?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "4",
+                      "q": "Czy FA łączy lub łączył z badaną jednostką stosunek gospodarczy lub inny stosunek, który może/mógł spowodować konflikt interesów?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "5",
+                      "q": "Czy FA łączy lub łączył z badaną jednostką stosunek gospodarczy lub inny stosunek, który może/mógł być postrzegany jako powodujący konflikt interesów?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "6",
+                      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w prowadzeniu ksiąg rachunkowych badanej jednostki?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "7",
+                      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w sporządzaniu dokumentacji księgowej badanej jednostki?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "8",
+                      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w sporządzaniu sprawozdań finansowych badanej jednostki?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "9",
+                      "q": "Czy FA jest / była przedstawicielem prawnym (pełnomocnikiem) badanej jednostki?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "10",
+                      "q": "Czy FA jest / była członkiem organów nadzorczych badanej jednostki?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "11",
+                      "q": "Czy FA jest / była członkiem organów zarządzających badanej jednostki?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "12",
+                      "q": "Czy FA jest / była przedstawicielem prawnym (pełnomocnikiem) jednostki powiązanej z badaną jednostką?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "13",
+                      "q": "Czy FA jest / była członkiem organów nadzorczych jednostki powiązanej z badaną jednostką?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "14",
+                      "q": "Czy FA jest / była członkiem organów zarządzających jednostki powiązanej z badaną jednostką?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "15",
+                      "q": "Czy FA bierze / brała udział w procesie zarządzania badaną jednostką?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "16",
+                      "q": "Czy FA bierze / brała udział w procesie podejmowania decyzji przez badaną jednostkę?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "17",
+                      "q": "Czy FA przyjęła / posiada od badanej jednostki, będącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki udzieloną z pominięciem zwykłych procedur, warunków i wymogów kredytowych – podaj wartość kredytu/pożyczki?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "18",
+                      "q": "Czy FA przyjęła / posiada od badanej jednostki, niebędącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki stanowiącą istotną wartość dla Ciebie oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "19",
+                      "q": "Czy FA udzieliła badanej jednostce niebędącej bankiem lub podobną instytucją / masz należność od badanej jednostki z tytułu pożyczki lub poręczenia pożyczki stanowiącej istotną wartość dla pożyczkobiorcy oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "20",
+                      "q": "Czy FA posiada / posiadała bliskie powiązania gospodarcze z badaną jednostką lub z jej kierownictwem, w szczególności: a) czy FA posiada / posiadała istotny udział finansowy we wspólnym przedsięwzięciu z badaną jednostką, jej właścicielem posiadającym pakiet kontrolny, członkiem zarządu lub kierownictwa wyższego szczebla badanej jednostki? b) czy występuje / występowało istotne powiązanie usług lub produktów z usługami lub produktami badanej jednostki i wprowadzanie ich na rynek pod wspólnym szyldem? c) czy ma / miało miejsce prowadzenie przez podmiot dystrybucji lub marketingu produktów lub usług badanej jednostki (i odwrotnie)?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "21",
+                      "q": "Czy FA żądała / przyjęła od badanej jednostki jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "22",
+                      "q": "Czy FA żądała / przyjęła od jednostki powiązanej z badaną jednostką jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "23",
+                      "q": "Czy istnieją jakiekolwiek inne okoliczności ograniczające bezstronność i niezależność FA od badanej jednostki? Określ jakie.",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "24",
+                      "q": "Czy podmioty należące do wspólnej sieci z FA lub powiązane z FA w taki sposób, że mogą wywierać istotny wpływ na swoją działalność, posiadają bliskie powiązania gospodarcze z klientem badania lub z jego kierownictwem. W szczególności: a) czy FA lub firma powiązana z FA posiada istotny udział finansowy we wspólnym przedsięwzięciu z klientem badania, jego właścicielem posiadającym pakiet kontrolny, członkiem zarządu lub kierownictwa wyższego szczebla klienta badania? b) czy występuje istotne powiązanie usług lub produktów z usługami lub produktami klienta badania i wprowadzanie ich na rynek pod wspólnym szyldem? c) czy ma miejsce prowadzenie przez FA lub firmę powiązaną z FA dystrybucji lub marketingu produktów lub usług klienta badania (i odwrotnie)?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "25",
+                      "q": "Czy FA w przynajmniej jednym roku, w okresie ostatnich 5 lat, osiągnęła z tytułu świadczenia usług na rzecz badanej jednostki nie będącej JZP przychód stanowiący co najmniej 40% całkowitego rocznego przychodu FA? Uwaga! Przepisu nie stosuje się do pierwszego roku działalności FA.",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "26",
+                      "q": "Dla jednostek zainteresowania publicznego: Czy FA lub z nią powiązana lub jakikolwiek inny członek sieci działającej w państwach Unii Europejskiej, do której te firmy należą, nieprzerwanie przez okres 5 lat realizowały dla klienta badania zlecenie badania ustawowego?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "27",
+                      "q": "Dla jednostek zainteresowania publicznego: Czy po ponownym podjęciu współpracy naruszony został 4-letni okres karencji?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "28",
+                      "q": "Dla jednostek zainteresowania publicznego: Czy całkowite wynagrodzenie otrzymane od JZP za każde z trzech ostatnich lat obrotowych wynosi ponad 15% całkowitego wynagrodzenia uzyskanego przez FA przeprowadzającą badanie ustawowe w każdym z tych lat obrotowych?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "29",
+                      "q": "Dla jednostek zainteresowania publicznego: Czy przez okres objęty badaniem i okres do chwili obecnej FA świadczyła na rzecz badanej jednostki, jej jednostki dominującej lub jednostek przez nią kontrolowanych usługi niebędące badaniem sprawozdań finansowych, inne niż wymienione w art. 136 ust. 2 ustawy o biegłych rewidentach?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "30",
+                      "q": "Czy całkowite wynagrodzenie z usług, o których mowa w art. 136 ust. 2 ustawy o biegłych rewidentach, uzyskane w ciągu ostatnich kolejnych 3-ch lat przekroczyło 70% średniego wynagrodzenia płaconego w 3-ch kolejnych ostatnich latach obrotowych z tytułu badania ustawowego?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "31",
+                      "q": "Czy FA przyjęła prezenty lub korzystała z gościnności badanej jednostki w wartości przekraczającej wielkości błahe i nieistotne? Określ ich wartość.",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "32",
+                      "q": "Dla jednostek zainteresowania publicznego: Czy kluczowy biegły rewident będzie wykonywał czynności rewizji finansowej na rzecz badanej jednostki w okresie dłuższym niż 5 lat?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "33",
+                      "q": "Dla jednostek zainteresowania publicznego: Czy minął okres krótszy niż 3 lata przerwy w odniesieniu do kluczowego biegłego rewidenta, który wykonywał badanie ustawowe dla badanej jednostki przez okres 5 lat?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    },
+                    {
+                      "id": "34",
+                      "q": "Czy istnieją jakiekolwiek inne okoliczności ograniczające bezstronność i niezależność FA od badanej jednostki, w szczególności dotyczące wymogów Kodeksu Etyki Zawodowych Księgowych IFAC?",
+                      "answer": {
+                        "value": "Nie",
+                        "comment": null
+                      },
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    }
+                  ]
                 },
                 {
-                  "type": "description",
-                  "label": "Opis"
+                  "title:": "Zapotrzebowanie",
+                  "type": "REQUEST"
                 },
                 {
-                  "type": "yes_no",
-                  "label": "Odpowiedź",
-                  "default": "no"
+                  "title:": "Pliki",
+                  "type": "FILES"
                 },
                 {
-                  "type": "comment",
-                  "label": "Komentarz"
-                },
-                {
-                  "type": "author",
-                  "label": "Zatwierdź"
+                  "title:": "Dziennik zdarzeń",
+                  "type": "ACTIVITY_LOG"
                 }
-              ],
-              "questions": []
+              ]
             },
             {
-              "id": -3,
-              "title": "I.2 Test niezależności dla firmy audytorskiej",
-              "columns": [
+              "id": 3,
+              "title": "I.3 Rola partnera odpowiedzialnego za zlecenie",
+              "tabs": [
                 {
-                  "type": "no",
-                  "label": "Lp."
+                  "title:": "Kwestionariusz",
+                  "type": "CUSTOM",
+                  "columns": [
+                    {
+                      "type": "no",
+                      "label": "Lp."
+                    },
+                    {
+                      "type": "description",
+                      "label": "Opis"
+                    },
+                    {
+                      "type": "yes_no",
+                      "label": "Odpowiedź",
+                      "default": "no"
+                    },
+                    {
+                      "type": "comment",
+                      "label": "Komentarz"
+                    },
+                    {
+                      "type": "author",
+                      "label": "Zatwierdź"
+                    }
+                  ],
+                  "rows": [
+                    {
+                      "sections": [
+                        {
+                          "type": "section",
+                          "name": "Kompetencje firmy audytorskiej",
+                          "questions": [
+                            {
+                              "id": "1",
+                              "q": "Czy FA posiada odpowiednią wiedzę o branży i przedmiocie zlecenia?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "2",
+                              "q": "Czy FA posiada odpowiednie doświadczenie w zakresie mających zastosowanie wymogów regulacyjnych (przepisów prawa)?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "3",
+                              "q": "Czy FA posiada odpowiednie doświadczenie w zakresie wymogów sprawozdawczych?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "4",
+                              "q": "Jeśli odpowiedź na pytania 2 i 3 jest przecząca lub wątpliwa, czy FA może skutecznie zdobyć i posiąść niezbędną wiedzę w tym zakresie?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "5",
+                              "q": "Czy FA posiada wystarczający i odpowiedni personel posiadający niezbędne umiejętności i kompetencje?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "6",
+                              "q": "Czy jest możliwy dostęp do ekspertów, kiedy zajdzie taka potrzeba?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "7",
+                              "q": "Czy FA jest zdolna do zakończenia zlecenia w wyznaczonym terminie?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "8",
+                              "q": "Czy istnieje dostęp do osób spełniających kryteria i wymogi dotyczące kontroli jakości wykonania zlecenia (weryfikacji), jeśli weryfikacja okaże się konieczna?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "9",
+                              "q": "Czy FA posiada odpowiednie zasoby ludzkie do realizacji zlecenia w wyznaczonym terminie?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "10",
+                              "q": "Czy FA jest w stanie zapewnić odpowiedni poziom nadzoru kluczowego biegłego rewidenta nad pracą pozostałych członków zespołu?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "11",
+                              "q": "Czy zlecenie wymaga zaangażowania większego zespołu rewizyjnego lub kilku zespołów?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            }
+                          ]
+                        },
+                        {
+                          "type": "section",
+                          "name": "Uczciwość klienta",
+                          "questions": [
+                            {
+                              "id": "12",
+                              "q": "Czy znasz klienta lub ktoś z Twojego otoczenia zna klienta?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "13",
+                              "q": "Czy klient prowadzi działalność krajową czy międzynarodową?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "14",
+                              "q": "Czy klient ma dobry wizerunek i reputację?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "15",
+                              "q": "Opisz krótko charakter działalności gospodarczej klienta oraz jego praktyki gospodarcze.",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "16",
+                              "q": "Czy reputacja głównych właścicieli, kierownictwa i podmiotów powiązanych nie budzi zastrzeżeń?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "17",
+                              "q": "Czy znana jest tożsamość głównych właścicieli i kierownictwa klienta oraz organów nadzoru?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "18",
+                              "q": "Czy inni biegli rewidenci odmówili świadczenia usług potencjalnemu klientowi?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "19",
+                              "q": "Czy znane są przyczyny zmiany biegłego rewidenta?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "20",
+                              "q": "Czy kontaktowałeś się z poprzednim biegłym rewidentem?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "21",
+                              "q": "Czy klient zgłasza się pod koniec lub w II kwartale po roku badanym i oczekuje krótkiego terminu realizacji?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "22",
+                              "q": "Czy klient wskazuje ograniczenia czasowe zakończenia badania z powodu publikacji wyników?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "23",
+                              "q": "Jak długo poprzedni biegły rewident współpracował z klientem w zakresie badania?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "24",
+                              "q": "Jak często klient dokonuje zmiany biegłego rewidenta?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "25",
+                              "q": "Czy klient odmawia ujawnienia informacji finansowych lub danych niezbędnych do oszacowania pracochłonności badania?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "26",
+                              "q": "Czy klient dąży do maksymalnego skrócenia czasu badania wywierając presję na termin zakończenia?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "27",
+                              "q": "Czy znana jest reputacja podmiotów powiązanych z klientem?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "28",
+                              "q": "Czy klient dąży do utrzymania honorarium na możliwie najniższym poziomie?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "29",
+                              "q": "Czy klient stosuje agresywną interpretację standardów rachunkowości?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "30",
+                              "q": "Czy istnieją przesłanki lub podejrzenia o działania sprzeczne z prawem?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "31",
+                              "q": "Czy są oznaki mogące świadczyć o praniu brudnych pieniędzy lub innej działalności przestępczej?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "32",
+                              "q": "Czy wobec klienta prowadzone jest dochodzenie?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "33",
+                              "q": "Czy klient ma negatywny wizerunek lub jest powiązany z jednostkami o takim wizerunku?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "34",
+                              "q": "Czy rozważyłeś rodzaj ewentualnych zastrzeżeń w opinii biegłego rewidenta z poprzedniego badania?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            }
+                          ]
+                        },
+                        {
+                          "type": "section",
+                          "name": "Rozważenie czy FA i jej personel mogą przestrzegać odpowiednich wymogów etycznych",
+                          "questions": [
+                            {
+                              "id": "35",
+                              "q": "Czy FA i wszystkie osoby, od których jest to wymagane, spełniają wymóg niezależności wobec klienta?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "36",
+                              "q": "Czy FA i wszystkie osoby, od których jest to wymagane, spełniają wymóg niezależności wizerunku wobec klienta?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "37",
+                              "q": "Czy akceptacja zlecenia nie wywoła zagrożenia konfliktu interesów?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "38",
+                              "q": "Czy wśród klientów FA są inne firmy z tej samej branży stanowiące dla siebie konkurencję?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "39",
+                              "q": "Czy podjęcie współpracy wymaga powiadomienia innych klientów (konkurencyjnych) o zamiarze podjęcia współpracy?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "40",
+                              "q": "Czy FA i jej personel przy realizacji zlecenia zdołają wystarczająco profesjonalnie postępować i prezentować odpowiedni poziom zawodowych kompetencji oraz obiektywizmu?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            }
+                          ]
+                        },
+                        {
+                          "type": "section",
+                          "name": "Inne kwestie",
+                          "questions": [
+                            {
+                              "id": "41",
+                              "q": "Czy na poziom wynagrodzenia za badanie ma wpływ realizacja usług innych na rzecz badanego klienta?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "42",
+                              "q": "Czy występują jakiekolwiek ustalenia co do wynagrodzenia warunkowego?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "43",
+                              "q": "Czy badany klient zalega z wynagrodzeniami za inne usługi?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "44",
+                              "q": "Czy pomiędzy firmą audytorską a badanym klientem toczy się spór lub czy istnieją przesłanki, że może do niego dojść?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "45",
+                              "q": "Czy od klienta otrzymano jakiekolwiek znaczące upominki lub gesty gościnności albo czy klientowi przekazano jakiekolwiek znaczące upominki?",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "id": "46",
+                              "q": "Czy występują jakiekolwiek inne faktyczne lub domniemane konflikty interesów albo inne czynniki mogące zagrażać obiektywizmowi i niezależności? Jeśli tak, proszę je udokumentować wraz z zastosowanymi środkami zaradczymi.",
+                              "answer": {
+                                "value": null,
+                                "comment": null
+                              },
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 },
                 {
-                  "type": "description",
-                  "label": "Opis"
+                  "title:": "Zapotrzebowanie",
+                  "type": "REQUEST"
                 },
                 {
-                  "type": "yes_no",
-                  "label": "Odpowiedź",
-                  "default": "no"
+                  "title:": "Pliki",
+                  "type": "FILES"
                 },
                 {
-                  "type": "comment",
-                  "label": "Komentarz"
-                },
-                {
-                  "type": "author",
-                  "label": "Zatwierdź"
+                  "title:": "Dziennik zdarzeń",
+                  "type": "ACTIVITY_LOG"
                 }
-              ],
-              "questions": []
+              ]
+            },
+            {
+              "id": 4,
+              "title": "I.4 Rozpoznanie zagrożenia",
+              "tabs": [
+                {
+                  "title:": "Kwestionariusz",
+                  "type": "CUSTOM",
+                  "columns": [
+                    {
+                      "type": "no",
+                      "label": "Lp."
+                    },
+                    {
+                      "type": "input",
+                      "label": "Rozpoznane zagrożenie"
+                    },
+                    {
+                      "type": "input",
+                      "label": "Wdrożony środek zaradczy"
+                    },
+                    {
+                      "type": "author",
+                      "label": "Sporządził"
+                    },
+                    {
+                      "type": "author",
+                      "label": "Zatwierdź"
+                    }
+                  ],
+                  "rows": []
+                },
+                {
+                  "title:": "Zapotrzebowanie",
+                  "type": "REQUEST"
+                },
+                {
+                  "title:": "Pliki",
+                  "type": "FILES"
+                },
+                {
+                  "title:": "Dziennik zdarzeń",
+                  "type": "ACTIVITY_LOG"
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "title": "I.5 Wyznaczenie zespołu badającego",
+              "tabs": [
+                {
+                  "title:": "Kwestionariusz",
+                  "type": "Team",
+                  "columns": [
+                    { "type": "description", "title": "Rola" },
+                    { "type": "input", "title": "Imię i nazwisko" },
+                    { "type": "input", "title": "Numer identyfikacyjny" },
+                    { "type": "description", "title": "Pytanie" },
+                    { "type": "yes_no", "title": "Odpowiedź" },
+                    { "type": "comment", "title": "Komentarz" },
+                    { "type": "file", "title": "Załącznik" }
+                  ],
+                  "members": [
+                    {
+                      "role": "Kluczowy biegły rewident",
+                      "imieNazwisko": "Jan Kowalski",
+                      "idNumber": "12345",
+                      "questions": [
+                        {
+                          "lp": 1,
+                          "question": "Czy spełnia wymogi niezależności? (załącz test niezależności)",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        },
+                        {
+                          "lp": 2,
+                          "question": "Czy ma prawo do wykonywania zawodu (czy jest zgłoszony jako biegły rewident wykonujący zawód)?",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        },
+                        {
+                          "lp": 3,
+                          "question": "Czy toczy się przeciwko biegłemu postępowanie dyscyplinarne?",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        },
+                        {
+                          "lp": 4,
+                          "question": "Czy został skazany przez Sąd Dyscyplinarny – określ rodzaj kary",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        },
+                        {
+                          "lp": 5,
+                          "question": "Czy posiada odpowiednie doświadczenie zawodowe w specyfice działalności klienta badania?",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        },
+                        {
+                          "lp": 6,
+                          "question": "Czy będzie w stanie nadzorować zespół audytorski w składzie jak poniżej?",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        },
+                        {
+                          "lp": 7,
+                          "question": "Czy dysponuje odpowiednią ilością czasu?",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        },
+                        {
+                          "lp": 8,
+                          "question": "Czy będzie zdolny do przestrzegania wszystkich zasad etyki zawodowej?",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        }
+                      ]
+                    },
+                    {
+                      "role": "Asystent",
+                      "imieNazwisko": null,
+                      "questions": [
+                        {
+                          "lp": 1,
+                          "question": "Czy spełnia wymogi niezależności? (załącz test niezależności)",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        },
+                        {
+                          "lp": 2,
+                          "question": "Czy posiada odpowiednie doświadczenie zawodowe w specyfice działalności klienta badania?",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        },
+                        {
+                          "lp": 3,
+                          "question": "Czy dysponuje odpowiednią ilością czasu?",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        },
+                        {
+                          "lp": 4,
+                          "question": "Czy będzie zdolny do przestrzegania wszystkich zasad etyki zawodowej?",
+                          "answer": null,
+                          "comment": null,
+                          "attachment": null
+                        }
+                      ]
+                    }
+                          ]
+                },
+                {
+                  "title:": "Zapotrzebowanie",
+                  "type": "REQUEST"
+                },
+                {
+                  "title:": "Pliki",
+                  "type": "FILES"
+                },
+                {
+                  "title:": "Dziennik zdarzeń",
+                  "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title:": "Wniosek",
+                  "type": "APPLICATION"
+                }
+              ]
             }
           ]
         },
@@ -1933,292 +2515,889 @@
           "sections": [
             {
               "name": "II.1 Wstępne zagadnienia",
-              "questionnaires": []
+              "screens": [
+                {
+                  "id": 1,
+                  "title": "II.1.1 Plan badania",
+                  "tabs": []
+                },
+                {
+                  "id": 2,
+                  "title": "II.1.2 Poznanie jednostki i otoczenia",
+                  "tabs": []
+                },
+                {
+                  "id": 3,
+                  "title": "II.1.3 Wstępny przegląd analityczny",
+                  "tabs": []
+                },
+                {
+                  "id": 4,
+                  "title": "II.1.4 Kontynuacja działalności",
+                  "tabs": []
+                },
+                {
+                  "id": 5,
+                  "title": "II.1.5 Ustalenie poziomów istotności",
+                  "tabs": []
+                },
+                {
+                  "id": 6,
+                  "title": "II.1.6 Bilans otwarcia / dane porównawcze",
+                  "tabs": []
+                },
+                {
+                  "id": 7,
+                  "title": "II.1.7 Odpowiedzialność dotycząca oszustw - lista kontrolna",
+                  "tabs": []
+                },
+                {
+                  "id": 8,
+                  "title": "II.1.8 Spotkania na etapie planowania",
+                  "tabs": []
+                },
+                {
+                  "id": 9,
+                  "title": "II.1.9 Memorandum planowania badania",
+                  "tabs": []
+                },
+                {
+                  "id": 10,
+                  "title": "II.1.10 Przykładowa lista kontrolna dotycząca zbioru stałego",
+                  "tabs": []
+                }
+              ]
             },
             {
-              "name": "II.2 Podejście do ryzyka nieodłącznego"
+              "name": "II.2 Podejście do ryzyka nieodłącznego",
+              "screens": [
+                {
+                  "id": 1,
+                  "title": "II.2.1 Identyfikacja i ocena ryzyka na poziomie sprawozdania finansowego",
+                  "tabs": []
+                },
+                {
+                  "id": 2,
+                  "title": "II.2.2 Identyfikacja i ocena ryzyka na poziomie stwierdzeń",
+                  "tabs": []
+                },
+                {
+                  "id": 3,
+                  "title": "II.2.3 Identyfikacja i ocena ryzyka rozległego",
+                  "tabs": []
+                }
+              ]
             },
             {
-              "name": "II.3 Ogólne podejście do kontroli wewnętrznej"
+              "name": "II.3 Ogólne podejście do kontroli wewnętrznej",
+              "screens": [
+                {
+                  "id": 1,
+                  "title": "II.3.1 Program badania",
+                  "tabs": []
+                },
+                {
+                  "id": 2,
+                  "title": "II.3.2 Dokumentacja zrozumienia kontroli wewnętrznej jednostki",
+                  "tabs": []
+                },
+                {
+                  "id": 3,
+                  "title": "II.3.3 Opis kluczowych procesów i działań kontrolnych",
+                  "tabs": []
+                },
+                {
+                  "id": 4,
+                  "title": "II.3.4 Przegląd kontroli wewnętrznej",
+                  "tabs": []
+                },
+                {
+                  "id": 5,
+                  "title": "II.3.5 Testy kontroli wewnętrznej",
+                  "tabs": []
+                },
+                {
+                  "id": 6,
+                  "title": "II.3.6 Ocena kontroli wewnętrznej",
+                  "tabs": []
+                }
+              ]
             },
             {
-              "name": "II.4 Macierz ryzyk"
+              "name": "II.4 Macierz ryzyk",
+              "screens": [
+                {
+                  "id": 1,
+                  "title": "II.4 Macierz ryzyk",
+                  "tabs": []
+                }
+              ]
             }
           ]
         },
         {
-          "label": "III. Badanie"
+          "label": "III. Badanie",
+          "screens": [
+            {
+              "id": 1,
+              "title": "III.1 Tabela testu rewizyjnego",
+              "tabs": [
+                {
+                  "title:": "Kwestionariusz",
+                  "type": "CUSTOM",
+                  "columns": [
+                    { "type": "no", "label": "Lp." },
+                    { "type": "description", "label": "Pytanie" },
+                    { "type": "comment", "label": "Odpowiedź" },
+                    { "type": "file", "label": "Załącznik" },
+                    { "type": "author", "label": "Sporządził" },
+                    { "type": "author", "label": "Zatwierdził" }
+                  ],
+                  "rows": [
+                    { "lp": 1, "question": "Nr dok.", "answer": null, "attachment": null, "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null },
+                    { "lp": 2, "question": "Test:", "answer": null, "attachment": null, "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null},
+                    { "lp": 3, "question": "Cel:", "answer": null, "attachment": null,"author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null },
+                    { "lp": 4, "question": "Wykorzystane dokumenty źródłowe:", "answer": null, "attachment": null,"author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null },
+                    { "lp": 5, "question": "Poziom ryzyka dla tego obszaru:", "answer": null, "attachment": null,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null},
+                    { "lp": 6, "question": "Stwierdzenia do przetestowania:", "answer": null, "attachment": null, "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null },
+                    { "lp": 7, "question": "Wielkość próby i zasady jej wyboru:", "answer": null, "attachment": null,"author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null },
+                    { "lp": 8, "question": "Objaśnienie wykonanych czynności z odpowiednimi odniesieniami do informacji o próbie:", "answer": null, "attachment": null,"author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null },
+                    { "lp": 9, "question": "Sprawy rozważane:", "answer": null, "attachment": null, "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null },
+                    { "lp": 10, "question": "Wnioski:", "answer": null, "attachment": null, "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null }
+                  ]
+                },
+
+                {
+                  "title:": "Zapotrzebowanie",
+                  "type": "REQUEST"
+                },
+                {
+                  "title:": "Pliki",
+                  "type": "FILES"
+                },
+                {
+                  "title:": "Dziennik zdarzeń",
+                  "type": "ACTIVITY_LOG"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "title": "III.2 Wartości niematerialne i prawne",
+              "tabs": [
+                {
+                  "title:": "Salda kont",
+                  "type": "CUSTOM",
+                  "columns": [
+                    { "key": "nazwa", "type": "comment", "label": "Pytanie" },
+                    { "key": "I", "type": "dynamic", "label": "I" },
+                    { "key": "PiO", "type": "dynamic", "label": "PiO" },
+                    { "key": "Ko", "type": "dynamic", "label": "Ko" },
+                    { "key": "WiP", "type": "dynamic", "label": "WiP" },
+                    { "key": "komentarz", "type": "comment", "label": "Komentarz" },
+                    { "key": "sporzadzil", "type": "author", "label": "Sporządził" },
+                    { "key": "data", "type": "date", "label": "Data" },
+                    { "key": "plik", "type": "file", "label": "Załącznik" }
+                  ],
+                  "rows": [
+                    {
+                      "id": 1,
+                      "nazwa": "Oszacowane ryzyko nieodłączne (RN) na poziomie stwierdzeń",
+                      "I": { "value": "Średnie", "type": "select" },
+                      "PiO": { "value": "Średnie", "type": "select" },
+                      "Ko": { "value": "Średnie", "type": "select" },
+                      "WiP": { "value": "Średnie", "type": "select" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 2,
+                      "nazwa": "Oszacowane ryzyko kontroli (RK) na poziomie stwierdzeń",
+                      "I": { "value": "Średnie", "type": "select" },
+                      "PiO": { "value": "Średnie", "type": "select" },
+                      "Ko": { "value": "Średnie", "type": "select" },
+                      "WiP": { "value": "Średnie", "type": "select" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 3,
+                      "nazwa": "Oszacowane ryzyko istotnego zniekształcenia na poziomie stwierdzeń",
+                      "I": { "value": "Średnie", "type": "select" },
+                      "PiO": { "value": "Średnie", "type": "select" },
+                      "Ko": { "value": "Średnie", "type": "select" },
+                      "WiP": { "value": "Średnie", "type": "select" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 4,
+                      "nazwa": "Podsumowanie proponowanej reakcji na ryzyko – wybór kategorii procedur badania",
+                      "I": { "value": "Średnie", "type": "select" },
+                      "PiO": { "value": "Średnie", "type": "select" },
+                      "Ko": { "value": "Średnie", "type": "select" },
+                      "WiP": { "value": "Średnie", "type": "select" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 5,
+                      "nazwa": "I. Szczegółowe procedury wiarygodności – podstawowe",
+                      "I": { "value": false, "type": "checkbox" },
+                      "PiO": { "value": false, "type": "checkbox" },
+                      "Ko": { "value": false, "type": "checkbox" },
+                      "WiP": { "value": false, "type": "checkbox" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 6,
+                      "nazwa": "II. Szczegółowe procedury wiarygodności – dostosowane do konkretnych czynników ryzyka",
+                      "I": { "value": false, "type": "checkbox" },
+                      "PiO": { "value": false, "type": "checkbox" },
+                      "Ko": { "value": false, "type": "checkbox" },
+                      "WiP": { "value": false, "type": "checkbox" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 7,
+                      "nazwa": "III. Analityczne procedury wiarygodności",
+                      "I": { "value": false, "type": "checkbox" },
+                      "PiO": { "value": false, "type": "checkbox" },
+                      "Ko": { "value": false, "type": "checkbox" },
+                      "WiP": { "value": false, "type": "checkbox" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 8,
+                      "nazwa": "IV. Testy kontroli (skuteczność działania kontroli wewnętrznej)",
+                      "I": { "value": false, "type": "checkbox" },
+                      "PiO": { "value": false, "type": "checkbox" },
+                      "Ko": { "value": false, "type": "checkbox" },
+                      "WiP": { "value": false, "type": "checkbox" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    }
+                  ]
+                },
+                {
+                  "title:": "Prezentacja i ujawnienia",
+                  "type": "CUSTOM",
+                  "columns": [
+                    { "type": "comment", "label": "Pytanie" },
+                    { "type": "dynamic", "label": "WoPiO" },
+                    { "type": "dynamic", "label": "Ko" },
+                    { "type": "dynamic", "label": "KiZ" },
+                    { "type": "dynamic", "label": "DiW" },
+                    {  "type": "comment", "label": "Komentarz" },
+                    {  "type": "author", "label": "Sporządził" },
+                    { "type": "date", "label": "Data" },
+                    { "type": "file", "label": "Załącznik" }
+                  ],
+                  "rows": [
+                    {
+                      "id": 1,
+                      "nazwa": "Oszacowane ryzyko nieodłączne (RN) na poziomie stwierdzeń",
+                      "WoPiO": { "value": "Średnie", "type": "select" },
+                      "Ko": { "value": "Średnie", "type": "select" },
+                      "KiZ": { "value": "Średnie", "type": "select" },
+                      "DiW": { "value": "Średnie", "type": "select" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 2,
+                      "nazwa": "Oszacowane ryzyko kontroli (RK) na poziomie stwierdzeń",
+                      "WoPiO": { "value": "Średnie", "type": "select" },
+                      "Ko": { "value": "Średnie", "type": "select" },
+                      "KiZ": { "value": "Średnie", "type": "select" },
+                      "DiW": { "value": "Średnie", "type": "select" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 3,
+                      "nazwa": "Oszacowane ryzyko istotnego zniekształcenia na poziomie stwierdzeń",
+                      "WoPiO": { "value": "Średnie", "type": "select" },
+                      "Ko": { "value": "Średnie", "type": "select" },
+                      "KiZ": { "value": "Średnie", "type": "select" },
+                      "DiW": { "value": "Średnie", "type": "select" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 4,
+                      "nazwa": "Podsumowanie proponowanej reakcji na ryzyko – wybór kategorii procedur badania",
+                      "WoPiO": { "value": "Średnie", "type": "select" },
+                      "Ko": { "value": "Średnie", "type": "select" },
+                      "KiZ": { "value": "Średnie", "type": "select" },
+                      "DiW": { "value": "Średnie", "type": "select" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 5,
+                      "nazwa": "I. Szczegółowe procedury wiarygodności – podstawowe",
+                      "WoPiO": { "value": false, "type": "checkbox" },
+                      "Ko": { "value": false, "type": "checkbox" },
+                      "KiZ": { "value": false, "type": "checkbox" },
+                      "DiW": { "value": false, "type": "checkbox" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 6,
+                      "nazwa": "II. Szczegółowe procedury wiarygodności – dostosowane do konkretnych czynników ryzyka",
+                      "WoPiO": { "value": false, "type": "checkbox" },
+                      "Ko": { "value": false, "type": "checkbox" },
+                      "KiZ": { "value": false, "type": "checkbox" },
+                      "DiW": { "value": false, "type": "checkbox" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 7,
+                      "nazwa": "III. Analityczne procedury wiarygodności",
+                      "WoPiO": { "value": false, "type": "checkbox" },
+                      "Ko": { "value": false, "type": "checkbox" },
+                      "KiZ": { "value": false, "type": "checkbox" },
+                      "DiW": { "value": false, "type": "checkbox" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    },
+                    {
+                      "id": 8,
+                      "nazwa": "IV. Testy kontroli (skuteczność działania kontroli wewnętrznej)",
+                      "WoPiO": { "value": false, "type": "checkbox" },
+                      "Ko": { "value": false, "type": "checkbox" },
+                      "KiZ": { "value": false, "type": "checkbox" },
+                      "DiW": { "value": false, "type": "checkbox" },
+                      "komentarz": "",
+                      "sporzadzil": null,
+                      "data": null,
+                      "plik": null
+                    }
+                  ]
+                },
+                {
+                  "title:": "Cele badania",
+                  "type": "CUSTOM",
+                  "columns": [
+                    { "type": "no", "label": "Lp." },
+                    { "type": "description", "label": "Badane stwierdzenie" },
+                    { "type": "description", "label": "Powiązane obszary" }
+                  ],
+                  "rows": [
+                    {
+                      "lp": 1,
+                      "stwierdzenie": "Przy przeprowadzaniu badania sprawozdania finansowego twoim celem jest uzyskanie wystarczającej pewności, czy sprawozdanie finansowe jako całość nie zawiera istotnego zniekształcenia, niezależnie od tego, czy zostało ono spowodowane błędem lub oszustwem, co umożliwi ci wyrażenie opinii o tym, czy sprawozdanie finansowe jest, we wszystkich istotnych aspektach, sporządzone zgodnie z mającymi zastosowanie ramowymi założeniami sprawozdawczości finansowej. W związku z tym powinieneś zrealizować poniższe cele, które pozwolą ci osiągnąć określony powyżej cel ogólny. Pamiętaj, że twoim celem jest uzyskanie wystarczających i odpowiednich dowodów badania ocenionego ryzyka istotnego zniekształcenia dzięki zaprojektowaniu i zastosowaniu odpowiednich do tego ryzyka reakcji. Upewnij się, że wartości niematerialne i prawne są prawidłowo wykazane w sprawozdaniu finansowym zgodnie z odpowiednimi przepisami prawa i przyjętymi zasadami (polityką) rachunkowości.",
+                      "obszary": ["I", "PiO", "Ko", "WiP"]
+                    },
+                    {
+                      "lp": 2,
+                      "stwierdzenie": "Upewnij się, że ujęte w sprawozdaniu finansowym wartości niematerialne i prawne istnieją i klient ma do nich ważny tytuł prawny.",
+                      "obszary": ["I", "PiO"]
+                    },
+                    {
+                      "lp": 3,
+                      "stwierdzenie": "Upewnij się, że wycena wartości niematerialnych i prawnych jest zgodna z zasadami (polityką) rachunkowości klienta i zasady te stosowane są w sposób ciągły.",
+                      "obszary": ["WiP"]
+                    },
+                    {
+                      "lp": 4,
+                      "stwierdzenie": "Upewnij się, że zwiększenie stanu wartości niematerialnych i prawnych jest zasadne, a ich zbycie zostało prawidłowo zarejestrowane.",
+                      "obszary": ["Ko"]
+                    },
+                    {
+                      "lp": 5,
+                      "stwierdzenie": "Upewnij się, że wobec wartości niematerialnych i prawnych, podlegających amortyzacji, zastosowano prawidłowe stawki amortyzacji, w sposób: (a) zasadny i właściwy; (b) zgodny z podejściem zastosowanym w poprzednim roku.",
+                      "obszary": ["WiP"]
+                    },
+                    {
+                      "lp": 6,
+                      "stwierdzenie": "Upewnij się, że utworzono odpis aktualizujący z tytułu utraty wartości.",
+                      "obszary": ["WiP"]
+                    },
+                    {
+                      "lp": 7,
+                      "stwierdzenie": "Upewnij się, że w sprawozdaniu finansowym: - obszar został poprawnie zaprezentowany, - poprawnie ujawniono zastosowane zasady wyceny, - poprawnie i kompletnie przedstawiono wymagane przepisami i standardami rachunkowości ujawnienia związane z tym obszarem.",
+                      "obszary": ["WoPiO", "Ko", "KiZ", "DiW"]
+                    }
+                  ]
+                },
+                {
+                  "title:": "Program badania",
+                  "type": "CUSTOM"
+                },
+                {
+                  "title:": "Zapotrzebowanie",
+                  "type": "REQUEST"
+                },
+                {
+                  "title:": "Pliki",
+                  "type": "FILES"
+                },
+                {
+                  "title:": "Dziennik zdarzeń",
+                  "type": "ACTIVITY_LOG"
+                }
+              ]
+            },
+
+            {
+              "id": 3,
+              "title": "III.3 Rzeczowe aktywa stałe",
+              "tabs": []
+            },
+            {
+              "id": 4,
+              "title": "III.4 Inwestycje",
+              "tabs": []
+            },
+            {
+              "id": 5,
+              "title": "III.5 Zapasy",
+              "tabs": []
+            },
+            {
+              "id": 6,
+              "title": "III.6 Należności",
+              "tabs": []
+            },
+            {
+              "id": 7,
+              "title": "III.7 Rozliczenia międzyokresowe",
+              "tabs": []
+            },
+            {
+              "id": 8,
+              "title": "III.8 Środki pieniężne",
+              "tabs": []
+            },
+            {
+              "id": 9,
+              "title": "III.9 Kapitały (fundusze) własne",
+              "tabs": []
+            },
+            {
+              "id": 10,
+              "title": "III.10 Rezerwy na zobowiązania warunkowe i zabezpieczenia",
+              "tabs": []
+            },
+            {
+              "id": 11,
+              "title": "III.11 Zobowiązania, fundusze specjalne i rozliczenia międzyokresowe (pasywa)",
+              "tabs": []
+            },
+            {
+              "id": 12,
+              "title": "III.12 Przychody",
+              "tabs": []
+            },
+            {
+              "id": 13,
+              "title": "III.13 Koszty",
+              "tabs": []
+            },
+            {
+              "id": 14,
+              "title": "III.14 Podatek dochodowy",
+              "tabs": []
+            },
+            {
+              "id": 15,
+              "title": "III.15 Rachunek przepływów pieniężnych",
+              "tabs": []
+            }
+          ]
+        },
+
+        {
+          "label": "IV. Procedury",
+          "screens": [
+            {
+              "id": 1,
+              "title": "IV.1 Zestawienie obrotów i sald",
+              "tabs": []
+            },
+            {
+              "id": 2,
+              "title": "IV.2 Podmioty powiązane",
+              "tabs": []
+            },
+            {
+              "id": 3,
+              "title": "IV.3 Przestrzeganie prawa i regulacji",
+              "tabs": []
+            },
+            {
+              "id": 4,
+              "title": "IV.4 Późniejsze zdarzenia",
+              "tabs": []
+            },
+            {
+              "id": 5,
+              "title": "IV.5 Kontynuacja działalności",
+              "tabs": []
+            },
+            {
+              "id": 6,
+              "title": "IV.6 Sprawozdanie finansowe",
+              "tabs": []
+            },
+            {
+              "id": 7,
+              "title": "IV.7 Sprawozdanie z działalności,",
+              "tabs": []
+            }
+          ]
         },
         {
-          "label": "IV. Procedury"
-        },
-        {
-          "label": "V. Podsumowanie"
+          "label": "V. Podsumowanie",
+          "screens": [
+            {
+              "id": 1,
+              "title": "V.1 Zagadnienia wymagające konsultacji",
+              "tabs": []
+            },
+            {
+              "id": 2,
+              "title": "V.2 Końcowy przegląd analityczny - program badania",
+              "tabs": []
+            },
+            {
+              "id": 3,
+              "title": "V.3 Zbiorcze zestawienie zniekształceń",
+              "tabs": []
+            },
+            {
+              "id": 4,
+              "title": "V.4 Oświadczenia końcowe",
+              "tabs": []
+            },
+            {
+              "id": 5,
+              "title": "V.5 Sprawozdanie biegłego rewidenta - kwestie do rozważenia",
+              "tabs": []
+            },
+            {
+              "id": 6,
+              "title": "V.6 Komunikacja z osobami sprawującymi nadzór",
+              "tabs": []
+            },
+            {
+              "id": 7,
+              "title": "V.7 Zakończenie badania zasadniczego i podsumowanie wyników badania",
+              "tabs": []
+            },
+            {
+              "id": 8,
+              "title": "V.8 Kontrola jakości wykonania zlecenia",
+              "tabs": []
+            },
+            {
+              "id": 8,
+              "title": "V.9 Lista spraw do rozważenia na przyszłość",
+              "tabs": []
+            }
+          ]
         }
       ]
     },
-    {
-      "id": 2,
-      "name": "DR/2025/123454",
-      "status": "completed",
-      "progress": 100,
-      "deadline": "2025-06-15",
-      "klient": "Gamma Demo Logistics",
-      "users": [
-        "Katarzyna Wiśniewska"
-      ],
-      "contact": {
-        "name": "Maria Wiśniewska",
-        "email": "maria.wisniewska@gammalogistics.com",
-        "phone": "12 234 56 78"
-      }
-    },
-    {
-      "id": 3,
-      "name": "MBP/2025/000111",
-      "status": "active",
-      "progress": 45,
-      "deadline": "2024-12-20",
-      "klient": "BetaConsulting S.A.",
-      "users": [
-        "Piotr Zieliński",
-        "Magdalena Lewandowska"
-      ],
-      "contact": {
-        "name": "Piotr Zieliński",
-        "email": "piotr.zielinski@betaconsulting.com",
-        "phone": "33 345 67 89"
-      }
-    },
-    {
-      "id": 4,
-      "name": "DR/2025/123444",
-      "status": "delayed",
-      "progress": 20,
-      "deadline": "2025-03-15",
-      "klient": "Upsilon Design",
-      "users": [
-        "Tomasz Kamiński"
-      ],
-      "contact": {
-        "name": "Tomasz Kamiński",
-        "email": "tomasz.kaminski@upsilondesign.com",
-        "phone": "44 456 78 90"
-      }
-    },
-    {
-      "id": 5,
-      "name": "DR/2025/123457",
-      "status": "active",
-      "progress": 55,
-      "deadline": "2025-08-10",
-      "klient": "Delta Solutions",
-      "users": [
-        "Agnieszka Dąbrowska",
-        "Marek Wojciechowski"
-      ],
-      "contact": {
-        "name": "Agnieszka Dąbrowska",
-        "email": "a.dabrowska@deltasolutions.com",
-        "phone": "55 567 89 01"
-      }
-    },
-    {
-      "id": 6,
-      "name": "DR/2025/123458",
-      "status": "completed",
-      "progress": 100,
-      "deadline": "2025-05-20",
-      "klient": "Epsilon Sp. z o.o.",
-      "users": [
-        "Joanna Kaczmarek"
-      ],
-      "contact": {
-        "name": "Joanna Kaczmarek",
-        "email": "joanna.kaczmarek@epsilon.com",
-        "phone": "66 678 90 12"
-      }
-    },
-    {
-      "id": 7,
-      "name": "DR/2025/123459",
-      "status": "delayed",
-      "progress": 10,
-      "deadline": "2025-02-28",
-      "klient": "Zeta Systems",
-      "users": [
-        "Paweł Grabowski",
-        "Magdalena Lewandowska"
-      ],
-      "contact": {
-        "name": "Paweł Grabowski",
-        "email": "pawel.grabowski@zetasystems.com",
-        "phone": "77 789 01 23"
-      }
-    },
-    {
-      "id": 8,
-      "name": "MBP/2025/000112",
-      "status": "active",
-      "progress": 75,
-      "deadline": "2025-10-10",
-      "klient": "Theta Corp.",
-      "users": [
-        "Tomasz Kamiński",
-        "Anna Kowalska"
-      ],
-      "contact": {
-        "name": "Tomasz Kamiński",
-        "email": "t.kaminski@thetacorp.com",
-        "phone": "88 890 12 34"
-      }
-    },
-    {
-      "id": 9,
-      "name": "DR/2025/123460",
-      "status": "active",
-      "progress": 50,
-      "deadline": "2025-07-25",
-      "klient": "Iota Group",
-      "users": [
-        "Jan Nowak"
-      ],
-      "contact": {
-        "name": "Jan Nowak",
-        "email": "jan.nowak@iotagroup.com",
-        "phone": "99 901 23 45"
-      }
-    },
-    {
-      "id": 10,
-      "name": "DR/2025/123461",
-      "status": "completed",
-      "progress": 100,
-      "deadline": "2025-06-30",
-      "klient": "Kappa Enterprises",
-      "users": [
-        "Katarzyna Wiśniewska",
-        "Piotr Zieliński"
-      ],
-      "contact": {
-        "name": "Katarzyna Wiśniewska",
-        "email": "k.wisniewska@kappa.com",
-        "phone": "11 112 34 56"
-      }
-    },
-    {
-      "id": 11,
-      "name": "DR/2025/123462",
-      "status": "delayed",
-      "progress": 30,
-      "deadline": "2025-04-15",
-      "klient": "Lambda Innovations",
-      "users": [
-        "Agnieszka Dąbrowska"
-      ],
-      "contact": {
-        "name": "Agnieszka Dąbrowska",
-        "email": "a.dabrowska@lambdainnovations.com",
-        "phone": "22 223 45 67"
-      }
-    },
-    {
-      "id": 12,
-      "name": "DR/2025/123463",
-      "status": "active",
-      "progress": 65,
-      "deadline": "2025-09-01",
-      "klient": "Mu Tech",
-      "users": [
-        "Marek Wojciechowski"
-      ],
-      "contact": {
-        "name": "Marek Wojciechowski",
-        "email": "marek.wojciechowski@mutech.com",
-        "phone": "33 334 56 78"
-      }
-    },
-    {
-      "id": 13,
-      "name": "DR/2025/123464",
-      "status": "active",
-      "progress": 80,
-      "deadline": "2025-10-20",
-      "klient": "Nu Industries",
-      "users": [
-        "Joanna Kaczmarek",
-        "Paweł Grabowski"
-      ],
-      "contact": {
-        "name": "Joanna Kaczmarek",
-        "email": "joanna.k@nuindustries.com",
-        "phone": "44 445 67 89"
-      }
-    },
-    {
-      "id": 14,
-      "name": "MBP/2025/000113",
-      "status": "delayed",
-      "progress": 25,
-      "deadline": "2025-03-30",
-      "klient": "Xi Solutions",
-      "users": [
-        "Tomasz Kamiński"
-      ],
-      "contact": {
-        "name": "Tomasz Kamiński",
-        "email": "t.kaminski@xisolutions.com",
-        "phone": "55 556 78 90"
-      }
-    },
-    {
-      "id": 15,
-      "name": "DR/2025/123465",
-      "status": "completed",
-      "progress": 100,
-      "deadline": "2025-07-10",
-      "klient": "Omicron Corp.",
-      "users": [
-        "Anna Kowalska",
-        "Jan Nowak"
-      ],
-      "contact": {
-        "name": "Anna Kowalska",
-        "email": "anna.kowalska@omicron.com",
-        "phone": "66 667 89 01"
-      }
-    },
-    {
-      "id": "027a",
-      "name": "DR/2025/123456",
-      "klient": "Alphatech Sp. z o.o.",
-      "status": "active",
-      "progress": 60,
-      "users": [
-        "Anna Kowalska",
-        "Jan Nowak"
-      ],
-      "contact": {
-        "name": "Jan Kowalski",
-        "email": "jan.kowalski@alphatech.com",
-        "phone": "22 123 45 67"
-      }
-    },
-    {
-      "id": "c425",
-      "name": "DR/2025/123456",
-      "klient": "Alphatech Sp. z o.o.",
-      "status": "active",
-      "progress": 60,
-      "users": [
-        "Anna Kowalska",
-        "Jan Nowak"
-      ],
-      "contact": {
-        "name": "Jan Kowalski",
-        "email": "jan.kowalski@alphatech.com",
-        "phone": "22 123 45 67"
-      }
+
+        {
+          "id": 2,
+          "name": "DR/2025/123454",
+          "status": "completed",
+          "progress": 100,
+          "deadline": "2025-06-15",
+          "klient": "Gamma Demo Logistics",
+          "users": [
+            "Katarzyna Wiśniewska"
+          ],
+          "contact": {
+            "name": "Maria Wiśniewska",
+            "email": "maria.wisniewska@gammalogistics.com",
+            "phone": "12 234 56 78"
+          }
+        },
+        {
+          "id": 3,
+          "name": "MBP/2025/000111",
+          "status": "active",
+          "progress": 45,
+          "deadline": "2024-12-20",
+          "klient": "BetaConsulting S.A.",
+          "users": [
+            "Piotr Zieliński",
+            "Magdalena Lewandowska"
+          ],
+          "contact": {
+            "name": "Piotr Zieliński",
+            "email": "piotr.zielinski@betaconsulting.com",
+            "phone": "33 345 67 89"
+          }
+        },
+        {
+          "id": 4,
+          "name": "DR/2025/123444",
+          "status": "delayed",
+          "progress": 20,
+          "deadline": "2025-03-15",
+          "klient": "Upsilon Design",
+          "users": [
+            "Tomasz Kamiński"
+          ],
+          "contact": {
+            "name": "Tomasz Kamiński",
+            "email": "tomasz.kaminski@upsilondesign.com",
+            "phone": "44 456 78 90"
+          }
+        },
+        {
+          "id": 5,
+          "name": "DR/2025/123457",
+          "status": "active",
+          "progress": 55,
+          "deadline": "2025-08-10",
+          "klient": "Delta Solutions",
+          "users": [
+            "Agnieszka Dąbrowska",
+            "Marek Wojciechowski"
+          ],
+          "contact": {
+            "name": "Agnieszka Dąbrowska",
+            "email": "a.dabrowska@deltasolutions.com",
+            "phone": "55 567 89 01"
+          }
+        },
+        {
+          "id": 6,
+          "name": "DR/2025/123458",
+          "status": "completed",
+          "progress": 100,
+          "deadline": "2025-05-20",
+          "klient": "Epsilon Sp. z o.o.",
+          "users": [
+            "Joanna Kaczmarek"
+          ],
+          "contact": {
+            "name": "Joanna Kaczmarek",
+            "email": "joanna.kaczmarek@epsilon.com",
+            "phone": "66 678 90 12"
+          }
+        },
+        {
+          "id": 7,
+          "name": "DR/2025/123459",
+          "status": "delayed",
+          "progress": 10,
+          "deadline": "2025-02-28",
+          "klient": "Zeta Systems",
+          "users": [
+            "Paweł Grabowski",
+            "Magdalena Lewandowska"
+          ],
+          "contact": {
+            "name": "Paweł Grabowski",
+            "email": "pawel.grabowski@zetasystems.com",
+            "phone": "77 789 01 23"
+          }
+        },
+        {
+          "id": 8,
+          "name": "MBP/2025/000112",
+          "status": "active",
+          "progress": 75,
+          "deadline": "2025-10-10",
+          "klient": "Theta Corp.",
+          "users": [
+            "Tomasz Kamiński",
+            "Anna Kowalska"
+          ],
+          "contact": {
+            "name": "Tomasz Kamiński",
+            "email": "t.kaminski@thetacorp.com",
+            "phone": "88 890 12 34"
+          }
+        },
+        {
+          "id": 9,
+          "name": "DR/2025/123460",
+          "status": "active",
+          "progress": 50,
+          "deadline": "2025-07-25",
+          "klient": "Iota Group",
+          "users": [
+            "Jan Nowak"
+          ],
+          "contact": {
+            "name": "Jan Nowak",
+            "email": "jan.nowak@iotagroup.com",
+            "phone": "99 901 23 45"
+          }
+        },
+        {
+          "id": 10,
+          "name": "DR/2025/123461",
+          "status": "completed",
+          "progress": 100,
+          "deadline": "2025-06-30",
+          "klient": "Kappa Enterprises",
+          "users": [
+            "Katarzyna Wiśniewska",
+            "Piotr Zieliński"
+          ],
+          "contact": {
+            "name": "Katarzyna Wiśniewska",
+            "email": "k.wisniewska@kappa.com",
+            "phone": "11 112 34 56"
+          }
+        },
+        {
+          "id": 11,
+          "name": "DR/2025/123462",
+          "status": "delayed",
+          "progress": 30,
+          "deadline": "2025-04-15",
+          "klient": "Lambda Innovations",
+          "users": [
+            "Agnieszka Dąbrowska"
+          ],
+          "contact": {
+            "name": "Agnieszka Dąbrowska",
+            "email": "a.dabrowska@lambdainnovations.com",
+            "phone": "22 223 45 67"
+          }
+        },
+        {
+          "id": 12,
+          "name": "DR/2025/123463",
+          "status": "active",
+          "progress": 65,
+          "deadline": "2025-09-01",
+          "klient": "Mu Tech",
+          "users": [
+            "Marek Wojciechowski"
+          ],
+          "contact": {
+            "name": "Marek Wojciechowski",
+            "email": "marek.wojciechowski@mutech.com",
+            "phone": "33 334 56 78"
+          }
+        },
+        {
+          "id": 13,
+          "name": "DR/2025/123464",
+          "status": "active",
+          "progress": 80,
+          "deadline": "2025-10-20",
+          "klient": "Nu Industries",
+          "users": [
+            "Joanna Kaczmarek",
+            "Paweł Grabowski"
+          ],
+          "contact": {
+            "name": "Joanna Kaczmarek",
+            "email": "joanna.k@nuindustries.com",
+            "phone": "44 445 67 89"
+          }
+        },
+        {
+          "id": 14,
+          "name": "MBP/2025/000113",
+          "status": "delayed",
+          "progress": 25,
+          "deadline": "2025-03-30",
+          "klient": "Xi Solutions",
+          "users": [
+            "Tomasz Kamiński"
+          ],
+          "contact": {
+            "name": "Tomasz Kamiński",
+            "email": "t.kaminski@xisolutions.com",
+            "phone": "55 556 78 90"
+          }
+        },
+        {
+          "id": 15,
+          "name": "DR/2025/123465",
+          "status": "completed",
+          "progress": 100,
+          "deadline": "2025-07-10",
+          "klient": "Omicron Corp.",
+          "users": [
+            "Anna Kowalska",
+            "Jan Nowak"
+          ],
+          "contact": {
+            "name": "Anna Kowalska",
+            "email": "anna.kowalska@omicron.com",
+            "phone": "66 667 89 01"
+          }
+        }
+      ]
     }
-  ]
-}
