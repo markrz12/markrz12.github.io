@@ -157,7 +157,6 @@ export default function Project() {
                     label: 'II.2 Podejście do ryzyka nieodłącznego',
                     items: [
                         { name: 'II.2.1 Identyfikacja i ocena ryzyka na poziomie sprawozdania finansowego', code: 'DR 14.12', progress: 0, to: '/kwestionariusz' },
-                        { name: 'II.2.2 Identyfikacja i ocena ryzyka na poziomie stwierdzeń', code: 'DR 14.13', progress: 0, to: '/kwestionariusz' },
                         { name: 'II.2.3 Identyfikacja i ocena ryzyka rozległego', code: 'DR 14.14', progress: 0, to: '/kwestionariusz' }
                     ]
                 },

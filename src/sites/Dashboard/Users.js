@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { Sidebar, Topbar, InitialsAvatar } from "../../ui/Common";
 import Pagination from "../Pagination";
+import { BsSearch } from "react-icons/bs";
 
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 
@@ -16,7 +17,6 @@ function Users() {
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 11;
-    const maxPageButtons = 5;
 
     // Fetch users from API
     useEffect(() => {
@@ -104,7 +104,7 @@ function Users() {
                                                 aria-label="Wyczyść"
                                             >×</button>
                                         )}
-                                        <span className="input-group-text">🔍</span>
+                                        <span className="input-group-text"><BsSearch /></span>
                                     </div>
                                 </div>
                             </div>

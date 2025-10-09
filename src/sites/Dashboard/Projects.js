@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Sidebar, Topbar } from "../../ui/Common";
 import axios from "axios";
 import Pagination from "../../sites/Pagination"; // make sure this path is correct
+import { BsSearch } from "react-icons/bs";
 
 const statusLabel = {
     active: { text: "W trakcie"},
@@ -109,6 +110,33 @@ function Projects() {
         setModal({ type: null, target: null });
     };
 
+    useEffect(() => {
+        let alive = true;
+        setLoading(true);
+
+        axios.get(`${API_BASE}/Projects`)
+            .then(res => {
+                if (!alive) return;
+                const apiData = res.data || [];
+
+                // Wczytaj projekty zapisane lokalnie (utworzone w ProjectClient)
+                const localProjects = JSON.parse(localStorage.getItem("projects") || "[]");
+
+                // Połącz i usuń duplikaty po id
+                const merged = [...apiData, ...localProjects.filter(lp => !apiData.some(ap => ap.id === lp.id))];
+                setProjects(merged);
+            })
+            .catch(err => {
+                if (!alive) return;
+                console.error(err);
+                setError("Nie udało się pobrać listy projektów. Upewnij się, że mock serwer działa.");
+            })
+            .finally(() => alive && setLoading(false));
+
+        return () => { alive = false; };
+    }, []);
+
+
 
     useEffect(() => {
         let alive = true;
@@ -175,7 +203,7 @@ function Projects() {
                                         {search && (
                                             <button className="btn btn-outline-secondary" type="button" onClick={() => setSearch("")}>×</button>
                                         )}
-                                        <span className="input-group-text">🔍</span>
+                                        <span className="input-group-text"><BsSearch /></span>
                                     </div>
                                 </div>
                             </div>
@@ -261,8 +289,9 @@ function Projects() {
                     <div className="d-none d-lg-block" style={{ width: 360, paddingLeft: 12 }}>
                         <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: "hidden" }}>
                             <div className="text-center mb-2">
-                                <button className="btn btn-success w-100" onClick={() => openModal("add")}>Utwórz projekt</button>
-
+                                <button className="btn btn-success w-100" onClick={() => navigate("/projekt-klient")}>
+                                    Utwórz projekt
+                                </button>
                             </div>
                             <div className="card-header d-flex align-items-center"
                                  style={{ padding: "0.6rem 1rem", fontSize: "1rem", backgroundColor: "#0a2b4c", color: "#ffffff" }}

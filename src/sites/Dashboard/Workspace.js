@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Sidebar, Topbar } from "../../ui/Common";
 import { Link } from "react-router-dom";
 import { Hourglass, CheckCircle, AlertCircle } from "lucide-react";
+import { BsSearch } from "react-icons/bs";
 
 function Workspace() {
     const [search, setSearch] = useState("");
@@ -64,13 +65,13 @@ function Workspace() {
                 <div className="flex-grow-1 p-4 bg-light">
                     <div className="container-fluid">
 
-                        <div className="d-flex gap-4">
+                        <div className="d-flex gap-4" style={{background: "#005679"}}>
                             {/* Lewa część - projekty */}
                             <div className="bg-white rounded-2xl shadow p-4 flex-grow-1">
 
                                 {/* Header with Projekty title and search */}
                                 <div className="card-header">
-                                    <div className="d-flex align-items-center justify-content-between">
+                                    <div className="d-flex align-items-center justify-content-between" >
                                         <h5 className="text-lg font-semibold mb-2 ms-2">Projekty</h5>
 
                                         <div className="input-group input-group-sm mb-2" style={{ maxWidth: 400 }}>
@@ -93,8 +94,7 @@ function Workspace() {
                                                     ×
                                                 </button>
                                             )}
-                                            <span className="input-group-text" id="users-search-icon-top">🔍</span>
-                                        </div>
+                                            <span className="input-group-text"><BsSearch /></span>                                        </div>
                                     </div>
                                 </div>
 

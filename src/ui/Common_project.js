@@ -209,7 +209,6 @@ export function Sidebar({ search, setSearch }) {
                 {name: 'II.3 Ogólne podejście do kontroli wewnętrznej',
                     subQuestionnaires: [
                         { name: 'II.2.1 Identyfikacja i ocena ryzyka na poziomie sprawozdania finansowego', to: '/kwestionariusz' },
-                        { name: 'II.2.2 Identyfikacja i ocena ryzyka na poziomie stwierdzeń',  to: '/kwestionariusz' },
                         { name: 'II.2.3 Identyfikacja i ocena ryzyka rozległego', to: '/kwestionariusz' }
                     ]
 

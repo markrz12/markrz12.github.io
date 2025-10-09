@@ -10,7 +10,6 @@ function ProjektKonfiguracja(){
 
   const [manager, setManager] = useState("");
   const [assistants, setAssistants] = useState(['Piotr Nowak','Katarzyna Malinowska','Ewa Jabłońska']);
-  const [clients, setClients] = useState(['Janina Zielińska','Robert Kamiński']);
   const [showAssistantPicker, setShowAssistantPicker] = useState(false);
   const [assistantChoice, setAssistantChoice] = useState("");
   const availableAssistantCandidates = useMemo(() => allUsers.filter(u => u !== manager && !assistants.includes(u)), [allUsers, manager, assistants]);
@@ -18,10 +17,6 @@ function ProjektKonfiguracja(){
   const addAssistant = () => {
     setAssistantChoice("");
     setShowAssistantPicker(true);
-  };
-  const addClient = () => {
-    const candidate = allUsers.find(u => !clients.includes(u));
-    if(candidate) setClients(prev=>[...prev, candidate]);
   };
 
     const breadcrumb = [
@@ -45,39 +40,60 @@ function ProjektKonfiguracja(){
         {/* Content */}
         <div className="flex-grow-1 bg-light d-flex pt-3 px-3" style={{ minHeight:0 }}>
           <div className="container-fluid">
-            <h5 className="mb-3">Konfiguracja użytkowników projektu</h5>
+            <h5 className="mb-4 mt-3">Konfiguracja użytkowników projektu</h5>
 
-              <div className="mb-3 d-flex" style={{ maxWidth: 520 }}>
+              <div className="mb-3 d-flex align-items-stretch" style={{ maxWidth: 650 }}>
                   <label
                       className="form-label mb-0 text-white fw-bold d-flex align-items-center justify-content-center"
                       style={{
                           backgroundColor: "#0a2b4c",
-                          padding: '0.75rem 1rem',
-                          borderTopLeftRadius: '0.25rem',
-                          borderBottomLeftRadius: '0.25rem',
-                          minWidth: '130px',
-                          textAlign: 'center',
-                          marginRight: '0px'
+                          padding: "0.75rem 1rem",
+                          borderTopLeftRadius: "0.25rem",
+                          borderBottomLeftRadius: "0.25rem",
+                          minWidth: "130px",
+                          textAlign: "center",
+                          marginRight: "0px",
                       }}
                   >
                       Kierownik
                   </label>
+
                   <select
                       className="form-select"
                       value={manager}
-                      onChange={e=>setManager(e.target.value)}
+                      onChange={(e) => setManager(e.target.value)}
                       style={{
-                          flexGrow: 1,
-                          borderTopLeftRadius: 0,
-                          borderBottomLeftRadius: 0,
-                          padding: '0.75rem 1rem',   // dopasowane do label
-                          height: '100%'             // dopasowanie do label
+                          borderRadius: 0,
+                          padding: "0.75rem 1rem",
+                          width: "398px",
+                          height: "100%", // dopasowanie do label
                       }}
                   >
                       <option value="">Wybierz kierownika</option>
-                      {allUsers.map((u,i)=> (<option key={i} value={u}>{u}</option>))}
+                      {allUsers.map((u, i) => (
+                          <option key={i} value={u}>
+                              {u}
+                          </option>
+                      ))}
                   </select>
+
+                  <button
+                      className="btn btn-success fw-semibold"
+                      style={{
+                          borderTopLeftRadius: 0,
+                          borderBottomLeftRadius: 0,
+                          borderTopRightRadius: "0.25rem",
+                          borderBottomRightRadius: "0.25rem",
+                          padding: "0.75rem 1rem",
+                          height: "100%", // dopasowanie do labela i selecta
+                      }}
+                      disabled={!manager}
+                      onClick={() => alert(`Zapisano kierownika: ${manager}`)}
+                  >
+                      Zapisz
+                  </button>
               </div>
+
 
 
               <div className="row g-4">
@@ -144,56 +160,6 @@ function ProjektKonfiguracja(){
                 </div>
               </div>
 
-              <div className="col-12 col-lg-6">
-                  <div className="card shadow-sm h-100 d-flex flex-column">
-                      <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
-                          <strong>Klienci</strong>
-                      </div>
-
-                      <div className="card-body p-0">
-                    <div className="table-responsive">
-                      <table className="table table-sm table-hover mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
-                          <thead style={{position: "sticky", top: 0, zIndex: 1,}}>
-                          <tr>
-                              <th style={{ padding: "0.5rem 1rem", }}>Osoba</th>
-                              <th style={{ width: 120, padding: "0.5rem 1rem" }}>Akcja</th>
-                          </tr>
-                          </thead>
-                        <tbody>
-                          {clients.map((c,idx)=> (
-                            <tr key={idx}>
-                                <td style={{ padding: "0.5rem 1rem" }}>{c}</td>
-                                <td style={{ padding: "0.5rem 1rem" }}>
-
-                                <button className="btn btn-sm btn-outline-danger" onClick={()=>setClients(prev=>prev.filter(x=>x!==c))}>Usuń</button>
-                              </td>
-                            </tr>
-                          ))}
-                          {clients.length===0 && (
-                            <tr><td colSpan={2} className="text-muted text-center small py-3">Brak klientów</td></tr>
-                          )}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                          <div className="card-footer d-flex justify-content-end">
-                              <button
-                                  className="btn"
-                                  style={{
-                                      backgroundColor: '#0a2b4c',
-                                      color: '#ffffff',
-                                      borderRadius: '0.35rem',
-                                      padding: '0.5rem 1rem',
-                                      boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
-                                      border: 'none'
-                                  }}
-                                  onClick={addClient}
-                              >
-                                  Dodaj klienta
-                              </button>
-                          </div>
-                </div>
-              </div>
             </div>
 
           </div>

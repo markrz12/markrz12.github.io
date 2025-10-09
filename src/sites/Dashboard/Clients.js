@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Sidebar, Topbar } from "../../ui/Common";
+import { BsSearch } from "react-icons/bs";
 
 function Clients() {
   const [search, setSearch] = useState("");
@@ -120,7 +121,7 @@ function Clients() {
                           onChange={(e) => setSearch(e.target.value)}
                         />
                         {search && (<button className="btn btn-outline-secondary" type="button" onClick={()=>setSearch("")} title="Wyczyść" aria-label="Wyczyść">×</button>)}
-                        <span className="input-group-text" id="clients-search-icon-top">🔍</span>
+                          <span className="input-group-text"><BsSearch /></span>
                       </div>
                     </div>
                   </div>
@@ -252,7 +253,7 @@ function Clients() {
                       </tr>
                     </thead>
                     <tbody>
-                      {paginatedClients.map((c, idx) => (
+                      {paginatedClients.map((c ) => (
                         <tr
                           key={c.id}
                           onClick={() => setSelectedId(c.id)}
