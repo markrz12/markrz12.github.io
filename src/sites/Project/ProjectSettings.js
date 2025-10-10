@@ -27,6 +27,67 @@ function ProjektKonfiguracja(){
 
     const [search, setSearch] = useState('');
 
+    const [questionnaires, setQuestionnaires] = useState([
+        { id: 1, name: "Test niezależności kluczowego biegłego rewidenta", assigned: [] },
+        { id: 2, name: "Test niezależności członka zespołu", assigned: [] },
+        { id: 3, name: "Wyznaczenie zespołu badającego", assigned: [] }
+    ]);
+
+    const saveManager = () => {
+        if (!manager) return alert("Wybierz kierownika!");
+
+        setQuestionnaires(prev =>
+            prev.map(q => {
+                if (q.name === "Test niezależności kluczowego biegłego rewidenta") {
+                    // nadpisz tylko aktualnym managerem
+                    return { ...q, assigned: [manager] };
+                }
+                if (q.name === "Wyznaczenie zespołu badającego") {
+                    // manager + obecni asystenci
+                    const newAssigned = [manager, ...assistants];
+                    return { ...q, assigned: newAssigned };
+                }
+                return q;
+            })
+        );
+
+        alert(`Zapisano kierownika: ${manager}`);
+    };
+
+    const saveAssistants = () => {
+        setQuestionnaires(prev =>
+            prev.map(q => {
+                if (q.name === "Test niezależności członka zespołu") {
+                    return { ...q, assigned: [...assistants] };
+                }
+                if (q.name === "Wyznaczenie zespołu badającego") {
+                    // manager + obecni asystenci
+                    const newAssigned = [manager, ...assistants];
+                    return { ...q, assigned: newAssigned };
+                }
+                return q;
+            })
+        );
+
+        alert("Zapisano asystentów");
+    };
+
+    const [showAssignPicker, setShowAssignPicker] = useState(false);
+    const [currentQId] = useState(null);
+    const [userChoice, setUserChoice] = useState("");
+
+    const handleAssignUser = () => {
+        if(!userChoice) return;
+        setQuestionnaires(prev => prev.map(q => {
+            if(q.id === currentQId && !q.assigned.includes(userChoice)){
+                return { ...q, assigned: [...q.assigned, userChoice] };
+            }
+            return q;
+        }));
+        setShowAssignPicker(false);
+        setUserChoice("");
+    };
+
 
     return (
     <div className="d-flex min-vh-100" style={{ minHeight: '100vh' }}>
@@ -88,7 +149,7 @@ function ProjektKonfiguracja(){
                           height: "100%", // dopasowanie do labela i selecta
                       }}
                       disabled={!manager}
-                      onClick={() => alert(`Zapisano kierownika: ${manager}`)}
+                      onClick={saveManager}
                   >
                       Zapisz
                   </button>
@@ -97,68 +158,109 @@ function ProjektKonfiguracja(){
 
 
               <div className="row g-4">
-              <div className="col-12 col-lg-6">
-                  <div className="card shadow-sm h-100 d-flex flex-column">
-                      <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
-                          <strong>Asystenci</strong>
+                  <div className="col-12 col-lg-6 d-flex flex-column">
+                      <div className="card shadow-sm h-100 d-flex flex-column">
+                          {/* Nagłówek */}
+                          <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
+                              <strong>Asystenci</strong>
+                          </div>
+
+                          {/* Tabela */}
+                          <div className="card-body p-0 flex-grow-1">
+                              <div className="table-responsive">
+                                  <table className="table table-sm table-hover mb-0 align-middle w-100" style={{ fontSize: "0.9rem" }}>
+                                      <thead style={{position: "sticky", top: 0, zIndex: 1}}>
+                                      <tr>
+                                          <th style={{ padding: "0.5rem 1rem" }}>Osoba</th>
+                                          <th style={{ width: 120, padding: "0.5rem 1rem" }}>Akcja</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                                      {assistants.map((a, idx) => (
+                                          <tr key={idx}>
+                                              <td style={{ padding: "0.5rem 1rem" }}>{a}</td>
+                                              <td style={{ padding: "0.5rem 1rem" }}>
+                                                  <button className="btn btn-sm btn-outline-danger" onClick={() => setAssistants(prev => prev.filter(x => x !== a))}>
+                                                      Usuń
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                      ))}
+                                      {assistants.length === 0 && (
+                                          <tr>
+                                              <td colSpan={2} className="text-muted text-center small py-3">Brak asystentów</td>
+                                          </tr>
+                                      )}
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+
+                          {/* Footer z przyciskiem Dodaj */}
+                          <div className="card-footer d-flex justify-content-end gap-2">
+                              <button className="btn btn-dark fw-semibold" onClick={addAssistant}>
+                                  + Dodaj asystenta
+                              </button>
+                              <button className="btn btn-success fw-semibold" onClick={saveAssistants} disabled={assistants.length===0}>
+                                  Zatwierdź asystentów
+                              </button>
+                          </div>
                       </div>
+                  </div>
 
+                  <div className="col-12 col-lg-6">
+                      <div className="card shadow-sm h-100 d-flex flex-column">
+                          <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
+                              <strong> Przypisane kwestionariusze</strong>
+                          </div>
 
-
-                      <div className="card-body p-0">
-                          <div className="table-responsive">
+                          <div className="card-body p-0">
                               <table className="table table-sm table-hover mb-0 align-middle w-100" style={{ fontSize: "0.9rem" }}>
-                                  <thead style={{position: "sticky", top: 0, zIndex: 1,}}>
+                                  <thead>
                                   <tr>
-                                      <th style={{ padding: "0.5rem 1rem", }}>Osoba</th>
-                                      <th style={{ width: 120, padding: "0.5rem 1rem" }}>Akcja</th>
+                                      <th style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>Nazwa</th>
+                                      <th style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>Przypisani użytkownicy</th>
                                   </tr>
                                   </thead>
                                   <tbody>
-                                  {assistants.map((a, idx) => (
-                                      <tr key={idx}>
-                                          <td style={{ padding: "0.5rem 1rem" }}>{a}</td>
-                                          <td style={{ padding: "0.5rem 1rem" }}>
-                                              <button
-                                                  className="btn btn-sm btn-outline-danger"
-                                                  onClick={() => setAssistants(prev => prev.filter(x => x !== a))}
-                                              >
-                                                  Usuń
-                                              </button>
-                                          </td>
+                                  {questionnaires.map(q => (
+                                      <tr key={q.id}>
+                                          <td style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>{q.name}</td>
+                                          <td style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>{q.assigned.join(", ") || <span className="text-muted">Brak</span>}</td>
                                       </tr>
                                   ))}
-                                  {assistants.length === 0 && (
+                                  {questionnaires.length === 0 && (
                                       <tr>
-                                          <td colSpan={2} className="text-muted text-center small py-3">
-                                              Brak asystentów
-                                          </td>
+                                          <td colSpan={3} className="text-center text-muted small py-3">Brak kwestionariuszy</td>
                                       </tr>
                                   )}
                                   </tbody>
                               </table>
                           </div>
                       </div>
+                  </div>
 
 
-                      <div className="card-footer d-flex justify-content-end">
-                          <button
-                              className="btn"
-                              style={{
-                                  backgroundColor: '#0a2b4c',
-                                  color: '#ffffff',
-                                  borderRadius: '0.35rem',
-                                  padding: '0.5rem 1rem',
-                                  boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
-                                  border: 'none'
-                              }}
-                              onClick={addAssistant}
-                          >
-                              Dodaj asystenta
-                          </button>
+                  {showAssignPicker && (
+                      <div className="position-fixed top-0 start-0 w-100 h-100" style={{ background:"rgba(0,0,0,0.35)", zIndex:1050 }} onClick={()=>setShowAssignPicker(false)}>
+                          <div className="card shadow" style={{ maxWidth:400, margin:"15vh auto", padding:0 }} onClick={e=>e.stopPropagation()}>
+                              <div className="card-header d-flex justify-content-between align-items-center">
+                                  <strong>Przypisz użytkownika</strong>
+                                  <button className="btn btn-sm btn-outline-secondary" onClick={()=>setShowAssignPicker(false)}>Zamknij</button>
+                              </div>
+                              <div className="card-body">
+                                  <select className="form-select" value={userChoice} onChange={e=>setUserChoice(e.target.value)}>
+                                      <option value="">— wybierz —</option>
+                                      {allUsers.map(u => <option key={u} value={u}>{u}</option>)}
+                                  </select>
+                              </div>
+                              <div className="card-footer d-flex justify-content-end gap-2">
+                                  <button className="btn btn-light" onClick={()=>setShowAssignPicker(false)}>Anuluj</button>
+                                  <button className="btn btn-primary" onClick={handleAssignUser} disabled={!userChoice}>Dodaj</button>
+                              </div>
+                          </div>
                       </div>
-                </div>
-              </div>
+                  )}
 
             </div>
 

@@ -2,8 +2,8 @@ import React, { useMemo, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Sidebar, Topbar } from "../../ui/Common";
 import axios from "axios";
-import Pagination from "../../sites/Pagination"; // make sure this path is correct
-import { BsSearch } from "react-icons/bs";
+import Pagination from "../../sites/Pagination";
+import { BsSearch, BsFilter } from "react-icons/bs";
 
 const statusLabel = {
     active: { text: "W trakcie"},
@@ -29,6 +29,10 @@ function Projects() {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+
+    const [statusFilter, setStatusFilter] = useState(""); // filtr statusu
+    const [showStatusDropdown, setShowStatusDropdown] = useState(false);
+
 
     // Pagination
     const [currentPage, setCurrentPage] = useState(1);
@@ -158,13 +162,14 @@ function Projects() {
 
     const filtered = useMemo(() => {
         const q = search.trim().toLowerCase();
-        if (!q) return projects;
-        return projects.filter(p =>
-            [p.name, p.klient, p.status, ...(p.users || [])].some(v =>
-                String(v).toLowerCase().includes(q)
-            )
-        );
-    }, [projects, search]);
+        return projects.filter((p) => {
+            const matchesSearch = !q || [p.name, p.klient, ...(p.users || [])]
+                .some((v) => String(v).toLowerCase().includes(q));
+            const matchesStatus = !statusFilter || p.status === statusFilter;
+            return matchesSearch && matchesStatus;
+        });
+    }, [projects, search, statusFilter]);
+
 
     const totalPages = Math.ceil(filtered.length / itemsPerPage);
     const paginatedProjects = useMemo(() => {
@@ -214,7 +219,69 @@ function Projects() {
                                     <tr>
                                         <th style={headerStyle}>Projekt</th>
                                         <th style={headerStyle}>Klient</th>
-                                        <th style={headerStyle}>Status</th>
+                                        <th style={headerStyle} className="position-relative">
+                                            Status
+                                            <BsFilter
+                                                style={{ cursor: "pointer", marginLeft: 6 }}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    setShowStatusDropdown((prev) => !prev);
+                                                }}
+                                            />
+                                            {showStatusDropdown && (
+                                                <div
+                                                    className="position-absolute shadow rounded"
+                                                    style={{
+                                                        top: "100%",
+                                                        right: 0,
+                                                        zIndex: 20,
+                                                        minWidth: 140,
+                                                        backgroundColor: "#ffffff",
+                                                        color: "#000000",
+                                                        border: "1px solid #ccc",
+                                                        boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
+                                                    }}
+                                                >
+                                                    {["active", "completed", "delayed"].map((s) => (
+                                                        <div
+                                                            key={s}
+                                                            className="px-3 py-2"
+                                                            style={{
+                                                                cursor: "pointer",
+                                                                fontSize: "0.85rem",
+                                                                fontWeight: 400,
+                                                                color: "#000000",
+                                                                backgroundColor: statusFilter === s ? "#cce5ff" : "transparent",
+                                                                borderBottom: "1px solid #eee",
+                                                            }}
+                                                            onClick={() => {
+                                                                setStatusFilter(s);
+                                                                setShowStatusDropdown(false);
+                                                            }}
+                                                        >
+                                                            {statusLabel[s].text}
+                                                        </div>
+                                                    ))}
+                                                    <div
+                                                        className="px-3 py-2"
+                                                        style={{
+                                                            cursor: "pointer",
+                                                            color: "#000000",
+                                                            fontWeight: 500,
+                                                            fontSize: "0.85rem",
+                                                            borderTop: "1px solid #eee",
+                                                            backgroundColor: "#f8f9fa",
+                                                        }}
+                                                        onClick={() => {
+                                                            setStatusFilter("");
+                                                            setShowStatusDropdown(false);
+                                                        }}
+                                                    >
+                                                        Wyczyść filtr
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </th>
                                         <th style={headerStyle}>Postęp</th>
                                     </tr>
                                     </thead>

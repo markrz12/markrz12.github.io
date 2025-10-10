@@ -559,6 +559,296 @@
       ]
     }
   ],
+  "Clients": [
+      {
+        "id": 1,
+        "name": "Alpha Sp. z o.o.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0000123456",
+        "nip": "5211234567",
+        "regon": "012345678",
+        "form": "Spółka z o.o.",
+        "addr": {
+          "kraj": "Polska",
+          "woj": "mazowieckie",
+          "miejscowosc": "Warszawa",
+          "ulica": "Nowowiejska",
+          "nrDomu": "15",
+          "kod": "00-665"
+        },
+        "contact": {
+          "email": "biuro@alphatech.pl",
+          "phone": "+48 22 123 45 67",
+          "www": "alphatech.pl"
+        },
+        "repr": [
+          { "name": "Jan Kowalski", "role": "Prezes Zarządu", "sposob": "samodzielnie" }
+        ],
+        "projects": ["DR/2025/123456", "DR/2024/234567"]
+      },
+      {
+        "id": 2,
+        "name": "BetaConsulting S.A.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0000234567",
+        "nip": "6762345678",
+        "regon": "023456789",
+        "form": "Spółka Akcyjna",
+        "addr": {
+          "kraj": "Polska",
+          "woj": "małopolskie",
+          "miejscowosc": "Kraków",
+          "ulica": "Długa",
+          "nrDomu": "8",
+          "kod": "31-147"
+        },
+        "contact": {
+          "email": "kontakt@betaconsulting.pl",
+          "phone": "+48 12 222 22 22",
+          "www": "betaconsulting.pl"
+        },
+        "repr": [
+          { "name": "Maria Nowak", "role": "Prezes Zarządu", "sposob": "samodzielnie" }
+        ],
+        "projects": ["DR/2025/345678", "DR/2024/456789"]
+      },
+      {
+        "id": 3,
+        "name": "Gamma Logistics Sp. z o.o.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0000345678",
+        "nip": "8513456789",
+        "regon": "034567890",
+        "form": "Spółka z o.o.",
+        "addr": {
+          "kraj": "Polska",
+          "woj": "pomorskie",
+          "miejscowosc": "Gdańsk",
+          "ulica": "Portowa",
+          "nrDomu": "5",
+          "kod": "80-001"
+        },
+        "contact": {
+          "email": "info@gammalogistics.pl",
+          "phone": "+48 58 111 22 33",
+          "www": "gammalogistics.pl"
+        },
+        "repr": [
+          { "name": "Tomasz Zieliński", "role": "Dyrektor Generalny", "sposob": "samodzielnie" }
+        ],
+        "projects": ["DR/2025/567890", "DR/2024/678901"]
+      },
+      {
+        "id": 4,
+        "name": "Delta Finance S.A.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0000456789",
+        "nip": "6341234567",
+        "regon": "045678901",
+        "form": "Spółka Akcyjna",
+        "addr": {
+          "kraj": "Polska",
+          "woj": "śląskie",
+          "miejscowosc": "Katowice",
+          "ulica": "Mickiewicza",
+          "nrDomu": "12",
+          "kod": "40-092"
+        },
+        "contact": {
+          "email": "biuro@deltafinance.pl",
+          "phone": "+48 32 222 11 11",
+          "www": "deltafinance.pl"
+        },
+        "repr": [
+          { "name": "Agnieszka Piotrowska", "role": "CFO", "sposob": "samodzielnie" }
+        ],
+        "projects": ["DR/2025/789012", "DR/2024/890123"]
+      },
+      {
+        "id": 5,
+        "name": "Epsilon Tech S.A.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0000567890",
+        "nip": "9459876543",
+        "regon": "056789012",
+        "form": "Spółka Akcyjna",
+        "addr": {
+          "kraj": "Polska",
+          "woj": "małopolskie",
+          "miejscowosc": "Kraków",
+          "ulica": "Wielicka",
+          "nrDomu": "220",
+          "kod": "30-552"
+        },
+        "contact": {
+          "email": "office@epsilontech.pl",
+          "phone": "+48 12 333 44 55",
+          "www": "epsilontech.pl"
+        },
+        "repr": [
+          { "name": "Krzysztof Wiśniewski", "role": "CEO", "sposob": "samodzielnie" }
+        ],
+        "projects": ["DR/2025/901234", "DR/2024/012345"]
+      },
+      {
+        "id": 6,
+        "name": "Omega Consulting Sp. z o.o.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0000678901",
+        "nip": "7281239876",
+        "regon": "067890123",
+        "form": "Spółka z o.o.",
+        "addr": {
+          "kraj": "Polska",
+          "woj": "łódzkie",
+          "miejscowosc": "Łódź",
+          "ulica": "Piotrkowska",
+          "nrDomu": "250",
+          "kod": "90-001"
+        },
+        "contact": {
+          "email": "kontakt@omegaconsulting.pl",
+          "phone": "+48 42 123 45 67",
+          "www": "omegaconsulting.pl"
+        },
+        "repr": [
+          { "name": "Anna Lewandowska", "role": "Prezes Zarządu", "sposob": "samodzielnie" }
+        ],
+        "projects": ["DR/2025/123789", "DR/2024/234890"]
+      },
+      {
+        "id": 7,
+        "name": "Sigma Systems Sp. z o.o.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0000789012",
+        "nip": "8321234567",
+        "regon": "078901234",
+        "form": "Spółka z o.o.",
+        "addr": { "kraj": "Polska", "woj": "dolnośląskie", "miejscowosc": "Wrocław", "ulica": "Rynek", "nrDomu": "1", "kod": "50-101" },
+        "contact": { "email": "kontakt@sigmasystems.pl", "phone": "+48 71 111 22 33", "www": "sigmasystems.pl" },
+        "repr": [{ "name": "Piotr Nowak", "role": "CEO", "sposob": "samodzielnie" }],
+        "projects": ["DR/2025/345901", "DR/2024/456012"]
+      },
+      {
+        "id": 8,
+        "name": "Theta Innovations S.A.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0000890123",
+        "nip": "9451234567",
+        "regon": "089012345",
+        "form": "Spółka Akcyjna",
+        "addr": { "kraj": "Polska", "woj": "wielkopolskie", "miejscowosc": "Poznań", "ulica": "Główna", "nrDomu": "10", "kod": "60-101" },
+        "contact": { "email": "biuro@thetainnovations.pl", "phone": "+48 61 222 33 44", "www": "thetainnovations.pl" },
+        "repr": [{ "name": "Karolina Kowalska", "role": "CFO", "sposob": "samodzielnie" }],
+        "projects": ["DR/2025/567123", "DR/2024/678234"]
+      },
+      {
+        "id": 9,
+        "name": "Lambda Solutions Sp. z o.o.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0000901234",
+        "nip": "8213456789",
+        "regon": "090123456",
+        "form": "Spółka z o.o.",
+        "addr": { "kraj": "Polska", "woj": "podkarpackie", "miejscowosc": "Rzeszów", "ulica": "Słoneczna", "nrDomu": "7", "kod": "35-101" },
+        "contact": { "email": "kontakt@lambdasolutions.pl", "phone": "+48 17 111 22 33", "www": "lambdasolutions.pl" },
+        "repr": [{ "name": "Michał Wiśniewski", "role": "Prezes Zarządu", "sposob": "samodzielnie" }],
+        "projects": ["DR/2025/789345", "DR/2024/890456"]
+      },
+      {
+        "id": 10,
+        "name": "Kappa Enterprises S.A.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0001012345",
+        "nip": "9562345678",
+        "regon": "101234567",
+        "form": "Spółka Akcyjna",
+        "addr": { "kraj": "Polska", "woj": "lubelskie", "miejscowosc": "Lublin", "ulica": "Krótka", "nrDomu": "3", "kod": "20-101" },
+        "contact": { "email": "office@kappaenterprises.pl", "phone": "+48 81 222 11 33", "www": "kappaenterprises.pl" },
+        "repr": [{ "name": "Anna Nowak", "role": "CEO", "sposob": "samodzielnie" }],
+        "projects": ["DR/2025/901567", "DR/2024/012678"]
+      },
+      {
+        "id": 11,
+        "name": "Omicron Tech Sp. z o.o.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0001123456",
+        "nip": "8341234567",
+        "regon": "112345678",
+        "form": "Spółka z o.o.",
+        "addr": { "kraj": "Polska", "woj": "mazowieckie", "miejscowosc": "Warszawa", "ulica": "Marszałkowska", "nrDomu": "50", "kod": "00-001" },
+        "contact": { "email": "kontakt@omicrontech.pl", "phone": "+48 22 333 44 55", "www": "omicrontech.pl" },
+        "repr": [{ "name": "Tomasz Kaczmarek", "role": "CIO", "sposob": "samodzielnie" }],
+        "projects": ["DR/2025/123678", "DR/2024/234789"]
+      },
+      {
+        "id": 12,
+        "name": "Pi Consulting S.A.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0001234567",
+        "nip": "8671234567",
+        "regon": "123456789",
+        "form": "Spółka Akcyjna",
+        "addr": { "kraj": "Polska", "woj": "warmińsko-mazurskie", "miejscowosc": "Olsztyn", "ulica": "Leśna", "nrDomu": "18", "kod": "10-101" },
+        "contact": { "email": "biuro@piconsulting.pl", "phone": "+48 89 222 33 44", "www": "piconsulting.pl" },
+        "repr": [{ "name": "Marta Kowalczyk", "role": "CEO", "sposob": "samodzielnie" }],
+        "projects": ["DR/2025/345789", "DR/2024/456890"]
+      },
+      {
+        "id": 13,
+        "name": "Rho Solutions Sp. z o.o.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0001345678",
+        "nip": "8451234567",
+        "regon": "134567890",
+        "form": "Spółka z o.o.",
+        "addr": { "kraj": "Polska", "woj": "podlaskie", "miejscowosc": "Białystok", "ulica": "Kwiatowa", "nrDomu": "22", "kod": "15-101" },
+        "contact": { "email": "kontakt@rhosolutions.pl", "phone": "+48 85 111 22 33", "www": "rhosolutions.pl" },
+        "repr": [{ "name": "Łukasz Zieliński", "role": "CFO", "sposob": "samodzielnie" }],
+        "projects": ["DR/2025/567901", "DR/2024/678012"]
+      },
+      {
+        "id": 14,
+        "name": "Tau Innovations S.A.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0001456789",
+        "nip": "9234567890",
+        "regon": "145678901",
+        "form": "Spółka Akcyjna",
+        "addr": { "kraj": "Polska", "woj": "śląskie", "miejscowosc": "Częstochowa", "ulica": "Sienkiewicza", "nrDomu": "11", "kod": "42-200" },
+        "contact": { "email": "office@tauinnovations.pl", "phone": "+48 34 222 33 44", "www": "tauinnovations.pl" },
+        "repr": [{ "name": "Agnieszka Kowalska", "role": "CEO", "sposob": "samodzielnie" }],
+        "projects": ["DR/2025/789012", "DR/2024/890123"]
+      },
+      {
+        "id": 15,
+        "name": "Upsilon Tech Sp. z o.o.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0001567890",
+        "nip": "9123456789",
+        "regon": "156789012",
+        "form": "Spółka z o.o.",
+        "addr": { "kraj": "Polska", "woj": "małopolskie", "miejscowosc": "Kraków", "ulica": "Słowackiego", "nrDomu": "5", "kod": "30-101" },
+        "contact": { "email": "kontakt@upsilontechnology.pl", "phone": "+48 12 111 22 33", "www": "upsilontechnology.pl" },
+        "repr": [{ "name": "Paweł Nowak", "role": "CTO", "sposob": "samodzielnie" }],
+        "projects": ["DR/2025/901234", "DR/2024/012345"]
+      },
+      {
+        "id": 16,
+        "name": "Phi Consulting S.A.",
+        "reg": "Rejestr Przedsiębiorców",
+        "krs": "0001678901",
+        "nip": "9345678901",
+        "regon": "167890123",
+        "form": "Spółka Akcyjna",
+        "addr": { "kraj": "Polska", "woj": "pomorskie", "miejscowosc": "Gdynia", "ulica": "Hryniewickiego", "nrDomu": "33", "kod": "81-001" },
+        "contact": { "email": "office@phiconsulting.pl", "phone": "+48 58 222 33 44", "www": "phiconsulting.pl" },
+        "repr": [{ "name": "Monika Wiśniewska", "role": "CEO", "sposob": "samodzielnie" }],
+        "projects": ["DR/2025/123456", "DR/2024/234567"]
+      }
+    ],
+
+
   "Projects": [
     {
       "id": 1,

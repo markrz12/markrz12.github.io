@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { Sidebar, Topbar, InitialsAvatar } from "../../ui/Common";
 import Pagination from "../Pagination";
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsFilter } from "react-icons/bs";
 
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 
@@ -17,6 +17,10 @@ function Users() {
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 11;
+
+    const [showRoleDropdown, setShowRoleDropdown] = useState(false);
+    const [roleFilter, setRoleFilter] = useState("");
+
 
     // Fetch users from API
     useEffect(() => {
@@ -39,12 +43,22 @@ function Users() {
 
     // Filter users based on search
     const filtered = useMemo(() => {
-        const q = search.trim().toLowerCase();
-        if (!q) return users;
-        return users.filter(u =>
-            [u.name, u.email, u.role].some(v => String(v).toLowerCase().includes(q))
-        );
-    }, [users, search]);
+        let data = users;
+
+        if (search.trim()) {
+            const q = search.trim().toLowerCase();
+            data = data.filter(u =>
+                [u.name, u.email, u.role].some(v => String(v).toLowerCase().includes(q))
+            );
+        }
+
+        if (roleFilter) {
+            data = data.filter(u => u.role === roleFilter);
+        }
+
+        return data;
+    }, [users, search, roleFilter]);
+
 
     // Pagination logic
     const totalPages = useMemo(() => Math.ceil(filtered.length / itemsPerPage), [filtered.length]);
@@ -81,8 +95,8 @@ function Users() {
 
                 <div className="flex-grow-1 bg-light d-flex pt-2 px-2" style={{ minHeight: 0 }}>
                     {/* Left: Table */}
-                    <div className="flex-grow-1 d-flex flex-column" style={{ minWidth: 0 }}>
-                        <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: 'hidden' }}>
+                    <div className="flex-grow-1 d-flex flex-column" style={{ minHeight: 0, minWidth: 0 }}>
+                        <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: 'hidden', minHeight: 0 }}>
                             <div className="card-header" style={{ backgroundColor: "#0a2b4c", color: "#ffffff" }}>
                                 <div className="d-flex align-items-center" style={{ padding: '0.5rem 0.3rem' }}>
                                     <strong className="me-auto" style={{ fontSize: "1.1rem" }}>Moduł użytkowników</strong>
@@ -122,7 +136,71 @@ function Users() {
                                                 <th style={headerStyle}>Imię i nazwisko</th>
                                                 <th style={headerStyle}>Email</th>
                                                 <th style={headerStyle}>Status</th>
-                                                <th style={headerStyle}>Rola</th>
+                                                <th style={headerStyle} className="position-relative">
+                                                    Rola
+                                                    <BsFilter
+                                                        style={{ cursor: "pointer", marginLeft: 6 }}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setShowRoleDropdown((prev) => !prev);
+                                                        }}
+                                                    />
+                                                    {showRoleDropdown && (
+                                                        <div
+                                                            className="position-absolute shadow rounded"
+                                                            style={{
+                                                                top: "100%",
+                                                                right: 0,
+                                                                zIndex: 20,
+                                                                minWidth: 140,
+                                                                backgroundColor: "#ffffff",
+                                                                color: "#000000",
+                                                                border: "1px solid #ccc",
+                                                                boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
+                                                            }}
+                                                        >
+                                                            {["Administrator", "Kierownik", "Asystent", "Klient", "Właściciel"].map((r) => (
+                                                                <div
+                                                                    key={r}
+                                                                    className="px-3 py-2"
+                                                                    style={{
+                                                                        cursor: "pointer",
+                                                                        fontSize: "0.85rem",
+                                                                        fontWeight: 400,
+                                                                        color: "#000000",
+                                                                        backgroundColor: roleFilter === r ? "#cce5ff" : "transparent",
+                                                                        borderBottom: "1px solid #eee",
+                                                                    }}
+                                                                    onClick={() => {
+                                                                        setRoleFilter(r);
+                                                                        setShowRoleDropdown(false);
+                                                                        setCurrentPage(1); // reset paginacji
+                                                                    }}
+                                                                >
+                                                                    {r}
+                                                                </div>
+                                                            ))}
+                                                            <div
+                                                                className="px-3 py-2"
+                                                                style={{
+                                                                    cursor: "pointer",
+                                                                    color: "#000000",
+                                                                    fontWeight: 500,
+                                                                    fontSize: "0.85rem",
+                                                                    borderTop: "1px solid #eee",
+                                                                    backgroundColor: "#f8f9fa",
+                                                                }}
+                                                                onClick={() => {
+                                                                    setRoleFilter("");
+                                                                    setShowRoleDropdown(false);
+                                                                    setCurrentPage(1);
+                                                                }}
+                                                            >
+                                                                Wyczyść filtr
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </th>
                                             </tr>
                                             </thead>
                                             <tbody>
