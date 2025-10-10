@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Sidebar, Topbar } from "../../ui/Common";
 import { Link } from "react-router-dom";
 import { Hourglass, CheckCircle, AlertCircle } from "lucide-react";
+import { BsSearch } from "react-icons/bs";
 
 function Workspace() {
     const [search, setSearch] = useState("");
@@ -64,13 +65,13 @@ function Workspace() {
                 <div className="flex-grow-1 p-4 bg-light">
                     <div className="container-fluid">
 
-                        <div className="d-flex gap-4">
+                        <div className="d-flex gap-4" style={{background: "#005679"}}>
                             {/* Lewa część - projekty */}
                             <div className="bg-white rounded-2xl shadow p-4 flex-grow-1">
 
                                 {/* Header with Projekty title and search */}
                                 <div className="card-header">
-                                    <div className="d-flex align-items-center justify-content-between">
+                                    <div className="d-flex align-items-center justify-content-between" >
                                         <h5 className="text-lg font-semibold mb-2 ms-2">Projekty</h5>
 
                                         <div className="input-group input-group-sm mb-2" style={{ maxWidth: 400 }}>
@@ -93,8 +94,7 @@ function Workspace() {
                                                     ×
                                                 </button>
                                             )}
-                                            <span className="input-group-text" id="users-search-icon-top">🔍</span>
-                                        </div>
+                                            <span className="input-group-text"><BsSearch /></span>                                        </div>
                                     </div>
                                 </div>
 
@@ -186,10 +186,12 @@ function Workspace() {
 
                             {/* Prawy sidebar - Moje zadania */}
                             <div
-                                className="bg-white rounded-2xl shadow-sm p-3"
-                                style={{ width: "320px", flexShrink: 0 }}
+                                className="rounded-2xl shadow-sm p-3"
+                                style={{ width: "320px", flexShrink: 0,
+                                    background: "#0a2b4c"}}
                             >
-                                <h5 className="text-lg fw-semibold mb-3">Moje zadania</h5>
+                                <h5 className="text-lg fw-semibold mb-2" style={{color: "#ffff", padding:"10px"}}>
+                                    Moje zadania</h5>
 
                                 <ul className="list-unstyled mb-0 d-flex flex-column gap-2">
                                     {tasks.map((task) => {
@@ -216,7 +218,7 @@ function Workspace() {
                                         return (
                                             <li
                                                 key={task.id}
-                                                className="p-3 rounded-3 border"
+                                                className="p-3 rounded-4 border"
                                                 style={{
                                                     transition: "all 0.2s ease",
                                                     backgroundColor: "#fff",

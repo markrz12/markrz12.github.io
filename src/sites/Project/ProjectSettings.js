@@ -10,7 +10,6 @@ function ProjektKonfiguracja(){
 
   const [manager, setManager] = useState("");
   const [assistants, setAssistants] = useState(['Piotr Nowak','Katarzyna Malinowska','Ewa Jabłońska']);
-  const [clients, setClients] = useState(['Janina Zielińska','Robert Kamiński']);
   const [showAssistantPicker, setShowAssistantPicker] = useState(false);
   const [assistantChoice, setAssistantChoice] = useState("");
   const availableAssistantCandidates = useMemo(() => allUsers.filter(u => u !== manager && !assistants.includes(u)), [allUsers, manager, assistants]);
@@ -18,10 +17,6 @@ function ProjektKonfiguracja(){
   const addAssistant = () => {
     setAssistantChoice("");
     setShowAssistantPicker(true);
-  };
-  const addClient = () => {
-    const candidate = allUsers.find(u => !clients.includes(u));
-    if(candidate) setClients(prev=>[...prev, candidate]);
   };
 
     const breadcrumb = [
@@ -31,6 +26,67 @@ function ProjektKonfiguracja(){
     ];
 
     const [search, setSearch] = useState('');
+
+    const [questionnaires, setQuestionnaires] = useState([
+        { id: 1, name: "Test niezależności kluczowego biegłego rewidenta", assigned: [] },
+        { id: 2, name: "Test niezależności członka zespołu", assigned: [] },
+        { id: 3, name: "Wyznaczenie zespołu badającego", assigned: [] }
+    ]);
+
+    const saveManager = () => {
+        if (!manager) return alert("Wybierz kierownika!");
+
+        setQuestionnaires(prev =>
+            prev.map(q => {
+                if (q.name === "Test niezależności kluczowego biegłego rewidenta") {
+                    // nadpisz tylko aktualnym managerem
+                    return { ...q, assigned: [manager] };
+                }
+                if (q.name === "Wyznaczenie zespołu badającego") {
+                    // manager + obecni asystenci
+                    const newAssigned = [manager, ...assistants];
+                    return { ...q, assigned: newAssigned };
+                }
+                return q;
+            })
+        );
+
+        alert(`Zapisano kierownika: ${manager}`);
+    };
+
+    const saveAssistants = () => {
+        setQuestionnaires(prev =>
+            prev.map(q => {
+                if (q.name === "Test niezależności członka zespołu") {
+                    return { ...q, assigned: [...assistants] };
+                }
+                if (q.name === "Wyznaczenie zespołu badającego") {
+                    // manager + obecni asystenci
+                    const newAssigned = [manager, ...assistants];
+                    return { ...q, assigned: newAssigned };
+                }
+                return q;
+            })
+        );
+
+        alert("Zapisano asystentów");
+    };
+
+    const [showAssignPicker, setShowAssignPicker] = useState(false);
+    const [currentQId] = useState(null);
+    const [userChoice, setUserChoice] = useState("");
+
+    const handleAssignUser = () => {
+        if(!userChoice) return;
+        setQuestionnaires(prev => prev.map(q => {
+            if(q.id === currentQId && !q.assigned.includes(userChoice)){
+                return { ...q, assigned: [...q.assigned, userChoice] };
+            }
+            return q;
+        }));
+        setShowAssignPicker(false);
+        setUserChoice("");
+    };
 
 
     return (
@@ -45,155 +101,167 @@ function ProjektKonfiguracja(){
         {/* Content */}
         <div className="flex-grow-1 bg-light d-flex pt-3 px-3" style={{ minHeight:0 }}>
           <div className="container-fluid">
-            <h5 className="mb-3">Konfiguracja użytkowników projektu</h5>
+            <h5 className="mb-4 mt-3">Konfiguracja użytkowników projektu</h5>
 
-              <div className="mb-3 d-flex" style={{ maxWidth: 520 }}>
+              <div className="mb-3 d-flex align-items-stretch" style={{ maxWidth: 650 }}>
                   <label
                       className="form-label mb-0 text-white fw-bold d-flex align-items-center justify-content-center"
                       style={{
                           backgroundColor: "#0a2b4c",
-                          padding: '0.75rem 1rem',
-                          borderTopLeftRadius: '0.25rem',
-                          borderBottomLeftRadius: '0.25rem',
-                          minWidth: '130px',
-                          textAlign: 'center',
-                          marginRight: '0px'
+                          padding: "0.75rem 1rem",
+                          borderTopLeftRadius: "0.25rem",
+                          borderBottomLeftRadius: "0.25rem",
+                          minWidth: "130px",
+                          textAlign: "center",
+                          marginRight: "0px",
                       }}
                   >
                       Kierownik
                   </label>
+
                   <select
                       className="form-select"
                       value={manager}
-                      onChange={e=>setManager(e.target.value)}
+                      onChange={(e) => setManager(e.target.value)}
                       style={{
-                          flexGrow: 1,
-                          borderTopLeftRadius: 0,
-                          borderBottomLeftRadius: 0,
-                          padding: '0.75rem 1rem',   // dopasowane do label
-                          height: '100%'             // dopasowanie do label
+                          borderRadius: 0,
+                          padding: "0.75rem 1rem",
+                          width: "398px",
+                          height: "100%", // dopasowanie do label
                       }}
                   >
                       <option value="">Wybierz kierownika</option>
-                      {allUsers.map((u,i)=> (<option key={i} value={u}>{u}</option>))}
+                      {allUsers.map((u, i) => (
+                          <option key={i} value={u}>
+                              {u}
+                          </option>
+                      ))}
                   </select>
+
+                  <button
+                      className="btn btn-success fw-semibold"
+                      style={{
+                          borderTopLeftRadius: 0,
+                          borderBottomLeftRadius: 0,
+                          borderTopRightRadius: "0.25rem",
+                          borderBottomRightRadius: "0.25rem",
+                          padding: "0.75rem 1rem",
+                          height: "100%", // dopasowanie do labela i selecta
+                      }}
+                      disabled={!manager}
+                      onClick={saveManager}
+                  >
+                      Zapisz
+                  </button>
               </div>
 
 
+
               <div className="row g-4">
-              <div className="col-12 col-lg-6">
-                  <div className="card shadow-sm h-100 d-flex flex-column">
-                      <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
-                          <strong>Asystenci</strong>
+                  <div className="col-12 col-lg-6 d-flex flex-column">
+                      <div className="card shadow-sm h-100 d-flex flex-column">
+                          {/* Nagłówek */}
+                          <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
+                              <strong>Asystenci</strong>
+                          </div>
+
+                          {/* Tabela */}
+                          <div className="card-body p-0 flex-grow-1">
+                              <div className="table-responsive">
+                                  <table className="table table-sm table-hover mb-0 align-middle w-100" style={{ fontSize: "0.9rem" }}>
+                                      <thead style={{position: "sticky", top: 0, zIndex: 1}}>
+                                      <tr>
+                                          <th style={{ padding: "0.5rem 1rem" }}>Osoba</th>
+                                          <th style={{ width: 120, padding: "0.5rem 1rem" }}>Akcja</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                                      {assistants.map((a, idx) => (
+                                          <tr key={idx}>
+                                              <td style={{ padding: "0.5rem 1rem" }}>{a}</td>
+                                              <td style={{ padding: "0.5rem 1rem" }}>
+                                                  <button className="btn btn-sm btn-outline-danger" onClick={() => setAssistants(prev => prev.filter(x => x !== a))}>
+                                                      Usuń
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                      ))}
+                                      {assistants.length === 0 && (
+                                          <tr>
+                                              <td colSpan={2} className="text-muted text-center small py-3">Brak asystentów</td>
+                                          </tr>
+                                      )}
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+
+                          {/* Footer z przyciskiem Dodaj */}
+                          <div className="card-footer d-flex justify-content-end gap-2">
+                              <button className="btn btn-dark fw-semibold" onClick={addAssistant}>
+                                  + Dodaj asystenta
+                              </button>
+                              <button className="btn btn-success fw-semibold" onClick={saveAssistants} disabled={assistants.length===0}>
+                                  Zatwierdź asystentów
+                              </button>
+                          </div>
                       </div>
+                  </div>
 
+                  <div className="col-12 col-lg-6">
+                      <div className="card shadow-sm h-100 d-flex flex-column">
+                          <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
+                              <strong> Przypisane kwestionariusze</strong>
+                          </div>
 
-
-                      <div className="card-body p-0">
-                          <div className="table-responsive">
+                          <div className="card-body p-0">
                               <table className="table table-sm table-hover mb-0 align-middle w-100" style={{ fontSize: "0.9rem" }}>
-                                  <thead style={{position: "sticky", top: 0, zIndex: 1,}}>
+                                  <thead>
                                   <tr>
-                                      <th style={{ padding: "0.5rem 1rem", }}>Osoba</th>
-                                      <th style={{ width: 120, padding: "0.5rem 1rem" }}>Akcja</th>
+                                      <th style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>Nazwa</th>
+                                      <th style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>Przypisani użytkownicy</th>
                                   </tr>
                                   </thead>
                                   <tbody>
-                                  {assistants.map((a, idx) => (
-                                      <tr key={idx}>
-                                          <td style={{ padding: "0.5rem 1rem" }}>{a}</td>
-                                          <td style={{ padding: "0.5rem 1rem" }}>
-                                              <button
-                                                  className="btn btn-sm btn-outline-danger"
-                                                  onClick={() => setAssistants(prev => prev.filter(x => x !== a))}
-                                              >
-                                                  Usuń
-                                              </button>
-                                          </td>
+                                  {questionnaires.map(q => (
+                                      <tr key={q.id}>
+                                          <td style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>{q.name}</td>
+                                          <td style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>{q.assigned.join(", ") || <span className="text-muted">Brak</span>}</td>
                                       </tr>
                                   ))}
-                                  {assistants.length === 0 && (
+                                  {questionnaires.length === 0 && (
                                       <tr>
-                                          <td colSpan={2} className="text-muted text-center small py-3">
-                                              Brak asystentów
-                                          </td>
+                                          <td colSpan={3} className="text-center text-muted small py-3">Brak kwestionariuszy</td>
                                       </tr>
                                   )}
                                   </tbody>
                               </table>
                           </div>
                       </div>
-
-
-                      <div className="card-footer d-flex justify-content-end">
-                          <button
-                              className="btn"
-                              style={{
-                                  backgroundColor: '#0a2b4c',
-                                  color: '#ffffff',
-                                  borderRadius: '0.35rem',
-                                  padding: '0.5rem 1rem',
-                                  boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
-                                  border: 'none'
-                              }}
-                              onClick={addAssistant}
-                          >
-                              Dodaj asystenta
-                          </button>
-                      </div>
-                </div>
-              </div>
-
-              <div className="col-12 col-lg-6">
-                  <div className="card shadow-sm h-100 d-flex flex-column">
-                      <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
-                          <strong>Klienci</strong>
-                      </div>
-
-                      <div className="card-body p-0">
-                    <div className="table-responsive">
-                      <table className="table table-sm table-hover mb-0 align-middle" style={{ fontSize:'0.9rem' }}>
-                          <thead style={{position: "sticky", top: 0, zIndex: 1,}}>
-                          <tr>
-                              <th style={{ padding: "0.5rem 1rem", }}>Osoba</th>
-                              <th style={{ width: 120, padding: "0.5rem 1rem" }}>Akcja</th>
-                          </tr>
-                          </thead>
-                        <tbody>
-                          {clients.map((c,idx)=> (
-                            <tr key={idx}>
-                                <td style={{ padding: "0.5rem 1rem" }}>{c}</td>
-                                <td style={{ padding: "0.5rem 1rem" }}>
-
-                                <button className="btn btn-sm btn-outline-danger" onClick={()=>setClients(prev=>prev.filter(x=>x!==c))}>Usuń</button>
-                              </td>
-                            </tr>
-                          ))}
-                          {clients.length===0 && (
-                            <tr><td colSpan={2} className="text-muted text-center small py-3">Brak klientów</td></tr>
-                          )}
-                        </tbody>
-                      </table>
-                    </div>
                   </div>
-                          <div className="card-footer d-flex justify-content-end">
-                              <button
-                                  className="btn"
-                                  style={{
-                                      backgroundColor: '#0a2b4c',
-                                      color: '#ffffff',
-                                      borderRadius: '0.35rem',
-                                      padding: '0.5rem 1rem',
-                                      boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
-                                      border: 'none'
-                                  }}
-                                  onClick={addClient}
-                              >
-                                  Dodaj klienta
-                              </button>
+
+
+                  {showAssignPicker && (
+                      <div className="position-fixed top-0 start-0 w-100 h-100" style={{ background:"rgba(0,0,0,0.35)", zIndex:1050 }} onClick={()=>setShowAssignPicker(false)}>
+                          <div className="card shadow" style={{ maxWidth:400, margin:"15vh auto", padding:0 }} onClick={e=>e.stopPropagation()}>
+                              <div className="card-header d-flex justify-content-between align-items-center">
+                                  <strong>Przypisz użytkownika</strong>
+                                  <button className="btn btn-sm btn-outline-secondary" onClick={()=>setShowAssignPicker(false)}>Zamknij</button>
+                              </div>
+                              <div className="card-body">
+                                  <select className="form-select" value={userChoice} onChange={e=>setUserChoice(e.target.value)}>
+                                      <option value="">— wybierz —</option>
+                                      {allUsers.map(u => <option key={u} value={u}>{u}</option>)}
+                                  </select>
+                              </div>
+                              <div className="card-footer d-flex justify-content-end gap-2">
+                                  <button className="btn btn-light" onClick={()=>setShowAssignPicker(false)}>Anuluj</button>
+                                  <button className="btn btn-primary" onClick={handleAssignUser} disabled={!userChoice}>Dodaj</button>
+                              </div>
                           </div>
-                </div>
-              </div>
+                      </div>
+                  )}
+
             </div>
 
           </div>
