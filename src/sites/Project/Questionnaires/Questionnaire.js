@@ -1,10 +1,12 @@
 import React, { useState} from "react";
-import { Sidebar, Topbar, CloseX, InitialsAvatar } from "../../../ui/Common_project.js";
+import { Sidebar, Topbar } from "../../../ui/Common_project.js";
 import { timeAgo, ProgressMeter } from "../../Functions";
 import FilesTable from "../Tabs/Files";
 import RequestsTable from "../Tabs/Request";
 import ActivityLog from "../Tabs/Activitylog";
 import TabNavigation from "../Tabs/TabNavigation";
+import { useDropdown, InitialsAvatar, Notifications, CloseX} from "../../../ui/common_function";
+
 
 function KwestionariuszFull() {
     // --- Dane początkowe ---

@@ -43,6 +43,7 @@ function ProjectClientForm({ onCreate }) {
         contact: false,
         repr: false,
     });
+
     const [selected, setSelected] = useState(null);
     const [suggestions, setSuggestions] = useState([]);
 
@@ -177,7 +178,7 @@ function ProjectClientForm({ onCreate }) {
                     {/* Wyszukiwanie klienta */}
                     <div className="mt-2">
                         <h5 className="fw-semibold mb-2" style={{paddingLeft: "0.2rem"}}>
-                            Moduł tworzenia projektu
+                            Moduł dodawania klienta
                         </h5>
                         <div className="d-flex flex-column flex-sm-row align-items-start gap-3 mt-3">
                             <div className="position-relative w-100 " style={{ maxWidth: 520 }}>

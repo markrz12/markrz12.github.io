@@ -1,33 +1,8 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {BsCollection, BsPlayCircle, BsShieldCheck, BsGraphUp, BsListCheck, BsHouse, BsPersonGear, BsInfoCircle, BsClipboardCheck, BsChevronRight, BsGear, BsBell} from "react-icons/bs";
+import { useDropdown, InitialsAvatar, Notifications, CloseX} from "../ui/common_function";
 
-export function InitialsAvatar({ name = "Jan Użytkownik", size = 26 }) {
-    const initials = String(name || "")
-        .split(/\s|\.|-/).filter(Boolean).slice(0, 2)
-        .map(s => s[0]?.toUpperCase()).join('') || '?';
-    const dim = size;
-    return (
-        <div
-            className="rounded-circle"
-            aria-hidden="true"
-            style={{
-                width: dim,
-                height: dim,
-                background: '#e6edf5',
-                color: '#0f2a3d',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontWeight: 600,
-                fontSize: dim > 24 ? '0.8rem' : '0.7rem',
-                border: '1px solid #d7e3f2'
-            }}
-        >
-            {initials}
-        </div>
-    );
-}
 export function Topbar({ breadcrumb, onLogout }){
     const [openNotifications, setOpenNotifications] = useState(false);
 
@@ -110,38 +85,8 @@ export function Topbar({ breadcrumb, onLogout }){
                 <Notifications open={openNotifications} setOpen={setOpenNotifications} popRef={notificationsPopRef} btnRef={notificationsBtnRef} />
                 <button ref={accountBtnRef} className="btn p-0 border-0" aria-haspopup="menu" aria-expanded={showAccount? 'true':'false'} onClick={()=>setShowAccount(v=>!v)}
                         onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setShowAccount(v=>!v);} }} title="Konto"
-                        style={{ padding:'2px 8px', border:'1px solid rgba(255,255,255,0.35)', borderRadius:999, color:'#fff', display:'flex', alignItems:'center', gap:6, background:'transparent' }} onMouseOver={(e)=>{ e.currentTarget.style.background='rgba(255,255,255,0.12)'; }} onMouseOut={(e)=>{ e.currentTarget.style.background='transparent'; }} > <InitialsAvatar name="Jan Użytkownik" size={26} /> <span aria-hidden="true" style={{ fontSize:12, opacity:0.9, lineHeight:1, transform:'translateY(1px)' }}>▾</span> </button> {showAccount && ( <div ref={accountMenuRef} className="card shadow-sm" style={{ position:'absolute', right:0, top:'100%', marginTop:'0.5rem', minWidth:260, zIndex:2000 }} role="menu" > <div className="card-body py-2"> <div className="d-flex align-items-center mb-2" style={{ gap:'0.5rem' }}> <InitialsAvatar name="Jan Użytkownik" size={28} /> <div> <div className="text-muted small mb-1" style={{ lineHeight:1 }}>Zalogowano jako</div> <div className="fw-semibold mb-1" style={{ lineHeight:1.1 }}>Jan Użytkownik</div> <div className="text-muted small">jan@example.com</div> </div> </div> <hr className="my-2" /> <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center" onClick={()=>setShowAccount(false)}> <span className="me-2">👤</span> Profil </button> <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center" onClick={()=>setShowAccount(false)}> <span className="me-2">⚙️</span> Ustawienia </button> <hr className="my-2" /> {onLogout ? ( <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" onClick={onLogout}> <span className="me-2">🚪</span> Wyloguj </button> ) : ( <a role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" href="/"> <span className="me-2">🚪</span> Wyloguj </a> )} </div> </div> )} </div> </div> </div> ); }
-
-export function Notifications({ open, setOpen, popRef, btnRef }) {
-    return (
-        <div className="position-relative me-2">
-            <button
-                ref={btnRef}
-                className="btn p-0 d-inline-flex align-items-center justify-content-center border rounded-circle"
-                aria-haspopup="menu"
-                aria-expanded={open ? 'true' : 'false'}
-                title="Powiadomienia"
-                onClick={() => setOpen(v => !v)}
-                style={{ width: 30, height: 30, borderColor: 'rgba(255,255,255,0.6)', borderWidth: '1.25px', background: 'transparent' }}
-            >
-                <BsBell size={18} color="#ffffff" />
-            </button>
-            {open && (
-                <div ref={popRef} className="card shadow-sm" style={{ position: 'absolute', right: '100%', transform: 'translateX(8px)', top: '100%', marginTop: '0.5rem', minWidth: 260, zIndex: 2000 }}>
-                    <div className="card-header py-2"><strong>Powiadomienia</strong></div>
-                    <div className="card-body p-0" style={{ maxHeight: 280, overflowY: 'auto' }}>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item small">Brak nowych powiadomień</li>
-                        </ul>
-                    </div>
-                    <div className="card-footer py-2 text-end">
-                        <button className="btn btn-sm btn-outline-secondary" onClick={() => setOpen(false)}>Zamknij</button>
-                    </div>
-                </div>
-            )}
-        </div>
-    );
-}
+                        style={{ padding:'2px 8px', border:'1px solid rgba(255,255,255,0.35)', borderRadius:999, color:'#fff', display:'flex', alignItems:'center', gap:6, background:'transparent' }} onMouseOver={(e)=>{ e.currentTarget.style.background='rgba(255,255,255,0.12)'; }} onMouseOut={(e)=>{ e.currentTarget.style.background='transparent'; }} >
+                    <InitialsAvatar name="Jan Użytkownik" size={31} /> <span aria-hidden="true" style={{ fontSize:12, opacity:0.9, lineHeight:1, transform:'translateY(1px)' }}>▾</span> </button> {showAccount && ( <div ref={accountMenuRef} className="card shadow-sm" style={{ position:'absolute', right:0, top:'100%', marginTop:'0.5rem', minWidth:260, zIndex:2000 }} role="menu" > <div className="card-body py-2"> <div className="d-flex align-items-center mb-2" style={{ gap:'0.5rem' }}> <InitialsAvatar name="Jan Użytkownik" size={28} /> <div> <div className="text-muted small mb-1" style={{ lineHeight:1 }}>Zalogowano jako</div> <div className="fw-semibold mb-1" style={{ lineHeight:1.1 }}>Jan Użytkownik</div> <div className="text-muted small">jan@example.com</div> </div> </div> <hr className="my-2" /> <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center" onClick={()=>setShowAccount(false)}> <span className="me-2">👤</span> Profil </button> <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center" onClick={()=>setShowAccount(false)}> <span className="me-2">⚙️</span> Ustawienia </button> <hr className="my-2" /> {onLogout ? ( <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" onClick={onLogout}> <span className="me-2">🚪</span> Wyloguj </button> ) : ( <a role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" href="/"> <span className="me-2">🚪</span> Wyloguj </a> )} </div> </div> )} </div> </div> </div> ); }
 
 export function Sidebar({ search, setSearch }) {
     const location = useLocation();
@@ -352,42 +297,5 @@ export function Sidebar({ search, setSearch }) {
                 </ul>
             </div>
         </div>
-    );
-}
-
-export function CloseX({ size=20, title='Zamknij', ariaLabel, className='', style={}, onClick }){
-    const dim = size;
-    const fontSize = Math.max(10, Math.round(dim * 0.6));
-    const baseStyle = {
-        width: dim,
-        height: dim,
-        lineHeight: 1,
-        fontSize,
-        fontWeight: 600,
-        color: '#0f2a3d',
-        background: '#ffffff',
-        borderColor: '#d7e3f2',
-        boxShadow: '0 1px 2px rgba(0,0,0,0.06)',
-        transition: 'background-color 120ms ease, box-shadow 120ms ease, transform 80ms ease',
-    };
-    const merged = { ...baseStyle, ...style };
-    return (
-        <button
-            type="button"
-            className={"btn p-0 d-inline-flex align-items-center justify-content-center rounded-circle border " + className}
-            style={merged}
-            title={title}
-            aria-label={ariaLabel || title}
-            onClick={onClick}
-            onMouseDown={(e)=>{ e.currentTarget.style.transform = 'scale(0.96)'; }}
-            onMouseUp={(e)=>{ e.currentTarget.style.transform = 'scale(1)'; }}
-            onMouseLeave={(e)=>{ e.currentTarget.style.transform = 'scale(1)'; }}
-            onFocus={(e)=>{ e.currentTarget.style.boxShadow = '0 0 0 3px rgba(20,115,230,0.25), 0 1px 2px rgba(0,0,0,0.06)'; }}
-            onBlur={(e)=>{ e.currentTarget.style.boxShadow = baseStyle.boxShadow; }}
-            onMouseOver={(e)=>{ e.currentTarget.style.background = '#f6f9ff'; }}
-            onMouseOut={(e)=>{ e.currentTarget.style.background = baseStyle.background; }}
-        >
-            ×
-        </button>
     );
 }

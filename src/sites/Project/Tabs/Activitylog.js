@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { InitialsAvatar } from "../../../ui/Common_project.js";
+import { useDropdown, InitialsAvatar, Notifications, CloseX} from "../../../ui/common_function";
+
 
 export default function ActivityLog({ logs }) {
     const [filterUser, setFilterUser] = useState("");

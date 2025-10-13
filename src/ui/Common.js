@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear, BsBell,} from "react-icons/bs";
 
+
 // 🔹 wspólny hook do obsługi dropdownów
 function useDropdown() {
     const [open, setOpen] = useState(false);
@@ -52,7 +53,7 @@ export function InitialsAvatar({ name = "Jan Użytkownik", size = 26 }) {
                 background: "#e6edf5",
                 color: "#0f2a3d",
                 fontWeight: 600,
-                fontSize: size > 24 ? "0.8rem" : "0.7rem",
+                fontSize: size > 30 ? "0.9rem" : "0.7rem",
                 border: "1px solid #d7e3f2",
             }}
         >
@@ -65,43 +66,100 @@ export function InitialsAvatar({ name = "Jan Użytkownik", size = 26 }) {
 export function Notifications() {
     const { open, setOpen, btnRef, menuRef } = useDropdown();
 
+    const notifications = [
+        { id: 1, user: "Anna Kowalska", text: "Nowa wersja raportu dostępna", time: "2 min temu" },
+        { id: 2, user: "Paweł Wiśniewski", text: "Projekt DR/2025/123456 zakończony", time: "1 godz. temu" },
+    ];
+
     return (
         <div className="position-relative me-2">
             <button
                 ref={btnRef}
-                className="btn p-0 d-flex align-items-center justify-content-center border rounded-circle"
-                onClick={() => setOpen((v) => !v)}
-                style={{ width: 30, height: 30, background: "transparent" }}
+                className="d-flex align-items-center justify-content-center"
+                onClick={() => setOpen(v => !v)}
+                style={{
+                    width: 30,
+                    height: 30,
+                    background: "#e6edf5",
+                    border: "1px solid #d7e3f2",
+                    borderRadius: "50%",
+                    cursor: "pointer",
+                    position: "relative",
+                    color: "#0f2a3d",
+                }}
+                title="Powiadomienia"
             >
-                <BsBell size={18} color="#fff" />
+                <BsBell size={32} />
+                {notifications.length > 0 && (
+                    <span
+                        className="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                        style={{
+                            background: "#b91c1c",
+                            color: "#fff",
+                            fontSize: "0.75rem",
+                            padding: "0.25em 0.5em",
+                        }}
+                    >
+                        {notifications.length}
+                    </span>
+                )}
             </button>
 
             {open && (
                 <div
                     ref={menuRef}
-                    className="card shadow-sm"
+                    className="shadow-sm"
                     style={{
                         position: "absolute",
                         right: 0,
                         top: "100%",
                         marginTop: "0.5rem",
-                        minWidth: 260,
+                        minWidth: 280,
+                        maxHeight: 300,
+                        overflowY: "auto",
+                        background: "#fff",
+                        borderRadius: 12,
+                        border: "1px solid #d7e3f2",
                         zIndex: 2000,
                     }}
                 >
-                    <div className="card-header py-2">
-                        <strong>Powiadomienia</strong>
+                    <div
+                        className="px-3 py-2 fw-semibold"
+                        style={{ borderBottom: "1px solid #e6edf5" }}
+                    >
+                        Powiadomienia
                     </div>
-                    <div className="card-body p-0" style={{ maxHeight: 280, overflowY: "auto" }}>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item small">Brak nowych powiadomień</li>
-                        </ul>
-                    </div>
+                    <ul className="list-unstyled mb-0">
+                        {notifications.length === 0 && (
+                            <li className="text-center py-3 text-muted small">Brak nowych powiadomień</li>
+                        )}
+                        {notifications.map((n) => (
+                            <li
+                                key={n.id}
+                                className="d-flex align-items-center gap-2 px-3 py-2"
+                                style={{
+                                    transition: "background 0.2s",
+                                    cursor: "pointer",
+                                    borderBottom: "1px solid #e6edf5",
+                                }}
+                                onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#f5f7fa")}
+                                onMouseLeave={e => (e.currentTarget.style.backgroundColor = "transparent")}
+                            >
+                                <InitialsAvatar name={n.user} size={27} />
+                                <div className="d-flex flex-column">
+                                    <span style={{ fontSize: "0.85rem" }}>{n.text}</span>
+                                    <span className="text-muted" style={{ fontSize: "0.7rem" }}>{n.time}</span>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             )}
         </div>
     );
 }
+
+
 
 // 🔹 Sidebar
 export function Sidebar({ search, setSearch }) {
@@ -240,7 +298,7 @@ export function Topbar({ breadcrumb, onLogout }){
                             </li> ))}
                     </ol>
                 </nav>
-                <div className="d-flex align-items-center position-relative" style={{ gap:'0.25rem' }}>
+                <div className="d-flex align-items-center position-relative" style={{ gap:'0.3rem' }}>
                     <Notifications open={openNotifications} setOpen={setOpenNotifications} popRef={notificationsPopRef} btnRef={notificationsBtnRef} />
                     <button ref={accountBtnRef} className="btn p-0 border-0" aria-haspopup="menu" aria-expanded={showAccount? 'true':'false'} onClick={()=>setShowAccount(v=>!v)}
                             onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setShowAccount(v=>!v);} }} title="Konto"
@@ -250,7 +308,7 @@ export function Topbar({ breadcrumb, onLogout }){
                                 gap:6, background:'transparent' }}
                             onMouseOver={(e)=>{ e.currentTarget.style.background='rgba(255,255,255,0.12)'; }}
                             onMouseOut={(e)=>{ e.currentTarget.style.background='transparent'; }} >
-                        <InitialsAvatar name="Jan Użytkownik" size={26} />
+                        <InitialsAvatar name="Jan Użytkownik" size={31} />
                         <span aria-hidden="true"
                               style={{ fontSize:12, opacity:0.9, lineHeight:1, transform:'translateY(1px)' }}>▾
                         </span>

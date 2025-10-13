@@ -5,11 +5,18 @@ import axios from "axios";
 import Pagination from "../../sites/Pagination";
 import { BsSearch, BsFilter } from "react-icons/bs";
 
+function generateProjectName() {
+    const year = new Date().getFullYear();
+    const random = Math.floor(100000 + Math.random() * 900000);
+    return `DR/${year}/${random}`;
+}
+
 const statusLabel = {
     active: { text: "W trakcie"},
     completed: { text: "Ukończone"},
     delayed: { text: "Opóźnione"},
 };
+
 function ProgressBar({ value }){
     return (
         <div className="flex-grow-1 position-relative" role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={100}
@@ -40,6 +47,9 @@ function Projects() {
 
     const navigate = useNavigate();
 
+    const [clients, setClients] = useState([]);
+    const [warning, setWarning] = useState("");
+
     const [modal, setModal] = useState({ type: null, target: null });
     const [form, setForm] = useState({
         name: "",
@@ -68,42 +78,41 @@ function Projects() {
         );
         setModal({ type, target });
     };
+
     const saveProject = () => {
         const usersArr = form.users.split(";").map(u => u.trim()).filter(Boolean);
-        if (modal.type === "add") {
-            const newProject = {
-                id: projects[projects.length - 1]?.id + 1 || 1,
-                name: form.name,
-                klient: form.klient,
-                status: form.status,
-                progress: Number(form.progress),
-                users: usersArr,
-                contact: {
-                    name: form.contactName,
-                    email: form.contactEmail,
-                    phone: form.contactPhone,
-                },
-            };
-            setProjects([...projects, newProject]);
-        } else if (modal.type === "edit" && modal.target) {
-            setProjects(projects.map(p =>
-                p.id === modal.target.id
-                    ? {
-                        ...p,
-                        name: form.name,
-                        klient: form.klient,
-                        status: form.status,
-                        progress: Number(form.progress),
-                        users: usersArr,
-                        contact: {
-                            name: form.contactName,
-                            email: form.contactEmail,
-                            phone: form.contactPhone,
-                        },
-                    }
-                    : p
-            ));
+
+        // 🔎 Check if client exists in DB
+        const clientExists = clients.some(
+            c => c.name?.toLowerCase() === form.klient?.trim().toLowerCase()
+        );
+
+        if (!clientExists) {
+            // 🟡 Show a simple popup alert
+            window.alert("Klienta nie ma w bazie. Proszę przejdź do strony klienta i go dodaj.");
+            return; // stop saving
         }
+
+        const newProject = {
+            id: projects[projects.length - 1]?.id + 1 || 1,
+            name: generateProjectName(), // auto name
+            klient: form.klient,
+            status: "active", // w trakcie
+            progress: 0, // start at 0%
+            users: usersArr,
+            contact: {
+                name: form.contactName,
+                email: form.contactEmail,
+                phone: form.contactPhone,
+            },
+        };
+
+        // Save to state
+        setProjects([...projects, newProject]);
+
+        // Optionally persist locally
+        localStorage.setItem("projects", JSON.stringify([...projects, newProject]));
+
         setModal({ type: null, target: null });
     };
 
@@ -140,7 +149,31 @@ function Projects() {
         return () => { alive = false; };
     }, []);
 
+    useEffect(() => {
+        let alive = true;
+        setLoading(true);
 
+        Promise.all([
+            axios.get(`${API_BASE}/Projects`),
+            axios.get(`${API_BASE}/Clients`).catch(() => ({ data: [] }))
+        ])
+            .then(([projRes, clientRes]) => {
+                if (!alive) return;
+                const apiData = projRes.data || [];
+                const localProjects = JSON.parse(localStorage.getItem("projects") || "[]");
+                const merged = [...apiData, ...localProjects.filter(lp => !apiData.some(ap => ap.id === lp.id))];
+                setProjects(merged);
+                setClients(clientRes.data || []);
+            })
+            .catch(err => {
+                if (!alive) return;
+                console.error(err);
+                setError("Nie udało się pobrać listy projektów lub klientów. Upewnij się, że mock serwer działa.");
+            })
+            .finally(() => alive && setLoading(false));
+
+        return () => { alive = false; };
+    }, []);
 
     useEffect(() => {
         let alive = true;
@@ -257,6 +290,7 @@ function Projects() {
                                                             onClick={() => {
                                                                 setStatusFilter(s);
                                                                 setShowStatusDropdown(false);
+                                                                setCurrentPage(1);
                                                             }}
                                                         >
                                                             {statusLabel[s].text}
@@ -356,10 +390,27 @@ function Projects() {
                     <div className="d-none d-lg-block" style={{ width: 360, paddingLeft: 12 }}>
                         <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: "hidden" }}>
                             <div className="text-center mb-2">
-                                <button className="btn btn-success w-100" onClick={() => navigate("/projekt-klient")}>
+                                <button
+                                    className="btn btn-success w-100"
+                                    onClick={() => {
+                                        // Reset form to defaults for a new project
+                                        setForm({
+                                            name: generateProjectName(),
+                                            klient: "",
+                                            status: "active",
+                                            progress: 0,
+                                            users: "",
+                                            contactName: "",
+                                            contactEmail: "",
+                                            contactPhone: "",
+                                        });
+                                        setModal({ type: "add", target: null });
+                                    }}
+                                >
                                     Utwórz projekt
                                 </button>
                             </div>
+
                             <div className="card-header d-flex align-items-center"
                                  style={{ padding: "0.6rem 1rem", fontSize: "1rem", backgroundColor: "#0a2b4c", color: "#ffffff" }}
                             >
@@ -498,6 +549,30 @@ function Projects() {
                                             />
                                         </div>
                                     </div>
+                                    {warning && (
+                                        <div
+                                            className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                                            style={{ background: "rgba(0,0,0,0.4)", zIndex: 1200 }}
+                                            onClick={() => setWarning("")}
+                                        >
+                                            <div
+                                                className="card shadow"
+                                                onClick={e => e.stopPropagation()}
+                                                style={{ maxWidth: 420 }}
+                                            >
+                                                <div className="card-header bg-warning text-dark fw-semibold">
+                                                    Uwaga
+                                                </div>
+                                                <div className="card-body">
+                                                    <p>{warning}</p>
+                                                    <div className="text-end">
+                                                        <button className="btn btn-primary" onClick={() => setWarning("")}>OK</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+
 
                                     {/* Buttons at bottom */}
                                     <div className="w-100 d-flex justify-content-end" style={{ gap: "0.5rem" }}>

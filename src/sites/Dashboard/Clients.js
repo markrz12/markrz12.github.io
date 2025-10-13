@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Sidebar, Topbar } from "../../ui/Common";
 import Pagination from "../Pagination";
 import { BsSearch } from "react-icons/bs";
@@ -8,52 +8,6 @@ import { BsSearch } from "react-icons/bs";
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 
 // Modale
-function AddModal({ form, setForm, handleAdd, setShowAdd, clients, setSelectedId }) {
-    return (
-        <div className="position-fixed top-0 start-0 w-100 h-100" style={{ background: "rgba(0,0,0,0.35)", zIndex: 1050 }} onClick={() => setShowAdd(false)}>
-            <div className="card shadow" style={{ maxWidth: 520, margin: "10vh auto", padding: 0, maxHeight: "80vh", display: "flex", flexDirection: "column" }} onClick={e => e.stopPropagation()}>
-                <div className="card-header d-flex justify-content-between align-items-center">
-                    <strong>Dodaj klienta</strong>
-                    <button className="btn btn-sm btn-outline-secondary" onClick={() => setShowAdd(false)}>Zamknij</button>
-                </div>
-                <div className="card-body" style={{ overflow: "auto" }}>
-                    <div className="row g-2">
-                        <div className="col-12">
-                            <label className="form-label mb-1">Nazwa</label>
-                            <input className="form-control" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} placeholder="np. ACME Sp. z o.o." />
-                        </div>
-                        <div className="col-6">
-                            <label className="form-label mb-1">NIP</label>
-                            <input className="form-control" value={form.nip} onChange={e => setForm({ ...form, nip: e.target.value })} placeholder="xxx-xxx-xx-xx" />
-                        </div>
-                        <div className="col-6">
-                            <label className="form-label mb-1">KRS</label>
-                            <input className="form-control" value={form.krs} onChange={e => setForm({ ...form, krs: e.target.value })} placeholder="XXXXXXXXXX" />
-                        </div>
-                        <div className="col-12">
-                            <label className="form-label mb-1">REGON</label>
-                            <input className="form-control" value={form.regon} onChange={e => setForm({ ...form, regon: e.target.value })} placeholder="XXXXXXXXX" />
-                        </div>
-                    </div>
-                </div>
-                <div className="card-footer d-flex justify-content-end gap-2">
-                    <button className="btn btn-light" onClick={() => setShowAdd(false)}>Anuluj</button>
-                    <button className="btn btn-primary" onClick={() => {
-                        const name = form.name.trim();
-                        if (!name) { alert('Wpisz nazwę firmy'); return; }
-                        if (form.nip && clients.some(c => c.nip === form.nip)) { alert('Taki NIP już istnieje'); return; }
-                        const newId = (clients[clients.length - 1]?.id || 0) + 1;
-                        //const newClient = { id: newId, name, nip: form.nip.trim(), krs: form.krs.trim(), regon: form.regon.trim(), city: '—' };
-                        setSelectedId(newId);
-                        setForm({ name: "", nip: "", krs: "", regon: "", city: "" });
-                        handleAdd();
-                    }}>Zapisz</button>
-                </div>
-            </div>
-        </div>
-    );
-}
-
 function EditModal({ form, setForm, handleSaveEdit, setShowEdit }) {
     return (
         <div className="position-fixed top-0 start-0 w-100 h-100" style={{ background: "rgba(0,0,0,0.35)", zIndex: 1050 }} onClick={() => setShowEdit(false)}>
@@ -131,6 +85,8 @@ function Clients() {
     const [selectedId, setSelectedId] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(12);
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         let alive = true;
@@ -273,7 +229,9 @@ function Clients() {
                         <div className="d-none d-lg-block" style={{ width: 360, paddingLeft: 12 }}>
                             <div className="card shadow-sm h-100 d-flex flex-column">
                                 <div className="text-center mb-2">
-                                    <button className="btn btn-success w-100" onClick={() => setShowAdd(true)}>Dodaj klienta</button>
+                                    <button className="btn btn-success w-100" onClick={() => navigate("/projekt-klient")}>
+                                        Dodaj klienta
+                                    </button>
                                 </div>
                                 <div className="card-header" style={{ padding: '0.6rem 1rem', fontSize: "1rem", backgroundColor: "#0a2b4c", color: "#ffffff" }}>
                                     <strong>Szczegóły klienta</strong>
@@ -372,7 +330,6 @@ function Clients() {
                             </div>
                         </div>
 
-                        {showAdd && <AddModal form={form} setForm={setForm} handleAdd={handleAdd} setShowAdd={setShowAdd} clients={clients} setSelectedId={setSelectedId} />}
                         {showEdit && editClient && <EditModal form={form} setForm={setForm} handleSaveEdit={handleSaveEdit} setShowEdit={setShowEdit} />}
                         {showDelete && deleteClient && <DeleteModal deleteClient={deleteClient} handleConfirmDelete={handleConfirmDelete} setShowDelete={setShowDelete} />}
                     </div>

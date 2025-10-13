@@ -80,6 +80,17 @@ function Users() {
         setUsers(prev => prev.map(u => u.id === id ? { ...u, role } : u));
     };
 
+    const [showAddUserModal, setShowAddUserModal] = useState(false);
+    const [newUser, setNewUser] = useState({
+        name: "",
+        email: "",
+        role: "Klient",
+        active: true,
+    });
+    const [adding, setAdding] = useState(false);
+
+
+
     return (
         <div className="d-flex min-vh-100">
             <Sidebar search={search} setSearch={setSearch} />
@@ -257,7 +268,11 @@ function Users() {
                     <div className="d-none d-lg-block" style={{ width: 360, paddingLeft: 12 }}>
                         <div className="card shadow-sm h-100 d-flex flex-column" style={{ overflow: 'hidden' }}>
                             <div className="text-center mb-2">
-                                <button className="btn btn-success w-100" onClick={() => alert('Dodawanie użytkownika (demo)')} style={{ minWidth: 220 }}>
+                                <button
+                                    className="btn btn-success w-100"
+                                    onClick={() => setShowAddUserModal(true)}
+                                    style={{ minWidth: 220 }}
+                                >
                                     Dodaj użytkownika
                                 </button>
                             </div>
@@ -329,6 +344,147 @@ function Users() {
                         <div className="card-footer d-flex justify-content-end gap-2">
                             <button className="btn btn-light" onClick={() => setShowRoleModal(false)}>Anuluj</button>
                             <button className="btn btn-primary" onClick={() => setShowRoleModal(false)}>Zapisz</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {showAddUserModal && (
+                <div
+                    className="position-fixed top-0 start-0 w-100 h-100"
+                    style={{ background: "rgba(0,0,0,0.35)", zIndex: 1050 }}
+                    onClick={() => !adding && setShowAddUserModal(false)}
+                >
+                    <div
+                        className="card shadow"
+                        style={{ maxWidth: 420, margin: "20vh auto", padding: 0 }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="card-header d-flex justify-content-between align-items-center">
+                            <strong>Dodaj nowego użytkownika</strong>
+                            <button
+                                className="btn btn-sm btn-outline-secondary"
+                                onClick={() => !adding && setShowAddUserModal(false)}
+                                disabled={adding}
+                            >
+                                Zamknij
+                            </button>
+                        </div>
+
+                        <div className="card-body">
+                            <div className="mb-3">
+                                <label className="form-label">Imię i nazwisko</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={newUser.name}
+                                    onChange={(e) =>
+                                        setNewUser({ ...newUser, name: e.target.value })
+                                    }
+                                    disabled={adding}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label">Email</label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    value={newUser.email}
+                                    onChange={(e) =>
+                                        setNewUser({ ...newUser, email: e.target.value })
+                                    }
+                                    disabled={adding}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label">Rola</label>
+                                <select
+                                    className="form-select"
+                                    value={newUser.role}
+                                    onChange={(e) =>
+                                        setNewUser({ ...newUser, role: e.target.value })
+                                    }
+                                    disabled={adding}
+                                >
+                                    <option>Administrator</option>
+                                    <option>Kierownik</option>
+                                    <option>Asystent</option>
+                                    <option>Klient</option>
+                                    <option>Właściciel</option>
+                                </select>
+                            </div>
+                            <div className="form-check mb-3">
+                                <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    checked={newUser.active}
+                                    onChange={(e) =>
+                                        setNewUser({ ...newUser, active: e.target.checked })
+                                    }
+                                    id="newUserActive"
+                                    disabled={adding}
+                                />
+                                <label className="form-check-label" htmlFor="newUserActive">
+                                    Aktywny
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="card-footer d-flex justify-content-end gap-2">
+                            <button
+                                className="btn btn-light"
+                                onClick={() => setShowAddUserModal(false)}
+                                disabled={adding}
+                            >
+                                Anuluj
+                            </button>
+                            <button
+                                className="btn btn-primary"
+                                disabled={adding}
+                                onClick={async () => {
+                                    if (!newUser.name.trim() || !newUser.email.trim()) {
+                                        alert("Proszę uzupełnić imię i email.");
+                                        return;
+                                    }
+
+                                    setAdding(true);
+                                    try {
+                                        const newEntry = {
+                                            id: Date.now().toString(),
+                                            name: newUser.name.trim(),
+                                            email: newUser.email.trim(),
+                                            role: newUser.role,
+                                            active: newUser.active,
+                                            projects: [], // ✅ no projects initially
+                                            actFrom: new Date().toISOString().split("T")[0],
+                                            actTo: "",
+                                            last: "Brak danych",
+                                        };
+
+                                        // ✅ POST to your db.json
+                                        await axios.post(`${API_BASE}/Users`, newEntry);
+
+                                        // ✅ Update state instantly
+                                        setUsers((prev) => [...prev, newEntry]);
+
+                                        // ✅ Reset form
+                                        setNewUser({
+                                            name: "",
+                                            email: "",
+                                            role: "Klient",
+                                            active: true,
+                                        });
+
+                                        setShowAddUserModal(false);
+                                    } catch (err) {
+                                        console.error(err);
+                                        alert("Błąd podczas zapisywania użytkownika. Sprawdź serwer API.");
+                                    } finally {
+                                        setAdding(false);
+                                    }
+                                }}
+                            >
+                                {adding ? "Zapisywanie..." : "Zapisz"}
+                            </button>
                         </div>
                     </div>
                 </div>

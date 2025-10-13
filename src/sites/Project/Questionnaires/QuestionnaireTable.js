@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Sidebar, Topbar, InitialsAvatar } from "../../../ui/Common_project.js";
+import { Sidebar, Topbar } from "../../../ui/Common_project.js";
 import { timeAgo, ProgressMeter } from "../../Functions";
 import TabNavigation from "../Tabs/TabNavigation";
 import { BsPaperclip, BsX } from "react-icons/bs";
@@ -7,6 +7,8 @@ import FilesTable from "../Tabs/Files";
 import RequestsTable from "../Tabs/Request";
 import ActivityLog from "../Tabs/Activitylog";
 import Application from "../Tabs/Application";
+import { useDropdown, InitialsAvatar, Notifications, CloseX} from "../../../ui/common_function";
+
 
 function KwestionariuszRyzyka() {
     const [activeTab, setActiveTab] = useState("Salda kont");
