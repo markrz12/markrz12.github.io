@@ -1,8 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import { Sidebar, Topbar, InitialsAvatar } from "../../ui/Common";
+import { Sidebar, Topbar } from "../../ui/Common";
 import Pagination from "../Pagination";
 import { BsSearch, BsFilter } from "react-icons/bs";
+import { InitialsAvatar } from "../../ui/common_function";
+
 
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 

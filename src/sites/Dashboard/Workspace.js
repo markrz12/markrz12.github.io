@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Sidebar, Topbar, InitialsAvatar } from "../../ui/Common";
+import { Sidebar, Topbar} from "../../ui/Common";
 import { Link } from "react-router-dom";
 import { Hourglass, CheckCircle, AlertCircle } from "lucide-react";
 import { BsSearch } from "react-icons/bs";
+import { InitialsAvatar } from "../../ui/common_function";
+
 
 function Workspace() {
     const [search, setSearch] = useState("");
