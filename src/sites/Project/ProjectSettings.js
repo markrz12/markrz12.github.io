@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Sidebar, Topbar } from '../../ui/Common_project.js';
+import {Link} from "react-router-dom";
 
 function ProjektKonfiguracja(){
   //const [search, setSearch] = useState("");
@@ -9,7 +10,7 @@ function ProjektKonfiguracja(){
   ],[]);
 
   const [manager, setManager] = useState("");
-  const [assistants, setAssistants] = useState(['Piotr Nowak','Katarzyna Malinowska','Ewa Jabłońska']);
+  const [assistants, setAssistants] = useState([]);
   const [showAssistantPicker, setShowAssistantPicker] = useState(false);
   const [assistantChoice, setAssistantChoice] = useState("");
   const availableAssistantCandidates = useMemo(() => allUsers.filter(u => u !== manager && !assistants.includes(u)), [allUsers, manager, assistants]);
@@ -225,7 +226,11 @@ function ProjektKonfiguracja(){
                                   <tbody>
                                   {questionnaires.map(q => (
                                       <tr key={q.id}>
-                                          <td style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>{q.name}</td>
+                                          <td style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>
+                                              <Link to="/kwestionariusz" className="btn btn-sm" style={{textDecoration: "underline"}}>
+                                                  {q.name}
+                                              </Link>
+                                          </td>
                                           <td style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>{q.assigned.join(", ") || <span className="text-muted">Brak</span>}</td>
                                       </tr>
                                   ))}

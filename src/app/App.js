@@ -14,8 +14,6 @@ import QuestionnaireDynamic from "../sites/Project/Questionnaires/QuestionnaireD
 import QuestionnaireText from "../sites/Project/Questionnaires/QuestionnaireText";
 import QuestionnaireCheck from "../sites/Project/Questionnaires/QuestionnaireCheck";
 import QuestionnaireTable from "../sites/Project/Questionnaires/QuestionnaireTable";
-
-
 import Project from "../sites/Project/Project";
 import InformationMSB from "../sites/Project/Questionnaires/InformationMSB";
 
