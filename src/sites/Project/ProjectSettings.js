@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
-import { Sidebar, Topbar } from '../../ui/Common_project.js';
+import { Sidebar} from "../../ui/Common_project.js";
+import {Topbar } from "../../ui/Common.js";
 import {Link} from "react-router-dom";
 
 function ProjektKonfiguracja(){

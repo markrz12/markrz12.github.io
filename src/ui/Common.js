@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear, BsBell,} from "react-icons/bs";
 
-
 // 🔹 wspólny hook do obsługi dropdownów
 function useDropdown() {
     const [open, setOpen] = useState(false);

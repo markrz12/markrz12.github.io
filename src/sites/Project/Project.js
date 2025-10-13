@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import { Sidebar, Topbar } from "../../ui/Common_project.js";
 import { BsChevronRight } from "react-icons/bs";
+import { Sidebar} from "../../ui/Common_project.js";
+import {Topbar } from "../../ui/Common.js";
 
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Sidebar, Topbar } from "../../../ui/Common_project.js";
+import { Sidebar} from "../../../ui/Common_project.js";
+import {Topbar } from "../../../ui/Common.js";
 import { timeAgo, ProgressMeter } from "../../Functions";
 import TabNavigation from "../Tabs/TabNavigation";
 import { BsPaperclip, BsX } from "react-icons/bs";
@@ -7,7 +8,7 @@ import FilesTable from "../Tabs/Files";
 import RequestsTable from "../Tabs/Request";
 import ActivityLog from "../Tabs/Activitylog";
 import Application from "../Tabs/Application";
-import { useDropdown, InitialsAvatar, Notifications, CloseX} from "../../../ui/common_function";
+import { InitialsAvatar} from "../../../ui/common_function";
 
 
 function KwestionariuszRyzyka() {

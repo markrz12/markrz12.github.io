@@ -49,7 +49,7 @@ export function InitialsAvatar({ name = "Jan Użytkownik", size = 26 }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontWeight: 600,
-                fontSize: dim > 20 ? '0.9rem' : '0.7rem',
+                fontSize: dim > 24 ? '0.9rem' : '0.7rem',
                 border: '1px solid #d7e3f2'
             }}
         >

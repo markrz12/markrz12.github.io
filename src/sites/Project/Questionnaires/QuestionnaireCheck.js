@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Sidebar, Topbar } from "../../../ui/Common_project.js";
 import { BsChevronRight, BsChevronDown, BsPaperclip, BsX } from "react-icons/bs";
 import { timeAgo, ProgressMeter } from "../../Functions";
 import TabNavigation from "../Tabs/TabNavigation";
 import RequestsTable from "../Tabs/Request";
 import FilesTable from "../Tabs/Files";
 import ActivityLog from "../Tabs/Activitylog";
-import { useDropdown, InitialsAvatar, Notifications, CloseX} from "../../../ui/common_function";
+import { InitialsAvatar} from "../../../ui/common_function";
+import { Sidebar} from "../../../ui/Common_project.js";
+import {Topbar } from "../../../ui/Common.js";
 
 
 
