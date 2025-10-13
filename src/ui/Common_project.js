@@ -88,7 +88,7 @@ export function Topbar({ breadcrumb, onLogout }){
                         style={{ padding:'2px 8px', border:'1px solid rgba(255,255,255,0.35)', borderRadius:999, color:'#fff', display:'flex', alignItems:'center', gap:6, background:'transparent' }} onMouseOver={(e)=>{ e.currentTarget.style.background='rgba(255,255,255,0.12)'; }} onMouseOut={(e)=>{ e.currentTarget.style.background='transparent'; }} >
                     <InitialsAvatar name="Jan Użytkownik" size={31} /> <span aria-hidden="true" style={{ fontSize:12, opacity:0.9, lineHeight:1, transform:'translateY(1px)' }}>▾</span> </button> {showAccount && ( <div ref={accountMenuRef} className="card shadow-sm" style={{ position:'absolute', right:0, top:'100%', marginTop:'0.5rem', minWidth:260, zIndex:2000 }} role="menu" > <div className="card-body py-2"> <div className="d-flex align-items-center mb-2" style={{ gap:'0.5rem' }}> <InitialsAvatar name="Jan Użytkownik" size={28} /> <div> <div className="text-muted small mb-1" style={{ lineHeight:1 }}>Zalogowano jako</div> <div className="fw-semibold mb-1" style={{ lineHeight:1.1 }}>Jan Użytkownik</div> <div className="text-muted small">jan@example.com</div> </div> </div> <hr className="my-2" /> <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center" onClick={()=>setShowAccount(false)}> <span className="me-2">👤</span> Profil </button> <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center" onClick={()=>setShowAccount(false)}> <span className="me-2">⚙️</span> Ustawienia </button> <hr className="my-2" /> {onLogout ? ( <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" onClick={onLogout}> <span className="me-2">🚪</span> Wyloguj </button> ) : ( <a role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" href="/"> <span className="me-2">🚪</span> Wyloguj </a> )} </div> </div> )} </div> </div> </div> ); }
 
-export function Sidebar({ search, setSearch }) {
+export function Sidebar({ search, setSearch, project }) { // <-- accept project as prop
     const location = useLocation();
     const isActive = (to) => {
         if (!to) return false;
@@ -103,7 +103,11 @@ export function Sidebar({ search, setSearch }) {
 
     const menuItems = [
         { label: 'Lista Projektów', to: '/projekty', icon: <BsCollection className="me-2" /> },
-        { label: 'Dashboard', to: '/projekty/r', icon: <BsHouse className="me-2" /> },
+        {
+            label: 'Dashboard',
+            to: project ? `/projekty/${encodeURIComponent(project.id)}` : '/projekty', // no literal ':id'
+            icon: <BsPlayCircle className="me-2" />
+        },
         { label: 'Użytkownicy', to: '/projekt-konfiguracja', icon: <BsPersonGear className="me-2" /> },
         { label: "Informacje", to: '/informacjeMSB', icon: <BsInfoCircle className="me-2" /> }
     ];

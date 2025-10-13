@@ -1128,6 +1128,7 @@
             {
               "id": 1,
               "title": "I.1 Test niezależności kluczowego biegłego rewidenta",
+              "percent": 100,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -1795,6 +1796,7 @@
             {
               "id": 2,
               "title": "I.2 Test niezależności dla firmy audytorskiej",
+              "percent": 70,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -2250,6 +2252,7 @@
             {
               "id": 3,
               "title": "I.3 Rola partnera odpowiedzialnego za zlecenie",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -2877,6 +2880,7 @@
             {
               "id": 4,
               "title": "I.4 Rozpoznanie zagrożenia",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -2922,6 +2926,7 @@
             {
               "id": 5,
               "title": "I.5 Wyznaczenie zespołu badającego",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -3085,6 +3090,7 @@
                 {
                   "id": 1,
                   "title": "II.1.1 Plan badania",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Kwestionariusz",
@@ -3511,6 +3517,7 @@
                 {
                   "id": 2,
                   "title": "II.1.2 Poznanie jednostki i otoczenia",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Kwestionariusz",
@@ -3784,6 +3791,7 @@
                 {
                   "id": 3,
                   "title": "II.1.3 Wstępny przegląd analityczny",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Kwestionariusz",
@@ -3902,6 +3910,7 @@
                 {
                   "id": 4,
                   "title": "II.1.4 Kontynuacja działalności",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Kwestionariusz",
@@ -4009,6 +4018,7 @@
                 {
                   "id": 5,
                   "title": "II.1.5 Ustalenie poziomów istotności",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Kwestionariusz",
@@ -4240,6 +4250,7 @@
                 {
                   "id": 6,
                   "title": "II.1.6 Bilans otwarcia / dane porównawcze",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Kwestionariusz",
@@ -4402,6 +4413,7 @@
                 {
                   "id": 7,
                   "title": "II.1.7 Odpowiedzialność dotycząca oszustw - lista kontrolna",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Kwestionariusz",
@@ -4542,6 +4554,7 @@
                 {
                   "id": 8,
                   "title": "II.1.8 Spotkania na etapie planowania",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Notatka - planowanie",
@@ -4858,6 +4871,7 @@
                 {
                   "id": 9,
                   "title": "II.1.9 Memorandum planowania badania",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Kwestionariusz",
@@ -5060,6 +5074,7 @@
                 {
                   "id": 10,
                   "title": "II.1.10 Przykładowa lista kontrolna dotycząca zbioru stałego",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Kwestionariusz",
@@ -5519,6 +5534,7 @@
                 {
                   "id": 1,
                   "title": "II.2.1 Identyfikacja i ocena ryzyka na poziomie sprawozdania finansowego",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Kwestionariusz",
@@ -6058,6 +6074,7 @@
                 {
                   "id": 2,
                   "title": "II.2.2 Identyfikacja i ocena ryzyka rozległego",
+                  "percent": 0,
                   "tabs": [
                     {
                       "title:": "Zapotrzebowanie",
@@ -6081,6 +6098,7 @@
             },
             {
               "name": "II.3 Ogólne podejście do kontroli wewnętrznej",
+              "percent": 0,
               "screens": [
                 {
                   "id": 1,
@@ -6549,6 +6567,7 @@
             },
             {
               "name": "II.4 Macierz ryzyk",
+              "percent": 0,
               "screens": [
                 {
                   "id": 1,
@@ -6582,6 +6601,7 @@
             {
               "id": 1,
               "title": "III.1 Tabela testu rewizyjnego",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -6732,6 +6752,7 @@
             {
               "id": 2,
               "title": "III.2 Wartości niematerialne i prawne",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -7550,6 +7571,7 @@
             {
               "id": 3,
               "title": "III.3 Rzeczowe aktywa stałe",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -8550,6 +8572,7 @@
             {
               "id": 4,
               "title": "III.4 Inwestycje",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -9502,6 +9525,7 @@
             {
               "id": 5,
               "title": "III.5 Zapasy",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -10792,6 +10816,7 @@
             {
               "id": 6,
               "title": "III.6 Należności",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -11753,6 +11778,7 @@
             {
               "id": 7,
               "title": "III.7 Rozliczenia międzyokresowe",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -12544,6 +12570,7 @@
             {
               "id": 8,
               "title": "III.8 Środki pieniężne",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -13326,6 +13353,7 @@
             {
               "id": 9,
               "title": "III.9 Kapitały (fundusze) własne",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -14141,6 +14169,7 @@
             {
               "id": 10,
               "title": "III.10 Rezerwy na zobowiązania warunkowe i zabezpieczenia",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -14966,6 +14995,7 @@
             {
               "id": 11,
               "title": "III.11 Zobowiązania, fundusze specjalne i rozliczenia międzyokresowe (pasywa)",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -15937,6 +15967,7 @@
             {
               "id": 12,
               "title": "III.12 Przychody",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -16831,6 +16862,7 @@
             {
               "id": 13,
               "title": "III.13 Koszty",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -17725,6 +17757,7 @@
             {
               "id": 14,
               "title": "III.14 Podatek dochodowy",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Salda kont",
@@ -18507,6 +18540,7 @@
             {
               "id": 15,
               "title": "III.15 Rachunek przepływów pieniężnych",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Cele badania",
@@ -18714,6 +18748,7 @@
             {
               "id": 1,
               "title": "IV.1 Zestawienie obrotów i sald",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -18828,6 +18863,7 @@
             {
               "id": 2,
               "title": "IV.2 Podmioty powiązane",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -19074,6 +19110,7 @@
             {
               "id": 3,
               "title": "IV.3 Przestrzeganie prawa i regulacji",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -19331,6 +19368,7 @@
             {
               "id": 4,
               "title": "IV.4 Późniejsze zdarzenia",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -19511,6 +19549,7 @@
             {
               "id": 5,
               "title": "IV.5 Kontynuacja działalności",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Program badania",
@@ -19970,6 +20009,7 @@
             {
               "id": 6,
               "title": "IV.6 Sprawozdanie finansowe",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Wniosek",
@@ -19980,6 +20020,7 @@
             {
               "id": 7,
               "title": "IV.7 Sprawozdanie z działalności,",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Wniosek",
@@ -19995,6 +20036,7 @@
             {
               "id": 1,
               "title": "V.1 Zagadnienia wymagające konsultacji",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -20074,6 +20116,7 @@
             {
               "id": 2,
               "title": "V.2 Końcowy przegląd analityczny - program badania",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -20192,6 +20235,7 @@
             {
               "id": 3,
               "title": "V.3 Zbiorcze zestawienie zniekształceń",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Zapotrzebowanie",
@@ -20214,6 +20258,7 @@
             {
               "id": 4,
               "title": "V.4 Oświadczenia końcowe",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -20387,6 +20432,7 @@
             {
               "id": 5,
               "title": "V.5 Sprawozdanie biegłego rewidenta - kwestie do rozważenia",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -20496,6 +20542,7 @@
             {
               "id": 6,
               "title": "V.6 Komunikacja z osobami sprawującymi nadzór",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
@@ -20775,6 +20822,7 @@
             {
               "id": 7,
               "title": "V.7 Zakończenie badania zasadniczego i podsumowanie wyników badania",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Załączniki",
@@ -21308,6 +21356,7 @@
             {
               "id": 8,
               "title": "V.8 Kontrola jakości wykonania zlecenia",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz - kluczowy biegły rewident",
@@ -21688,6 +21737,7 @@
             {
               "id": 9,
               "title": "V.9 Lista spraw do rozważenia na przyszłość",
+              "percent": 0,
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
