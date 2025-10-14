@@ -5,8 +5,12 @@ import RequestsTable from "../Tabs/Request";
 import ActivityLog from "../Tabs/Activitylog";
 import TabNavigation from "../Tabs/TabNavigation";
 import { InitialsAvatar, CloseX} from "../../../ui/common_function";
+import { useOutletContext } from "react-router-dom";
+
 
 function KwestionariuszFull() {
+    const { project } = useOutletContext();
+
     // --- Dane początkowe ---
     const [rows, setRows] = useState([
         { id: 1, q: "Upewnij się, że w dokumentacji znajduje się aktualna umowa o badanie dostosowana do sytuacji i okoliczności po stronie klienta.\nZadbaj o to, aby wspomniana umowa obejmowała stosowne ramowe założenia sprawozdawczości finansowej, a także zobowiązania –\nzarówno biegłego rewidenta, jak i kierownictwa.\nRozważ ewentualną potrzebę modyfikacji obecnych warunków, a uzgodnione zmiany wprowadź na piśmie.", author: "K M", approver: "M M", date: "2025-08-20", approvedAt: "2025-04-20" },
@@ -47,12 +51,12 @@ function KwestionariuszFull() {
                 {/* Content */}
                 <div className="d-flex flex-grow-1" style={{ overflow: "hidden" }}>
                     <div className="flex-grow-1 d-flex flex-column" style={{ minWidth: 0 }}>
-                        <ProjectHeader />
+                        <ProjectHeader project={project} />
                         <SubHeader />
                         <TabNavigation tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
 
                         {/* Tab content */}
-                        <div className="px-3 flex-grow-1 overflow-auto">
+                        <div className="px-1 flex-grow-1 overflow-auto" >
                             {activeTab === "Kwestionariusz" && (
                                 <div className="p-0">
                                     <div className="table-responsive">
@@ -275,24 +279,31 @@ function KwestionariuszFull() {
     );
 }
 
-const ProjectHeader = () => (
-    <div className="px-3 py-2 mt-2 mb-1 border-bottom d-flex justify-content-between align-items-center flex-wrap">
-        <div className="d-flex align-items-baseline gap-2 flex-wrap">
-            <h4 className="fw-semibold mb-0">DR/2025/123456</h4>
-            <span className="fs-5 text-secondary">Alphatech Sp. z o.o.</span>
+
+const ProjectHeader = () => {
+    const { project } = useOutletContext();
+
+    return (
+        <div className=" border-bottom d-flex justify-content-between align-items-center flex-wrap">
+            <div className="d-flex align-items-baseline gap-2 flex-wrap">
+                <h4 style={{ padding: "1rem 1rem 0.6rem 0.2rem" }}>
+                    <span style={{ fontWeight: 600 }}>{project.name}</span>
+                    <span style={{ fontWeight: 400, marginLeft: "1rem", color: "#555" }}>{project.klient}</span>
+                </h4>
+            </div>
+            <div className="text-muted gap-4" style={{ fontSize: "0.9rem" }}>
+                <div>Kierownik: {project.users.kierownik}</div>
+                <div>Okres: 01.01.2025 – 31.12.2025</div>
+            </div>
         </div>
-        <div className="text-muted gap-4" style={{ fontSize: "0.9rem" }}>
-            <div>Kierownik: Jan Kowalski</div>
-            <div>Okres: 01.01.2025 – 31.12.2025</div>
-        </div>
-    </div>
-);
+    );
+};
 
 const SubHeader = () => (
-    <div className="mb-2 mt-2 px-3 d-flex align-items-center justify-content-between">
-        <h5 className="fw-semibold fs-5 mb-2 mt-2">II.1.4 Kontynuacja działalności (wstępne rozpoznanie)</h5>
-        <div style={{ width: "250px", minWidth: "150px" }}>
-            <ProgressMeter percent={70} />
+    <div className="mb-1 mt-2 d-flex align-items-center justify-content-between">
+        <h5  style={{ padding: "0.5rem 1rem 0.6rem 0.3rem" }}>II.1.4 Kontynuacja działalności (wstępne rozpoznanie)</h5>
+        <div style={{ width: "240px", minWidth: "150px" }}>
+            <ProgressMeter percent={55} />
         </div>
     </div>
 );

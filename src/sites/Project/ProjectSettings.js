@@ -68,11 +68,11 @@ export default function ProjektKonfiguracja() {
     const addAssistant = () => setShowAssistantPicker(true);
 
     return (
-        <div className="p-0">
-            <h5 className="mb-4 mt-2">Konfiguracja użytkowników projektu: {decodedProjectName}</h5>
+        <div className="p-4">
+            <h5 className="mb-4 mt-1">Konfiguracja użytkowników projektu: {decodedProjectName}</h5>
 
             {/* Kierownik */}
-            <div className="mb-3 d-flex align-items-stretch" style={{ maxWidth: 650 }}>
+            <div className="mb-3 d-flex align-items-stretch" style={{ maxWidth: 550 }}>
                 <label
                     className="form-label mb-0 text-white fw-bold d-flex align-items-center justify-content-center"
                     style={{
@@ -95,7 +95,7 @@ export default function ProjektKonfiguracja() {
                     style={{
                         borderRadius: 0,
                         padding: "0.75rem 1rem",
-                        width: "315px",
+                        width: "340px",
                         height: "100%",
                     }}
                 >
@@ -115,7 +115,7 @@ export default function ProjektKonfiguracja() {
                         borderTopRightRadius: "0.25rem",
                         borderBottomRightRadius: "0.25rem",
                         padding: "0.75rem 1rem",
-                        height: "100%", // dopasowanie do labela i selecta
+                        height: "100%",
                     }}
                     disabled={!manager}
                     onClick={saveManager}
@@ -126,9 +126,9 @@ export default function ProjektKonfiguracja() {
 
             <div className="row g-4">
                 <div className="col-12 col-lg-6 d-flex flex-column">
-                    <div className="card shadow-sm h-100 d-flex flex-column">
+                    <div className="card shadow-sm h-100 d-flex flex-column" style={{maxWidth: 550}}>
                         {/* Nagłówek */}
-                        <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
+                        <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem'}}>
                             <strong>Asystenci</strong>
                         </div>
 

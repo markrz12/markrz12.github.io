@@ -102,12 +102,12 @@ export default function ProjectDashboard() {
 
     return (
         <>
-            <h4 style={{ padding: "1rem 1rem 1rem 1rem", margin: 0 }}>
+            <h4 style={{ padding: "1.5rem 3rem 1rem 3rem" }}>
                 <span style={{ fontWeight: 600 }}>{project.name}</span>
                 <span style={{ fontWeight: 400, marginLeft: "1rem", color: "#555" }}>{project.klient}</span>
             </h4>
 
-            <div className="d-flex justify-content-center" style={{ padding: "0 1rem 1rem 1rem" }}>
+            <div className="d-flex justify-content-center" style={{ padding: "0 3rem 3rem 3rem" }}>
                 <div className="card shadow-sm" style={{ width: "100%" }}>
                 {/* Phase Tabs */}
                 <div className="card-header d-flex border-0" style={{ background: "#0a2b4c", padding: 0 }}>

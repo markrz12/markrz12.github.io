@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
+import {BsSearch} from "react-icons/bs";
 
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 
@@ -59,21 +60,23 @@ function InformacjeMSB() {
     return (
         <div className="d-flex min-vh-100">
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: "hidden" }}>
-                <div className="p-0 overflow-auto">
-                    <div className="d-flex justify-content-between align-items-center mb-3">
-                        <h5 className="fw-semibold mb-0 mt-1" style={{paddingLeft: "0.2rem"}}>
+                <div className="p-3 overflow-auto">
+                    <div className="d-flex justify-content-between align-items-center mb-1 mt-1">
+                        <h5 className="fw-semibold" style={{paddingLeft: "0.2rem", fontSize: "1.3rem"}}>
                             Wykaz MSB zastosowanych w badaniu
                         </h5>
 
                         {/* Pole wyszukiwania */}
-                        <input
-                            type="text"
-                            placeholder="Szukaj standardu..."
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            className="form-control w-auto"
-                            style={{ minWidth: "300px" }}
-                        />
+                        <div className="input-group" style={{ maxWidth: "350px", marginBottom:"15px" }}>
+                            <input
+                                type="text"
+                                placeholder="Szukaj standardu..."
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                className="form-control"
+                            />
+                            <span className="input-group-text"><BsSearch /></span>
+                        </div>
                     </div>
 
                     {/* Stan ładowania */}

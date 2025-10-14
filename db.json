@@ -1112,11 +1112,11 @@
       "progress": 60,
       "deadline": "2025-09-30",
       "klient": "Alphatech Sp. z o.o.",
-      "users": [
-        "Anna Kowalska",
-        "Jan Nowak"
-      ],
-      "contact": {
+      "users": {
+        "kierownik": "Anna Kowalska",
+        "asystenci": [
+          "Jan Nowak"]},
+        "contact": {
         "name": "Jan Kowalski",
         "email": "jan.kowalski@alphatech.com",
         "phone": "22 123 45 67"

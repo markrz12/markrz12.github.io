@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import axios from "axios";
 import { Sidebar } from "../../ui/Common_project.js";
 import { Topbar } from "../../ui/Common.js";
@@ -13,8 +13,6 @@ export default function Project() {
     const [project, setProject] = useState(null);
     const [error, setError] = useState("");
     const [search, setSearch] = useState("");
-
-    const location = useLocation();
 
     useEffect(() => {
         let alive = true;
@@ -55,7 +53,7 @@ export default function Project() {
 
                 {/* Content rendered via nested routes */}
                 <div className="flex-grow-1 bg-light p-3" style={{ overflow: "auto" }}>
-                    <div className="container-fluid" style={{ maxWidth: 1200 }}>
+                    <div className="container-fluid" >
                         <Outlet context={{ project }} />
                     </div>
                 </div>
