@@ -1,7 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import { Sidebar} from "../../../ui/Common_project.js";
-import {Topbar } from "../../../ui/Common.js";
 
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 
@@ -60,19 +58,10 @@ function InformacjeMSB() {
 
     return (
         <div className="d-flex min-vh-100">
-            <Sidebar />
-
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: "hidden" }}>
-                <Topbar
-                    breadcrumb={[
-                        { label: "Home", to: "/" },
-                        { label: "Projekt", active: true },
-                    ]}
-                />
-
-                <div className="p-4 overflow-auto">
+                <div className="p-0 overflow-auto">
                     <div className="d-flex justify-content-between align-items-center mb-3">
-                        <h5 className="fw-semibold mb-0" style={{paddingLeft: "0.2rem"}}>
+                        <h5 className="fw-semibold mb-0 mt-1" style={{paddingLeft: "0.2rem"}}>
                             Wykaz MSB zastosowanych w badaniu
                         </h5>
 

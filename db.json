@@ -1124,6 +1124,7 @@
       "phases": [
         {
           "label": "I. Rozpoczęcie",
+          "icon": "BsPlayCircle",
           "screens": [
             {
               "id": 1,
@@ -3083,6 +3084,7 @@
         },
         {
           "label": "II. Ryzyko",
+          "icon": "BsShieldCheck",
           "sections": [
             {
               "name": "II.1 Wstępne zagadnienia",
@@ -6597,6 +6599,7 @@
         },
         {
           "label": "III. Badanie",
+          "icon": "BsGraphUp",
           "screens": [
             {
               "id": 1,
@@ -18744,6 +18747,7 @@
         },
         {
           "label": "IV. Procedury",
+          "icon": "BsListCheck",
           "screens": [
             {
               "id": 1,
@@ -20032,6 +20036,7 @@
         },
         {
           "label": "V. Podsumowanie",
+          "icon": "BsClipboardCheck",
           "screens": [
             {
               "id": 1,
