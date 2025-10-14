@@ -509,46 +509,9 @@ function Projects() {
                                                 onChange={(e) => setForm({ ...form, klient: e.target.value })}
                                             />
                                         </div>
-
-                                        <div className="mb-3">
-                                            <label className="form-label fw-semibold">Użytkownicy (oddzielone średnikiem)</label>
-                                            <input
-                                                className="form-control"
-                                                value={form.users}
-                                                onChange={(e) => setForm({ ...form, users: e.target.value })}
-                                            />
-                                        </div>
                                     </div>
 
-                                    {/* Right column: Contact info */}
-                                    <div className="flex-fill" style={{ minWidth: 280 }}>
-                                        <div className="mb-3">
-                                            <label className="form-label fw-semibold">Kontakt - Imię</label>
-                                            <input
-                                                className="form-control"
-                                                value={form.contactName}
-                                                onChange={(e) => setForm({ ...form, contactName: e.target.value })}
-                                            />
-                                        </div>
 
-                                        <div className="mb-3">
-                                            <label className="form-label fw-semibold">Kontakt - Email</label>
-                                            <input
-                                                className="form-control"
-                                                value={form.contactEmail}
-                                                onChange={(e) => setForm({ ...form, contactEmail: e.target.value })}
-                                            />
-                                        </div>
-
-                                        <div className="mb-3">
-                                            <label className="form-label fw-semibold">Kontakt - Telefon</label>
-                                            <input
-                                                className="form-control"
-                                                value={form.contactPhone}
-                                                onChange={(e) => setForm({ ...form, contactPhone: e.target.value })}
-                                            />
-                                        </div>
-                                    </div>
                                     {warning && (
                                         <div
                                             className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"

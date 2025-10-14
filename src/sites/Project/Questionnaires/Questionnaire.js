@@ -5,9 +5,6 @@ import RequestsTable from "../Tabs/Request";
 import ActivityLog from "../Tabs/Activitylog";
 import TabNavigation from "../Tabs/TabNavigation";
 import { InitialsAvatar, CloseX} from "../../../ui/common_function";
-import { Sidebar} from "../../../ui/Common_project.js";
-import {Topbar } from "../../../ui/Common.js";
-
 
 function KwestionariuszFull() {
     // --- Dane początkowe ---
@@ -45,11 +42,7 @@ function KwestionariuszFull() {
 
     return (
         <div className="d-flex min-vh-100">
-            <Sidebar />
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: "hidden" }}>
-                <Topbar
-                    breadcrumb={[{ label: "Home", to: "/" }, { label: "Projekty", to: "/projekty" }, { label: "Projekt", to: "/projekt" }, { label: activeTab, active: true }]}
-                />
 
                 {/* Content */}
                 <div className="d-flex flex-grow-1" style={{ overflow: "hidden" }}>
