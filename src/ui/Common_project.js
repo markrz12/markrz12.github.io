@@ -50,7 +50,19 @@ export function Sidebar({ project }) {
                 {topLinks.map((link) =>
                     link.to ? (
                         <li key={link.label} className="nav-item">
-                            <Link className={linkClass(link.to)} to={link.to} style={{ display: "flex", alignItems: "center", gap: "0.5rem", paddingLeft: "16px" }}>
+                            <Link
+                                className={linkClass(link.to)}
+                                to={link.to}
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "0.5rem",
+                                    paddingLeft: "16px",
+                                    ...(isActive(link.to)
+                                        ? { background: "rgba(255,255,255,0.12)", borderRadius: 4 }
+                                        : {}),
+                                }}
+                            >
                                 {getIcon(link.icon)()}
                                 {link.label}
                             </Link>
