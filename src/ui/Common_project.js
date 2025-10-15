@@ -29,7 +29,7 @@ export function Sidebar({ project }) {
             style={{
                 display: "block",
                 paddingLeft: `${10 + level * 20}px`,
-                fontSize: level === 2 ? "0.8rem" : "0.9rem"
+                fontSize: level === 2 ? "0.80rem" : "0.80rem"
             }}
         >
             {label}
@@ -108,7 +108,7 @@ export function Sidebar({ project }) {
                                                     display: "flex",
                                                     justifyContent: "space-between",
                                                     alignItems: "center",
-                                                    fontSize: "0.85rem"
+                                                    fontSize: "0.80rem"
                                                 }}
                                             >
                                                 {section.name}

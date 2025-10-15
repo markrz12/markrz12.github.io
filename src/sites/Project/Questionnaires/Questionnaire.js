@@ -50,7 +50,7 @@ function KwestionariuszFull() {
 
     // Helper: get text for description columns
     const getText = (row) =>
-        row.q || row.pytanie || row.opis || row.MSB || row.nazwa || row.cele || row.stwierdzenie || row.obszary || row.test || "";
+        row.q || row.pytanie || row.opis || row.MSB || row.nazwa || row.cele || row.stwierdzenie || row.obszary || row.test || row.question || "";
 
     // Unique key for rows per questionnaire
     const getRowKey = (row) => `${screenData.id}-${row.id || getText(row)}`;
@@ -74,7 +74,7 @@ function KwestionariuszFull() {
 
         switch (col.type) {
             case "no":
-                return <td key={col.label} style={tdCenter}>{row.id || ""}</td>;
+                return <td key={col.label} style={tdCenter}>{row.id || row.lp || ""}</td>;
             case "description":
             case "text":
                 return <td key={col.label} style={tdDescription}>{getText(row)}</td>;
@@ -82,7 +82,7 @@ function KwestionariuszFull() {
                 const value = answers[rowKey]?.choice ?? row.answer?.value ?? "NIE";
                 return (
                     <td key={col.label} style={tdCenter}>
-                        {["TAK", "NIE"].map((opt) => (
+                        {["Tak", "Nie"].map((opt) => (
                             <div className="form-check form-check-inline" key={opt}>
                                 <input
                                     className="form-check-input"
@@ -236,23 +236,22 @@ function KwestionariuszFull() {
     const renderTable = (tab) => {
         let rows = [];
 
-        if (tab.rows?.length) {
-            tab.rows.forEach((row) => {
-                // If row has sections
-                if (row.sections) {
-                    row.sections.forEach((section) => {
-                        rows.push({ isSection: true, name: section.name });
-                        section.questions.forEach((q) => rows.push(q));
-                    });
-                } else if (row.section && row.items) {
-                    // For row with section/items format
-                    rows.push({ isSection: true, name: row.section });
-                    row.items.forEach((q) => rows.push(q));
-                } else {
-                    rows.push(row);
-                }
-            });
-        }
+        // Support tab.rows, screenData.rows, or nested sections
+        const rawRows = tab.rows || screenData.rows || [];
+
+        rawRows.forEach((row) => {
+            if (row.sections) {
+                row.sections.forEach((section) => {
+                    rows.push({ isSection: true, name: section.name });
+                    section.questions?.forEach((q) => rows.push(q));
+                });
+            } else if (row.questions) {
+                rows.push({ isSection: true, name: row.name });
+                row.questions.forEach((q) => rows.push(q));
+            } else {
+                rows.push(row);
+            }
+        });
 
         if (!rows.length) return <div className="p-2">Brak danych do wyświetlenia</div>;
 
@@ -262,7 +261,7 @@ function KwestionariuszFull() {
                     <thead className="table-light" style={{ position: "sticky", top: 0, zIndex: 5 }}>
                     <tr>
                         {tab.columns.map((col) => (
-                            <th  key={col.label} style={headerStyle}>
+                            <th key={col.label} style={headerStyle}>
                                 {col.label}
                             </th>
                         ))}
@@ -272,8 +271,16 @@ function KwestionariuszFull() {
                     {rows.map((row, i) =>
                         row.isSection ? (
                             <tr key={`section-${i}`}>
-                                <td style={{backgroundColor: "#005679", color: "#fff", padding: "0.75rem"}}
-                                    colSpan={tab.columns.length} className="fw-bold text-center">
+                                <td
+                                    style={{
+                                        backgroundColor: "#005679",
+                                        color: "#fff",
+                                        padding: "0.75rem",
+                                        fontWeight: "bold",
+                                        textAlign: "center",
+                                    }}
+                                    colSpan={tab.columns.length}
+                                >
                                     {row.name}
                                 </td>
                             </tr>
@@ -281,7 +288,6 @@ function KwestionariuszFull() {
                             <tr key={i}>
                                 {tab.columns.map((col) => renderCell(col, row))}
                             </tr>
-
                         )
                     )}
                     </tbody>
