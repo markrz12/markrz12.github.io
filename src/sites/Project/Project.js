@@ -3,9 +3,50 @@ import { useParams} from "react-router-dom";
 import axios from "axios";
 import { Sidebar } from "../../ui/Common_project.js";
 import { Topbar } from "../../ui/Common.js";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
+
+
+function useBreadcrumb(project) {
+    const location = useLocation(); // React Router location
+    const pathParts = location.pathname.split("/").filter(Boolean); // split path
+
+    const breadcrumb = [];
+
+    // Add "Home"
+    breadcrumb.push({ label: "Home", to: "/" });
+
+    // Add "Projects"
+    breadcrumb.push({ label: "Projects", to: "/projekty" });
+
+    // Add project if available
+    if (project) {
+        breadcrumb.push({
+            label: project.name,
+            to: `/projekty/${encodeURIComponent(project.name)}`,
+        });
+    }
+
+    // Add deeper paths dynamically (e.g., /kwestionariusz / Sekcja 1)
+    for (let i = 2; i < pathParts.length; i++) {
+        const segment = decodeURIComponent(pathParts[i]);
+        const label = segment
+            .replace(/-/g, " ")
+            .replace(/\b\w/g, (l) => l.toUpperCase());
+
+        const path = "/" + pathParts.slice(0, i + 1).join("/");
+        breadcrumb.push({ label, to: path });
+    }
+
+    // Mark last breadcrumb as active
+    if (breadcrumb.length) {
+        breadcrumb[breadcrumb.length - 1].active = true;
+    }
+
+    return breadcrumb;
+}
+
 
 export default function Project() {
     const { projectName } = useParams();
@@ -13,6 +54,8 @@ export default function Project() {
     const [project, setProject] = useState(null);
     const [error, setError] = useState("");
     const [search, setSearch] = useState("");
+    const breadcrumb = useBreadcrumb(project);
+
 
     useEffect(() => {
         let alive = true;
@@ -41,13 +84,6 @@ export default function Project() {
 
     if (!project)
         return <div className="text-center mt-5">Loading project...</div>;
-
-
-    const breadcrumb = [
-        { label: "Home", to: "/" },
-        { label: "Projects", to: "/projekty" },
-        { label: project.name, active: true },
-    ];
 
     return (
         <div className="d-flex min-vh-100">

@@ -38,12 +38,16 @@ function ProgressMini({ value }) {
 function RenderSection({ section, level = 0 }) {
     const [open, setOpen] = useState(false);
     const indent = { marginLeft: `${level * 20}px` };
+    const { project } = useOutletContext(); // project passed from parent
+    const projectBase = project ? `/projekty/${encodeURIComponent(project.name)}` : "";
+    const getScreenUrl = (screenTitle) =>
+        `${projectBase}/kwestionariusz/${encodeURIComponent(screenTitle)}`;
 
     return (
         <div style={{ marginBottom: 4 }}>
             <div
                 onClick={() => setOpen(!open)}
-                className="fw-semibold d-flex align-items-center"
+                className=" d-flex align-items-center"
                 style={{
                     cursor: "pointer",
                     backgroundColor: "#f7f9fa",
@@ -53,14 +57,14 @@ function RenderSection({ section, level = 0 }) {
                     ...indent,
                 }}
             >
+                {section.name || section.label}
                 <BsChevronRight
                     style={{
-                        marginRight: 6,
+                        marginLeft: 6,
                         transform: open ? "rotate(90deg)" : "rotate(0deg)",
                         transition: "transform 0.2s ease",
                     }}
                 />
-                {section.name || section.label}
             </div>
 
             {open &&
@@ -80,7 +84,7 @@ function RenderSection({ section, level = 0 }) {
                         <div className="d-flex align-items-center gap-2">
                             <ProgressMini value={screen.percent || 0} />
                             <Link
-                                to="/kwestionariusz"
+                                to={getScreenUrl(screen.title)}
                                 className="btn btn-sm"
                                 style={{ backgroundColor: "#005679", color: "#fff", borderRadius: 4 }}
                             >
@@ -99,6 +103,11 @@ function RenderSection({ section, level = 0 }) {
 export default function ProjectDashboard() {
     const { project } = useOutletContext(); // project passed from parent
     const [activeTab, setActiveTab] = useState(project.phases?.[0]?.label || "");
+
+    const projectBase = project ? `/projekty/${encodeURIComponent(project.name)}` : "";
+    const getScreenUrl = (screenTitle) =>
+        `${projectBase}/kwestionariusz/${encodeURIComponent(screenTitle)}`;
+
 
     return (
         <>
@@ -151,7 +160,7 @@ export default function ProjectDashboard() {
                                         <div className="d-flex align-items-center gap-2">
                                             <ProgressMini value={screen.percent || 0} />
                                             <Link
-                                                to="/kwestionariusz"
+                                                to={getScreenUrl(screen.title)}
                                                 className="btn btn-sm"
                                                 style={{
                                                     backgroundColor: "#005679",
