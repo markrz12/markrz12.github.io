@@ -12,10 +12,8 @@ export function Sidebar({ project }) {
 
     const projectBase = project ? `/projekty/${encodeURIComponent(project.name)}` : "";
 
-    // Helper to get icon component by string name
     const getIcon = (iconName) => Icons[iconName] || Icons.BsFolder;
 
-    // Top-level links with icons
     const topLinks = [
         { label: "Lista Projektów", to: "/projekty", icon: "BsCollection" },
         { label: project?.name, to: projectBase, icon: "BsPlayCircle" },
@@ -23,52 +21,51 @@ export function Sidebar({ project }) {
         { label: "Informacje", to: `${projectBase}/informacjeMSB`, icon: "BsInfoCircle" },
     ];
 
-    // Render item without icon (sections/screens)
     const renderItem = (label, to, level = 0) => (
         <Link
+            key={to}
             className={linkClass(to)}
             to={to}
             style={{
                 display: "block",
                 paddingLeft: `${10 + level * 20}px`,
-                fontSize: level === 2 ? "0.8rem" : "0.8rem",
+                fontSize: level === 2 ? "0.8rem" : "0.9rem"
             }}
         >
             {label}
         </Link>
     );
 
+    const getScreenUrl = (screenTitle) =>
+        `${projectBase}/kwestionariusz/${encodeURIComponent(screenTitle)}`;
+
     return (
-        <div
-            className="d-flex flex-column text-white"
-            style={{ width: 240, flex: "0 0 240px", backgroundColor: "var(--ndr-bg-sidebar)", padding: "1.1rem",fontSize: "0.95rem" }}
-        >
+        <div className="d-flex flex-column text-white"
+             style={{ width: 240, flex: "0 0 240px", backgroundColor: "var(--ndr-bg-sidebar)", padding: "1.1rem", fontSize: "0.95rem" }}>
             <h5 className="mt-1 mb-0">NDR</h5>
             <hr style={{ borderColor: "#fff" }} />
 
             <ul className="nav flex-column mb-3">
-                {topLinks.map((link) =>
-                    link.to ? (
-                        <li key={link.label} className="nav-item">
-                            <Link
-                                className={linkClass(link.to)}
-                                to={link.to}
-                                style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    gap: "0.5rem",
-                                    paddingLeft: "16px",
-                                    ...(isActive(link.to)
-                                        ? { background: "rgba(255,255,255,0.12)", borderRadius: 4 }
-                                        : {}),
-                                }}
-                            >
-                                {getIcon(link.icon)()}
-                                {link.label}
-                            </Link>
-                        </li>
-                    ) : null
-                )}
+                {topLinks.map((link) => (
+                    <li key={link.label} className="nav-item">
+                        <Link
+                            className={linkClass(link.to)}
+                            to={link.to}
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "0.5rem",
+                                paddingLeft: "16px",
+                                ...(isActive(link.to)
+                                    ? { background: "rgba(255,255,255,0.12)", borderRadius: 4 }
+                                    : {}),
+                            }}
+                        >
+                            {getIcon(link.icon)()}
+                            {link.label}
+                        </Link>
+                    </li>
+                ))}
 
                 {/* 🔹 Phases */}
                 {project?.phases?.map((phase) => {
@@ -93,7 +90,9 @@ export function Sidebar({ project }) {
 
                             {openPhase === phase.label && (
                                 <ul className="nav flex-column">
-                                    {phase.screens?.map((screen) => renderItem(screen.title, `${projectBase}/kwestionariusz`, 1))}
+                                    {phase.screens?.map((screen) =>
+                                        renderItem(screen.title, getScreenUrl(screen.title), 1)
+                                    )}
                                     {phase.sections?.map((section) => (
                                         <li key={section.name}>
                                             <button
@@ -109,7 +108,7 @@ export function Sidebar({ project }) {
                                                     display: "flex",
                                                     justifyContent: "space-between",
                                                     alignItems: "center",
-                                                    fontSize:"0.85rem"
+                                                    fontSize: "0.85rem"
                                                 }}
                                             >
                                                 {section.name}
@@ -118,13 +117,15 @@ export function Sidebar({ project }) {
                                                     style={{
                                                         transform: openSection[section.name] ? "rotate(90deg)" : "none",
                                                         transition: "transform 0.2s ease",
-                                                        fontSize:"0.8rem",
+                                                        fontSize: "0.8rem",
                                                         flexShrink: 0,
                                                     }}
                                                 />
                                             </button>
                                             {openSection[section.name] &&
-                                                section.screens?.map((s) => renderItem(s.title, `${projectBase}/kwestionariusz`, 2))}
+                                                section.screens?.map((s) =>
+                                                    renderItem(s.title, getScreenUrl(s.title), 2)
+                                                )}
                                         </li>
                                     ))}
                                 </ul>

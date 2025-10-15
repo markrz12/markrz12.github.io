@@ -17,24 +17,31 @@ export default function Project() {
     useEffect(() => {
         let alive = true;
 
-        axios.get(`${API_BASE}/Projects`)
-            .then(res => {
+        axios
+            .get(`${API_BASE}/Projects`)
+            .then((res) => {
                 if (!alive) return;
-                const p = res.data.find(proj => proj.name === decodedProjectName);
+                const p = res.data.find((proj) => proj.name === decodedProjectName);
                 if (p) setProject(p);
                 else setError("Project not found");
             })
-            .catch(err => {
+            .catch((err) => {
                 console.error(err);
                 if (!alive) return;
                 setError("Project not found");
             });
 
-        return () => { alive = false; };
+        return () => {
+            alive = false;
+        };
     }, [decodedProjectName]);
 
-    if (error) return <div className="text-danger text-center mt-5">{error}</div>;
-    if (!project) return <div className="text-center mt-5">Loading project...</div>;
+    if (error)
+        return <div className="text-danger text-center mt-5">{error}</div>;
+
+    if (!project)
+        return <div className="text-center mt-5">Loading project...</div>;
+
 
     const breadcrumb = [
         { label: "Home", to: "/" },

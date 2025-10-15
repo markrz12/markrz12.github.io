@@ -44,7 +44,7 @@ function App() {
                     <Route index element={<ProjectDashboard />} />
                     <Route path="uzytkownicy" element={<ProjectSettings />} />
                     <Route path="informacjeMSB" element={<InformationMSB />} />
-                    <Route path="kwestionariusz" element={<Questionnaire />} />
+                    <Route path="kwestionariusz/:screenTitle" element={<Questionnaire/>} />
                     <Route path="kwestionariusz-prosty" element={<QuestionnaireSimple />} />
                     <Route path="kwestionariusz-dynamiczny" element={<QuestionnaireDynamic />} />
                     <Route path="kwestionariusz-tekstowy" element={<QuestionnaireText />} />

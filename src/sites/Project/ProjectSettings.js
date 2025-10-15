@@ -1,77 +1,140 @@
-import React, { useState, useMemo, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+import { useOutletContext, Link } from "react-router-dom";
+import axios from "axios";
 
-const allUsersList = [
-    "Jan Kowalski",
-    "Anna Kowalska",
-    "Piotr Nowak",
-    "Ewa Jabłońska",
-    "Katarzyna Malinowska",
-    "Robert Kamiński",
-    "Janina Zielińska",
-    "Tomasz Nowak",
-];
+const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 
 export default function ProjektKonfiguracja() {
-    const { projectName } = useParams();
-    const decodedProjectName = decodeURIComponent(projectName);
+    const { project, setProject } = useOutletContext();
 
-    const [project, setProject] = useState(null);
+    const [allUsers, setAllUsers] = useState([]);
     const [manager, setManager] = useState("");
     const [assistants, setAssistants] = useState([]);
     const [showAssistantPicker, setShowAssistantPicker] = useState(false);
     const [assistantChoice, setAssistantChoice] = useState("");
-    const [questionnaires, setQuestionnaires] = useState([
-        { id: 1, name: "Test niezależności kluczowego biegłego rewidenta", assigned: [] },
-        { id: 2, name: "Test niezależności członka zespołu", assigned: [] },
-        { id: 3, name: "Wyznaczenie zespołu badającego", assigned: [] },
-    ]);
+    const [questionnaires, setQuestionnaires] = useState([]);
 
-    // Fetch project info (optional)
+    // Fetch all system users from db.json
     useEffect(() => {
-        // Normally fetch project from API if needed
-        setProject({ name: decodedProjectName, klient: "Klient ABC" });
-    }, [decodedProjectName]);
+        axios
+            .get(`${API_BASE}/Users`)
+            .then((res) => setAllUsers(res.data))
+            .catch((err) => console.error("Błąd pobierania użytkowników:", err));
+    }, []);
 
-    const availableAssistantCandidates = useMemo(
-        () => allUsersList.filter((u) => u !== manager && !assistants.includes(u)),
-        [manager, assistants]
+    // Load current users from database (project context)
+    useEffect(() => {
+        if (!project) return; // wait for project to load
+
+        const { kierownik = "", asystenci = [] } = project.users || {};
+
+        setManager(kierownik);
+        setAssistants(asystenci);
+
+        setQuestionnaires([
+            {
+                id: 1,
+                name: "Test niezależności kluczowego biegłego rewidenta",
+                assigned: kierownik ? [kierownik] : [],
+            },
+            {
+                id: 2,
+                name: "Test niezależności członka zespołu",
+                assigned: [...asystenci],
+            },
+            {
+                id: 3,
+                name: "Wyznaczenie zespołu badającego",
+                assigned: kierownik ? [kierownik, ...asystenci] : [...asystenci],
+            },
+        ]);
+    }, [project]);
+
+
+
+    // Manager candidates
+    const managerCandidates = useMemo(
+        () => allUsers.filter((u) => u.role === "Kierownik").map((u) => u.name),
+        [allUsers]
     );
 
-    const saveManager = () => {
-        if (!manager) return alert("Wybierz kierownika!");
-        setQuestionnaires((prev) =>
-            prev.map((q) => {
-                if (q.name === "Test niezależności kluczowego biegłego rewidenta") {
-                    return { ...q, assigned: [manager] };
-                }
-                if (q.name === "Wyznaczenie zespołu badającego") {
-                    return { ...q, assigned: [manager, ...assistants] };
-                }
-                return q;
-            })
-        );
-        alert(`Zapisano kierownika: ${manager}`);
+    // Assistant candidates (excluding current manager and assistants)
+    const assistantCandidates = useMemo(
+        () =>
+            allUsers
+                .filter(
+                    (u) =>
+                        u.role === "Asystent" &&
+                        u.name !== manager &&
+                        !assistants.includes(u.name)
+                )
+                .map((u) => u.name),
+        [allUsers, manager, assistants]
+    );
+
+    // Update project users in database and context
+    const updateProjectUsers = async (newManager, newAssistants) => {
+        if (!project?.id) return;
+
+        const updatedUsers = { kierownik: newManager, asystenci: newAssistants };
+
+        try {
+            const response = await axios.put(`${API_BASE}/Projects/${project.id}`, {
+                ...project,
+                users: updatedUsers,
+            });
+
+            // Update project context with fresh object
+            setProject({ ...response.data });
+
+            // Update local questionnaires immediately
+            setQuestionnaires([
+                {
+                    id: 1,
+                    name: "Test niezależności kluczowego biegłego rewidenta",
+                    assigned: newManager ? [newManager] : [],
+                },
+                {
+                    id: 2,
+                    name: "Test niezależności członka zespołu",
+                    assigned: [...newAssistants],
+                },
+                {
+                    id: 3,
+                    name: "Wyznaczenie zespołu badającego",
+                    assigned: newManager ? [newManager, ...newAssistants] : [...newAssistants],
+                },
+            ]);
+
+            // Optional: show friendly message
+            alert("Zapisano zmiany! Aby zobaczyć aktualne dane, odśwież stronę.");
+        } catch (err) {
+            console.error("Error updating project:", err.response || err);
+            alert("Aby zobaczyć aktualne dane, odśwież stronę.");
+        }
     };
 
-    const saveAssistants = () => {
-        setQuestionnaires((prev) =>
-            prev.map((q) => {
-                if (q.name === "Test niezależności członka zespołu") return { ...q, assigned: [...assistants] };
-                if (q.name === "Wyznaczenie zespołu badającego") return { ...q, assigned: [manager, ...assistants] };
-                return q;
-            })
-        );
-        alert("Zapisano asystentów");
+
+
+    const saveManager = async () => {
+        if (!manager) return;
+        await updateProjectUsers(manager, assistants);
     };
 
-    const addAssistant = () => setShowAssistantPicker(true);
+    const saveAssistants = async () => {
+        await updateProjectUsers(manager, assistants);
+    };
+
+    if (!project) return <div className="p-4 text-muted">Ładowanie projektu...</div>;
 
     return (
         <div className="p-4">
-            <h5 className="mb-4 mt-1">Konfiguracja użytkowników projektu: {decodedProjectName}</h5>
+            <h5 className="mb-4 mt-1">
+                Konfiguracja użytkowników projektu: <strong>{project.name}</strong>{" "}
+                <span className="text-muted">({project.klient})</span>
+            </h5>
 
-            {/* Kierownik */}
+            {/* Manager selection */}
             <div className="mb-3 d-flex align-items-stretch" style={{ maxWidth: 550 }}>
                 <label
                     className="form-label mb-0 text-white fw-bold d-flex align-items-center justify-content-center"
@@ -100,15 +163,15 @@ export default function ProjektKonfiguracja() {
                     }}
                 >
                     <option value="">Wybierz kierownika</option>
-                    {allUsersList.map((u, i) => (
-                        <option key={i} value={u}>
-                            {u}
+                    {managerCandidates.map((name) => (
+                        <option key={name} value={name}>
+                            {name}
                         </option>
                     ))}
                 </select>
 
                 <button
-                    className="btn btn-success fw-semibold"
+                    className="btn btn-success"
                     style={{
                         borderTopLeftRadius: 0,
                         borderBottomLeftRadius: 0,
@@ -124,137 +187,138 @@ export default function ProjektKonfiguracja() {
                 </button>
             </div>
 
+            {/* Assistants */}
             <div className="row g-4">
                 <div className="col-12 col-lg-6 d-flex flex-column">
-                    <div className="card shadow-sm h-100 d-flex flex-column" style={{maxWidth: 550}}>
-                        {/* Nagłówek */}
+                    <div className="card shadow-sm" style={{ maxWidth: 550 }}>
                         <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem'}}>
                             <strong>Asystenci</strong>
                         </div>
-
-                        {/* Tabela */}
-                        <div className="card-body p-0 flex-grow-1">
-                            <div className="table-responsive">
-                                <table className="table table-sm table-hover mb-0 align-middle w-100" style={{ fontSize: "0.9rem" }}>
-                                    <thead style={{position: "sticky", top: 0, zIndex: 1}}>
-                                    <tr>
-                                        <th style={{ padding: "0.5rem 1rem" }}>Osoba</th>
-                                        <th style={{ width: 120, padding: "0.5rem 1rem" }}>Akcja</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {assistants.map((a, idx) => (
-                                        <tr key={idx}>
-                                            <td style={{ padding: "0.5rem 1rem" }}>{a}</td>
-                                            <td style={{ padding: "0.5rem 1rem" }}>
-                                                <button className="btn btn-sm btn-outline-danger" onClick={() => setAssistants(prev => prev.filter(x => x !== a))}>
-                                                    Usuń
-                                                </button>
-                                            </td>
-                                        </tr>
+                        <div className="card-body">
+                            {assistants.length ? (
+                                <ul className="list-group mb-3">
+                                    {assistants.map((a) => (
+                                        <li key={a} className="list-group-item d-flex justify-content-between">
+                                            {a}
+                                            <button
+                                                className="btn btn-sm btn-outline-danger"
+                                                onClick={() => setAssistants((prev) => prev.filter((x) => x !== a))}
+                                            >
+                                                Usuń
+                                            </button>
+                                        </li>
                                     ))}
-                                    {assistants.length === 0 && (
-                                        <tr>
-                                            <td colSpan={2} className="text-muted text-center small py-3">Brak asystentów</td>
-                                        </tr>
-                                    )}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                </ul>
+                            ) : (
+                                <p className="text-muted small">Brak asystentów</p>
+                            )}
 
-                        {/* Footer z przyciskiem Dodaj */}
-                        <div className="card-footer d-flex justify-content-end gap-2">
-                            <button className="btn btn-dark fw-semibold" onClick={addAssistant}>
-                                + Dodaj asystenta
-                            </button>
-                            <button className="btn btn-success fw-semibold" onClick={saveAssistants} disabled={assistants.length===0}>
-                                Zatwierdź asystentów
-                            </button>
+                            <div className="d-flex justify-content-end gap-2">
+                                <button className="btn btn-dark fw-semibold" onClick={() => setShowAssistantPicker(true)}>
+                                    + Dodaj asystenta
+                                </button>
+                                <button
+                                    className="btn btn-success fw-semibold"
+                                    onClick={saveAssistants}
+                                    disabled={assistants.length === 0}
+                                >
+                                    Zatwierdź asystentów
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="col-12 col-lg-6">
+                {/* Assigned Questionnaires */}
+                <div className="col-12 col-lg-6 mt-4">
                     <div className="card shadow-sm h-100 d-flex flex-column">
                         <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c", borderRadius: '0.25rem', padding: '0.75rem 1rem' }}>
-                            <strong> Przypisane kwestionariusze</strong>
+                            <strong>Przypisane kwestionariusze</strong>
                         </div>
-
                         <div className="card-body p-0">
                             <table className="table table-sm table-hover mb-0 align-middle w-100" style={{ fontSize: "0.9rem" }}>
                                 <thead>
                                 <tr>
-                                    <th style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>Nazwa</th>
-                                    <th style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>Przypisani użytkownicy</th>
+                                    <th style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6" }}>Nazwa</th>
+                                    <th style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6" }}>Przypisani użytkownicy</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {questionnaires.map(q => (
+                                {questionnaires.map((q) => (
                                     <tr key={q.id}>
-                                        <td style={{ padding: "0.2rem 0.8rem", border: "1px solid #dee2e6",  }}>
-                                            <Link to="/kwestionariusz" className="btn btn-sm" style={{textDecoration: "underline", textAlign: "left"}}>
+                                        <td style={{ padding: "0.2rem 0.8rem", border: "1px solid #dee2e6" }}>
+                                            <Link to="/kwestionariusz" className="btn btn-sm" style={{ textDecoration: "underline", textAlign: "left" }}>
                                                 {q.name}
                                             </Link>
                                         </td>
-                                        <td style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6",  }}>{q.assigned.join(", ") || <span className="text-muted">Brak</span>}</td>
+                                        <td style={{ padding: "0.5rem 1rem", border: "1px solid #dee2e6" }}>
+                                            {q.assigned.join(", ") || <span className="text-muted">Brak</span>}
+                                        </td>
                                     </tr>
                                 ))}
-                                {questionnaires.length === 0 && (
-                                    <tr>
-                                        <td colSpan={3} className="text-center text-muted small py-3">Brak kwestionariuszy</td>
-                                    </tr>
-                                )}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Picker modal */}
-            {showAssistantPicker && (
-                <div className="position-fixed top-0 start-0 w-100 h-100" style={{ background: "rgba(0,0,0,0.35)", zIndex: 1050 }} onClick={() => setShowAssistantPicker(false)}>
-                    <div className="card shadow" style={{ maxWidth: 520, margin: "12vh auto", padding: 0 }} onClick={(e) => e.stopPropagation()}>
-                        <div className="card-header d-flex justify-content-between align-items-center">
-                            <strong>Dodaj asystenta</strong>
-                            <button className="btn btn-sm btn-outline-secondary" onClick={() => setShowAssistantPicker(false)}>
-                                Zamknij
-                            </button>
-                        </div>
-                        <div className="card-body">
-                            {availableAssistantCandidates.length === 0 ? (
-                                <div className="text-muted small">Brak dostępnych osób do dodania.</div>
-                            ) : (
-                                <select className="form-select" value={assistantChoice} onChange={(e) => setAssistantChoice(e.target.value)}>
-                                    <option value="">— wybierz —</option>
-                                    {availableAssistantCandidates.map((u) => (
-                                        <option key={u} value={u}>
-                                            {u}
-                                        </option>
-                                    ))}
-                                </select>
-                            )}
-                        </div>
-                        <div className="card-footer d-flex justify-content-end gap-2">
-                            <button className="btn btn-light" onClick={() => setShowAssistantPicker(false)}>
-                                Anuluj
-                            </button>
-                            <button
-                                className="btn btn-primary"
-                                disabled={!assistantChoice || availableAssistantCandidates.length === 0}
-                                onClick={() => {
-                                    setAssistants((prev) => [...prev, assistantChoice]);
-                                    setAssistantChoice("");
-                                    setShowAssistantPicker(false);
-                                }}
-                            >
-                                Dodaj
-                            </button>
+                {/* Assistant Picker Modal */}
+                {showAssistantPicker && (
+                    <div
+                        className="position-fixed top-0 start-0 w-100 h-100"
+                        style={{ background: "rgba(0,0,0,0.35)", zIndex: 1050 }}
+                        onClick={() => setShowAssistantPicker(false)}
+                    >
+                        <div
+                            className="card shadow"
+                            style={{ maxWidth: 520, margin: "12vh auto" }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="card-header d-flex justify-content-between">
+                                <strong>Dodaj asystenta</strong>
+                                <button
+                                    className="btn btn-sm btn-outline-secondary"
+                                    onClick={() => setShowAssistantPicker(false)}
+                                >
+                                    Zamknij
+                                </button>
+                            </div>
+                            <div className="card-body">
+                                {assistantCandidates.length === 0 ? (
+                                    <div className="text-muted small">Brak dostępnych osób do dodania.</div>
+                                ) : (
+                                    <select
+                                        className="form-select"
+                                        value={assistantChoice}
+                                        onChange={(e) => setAssistantChoice(e.target.value)}
+                                    >
+                                        <option value="">— wybierz —</option>
+                                        {assistantCandidates.map((name) => (
+                                            <option key={name} value={name}>
+                                                {name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                )}
+                            </div>
+                            <div className="card-footer d-flex justify-content-end gap-2">
+                                <button className="btn btn-light" onClick={() => setShowAssistantPicker(false)}>Anuluj</button>
+                                <button
+                                    className="btn btn-primary"
+                                    disabled={!assistantChoice}
+                                    onClick={() => {
+                                        setAssistants((prev) => [...prev, assistantChoice]);
+                                        setAssistantChoice("");
+                                        setShowAssistantPicker(false);
+                                    }}
+                                >
+                                    Dodaj
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </div>
     );
 }

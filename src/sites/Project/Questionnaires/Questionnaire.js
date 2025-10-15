@@ -1,311 +1,347 @@
-import React, { useState} from "react";
+import React, { useState, useEffect } from "react";
+import { useOutletContext, useLocation } from "react-router-dom";
+import { InitialsAvatar } from "../../../ui/common_function";
 import { timeAgo, ProgressMeter } from "../../Functions";
+import TabNavigation from "../Tabs/TabNavigation";
 import FilesTable from "../Tabs/Files";
 import RequestsTable from "../Tabs/Request";
 import ActivityLog from "../Tabs/Activitylog";
-import TabNavigation from "../Tabs/TabNavigation";
-import { InitialsAvatar, CloseX} from "../../../ui/common_function";
-import { useOutletContext } from "react-router-dom";
-
 
 function KwestionariuszFull() {
     const { project } = useOutletContext();
+    const location = useLocation();
 
-    // --- Dane początkowe ---
-    const [rows, setRows] = useState([
-        { id: 1, q: "Upewnij się, że w dokumentacji znajduje się aktualna umowa o badanie dostosowana do sytuacji i okoliczności po stronie klienta.\nZadbaj o to, aby wspomniana umowa obejmowała stosowne ramowe założenia sprawozdawczości finansowej, a także zobowiązania –\nzarówno biegłego rewidenta, jak i kierownictwa.\nRozważ ewentualną potrzebę modyfikacji obecnych warunków, a uzgodnione zmiany wprowadź na piśmie.", author: "K M", approver: "M M", date: "2025-08-20", approvedAt: "2025-04-20" },
-        { id: 2, q: "Przejrzyj korespondencję firmy z klientem od daty zatwierdzenia\nostatniego sprawozdania finansowego, dokumentując wszelkie\nzagadnienia, które mogą mieć wpływ na tegoroczne badanie.\nUwaga! Uwzględnij odpowiedzi klienta na pismo do kierownictwa za\npoprzedni okres", author: "K K", approver: "M M", date: "2025-08-21", approvedAt: "2025-04-20" },
-        { id: 3, q: "Uzyskaj i przejrzyj egzemplarz zeszłorocznego zestawienia spraw do\nrozważenia w kolejnym roku i w razie potrzeby umieść go\nw dokumentacji.", author: "K M", approver: "—", date: "2025-08-22", approvedAt: null },
-        { id: 4, q: "Przeanalizuj wyniki wewnętrznego i zewnętrznego monitoringu\njakości czynności rewizji finansowej w firmie audytorskiej (monitoring\njest elementem systemu kontroli jakości w firmie audytorskiej), jakie\nzostały przeprowadzone w ostatnim czasie (np. wizyta monitorująca\ni/lub wyniki kontroli jakości dokonywanej przed podpisaniem\nopinii/po jej wydaniu) i udokumentuj wpływ poczynionych ustaleń na\nto zlecenie.", author: "—", approver: "—", date: null, approvedAt: null },
-        { id: 5, q: "Przeprowadź z klientem spotkanie/dyskusję przez rozpoczęciem\nbadania. Datę, dane uczestników oraz szczegółowe informacje na\ntemat omawianych spraw włącz do dokumentacji.", author: "—", approver: "—", date: null, approvedAt: null },
-    ]);
-
-    // --- Stany ---
-    const [activeTab, setActiveTab] = useState("Kwestionariusz");
-    const [files, setFiles] = useState([]);
+    const screenTitle = decodeURIComponent(location.pathname.split("/kwestionariusz/")[1] || "");
+    const [screenData, setScreenData] = useState(null);
+    const [activeTab, setActiveTab] = useState("");
     const [answers, setAnswers] = useState({});
-    const [logs] = useState([
-        { date: "2025-09-24 14:32", user: "K M", action: "Dodał komentarz", details: "Komentarz do pytania 3" },
-        { date: "2025-09-23 10:15", user: "J K", action: "Zatwierdził odpowiedź", details: "Pytanie 1" },
-        { date: "2025-09-22 09:00", user: "A N", action: "Dodał plik", details: "umowa-najmu.pdf" },
-    ]);
 
-    const [requests, setRequests] = useState(() => {
-        const now = new Date();
-        const earlier = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-        return [
-            {id: 1, type: "Wyciąg bankowy", desc: "Wyciągi za Q2 2025 (miesięczne zestawienia)", due: "2025-09-05",
-                status: "Oczekiwanie", createdAt: earlier.toISOString(), lastReminderAt: null, receivedAt: null, urgent: false},
-            {id: 2, type: "Umowa najmu", desc: "Aktualna umowa wraz z aneksami", due: "2025-09-10",
-                status: "Otrzymano", createdAt: earlier.toISOString(), lastReminderAt: earlier.toISOString(),
-                receivedAt: now.toISOString(), receivedFile: { name: "umowa-najmu.pdf", url: "#" }, urgent: true},
-        ];
-    });
+    // Find screen in project phases
+    useEffect(() => {
+        if (!project?.phases) return;
 
-    const tabs = ["Kwestionariusz", "Zapotrzebowanie", "Pliki", "Dziennik"];
+        for (const phase of project.phases) {
+            const found = phase.screens?.find((s) => s.title === screenTitle);
+            if (found) {
+                setScreenData(found);
+                return;
+            }
+            for (const section of phase.sections || []) {
+                const foundSection = section.screens?.find((s) => s.title === screenTitle);
+                if (foundSection) {
+                    setScreenData(foundSection);
+                    return;
+                }
+            }
+        }
+    }, [project, screenTitle]);
+
+    // Set initial active tab
+    useEffect(() => {
+        if (screenData?.tabs?.length) {
+            const firstTab = screenData.tabs[0].title || screenData.tabs[0]["title:"];
+            setActiveTab(firstTab?.replace(":", ""));
+        }
+    }, [screenData]);
+
+    if (!screenData) return <div>Loading...</div>;
+
+    const tabs = screenData.tabs?.map((t) => (t.title || t["title:"])?.replace(":", "")) || [];
+
+    // Helper: get text for description columns
+    const getText = (row) =>
+        row.q || row.pytanie || row.opis || row.MSB || row.nazwa || row.cele || row.stwierdzenie || row.obszary || row.test || "";
+
+    // Unique key for rows per questionnaire
+    const getRowKey = (row) => `${screenData.id}-${row.id || getText(row)}`;
+
+    // Handle dynamic / checkbox / select changes
+    const handleDynamicChange = (rowKey, key, value) => {
+        setAnswers((prev) => ({
+            ...prev,
+            [rowKey]: {
+                ...prev[rowKey],
+                dynamic: { ...(prev[rowKey]?.dynamic || {}), [key]: value },
+            },
+        }));
+    };
+
+    const renderCell = (col, row) => {
+        const rowKey = getRowKey(row);
+        const tdCenter = { textAlign: "center", border: "1px solid #dee2e6",padding: "0.40rem", };
+        const tdDescription = { border: "1px solid #dee2e6", fontSize: "0.85rem", paddingLeft: "1rem", paddingTop:"0.5rem", paddingBottom:"0.5rem", maxWidth: "45rem" };
+
+
+        switch (col.type) {
+            case "no":
+                return <td key={col.label} style={tdCenter}>{row.id || ""}</td>;
+            case "description":
+            case "text":
+                return <td key={col.label} style={tdDescription}>{getText(row)}</td>;
+            case "yes_no": {
+                const value = answers[rowKey]?.choice ?? row.answer?.value ?? "NIE";
+                return (
+                    <td key={col.label} style={tdCenter}>
+                        {["TAK", "NIE"].map((opt) => (
+                            <div className="form-check form-check-inline" key={opt}>
+                                <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    name={`ans-${rowKey}`}
+                                    checked={value === opt}
+                                    onChange={() =>
+                                        setAnswers((prev) => ({
+                                            ...prev,
+                                            [rowKey]: { ...prev[rowKey], choice: opt },
+                                        }))
+                                    }
+                                />
+                                <label className="form-check-label">{opt}</label>
+                            </div>
+                        ))}
+                    </td>
+                );
+            }
+            case "enum": {
+                const values = col.wartosci || [];
+                const value = (answers[rowKey]?.choice ?? row.answer?.value ?? values[0]) || "";
+                return (
+                    <td key={col.label} style={tdCenter}>
+                        <select
+                            className="form-select form-select-sm"
+                            value={value}
+                            onChange={(e) =>
+                                setAnswers((prev) => ({ ...prev, [rowKey]: { ...prev[rowKey], choice: e.target.value } }))
+                            }
+                        >
+                            {values.map((v) => (
+                                <option key={v} value={v}>
+                                    {v}
+                                </option>
+                            ))}
+                        </select>
+                    </td>
+                );
+            }
+            case "comment": {
+                const value = answers[rowKey]?.comment ?? row.comment ?? "";
+                return (
+                    <td key={col.label} style={tdCenter}>
+                        <input
+                            type="text"
+                            className="form-control form-control-sm"
+                            placeholder="Komentarz"
+                            value={value}
+                            onChange={(e) =>
+                                setAnswers((prev) => ({ ...prev, [rowKey]: { ...prev[rowKey], comment: e.target.value } }))
+                            }
+                        />
+                    </td>
+                );
+            }
+            case "author": {
+                const author = answers[rowKey]?.author ?? row.author;
+                const date = answers[rowKey]?.date ?? row.date;
+                return (
+                    <td key={col.label} style={tdCenter}>
+                        {author ? (
+                            <div className="d-flex align-items-center justify-content-center gap-2">
+                                <InitialsAvatar name={author} size={23} />
+                                <span className="text-muted small">{date ? timeAgo(new Date(date)) : ""}</span>
+                            </div>
+                        ) : (
+                            <button
+                                className="btn btn-sm btn-outline-primary"
+                                onClick={() =>
+                                    setAnswers((prev) => ({
+                                        ...prev,
+                                        [rowKey]: { ...prev[rowKey], author: "Jan Kowalski", date: new Date().toISOString() },
+                                    }))
+                                }
+                            >
+                                Zatwierdź
+                            </button>
+                        )}
+                    </td>
+                );
+            }
+            case "dynamic": {
+                const cell = row[col.key] || {};
+                if (cell.type === "checkbox") {
+                    const value = answers[rowKey]?.dynamic?.[col.key] ?? cell.value;
+                    return (
+                        <td key={col.label} style={tdCenter}>
+                            <input
+                                type="checkbox"
+                                checked={value}
+                                onChange={(e) => handleDynamicChange(rowKey, col.key, e.target.checked)}
+                            />
+                        </td>
+                    );
+                }
+                if (cell.type === "select") {
+                    const value = answers[rowKey]?.dynamic?.[col.key] ?? cell.value ?? "";
+                    return (
+                        <td key={col.label} style={tdCenter}>
+                            <select
+                                className="form-select form-select-sm"
+                                value={value}
+                                onChange={(e) => handleDynamicChange(rowKey, col.key, e.target.value)}
+                            >
+                                {(cell.options || []).map((opt) => (
+                                    <option key={opt} value={opt}>
+                                        {opt}
+                                    </option>
+                                ))}
+                            </select>
+                        </td>
+                    );
+                }
+                return <td key={col.label}>{cell.value ?? ""}</td>;
+            }
+            case "file": {
+                const file = answers[rowKey]?.file ?? row.file;
+                return (
+                    <td key={col.label} style={tdCenter}>
+                        {!file ? (
+                            <label className="btn btn-sm btn-outline-secondary mb-0">
+                                Dodaj plik
+                                <input
+                                    type="file"
+                                    style={{ display: "none" }}
+                                    onChange={(e) =>
+                                        setAnswers((prev) => ({ ...prev, [rowKey]: { ...prev[rowKey], file: e.target.files[0] } }))
+                                    }
+                                />
+                            </label>
+                        ) : (
+                            <div className="d-flex align-items-center gap-2">
+                                <span className="small">{file.name}</span>
+                                <button
+                                    className="btn btn-sm btn-light border"
+                                    onClick={() => setAnswers((prev) => ({ ...prev, [rowKey]: { ...prev[rowKey], file: null } }))}
+                                >
+                                    Usuń
+                                </button>
+                            </div>
+                        )}
+                    </td>
+                );
+            }
+            default:
+                return <td key={col.label} style={tdCenter}></td>;
+        }
+    };
+
+    const renderTable = (tab) => {
+        let rows = [];
+
+        if (tab.rows?.length) {
+            tab.rows.forEach((row) => {
+                // If row has sections
+                if (row.sections) {
+                    row.sections.forEach((section) => {
+                        rows.push({ isSection: true, name: section.name });
+                        section.questions.forEach((q) => rows.push(q));
+                    });
+                } else if (row.section && row.items) {
+                    // For row with section/items format
+                    rows.push({ isSection: true, name: row.section });
+                    row.items.forEach((q) => rows.push(q));
+                } else {
+                    rows.push(row);
+                }
+            });
+        }
+
+        if (!rows.length) return <div className="p-2">Brak danych do wyświetlenia</div>;
+
+        return (
+            <div className="table-responsive">
+                <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize: "0.85rem" }}>
+                    <thead className="table-light" style={{ position: "sticky", top: 0, zIndex: 5 }}>
+                    <tr>
+                        {tab.columns.map((col) => (
+                            <th  key={col.label} style={headerStyle}>
+                                {col.label}
+                            </th>
+                        ))}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {rows.map((row, i) =>
+                        row.isSection ? (
+                            <tr key={`section-${i}`}>
+                                <td style={{backgroundColor: "#005679", color: "#fff", padding: "0.75rem"}}
+                                    colSpan={tab.columns.length} className="fw-bold text-center">
+                                    {row.name}
+                                </td>
+                            </tr>
+                        ) : (
+                            <tr key={i}>
+                                {tab.columns.map((col) => renderCell(col, row))}
+                            </tr>
+
+                        )
+                    )}
+                    </tbody>
+                </table>
+            </div>
+        );
+    };
 
     return (
         <div className="d-flex min-vh-100">
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: "hidden" }}>
+                <ProjectHeader project={project} />
+                <SubHeader title={screenData.title} percent={screenData.percent} />
+                <TabNavigation tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+                <div className="px-1 flex-grow-1 overflow-auto">
+                    {screenData.tabs.map((tab, i) => {
+                        const tabTitle = (tab.title || tab["title:"])?.replace(":", "");
+                        if (tabTitle !== activeTab) return null;
 
-                {/* Content */}
-                <div className="d-flex flex-grow-1" style={{ overflow: "hidden" }}>
-                    <div className="flex-grow-1 d-flex flex-column" style={{ minWidth: 0 }}>
-                        <ProjectHeader project={project} />
-                        <SubHeader />
-                        <TabNavigation tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-
-                        {/* Tab content */}
-                        <div className="px-1 flex-grow-1 overflow-auto" >
-                            {activeTab === "Kwestionariusz" && (
-                                <div className="p-0">
-                                    <div className="table-responsive">
-                                        <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize: "0.85rem" }}>                                            <thead className="table-light" style={{ position: "sticky", top: 0, zIndex: 5 }}>
-                                            <tr>
-                                                <th style={{  textAlign: "center", border: "1px solid #dee2e6", width: "1%", backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem 1em" }}>Lp.</th>
-                                                <th style={{ border: "1px solid #dee2e6", width: "35%", paddingLeft: "1rem",backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem 1em" }}>Opis</th>
-                                                <th style = {{width: "5%",border: "1px solid #dee2e6",textAlign: "center",backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem 1em"}}>MSB</th>
-                                                <th style = {{width: "7%",border: "1px solid #dee2e6",textAlign: "center",backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem 1em"}}>Załączniki</th>
-                                                <th style = {{width: "15%", border: "1px solid #dee2e6",textAlign: "center",backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem 1em"}}>Odpowiedź</th>
-                                                <th style = {{ width: "13%", border: "1px solid #dee2e6",textAlign: "center",backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem 1em"}}>Komentarz</th>
-                                                <th style = {{width: "10%",border: "1px solid #dee2e6",textAlign: "center",backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem 1em"}}>Sporządził</th>
-                                                <th style = {{width: "10%",border: "1px solid #dee2e6",textAlign: "center",backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem 1em"}}>Zatwierdził</th>
-                                            </tr>
-
-                                            </thead>
-                                            <tbody>
-                                            {rows.map((r) => (
-                                                <tr key={r.id}>
-                                                    <td style = {{border: "1px solid #dee2e6", textAlign: "center"}}>{r.id}</td>
-                                                    <td style={{border: "1px solid #dee2e6", fontSize: "0.85rem", padding:"0.6rem" }}>
-                                                        <span id={`q-label-${r.id}`}>{r.q}</span>
-                                                    </td>
-                                                    <td style = {{border: "1px solid #dee2e6"}}></td>
-                                                    <td style = {{border: "1px solid #dee2e6"}}></td>
-                                                    <td style={{ border: "1px solid #dee2e6", fontSize: "0.85rem", padding:"0.7rem" }}>
-                                                        <div
-                                                            className="d-flex align-items-center"
-                                                            role="radiogroup"
-                                                            aria-labelledby={`q-label-${r.id}`}
-                                                        >
-                                                            {["TAK", "NIE", "ND"].map((opt, i) => (
-                                                                <div key={opt} className="form-check form-check-inline mt-2">
-                                                                    <input
-                                                                        className="form-check-input"
-                                                                        type="radio"
-                                                                        name={`ans-${r.id}`}
-                                                                        id={`a${i}-${r.id}`}
-                                                                        checked={answers[r.id] === opt}
-                                                                        onChange={() => {}}
-                                                                        onClick={() =>
-                                                                            setAnswers((prev) =>
-                                                                                prev[r.id] === opt
-                                                                                    ? { ...prev, [r.id]: undefined }
-                                                                                    : { ...prev, [r.id]: opt }
-                                                                            )
-                                                                        }
-                                                                    />
-                                                                    <label className="form-check-label" htmlFor={`a${i}-${r.id}`}>
-                                                                        {opt === "TAK" ? "Tak" : opt === "NIE" ? "Nie" : "N/D"}
-                                                                    </label>
-                                                                </div>
-                                                            ))}
-                                                            <CloseX
-                                                                size={20}
-                                                                className="ms-0 mt-0"
-                                                                title="Wyczyść odpowiedź"
-                                                                ariaLabel={`Wyczyść odpowiedź dla pytania ${r.id}`}
-                                                                onClick={() => setAnswers((prev) => ({ ...prev, [r.id]: undefined }))}
-                                                            />
-                                                        </div>
-                                                    </td>
-                                                        <td style={{
-                                                            border: "1px solid #dee2e6",
-                                                            minWidth: 150,
-                                                            padding: "0.5rem",
-                                                            textAlign: "center"
-                                                        }}>
-                                                            {answers[r.id]?.comment && !answers[r.id]?.editing ? (
-                                                                <div className="d-flex flex-column align-items-center" style={{ gap: "0.5rem" }}>
-                                                                    <span className="badge bg-light text-dark text-break"
-                                                                          style={{ whiteSpace: 'pre-wrap', fontWeight: 400, fontSize: "0.85rem", padding: "0.4rem 0.6rem" }}>
-                                                                        {answers[r.id].comment}
-                                                                    </span>
-
-                                                                    <div className="d-flex gap-2 flex-wrap justify-content-center">
-                                                                        <button
-                                                                            type="button"
-                                                                            className="btn btn-sm btn-outline-secondary"
-                                                                            onClick={() =>
-                                                                                setAnswers(prev => ({ ...prev, [r.id]: { ...prev[r.id], editing: true } }))}>
-                                                                            Edytuj
-                                                                        </button>
-                                                                        <button
-                                                                            type="button"
-                                                                            className="btn btn-sm btn-outline-danger"
-                                                                            onClick={() =>
-                                                                                setAnswers(prev => ({ ...prev, [r.id]: { choice: prev[r.id]?.choice || "NIE", comment: "", editing: false } }))}>
-                                                                            Usuń
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            ) : answers[r.id]?.editing ? (
-                                                                <div className="d-flex flex-column align-items-center" style={{ gap: "0.5rem" }}>
-                                                                    <select
-                                                                        className="form-select form-select-sm"
-                                                                        value={answers[r.id]?.comment || ""}
-                                                                        onChange={(e) =>
-                                                                            setAnswers(prev => ({ ...prev, [r.id]: { ...prev[r.id], comment: e.target.value } }))}>
-                                                                        <option value="">Wybierz komentarz...</option>
-                                                                        <option value="Komentarz 1">Komentarz 1</option>
-                                                                        <option value="Komentarz 2">Komentarz 2</option>
-                                                                        <option value="Komentarz 3">Komentarz 3</option>
-                                                                    </select>
-                                                                    <input
-                                                                        type="text"
-                                                                        className="form-control form-control-sm"
-                                                                        placeholder="Lub wpisz własny komentarz"
-                                                                        value={answers[r.id]?.comment || ""}
-                                                                        onChange={(e) =>
-                                                                            setAnswers(prev => ({ ...prev, [r.id]: { ...prev[r.id], comment: e.target.value } }))}/>
-                                                                    <div className="d-flex gap-2 justify-content-center">
-                                                                        <button
-                                                                            className="btn btn-sm btn-success"
-                                                                            onClick={() =>
-                                                                                setAnswers(prev => ({ ...prev, [r.id]: { ...prev[r.id], editing: false } }))}>
-                                                                            Zapisz
-                                                                        </button>
-                                                                        <button
-                                                                            className="btn btn-sm btn-outline-danger"
-                                                                            onClick={() =>
-                                                                                setAnswers(prev => ({ ...prev, [r.id]: { choice: prev[r.id]?.choice || "NIE", comment: "", editing: false } }))}>
-                                                                            Anuluj
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            ) : (
-                                                                <button
-                                                                    className="btn btn-sm btn-outline-primary"
-                                                                    style={{ display: "block", margin: "0 auto" }}
-                                                                    onClick={() =>
-                                                                        setAnswers(prev => ({ ...prev, [r.id]: { choice: prev[r.id]?.choice || "NIE", editing: true } }))}>
-                                                                    Dodaj komentarz
-                                                                </button>
-                                                            )}
-                                                    </td>
-
-                                                    {/* Kolumna Sporządził */}
-                                                    <td style={{ border: "1px solid #dee2e6", fontSize: "0.80rem" }}>
-                                                        {r.author && r.author !== "—" ? (
-                                                            <div className="d-flex align-items-center" style={{ gap: "0.5rem" }}>
-                                                                <InitialsAvatar name={r.author} size={23} />
-                                                                <span className="text-muted small">{r.date ? timeAgo(new Date(r.date)) : "-"}</span>
-                                                            </div>
-                                                        ) : (
-                                                            <div style={{ textAlign: "center" }}>
-                                                                <button
-                                                                    className="btn btn-sm btn-outline-primary"
-                                                                    onClick={() =>
-                                                                        setRows(prev =>
-                                                                            prev.map(row =>
-                                                                                row.id === r.id
-                                                                                    ? { ...row, author: "Jan Kowalski", date: new Date().toISOString() }
-                                                                                    : row
-                                                                            )
-                                                                        )
-                                                                    }
-                                                                >
-                                                                    Zatwierdź
-                                                                </button>
-                                                            </div>
-                                                        )}
-                                                    </td>
-
-                                                    {/* Kolumna Zatwierdził */}
-                                                    <td style={{ border: "1px solid #dee2e6", fontSize: "0.80rem" }}>
-                                                        {r.approver && r.approver !== "—" ? (
-                                                            <div className="d-flex align-items-center" style={{ gap: "0.5rem" }}>
-                                                                <InitialsAvatar name={r.approver} size={23} />
-                                                                <span className="text-muted small">{r.approvedAt ? timeAgo(new Date(r.approvedAt)) : "-"}</span>
-                                                            </div>
-                                                        ) : (
-                                                            <div style={{ textAlign: "center" }}>
-                                                                <button
-                                                                    className="btn btn-sm btn-outline-success"
-                                                                    onClick={() =>
-                                                                        setRows(prev =>
-                                                                            prev.map(row =>
-                                                                                row.id === r.id
-                                                                                    ? { ...row, approver: "Jan Kowalski", approvedAt: new Date().toISOString() }
-                                                                                    : row))}> Zatwierdź
-                                                                </button>
-                                                            </div>
-                                                        )}
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                    <div
-                                        className="px-3 py-2 border-top bg-white"
-                                        style={{ position: "sticky", bottom: 0, zIndex: 2, boxShadow: "0 -2px 6px rgba(0,0,0,0.06)" }}
-                                    >
-                                        <div className="d-flex justify-content-end mt-1">
-                                            <button className="btn btn-sm btn-success">Zatwierdź wszystko</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-
-                            {activeTab === "Zapotrzebowanie" && <RequestsTable requests={requests} setRequests={setRequests} />}
-                            {activeTab === "Pliki" && <FilesTable files={files} setFiles={setFiles} />}
-                            {activeTab === "Dziennik" && (
-                                <div className="p-0 flex-grow-1" style={{ overflow: "auto" }}>
-                                    <ActivityLog logs={logs} />
-                                </div>)}
-                        </div>
-
-                        {/* Prev/Next */}
-                        <div className="d-flex justify-content-between p-2 border-top mt-2" style={{ backgroundColor:'var(--ndr-bg-topbar)' }}>
-                            <button className="btn btn-outline-light">«« Poprzedni kwestionariusz</button>
-                            <button className="btn btn-outline-light">Następny kwestionariusz »»</button>
-                        </div>
-                    </div>
+                        switch (tab.type) {
+                            case "CUSTOM":
+                                return <div key={i}>{renderTable(tab)}</div>;
+                            case "REQUEST":
+                                return <RequestsTable key={i} requests={[]} setRequests={() => {}} />;
+                            case "FILES":
+                                return <FilesTable key={i} files={[]} setFiles={() => {}} />;
+                            case "ACTIVITY_LOG":
+                                return <ActivityLog key={i} logs={[]} />;
+                            default:
+                                return <div key={i}>Tab "{tabTitle}" not implemented</div>;
+                        }
+                    })}
                 </div>
             </div>
         </div>
     );
 }
 
-
-const ProjectHeader = () => {
-    const { project } = useOutletContext();
-
-    return (
-        <div className=" border-bottom d-flex justify-content-between align-items-center flex-wrap">
-            <div className="d-flex align-items-baseline gap-2 flex-wrap">
-                <h4 style={{ padding: "1rem 1rem 0.6rem 0.2rem" }}>
-                    <span style={{ fontWeight: 600 }}>{project.name}</span>
-                    <span style={{ fontWeight: 400, marginLeft: "1rem", color: "#555" }}>{project.klient}</span>
-                </h4>
-            </div>
-            <div className="text-muted gap-4" style={{ fontSize: "0.9rem" }}>
-                <div>Kierownik: {project.users.kierownik}</div>
-                <div>Okres: 01.01.2025 – 31.12.2025</div>
-            </div>
+const ProjectHeader = ({ project }) => (
+    <div className="border-bottom d-flex justify-content-between align-items-center flex-wrap">
+        <h4 style={{ padding: "1rem" }}>
+            <span style={{ fontWeight: 600 }}>{project.name}</span>
+            <span style={{ fontWeight: 400, marginLeft: "1rem", color: "#555" }}>{project.klient}</span>
+        </h4>
+        <div className="text-muted" style={{ fontSize: "0.9rem" }}>
+            <div>Kierownik: {project.users.kierownik}</div>
+            <div>Okres: 01.01.2025 – 31.12.2025</div>
         </div>
-    );
-};
+    </div>
+);
 
-const SubHeader = () => (
+const SubHeader = ({ title, percent }) => (
     <div className="mb-1 mt-2 d-flex align-items-center justify-content-between">
-        <h5  style={{ padding: "0.5rem 1rem 0.6rem 0.3rem" }}>II.1.4 Kontynuacja działalności (wstępne rozpoznanie)</h5>
+        <h5 style={{ padding: "0.5rem 1rem 0.4rem 0.5rem" }}>{title}</h5>
         <div style={{ width: "240px", minWidth: "150px" }}>
-            <ProgressMeter percent={55} />
+            <ProgressMeter percent={percent} />
         </div>
     </div>
 );
 
 export default KwestionariuszFull;
+
+const headerStyle = {border: "1px solid #dee2e6", backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.75rem",};

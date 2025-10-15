@@ -1113,10 +1113,12 @@
       "deadline": "2025-09-30",
       "klient": "Alphatech Sp. z o.o.",
       "users": {
-        "kierownik": "Anna Kowalska",
+        "kierownik": "Krzysztof Bąk",
         "asystenci": [
-          "Jan Nowak"]},
-        "contact": {
+          "Piotr Zieliński"
+        ]
+      },
+      "contact": {
         "name": "Jan Kowalski",
         "email": "jan.kowalski@alphatech.com",
         "phone": "22 123 45 67"
@@ -3693,7 +3695,7 @@
                           "rows": [
                             {
                               "lp": "9",
-                              "pytanie": "Uzyskaj zrozumienie (a zdobytą wiedzę udokumentuj) sposobu sporządzania sprawozdania finansowego, w tym systemu informacyjnego i powiązanych procesów gospodarczych znaczących dla sprawozdawczości finansowej w zakresie obszarów: i. grup transakcji stanowiących przedmiot działalności jednostki, które są znaczące dla sprawozdania finansowego; ii. procedur stosowanych zarówno w ramach technologii informacyjnych (IT), jak i systemów ręcznych, za pomocą których transakcje te są inicjowane, rejestrowane, przetwarzane, i – gdy to niezbędne - poprawiane, przenoszone do księgi głównej i wykazywane w sprawozdaniach finansowych; iii. powiązanych zapisów księgowych, wspierających informacje i poszczególne salda w sprawozdaniach finansowych, stosowanych do inicjowania, rejestrowania, przetwarzania i wykazywania transakcji; iv. sposobu, w jaki w systemie informacyjnym są ujmowane zdarzenia i warunki inne niż transakcje, które są znaczące dla sprawozdania finansowego; v. procesu sprawozdawczości finansowej stosowanego do sporządzania sprawozdania finansowego jednostki, w tym znaczących wartości szacunkowych i ujawnień; vi. kontroli dotyczących zapisów dziennika, w tym nietypowych zapisów księgowych stosowanych do rejestrowania niepowtarzalnych, nietypowych transakcji bądź korekt. Uwzględnij informacje na temat kluczowych pracowników i ich zadań w zakresie sporządzania sprawozdania finansowego oraz ewentualnych środków kontroli.",
+                              "pytanie": "Uzyskaj zrozumienie (a zdobytą wiedzę udokumentuj) sposobu sporządzania sprawozdania finansowego, w tym systemu informacyjnego i powiązanych procesów gospodarczych znaczących dla sprawozdawczości finansowej w zakresie obszarów: i. grup transakcji stanowiących przedmiot działalności jednostki, które są znaczące dla sprawozdania finansowego; ii. procedur stosowanych zarówno w ramach technologii informacyjnych (IT), jak i systemów ręcznych, za pomocą których transakcje te są inicjowane, rejestrowane, przetwarzane, i – gdy to niezbędne - poprawiane, przenoszone do księgi głównej i wykazywane w sprawozdaniach finansowych; iii. powiązanych zapisów księgowych, wspierających informacje i poszczególne salda w sprawozdaniach finansowych, stosowanych do inicjowania, rejestrowania, przetwarzania i wykazywania transakcji; iv. sposobu, w jaki w systemie informacyjnym są ujmowane zdarzenia i warunki inne niż transakcje, które są znaczące dla sprawozdania finansowego; v. procesu sprawozdawczości finansowej stosowanego do sporządzania sprawozdania finansowego jednostki, w tym znaczących wartości szacunkowych i ujawnień; vi. kontroli dotyczących zapisów dziennika, w tym nietypowych zapisów księgowych stosowanych do rejestrowania niepowtarzalnych, nietypowych transakcji bądź korekt. Uwzględnij informacje na temat kluczowych pracowników i ich zada�� w zakresie sporz����dzania sprawozdania finansowego oraz ewentualnych środków kontroli.",
                               "msb": "315(18-19)",
                               "odpowiedz": null,
                               "zalacznik": null,
@@ -13677,7 +13679,7 @@
                         "type": "select"
                       },
                       "Ko": {
-                        "value": "Średnie",
+                        "value": "��rednie",
                         "type": "select"
                       },
                       "KiZ": {
@@ -21826,9 +21828,13 @@
       "progress": 100,
       "deadline": "2025-06-15",
       "klient": "Gamma Demo Logistics",
-      "users": [
-        "Katarzyna Wiśniewska"
-      ],
+      "users": {
+        "kierownik": "Jan Nowak",
+        "asystenci": [
+          "Monika Sikora",
+          "Marek Wojciechowski"
+        ]
+      },
       "contact": {
         "name": "Maria Wiśniewska",
         "email": "maria.wisniewska@gammalogistics.com",
