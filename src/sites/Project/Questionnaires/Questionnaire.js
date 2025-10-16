@@ -50,10 +50,11 @@ function KwestionariuszFull() {
 
     // Helper: get text for description columns
     const getText = (row) =>
-        row.wskaz || row.q || row.pytanie || row.opis || row.nazwa || row.cele || row.stwierdzenie || row.obszary || row.test || row.question || "";
+        row.zagadnienie || row.wskaz || row.q || row.pytanie || row.opis || row.nazwa || row.cele || row.stwierdzenie || row.obszary || row.test || row.question || "";
 
     // Unique key for rows per questionnaire
     const getRowKey = (row) => `${screenData.id}-${row.id || getText(row)}`;
+    const getCommentKey = (row, col) => `${screenData.id}-${row.id || getText(row)}-comment-${col.label}`;
 
     // Handle dynamic / checkbox / select changes
     const handleDynamicChange = (rowKey, key, value) => {
@@ -70,7 +71,6 @@ function KwestionariuszFull() {
         const rowKey = getRowKey(row);
         const tdCenter = { textAlign: "center", border: "1px solid #dee2e6",padding: "0.40rem", };
         const tdDescription = { border: "1px solid #dee2e6", fontSize: "0.85rem", paddingLeft: "1rem", paddingTop:"0.5rem", paddingBottom:"0.5rem", maxWidth: "45rem" };
-
 
         switch (col.type) {
             case "no":
@@ -183,21 +183,27 @@ function KwestionariuszFull() {
             }
 
             case "comment": {
-                const value = answers[rowKey]?.comment ?? row.comment ?? "";
+                const commentKey = getCommentKey(row, col);
+                const value = answers[commentKey]?.comment ?? row.komentarz ?? "";
+
                 return (
                     <td key={col.label} style={tdCenter}>
                         <input
                             type="text"
                             className="form-control form-control-sm"
-                            placeholder="Komentarz"
+                            placeholder={col.label}
                             value={value}
                             onChange={(e) =>
-                                setAnswers((prev) => ({ ...prev, [rowKey]: { ...prev[rowKey], comment: e.target.value } }))
+                                setAnswers(prev => ({
+                                    ...prev,
+                                    [commentKey]: { ...prev[commentKey], comment: e.target.value }
+                                }))
                             }
                         />
                     </td>
                 );
             }
+
             case "author": {
                 const author = answers[rowKey]?.author ?? row.author;
                 const date = answers[rowKey]?.date ?? row.date;
@@ -331,6 +337,87 @@ function KwestionariuszFull() {
         }
     };
 
+    function DynamicTable({ tab, answers, setAnswers }) {
+        const rows = tab.rows || [];
+
+        const flattenRows = (rows) => {
+            let result = [];
+            rows.forEach((row) => {
+                if (row.sections) {
+                    row.sections.forEach((section) => {
+                        result.push({ isSection: true, name: section.name });
+                        result.push(...flattenRows(section.questions || []));
+                    });
+                } else if (row.subquestions) {
+                    result.push(row);
+                    result.push(...flattenRows(row.subquestions));
+                } else {
+                    result.push(row);
+                }
+            });
+            return result;
+        };
+
+        const addRow = () => {
+            const newRow = { id: Date.now(), zagadnienie: "", komentarz: "", author: null, date: null };
+            tab.rows = [...tab.rows, newRow];
+            setAnswers((prev) => ({ ...prev })); // trigger re-render
+        };
+
+        const removeRow = (rowId) => {
+            tab.rows = tab.rows.filter(r => r.id !== rowId);
+            setAnswers((prev) => ({ ...prev })); // trigger re-render
+        };
+
+        const flattened = flattenRows(tab.rows);
+
+        return (
+            <div>
+                <div className="table-responsive">
+                    <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize: "0.85rem" }}>
+                        <thead className="table-light" style={{ position: "sticky", top: 0, zIndex: 5 }}>
+                        <tr>
+                            {tab.columns.map((col) => (
+                                <th key={col.label} style={headerStyle}>{col.label}</th>
+                            ))}
+                            <th style={headerStyle}>Akcje</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {flattened.map((row, i) =>
+                            row.isSection ? (
+                                <tr key={`section-${i}`}>
+                                    <td colSpan={tab.columns.length + 1} style={{ backgroundColor: "#005679", color: "#fff", textAlign: "center", fontWeight: "bold", padding: "0.75rem" }}>
+                                        {row.name}
+                                    </td>
+                                </tr>
+                            ) : (
+                                <tr key={row.id || i}>
+                                    {tab.columns.map((col, colIndex) => {
+                                        if (col.type === "no") {
+                                            const lp = flattened.slice(0, i).filter(r => !r.isSection).length + 1;
+                                            return <td key={col.label} style={{ textAlign: "center", border: "1px solid #dee2e6", padding: "0.4rem" }}>{lp}</td>;
+                                        }
+                                        return renderCell(col, row);
+                                    })}
+                                    <td style={{ textAlign: "center" }}>
+                                        <button className="btn btn-sm btn-outline-danger" onClick={() => removeRow(row.id)}>Usuń</button>
+                                    </td>
+                                </tr>
+                            )
+                        )}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="mt-2">
+                    <button className="btn btn-sm btn-outline-success" onClick={addRow}>+ Dodaj wiersz</button>
+                </div>
+            </div>
+        );
+    }
+
+
+
     const renderTable = (tab) => {
         // Recursive function to flatten rows, sections, and subquestions
         const flattenRows = (rows) => {
@@ -413,6 +500,8 @@ function KwestionariuszFull() {
                         switch (tab.type) {
                             case "CUSTOM":
                                 return <div key={i}>{renderTable(tab)}</div>;
+                            case "DYNAMIC":
+                                return <DynamicTable key={i} tab={tab} answers={answers} setAnswers={setAnswers} />;
                             case "REQUEST":
                                 return <RequestsTable key={i} requests={[]} setRequests={() => {}} />;
                             case "FILES":

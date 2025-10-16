@@ -2272,8 +2272,7 @@
                     },
                     {
                       "type": "yes_no",
-                      "label": "Odpowiedź",
-                      "default": "no"
+                      "label": "Odpowiedź"
                     },
                     {
                       "type": "comment",
@@ -2295,7 +2294,7 @@
                               "id": "1",
                               "q": "Czy FA posiada odpowiednią wiedzę o branży i przedmiocie zlecenia?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2307,7 +2306,7 @@
                               "id": "2",
                               "q": "Czy FA posiada odpowiednie doświadczenie w zakresie mających zastosowanie wymogów regulacyjnych (przepisów prawa)?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2319,7 +2318,7 @@
                               "id": "3",
                               "q": "Czy FA posiada odpowiednie doświadczenie w zakresie wymogów sprawozdawczych?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2331,7 +2330,7 @@
                               "id": "4",
                               "q": "Jeśli odpowiedź na pytania 2 i 3 jest przecząca lub wątpliwa, czy FA może skutecznie zdobyć i posiąść niezbędną wiedzę w tym zakresie?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2343,7 +2342,7 @@
                               "id": "5",
                               "q": "Czy FA posiada wystarczający i odpowiedni personel posiadający niezbędne umiejętności i kompetencje?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2355,7 +2354,7 @@
                               "id": "6",
                               "q": "Czy jest możliwy dostęp do ekspertów, kiedy zajdzie taka potrzeba?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2367,7 +2366,7 @@
                               "id": "7",
                               "q": "Czy FA jest zdolna do zakończenia zlecenia w wyznaczonym terminie?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2379,7 +2378,7 @@
                               "id": "8",
                               "q": "Czy istnieje dostęp do osób spełniających kryteria i wymogi dotyczące kontroli jakości wykonania zlecenia (weryfikacji), jeśli weryfikacja okaże się konieczna?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2391,7 +2390,7 @@
                               "id": "9",
                               "q": "Czy FA posiada odpowiednie zasoby ludzkie do realizacji zlecenia w wyznaczonym terminie?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2403,7 +2402,7 @@
                               "id": "10",
                               "q": "Czy FA jest w stanie zapewnić odpowiedni poziom nadzoru kluczowego biegłego rewidenta nad pracą pozostałych członków zespołu?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2415,7 +2414,7 @@
                               "id": "11",
                               "q": "Czy zlecenie wymaga zaangażowania większego zespołu rewizyjnego lub kilku zespołów?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2433,7 +2432,7 @@
                               "id": "12",
                               "q": "Czy znasz klienta lub ktoś z Twojego otoczenia zna klienta?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2445,7 +2444,7 @@
                               "id": "13",
                               "q": "Czy klient prowadzi działalność krajową czy międzynarodową?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2457,7 +2456,7 @@
                               "id": "14",
                               "q": "Czy klient ma dobry wizerunek i reputację?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2469,7 +2468,7 @@
                               "id": "15",
                               "q": "Opisz krótko charakter działalności gospodarczej klienta oraz jego praktyki gospodarcze.",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2481,7 +2480,7 @@
                               "id": "16",
                               "q": "Czy reputacja głównych właścicieli, kierownictwa i podmiotów powiązanych nie budzi zastrzeżeń?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2493,7 +2492,7 @@
                               "id": "17",
                               "q": "Czy znana jest tożsamość głównych właścicieli i kierownictwa klienta oraz organów nadzoru?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2505,7 +2504,7 @@
                               "id": "18",
                               "q": "Czy inni biegli rewidenci odmówili świadczenia usług potencjalnemu klientowi?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2517,7 +2516,7 @@
                               "id": "19",
                               "q": "Czy znane są przyczyny zmiany biegłego rewidenta?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2529,7 +2528,7 @@
                               "id": "20",
                               "q": "Czy kontaktowałeś się z poprzednim biegłym rewidentem?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2541,7 +2540,7 @@
                               "id": "21",
                               "q": "Czy klient zgłasza się pod koniec lub w II kwartale po roku badanym i oczekuje krótkiego terminu realizacji?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2553,7 +2552,7 @@
                               "id": "22",
                               "q": "Czy klient wskazuje ograniczenia czasowe zakończenia badania z powodu publikacji wyników?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2565,7 +2564,7 @@
                               "id": "23",
                               "q": "Jak długo poprzedni biegły rewident współpracował z klientem w zakresie badania?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2577,7 +2576,7 @@
                               "id": "24",
                               "q": "Jak często klient dokonuje zmiany biegłego rewidenta?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2589,7 +2588,7 @@
                               "id": "25",
                               "q": "Czy klient odmawia ujawnienia informacji finansowych lub danych niezbędnych do oszacowania pracochłonności badania?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2601,7 +2600,7 @@
                               "id": "26",
                               "q": "Czy klient dąży do maksymalnego skrócenia czasu badania wywierając presję na termin zakończenia?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2613,7 +2612,7 @@
                               "id": "27",
                               "q": "Czy znana jest reputacja podmiotów powiązanych z klientem?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2625,7 +2624,7 @@
                               "id": "28",
                               "q": "Czy klient dąży do utrzymania honorarium na możliwie najniższym poziomie?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2637,7 +2636,7 @@
                               "id": "29",
                               "q": "Czy klient stosuje agresywną interpretację standardów rachunkowości?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2649,7 +2648,7 @@
                               "id": "30",
                               "q": "Czy istnieją przesłanki lub podejrzenia o działania sprzeczne z prawem?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2661,7 +2660,7 @@
                               "id": "31",
                               "q": "Czy są oznaki mogące świadczyć o praniu brudnych pieniędzy lub innej działalności przestępczej?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2673,7 +2672,7 @@
                               "id": "32",
                               "q": "Czy wobec klienta prowadzone jest dochodzenie?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2685,7 +2684,7 @@
                               "id": "33",
                               "q": "Czy klient ma negatywny wizerunek lub jest powiązany z jednostkami o takim wizerunku?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2697,7 +2696,7 @@
                               "id": "34",
                               "q": "Czy rozważyłeś rodzaj ewentualnych zastrzeżeń w opinii biegłego rewidenta z poprzedniego badania?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2715,7 +2714,7 @@
                               "id": "35",
                               "q": "Czy FA i wszystkie osoby, od których jest to wymagane, spełniają wymóg niezależności wobec klienta?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2727,7 +2726,7 @@
                               "id": "36",
                               "q": "Czy FA i wszystkie osoby, od których jest to wymagane, spełniają wymóg niezależności wizerunku wobec klienta?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2739,7 +2738,7 @@
                               "id": "37",
                               "q": "Czy akceptacja zlecenia nie wywoła zagrożenia konfliktu interesów?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2751,7 +2750,7 @@
                               "id": "38",
                               "q": "Czy wśród klientów FA są inne firmy z tej samej branży stanowiące dla siebie konkurencję?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2763,7 +2762,7 @@
                               "id": "39",
                               "q": "Czy podjęcie współpracy wymaga powiadomienia innych klientów (konkurencyjnych) o zamiarze podjęcia współpracy?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2775,7 +2774,7 @@
                               "id": "40",
                               "q": "Czy FA i jej personel przy realizacji zlecenia zdołają wystarczająco profesjonalnie postępować i prezentować odpowiedni poziom zawodowych kompetencji oraz obiektywizmu?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2793,7 +2792,7 @@
                               "id": "41",
                               "q": "Czy na poziom wynagrodzenia za badanie ma wpływ realizacja usług innych na rzecz badanego klienta?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2805,7 +2804,7 @@
                               "id": "42",
                               "q": "Czy występują jakiekolwiek ustalenia co do wynagrodzenia warunkowego?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2817,7 +2816,7 @@
                               "id": "43",
                               "q": "Czy badany klient zalega z wynagrodzeniami za inne usługi?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2829,7 +2828,7 @@
                               "id": "44",
                               "q": "Czy pomiędzy firmą audytorską a badanym klientem toczy się spór lub czy istnieją przesłanki, że może do niego dojść?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2841,7 +2840,7 @@
                               "id": "45",
                               "q": "Czy od klienta otrzymano jakiekolwiek znaczące upominki lub gesty gościnności albo czy klientowi przekazano jakiekolwiek znaczące upominki?",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2853,7 +2852,7 @@
                               "id": "46",
                               "q": "Czy występują jakiekolwiek inne faktyczne lub domniemane konflikty interesów albo inne czynniki mogące zagrażać obiektywizmowi i niezależności? Jeśli tak, proszę je udokumentować wraz z zastosowanymi środkami zaradczymi.",
                               "answer": {
-                                "value": null,
+                                "value": "Nie",
                                 "comment": null
                               },
                               "author": null,
@@ -2895,11 +2894,11 @@
                       "label": "Lp."
                     },
                     {
-                      "type": "input",
+                      "type": "comment",
                       "label": "Rozpoznane zagrożenie"
                     },
                     {
-                      "type": "input",
+                      "type": "comment",
                       "label": "Wdrożony środek zaradczy"
                     },
                     {
@@ -2911,7 +2910,15 @@
                       "label": "Zatwierdź"
                     }
                   ],
-                  "rows": []
+                  "rows": [
+                    {
+                    "lp": "1",
+                    "zagrozenie": null,
+                    "srodek": null,
+                    "author": null,
+                    "date": null
+                  }
+                  ]
                 },
                 {
                   "title:": "Zapotrzebowanie",
@@ -4081,7 +4088,7 @@
                           "type": "description"
                         },
                         {
-                          "label": "Odpowiedz",
+                          "label": "Odpowiedź",
                           "type": "comment"
                         },
                         {
@@ -21837,18 +21844,18 @@
                 },
                 {
                   "title:": "Rozważane kwestie oraz uwagi weryfikatora",
-                  "type": "CUSTOM",
+                  "type": "DYNAMIC",
                   "columns": [
                     {
                       "type": "no",
                       "label": "Lp"
                     },
                     {
-                      "type": "description",
+                      "type": "comment",
                       "label": "Sprawy rozważane"
                     },
                     {
-                      "type": "text",
+                      "type": "comment",
                       "label": "Uwagi kontrolera"
                     },
                     {
@@ -22027,7 +22034,7 @@
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
-                  "type": "DYNAMIC",
+                  "type": "CUSTOM",
                   "columns": [
                     {
                       "type": "no",
@@ -22038,7 +22045,7 @@
                       "label": "Zagadnienie"
                     },
                     {
-                      "type": "text",
+                      "type": "comment",
                       "label": "Komentarz"
                     },
                     {
@@ -22075,8 +22082,7 @@
                       "author": null,
                       "date": null
                     }
-                  ],
-                  "allowAddRow": true
+                  ]
                 },
                 {
                   "title:": "Zapotrzebowanie",
