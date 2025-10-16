@@ -1149,8 +1149,7 @@
                     },
                     {
                       "type": "yes_no",
-                      "label": "Odpowiedź",
-                      "default": "no"
+                      "label": "Odpowiedź"
                     },
                     {
                       "type": "comment",
@@ -1164,7 +1163,7 @@
                   "rows": [
                     {
                       "id": "1",
-                      "q": "Czy FA posiada instrumenty finansowe, w tym udziały w kapitale własnym, papiery\nwartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie\ninstrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym\nprawa i obowiązki do nabycia tych instrumentów finansowych oraz instrumentów\npochodnych bezpośrednio powiązanych z tymi instrumentami finansowymi,\nwyemitowane przez badaną jednostkę?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.",
+                      "q":"Czy posiadasz (lub czerpiesz istotne i bezpośrednie korzyści finansowe)\ninstrumenty finansowe, w tym udziały w kapitale własnym, papiery wartościowe\nw rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie instrumentami\nfinansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym prawa i obowiązki\ndo nabycia tych instrumentów finansowych oraz instrumentów pochodnych\nbezpośrednio powiązanych z tymi instrumentami finansowymi, wyemitowane przez\nbadaną jednostkę?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.\nNie dotyczy również kredytów lub pożyczek udzielonych na warunkach\nrynkowych w ramach zwykłej działalności przez badane jednostki, uprawnione\ndo udzielania kredytów na podstawie odrębnych przepisów.\n",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1176,7 +1175,7 @@
                     },
                     {
                       "id": "2",
-                      "q": "Czy FA posiada instrumenty finansowe, w tym udziały w kapitale własnym, papiery\nwartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie\ninstrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym\nprawa i obowiązki do nabycia tych instrumentów finansowych oraz instrumentów\npochodnych bezpośrednio powiązanych z tymi instrumentami finansowymi,\nwyemitowane przez jednostkę powiązaną z jednostką badaną?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.",
+                      "q":"Czy osoby blisko z Tobą związane posiadają (lub czerpią istotne i bezpośrednie\nkorzyści finansowe) instrumenty finansowe, w tym udziały w kapitale własnym,\npapiery wartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r.\no obrocie instrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne,\nw tym prawa i obowiązki do nabycia tych instrumentów finansowych oraz\ninstrumentów pochodnych bezpośrednio powiązanych z tymi instrumentami\nfinansowymi, wyemitowane przez badaną jednostkę?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.\nNie dotyczy również kredytów lub pożyczek udzielonych na warunkach\nrynkowych w ramach zwykłej działalności przez badane jednostki, uprawnione\ndo udzielania kredytów na podstawie odrębnych przepisów.",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1188,7 +1187,7 @@
                     },
                     {
                       "id": "3",
-                      "q": "Czy FA uczestniczy/-yła w transakcjach, których przedmiotem są instrumenty finansowe określone w pkt. 1-4?",
+                      "q": "Czy posiadasz (lub czerpiesz istotne i bezpośrednie korzyści finansowe)\ninstrumenty finansowe, w tym udziały w kapitale własnym, papiery wartościowe\nw rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie instrumentami\nfinansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym prawa i obowiązki\ndo nabycia tych instrumentów finansowych oraz instrumentów pochodnych\nbezpośrednio powiązanych z tymi instrumentami finansowymi, wyemitowane przez\njednostkę powiązaną z jednostką badaną?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.\nNie dotyczy również kredytów lub pożyczek udzielonych na warunkach\nrynkowych w ramach zwykłej działalności przez badane jednostki, uprawnione\ndo udzielania kredytów na podstawie odrębnych przepisów.\n",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1200,7 +1199,7 @@
                     },
                     {
                       "id": "4",
-                      "q": "Czy FA łączy lub łączył z badaną jednostką stosunek gospodarczy lub inny stosunek, który może/mógł spowodować konflikt interesów?",
+                      "q": "Czy osoby blisko z Tobą związane posiadają (lub czerpią istotne i bezpośrednie\nkorzyści finansowe) instrumenty finansowe, w tym udziały w kapitale własnym,\npapiery wartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r.\no obrocie instrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne,\nw tym prawa i obowiązki do nabycia tych instrumentów finansowych oraz\ninstrumentów pochodnych bezpośrednio powiązanych z tymi instrumentami\nfinansowymi, wyemitowane przez jednostkę powiązaną z badaną jednostką?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.\nNie dotyczy również kredytów lub pożyczek udzielonych na warunkach\nrynkowych w ramach zwykłej działalności przez badane jednostki, uprawnione\ndo udzielania kredytów na podstawie odrębnych przepisów.",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1212,7 +1211,7 @@
                     },
                     {
                       "id": "5",
-                      "q": "Czy FA łączy lub łączył z badaną jednostką stosunek gospodarczy lub inny stosunek,który może/mógł być postrzegany jako powodujący konflikt interesów?",
+                      "q": "Czy uczestniczysz/-yłeś w transakcjach, których przedmiotem są instrumenty\nfinansowe określone w pkt. 1-4?",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1224,7 +1223,7 @@
                     },
                     {
                       "id": "6",
-                      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w prowadzeniu ksiąg rachunkowych badanej jednostki?",
+                      "q": "Czy łączy Cię lub łączył z badaną jednostką stosunek pracy, stosunek gospodarczy lub\ninny stosunek, który może/mógł spowodować konflikt interesów? ",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1236,7 +1235,7 @@
                     },
                     {
                       "id": "7",
-                      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w sporządzaniu dokumentacji księgowej badanej jednostki?",
+                      "q": "Czy osoby blisko z Tobą związane łączy lub łączył z badaną jednostką stosunek pracy,\nstosunek gospodarczy lub inny stosunek, który może/mógł spowodować konflikt\ninteresów?",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1248,7 +1247,7 @@
                     },
                     {
                       "id": "8",
-                      "q": "Czy FA uczestniczy / uczestniczyła w roku poprzedzającym rok badany, w roku badanym i w okresie bieżącego roku w sporządzaniu sprawozdań finansowych badanej jednostki?",
+                      "q": "Czy łączy Cię lub łączył z badaną jednostką stosunek pracy, stosunek gospodarczy lub\ninny stosunek, który może/mógł być postrzegany jako powodujący konflikt interesów?",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1260,7 +1259,7 @@
                     },
                     {
                       "id": "9",
-                      "q": "Czy FA jest / była przedstawicielem prawnym (pełnomocnikiem) badanej jednostki?",
+                      "q": "Czy osoby blisko z Tobą związane łączy lub łączył z badaną jednostką stosunek pracy,\nstosunek gospodarczy lub inny stosunek, który może/mógł być postrzegany jako\npowodujący konflikt interesów?",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1272,7 +1271,7 @@
                     },
                     {
                       "id": "10",
-                      "q": "Czy FA jest / była członkiem organów nadzorczych badanej jednostki?",
+                      "q": "Czy uczestniczysz / uczestniczyłeś w roku poprzedzającym rok badany, w roku\nbadanym i w okresie bieżącego roku w prowadzeniu ksiąg rachunkowych badanej\njednostki?",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1284,7 +1283,7 @@
                     },
                     {
                       "id": "11",
-                      "q": "Czy FA jest / była członkiem organów zarządzających badanej jednostki?",
+                      "q": "Czy uczestniczysz / uczestniczyłeś w okresach określonych w pkt. 10 w sporządzaniu\ndokumentacji księgowej badanej jednostki?",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1296,7 +1295,7 @@
                     },
                     {
                       "id": "12",
-                      "q": "Czy uczestniczysz / uczestniczyłeś w okresach określonych w pkt. 10 w sporządzaniu sprawozdań finansowych badanej jednostki?",
+                      "q": "Czy uczestniczysz / uczestniczyłeś w okresach określonych w pkt. 10 w sporządzaniu\nsprawozdań finansowych badanej jednostki?\n",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1308,7 +1307,7 @@
                     },
                     {
                       "id": "13",
-                      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych w pkt. 10 w prowadzeniu ksiąg rachunkowych badanej jednostki?",
+                      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w prowadzeniu ksiąg rachunkowych badanej jednostki?\n",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1320,7 +1319,7 @@
                     },
                     {
                       "id": "14",
-                      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w sporządzaniu dokumentacji księgowej badanej jednostki?",
+                      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w sporządzaniu dokumentacji księgowej badanej jednostki?\n",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1332,7 +1331,7 @@
                     },
                     {
                       "id": "15",
-                      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w sporządzaniu sprawozdań finansowych badanej jednostki?",
+                      "q":"Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w sporządzaniu sprawozdań finansowych badanej jednostki?\n",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1406,7 +1405,7 @@
                       "id": "21",
                       "q": "Czy jesteś / byłeś członkiem organów nadzorczych jednostki powiązanej z badaną jednostką?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1418,7 +1417,7 @@
                       "id": "22",
                       "q": "Czy jesteś / byłeś członkiem organów zarządzających jednostki powiązanej z badaną jednostką?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1430,7 +1429,7 @@
                       "id": "23",
                       "q": "Czy jesteś / byłeś pracownikiem jednostki powiązanej z badaną jednostką?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1442,7 +1441,7 @@
                       "id": "24",
                       "q": "Czy osoby blisko z Tobą związane są / były przedstawicielem prawnym (pełnomocnikiem) badanej jednostki?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1454,7 +1453,7 @@
                       "id": "25",
                       "q": "Czy osoby blisko z Tobą związane są / były członkiem organów nadzorczych badanej jednostki?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1466,7 +1465,7 @@
                       "id": "26",
                       "q": "Czy osoby blisko z Tobą związane są / były członkiem organów zarządzających badanej jednostki?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1478,7 +1477,7 @@
                       "id": "27",
                       "q": "Czy osoby blisko z Tobą związane są / były pracownikiem badanej jednostki?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1490,7 +1489,7 @@
                       "id": "28",
                       "q": "Czy osoby blisko z Tobą związane są / były przedstawicielem prawnym (pełnomocnikiem) jednostki powiązanej z badaną jednostką?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1502,7 +1501,7 @@
                       "id": "29",
                       "q": "Czy osoby blisko z Tobą związane są / były członkiem organów nadzorczych jednostki powiązanej z badaną jednostką?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1514,7 +1513,7 @@
                       "id": "30",
                       "q": "Czy osoby blisko z Tobą związane są / były członkiem organów zarządzających jednostki powiązanej z badaną jednostką?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1526,7 +1525,7 @@
                       "id": "31",
                       "q": "Czy osoby blisko z Tobą związane są / były pracownikiem jednostki powiązanej z badaną jednostką?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1538,7 +1537,7 @@
                       "id": "32",
                       "q": "Czy bierzesz / brałeś udział w procesie zarządzania badaną jednostką?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1550,7 +1549,7 @@
                       "id": "33",
                       "q": "Czy bierzesz / brałeś udział w procesie podejmowania decyzji przez badaną jednostkę?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1562,7 +1561,7 @@
                       "id": "34",
                       "q": "Czy przyjąłeś / posiadasz od badanej jednostki, będącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki udzieloną z pominięciem zwykłych procedur, warunków i wymogów kredytowych – podaj wartość kredytu/pożyczki?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1574,7 +1573,7 @@
                       "id": "35",
                       "q": "Czy osoby blisko związane przyjęły / posiadają od badanej jednostki, będącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki udzieloną z pominięciem zwykłych procedur, warunków i wymogów kredytowych – podaj wartość kredytu/pożyczki?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1586,7 +1585,7 @@
                       "id": "36",
                       "q": "Czy przyjąłeś / posiadasz od badanej jednostki, niebędącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki stanowiącą istotną wartość dla Ciebie oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1598,7 +1597,7 @@
                       "id": "37",
                       "q": "Czy osoby blisko związane przyjęły / posiadają od badanej jednostki, niebędącej bankiem lub podobną instytucją, pożyczkę lub poręczenie pożyczki stanowiącą istotną wartość dla pożyczkobiorcy oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1610,7 +1609,7 @@
                       "id": "38",
                       "q": "Czy udzieliłeś badanej jednostce niebędącej bankiem lub podobną instytucją / masz należność od badanej jednostki z tytułu pożyczki lub poręczenia pożyczki stanowiącej istotną wartość dla pożyczkobiorcy oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1622,7 +1621,7 @@
                       "id": "39",
                       "q": "Czy osoby blisko związane udzieliły badanej jednostce niebędącej bankiem lub podobną instytucją / mają należność od badanej jednostki z tytułu pożyczki lub poręczenia pożyczki stanowiącej istotną wartość dla pożyczkobiorcy oraz istotną dla pożyczkodawcy – podaj wartość pożyczki?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1638,7 +1637,7 @@
                           "id": "40a",
                           "q": "Czy posiadasz / posiadałeś istotny udział finansowy we wspólnym przedsięwzięciu z badaną jednostką, jego właścicielem posiadającym pakiet kontrolny, członkiem zarządu lub kierownictwa wyższego szczebla badanej jednostki?",
                           "answer": {
-                            "value": "",
+                            "value": "Nie",
                             "comment": ""
                           }
                         },
@@ -1646,7 +1645,7 @@
                           "id": "40b",
                           "q": "Czy występuje / występowało istotne powiązanie usług lub produktów z usługami lub produktami badanej jednostki i wprowadzanie ich na rynek pod wspólnym szyldem?",
                           "answer": {
-                            "value": "",
+                            "value": "Nie",
                             "comment": ""
                           }
                         },
@@ -1654,7 +1653,7 @@
                           "id": "40c",
                           "q": "Czy ma / miało miejsce prowadzenie przez podmiot dystrybucji lub marketingu produktów lub usług badanej jednostki (i odwrotnie)?",
                           "answer": {
-                            "value": "",
+                            "value": "Nie",
                             "comment": ""
                           }
                         }
@@ -1672,7 +1671,7 @@
                           "id": "41a",
                           "q": "Czy posiadają / posiadały istotny udział finansowy we wspólnym przedsięwzięciu z badaną jednostką, jego właścicielem posiadającym pakiet kontrolny, członkiem zarządu lub kierownictwa wyższego szczebla badanej jednostki?",
                           "answer": {
-                            "value": "",
+                            "value": "Nie",
                             "comment": ""
                           }
                         },
@@ -1680,7 +1679,7 @@
                           "id": "41b",
                           "q": "Czy występuje / występowało istotne powiązanie usług lub produktów z usługami lub produktami badanej jednostki i wprowadzanie ich na rynek pod wspólnym szyldem?",
                           "answer": {
-                            "value": "",
+                            "value": "Nie",
                             "comment": ""
                           }
                         },
@@ -1688,7 +1687,7 @@
                           "id": "41c",
                           "q": "Czy ma / miało miejsce prowadzenie przez podmiot dystrybucji lub marketingu produktów lub usług badanej jednostki (i odwrotnie)?",
                           "answer": {
-                            "value": "",
+                            "value": "Nie",
                             "comment": ""
                           }
                         }
@@ -1702,7 +1701,7 @@
                       "id": "42",
                       "q": "Czy żądałeś / przyjąłeś od badanej jednostki jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1714,7 +1713,7 @@
                       "id": "43",
                       "q": "Czy osoby blisko związane żądały / przyjęły od badanej jednostki jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1726,7 +1725,7 @@
                       "id": "44",
                       "q": "Czy żądałeś / przyjąłeś od jednostki powiązanej z badaną jednostką jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1738,7 +1737,7 @@
                       "id": "45",
                       "q": "Czy osoby blisko związane żądały / przyjęły od jednostki powiązanej z badaną jednostką jakiekolwiek korzyści majątkowe lub osobiste, których wartość obiektywna, racjonalna i poinformowana osoba trzecia uznałaby za przekraczającą niewielką lub nieistotną?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1750,7 +1749,7 @@
                       "id": "46",
                       "q": "Czy istnieją jakiekolwiek inne okoliczności ograniczające Twoją bezstronność i niezależność od badanej jednostki? Określ jakie.",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1762,7 +1761,7 @@
                       "id": "47",
                       "q": "Czy okres współpracy z klientem przekroczy dozwolony dla jzp okres 5 lat lub inny okres jeśli jest określony w wewnętrznych procedurach?",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -1774,7 +1773,7 @@
                       "id": "48",
                       "q": "Czy istnieją jakiekolwiek inne okoliczności ograniczające Twoją bezstronność i niezależność od badanej jednostki, w szczególności dotyczące wymogów Kodeksu Etyki Zawodowych Księgowych IFAC.",
                       "answer": {
-                        "value": "",
+                        "value": "Nie",
                         "comment": ""
                       },
                       "author": "",
@@ -2889,7 +2888,7 @@
               "tabs": [
                 {
                   "title:": "Kwestionariusz",
-                  "type": "CUSTOM",
+                  "type": "DYNAMIC",
                   "columns": [
                     {
                       "type": "no",
@@ -3119,8 +3118,7 @@
                           "label": "Odpowiedź",
                           "wartosci": [
                             "tak",
-                            "nie",
-                            "nd"
+                            "nie"
                           ]
                         },
                         {
@@ -4075,30 +4073,30 @@
                       "type": "CUSTOM",
                       "columns": [
                         {
-                          "name": "Lp.",
-                          "type": "number"
+                          "label": "Lp.",
+                          "type": "no"
                         },
                         {
-                          "name": "Pytanie",
+                          "label": "Pytanie",
                           "type": "description"
                         },
                         {
-                          "name": "Odpowiedz",
-                          "type": "text"
+                          "label": "Odpowiedz",
+                          "type": "comment"
                         },
                         {
-                          "name": "Sporządzil",
+                          "label": "Sporządzil",
                           "type": "author"
                         },
                         {
-                          "name": "Zatwierdzil",
+                          "label": "Zatwierdzil",
                           "type": "author"
                         }
                       ],
                       "rows": [
                         {
                           "lp": 1,
-                          "Pytanie": "Wstępny poziom istotności",
+                          "pytanie": "Wstępny poziom istotności",
                           "odpowiedz": null,
                           "author": null,
                           "approver": null,
@@ -4107,7 +4105,7 @@
                         },
                         {
                           "lp": 2,
-                          "Pytanie": "Wstępny poziom istotności wykonawczej",
+                          "pytanie": "Wstępny poziom istotności wykonawczej",
                           "odpowiedz": null,
                           "author": null,
                           "approver": null,
@@ -4116,7 +4114,7 @@
                         },
                         {
                           "lp": 3,
-                          "Pytanie": "Wstępny poziom kwoty, poniżej której zniekształcenia mogą być uznane za oczywiście nieznaczące",
+                          "pytanie": "Wstępny poziom kwoty, poniżej której zniekształcenia mogą być uznane za oczywiście nieznaczące",
                           "odpowiedz": null,
                           "author": null,
                           "approver": null,
@@ -4125,7 +4123,7 @@
                         },
                         {
                           "lp": 4,
-                          "Pytanie": "Wstępny poziom istotności dla konkretnej grupy transakcji, sald kont lub ujawnień (jeśli dotyczy)",
+                          "pytanie": "Wstępny poziom istotności dla konkretnej grupy transakcji, sald kont lub ujawnień (jeśli dotyczy)",
                           "odpowiedz": null,
                           "author": null,
                           "approver": null,
@@ -4134,7 +4132,7 @@
                         },
                         {
                           "lp": 5,
-                          "Pytanie": "Wstępny poziom istotności wykonawczej dla konkretnej grupy transakcji, sald kont lub ujawnień (jeśli dotyczy)",
+                          "pytanie": "Wstępny poziom istotności wykonawczej dla konkretnej grupy transakcji, sald kont lub ujawnień (jeśli dotyczy)",
                           "odpowiedz": null,
                           "author": null,
                           "approver": null,
@@ -4148,31 +4146,31 @@
                       "type": "CUSTOM",
                       "columns": [
                         {
-                          "name": "lp",
-                          "type": "number"
+                          "label": "Lp.",
+                          "type": "no"
                         },
                         {
-                          "name": "Pytanie",
+                          "label": "Pytanie",
                           "type": "description"
                         },
                         {
-                          "name": "odpowiedz",
-                          "type": "text",
+                          "label": "Odpowiedź",
+                          "type": "comment",
                           "description": "Pole tekstowe na odpowiedź/komentarz"
                         },
                         {
-                          "name": "sporządzil",
+                          "label": "sporządzil",
                           "type": "author"
                         },
                         {
-                          "name": "zatwierdzil",
+                          "label": "zatwierdzil",
                           "type": "author"
                         }
                       ],
                       "rows": [
                         {
                           "lp": 1,
-                          "Pytanie": "Końcowy poziom istotności",
+                          "pytanie": "Końcowy poziom istotności",
                           "odpowiedz": null,
                           "author": null,
                           "approver": null,
@@ -4181,7 +4179,7 @@
                         },
                         {
                           "lp": 2,
-                          "Pytanie": "Końcowy poziom istotności wykonawczej",
+                          "pytanie": "Końcowy poziom istotności wykonawczej",
                           "odpowiedz": null,
                           "author": null,
                           "approver": null,
@@ -4190,7 +4188,7 @@
                         },
                         {
                           "lp": 3,
-                          "Pytanie": "Końcowy poziom kwoty, poniżej której zniekształcenia mogą być uznane za oczywiście nieznaczące",
+                          "pytanie": "Końcowy poziom kwoty, poniżej której zniekształcenia mogą być uznane za oczywiście nieznaczące",
                           "odpowiedz": null,
                           "author": null,
                           "approver": null,
@@ -4199,7 +4197,7 @@
                         },
                         {
                           "lp": 4,
-                          "Pytanie": "Końcowy poziom istotności dla konkretnej grupy transakcji, sald kont lub ujawnień (jeśli dotyczy)",
+                          "pytanie": "Końcowy poziom istotności dla konkretnej grupy transakcji, sald kont lub ujawnień (jeśli dotyczy)",
                           "odpowiedz": null,
                           "author": null,
                           "approver": null,
@@ -4208,7 +4206,7 @@
                         },
                         {
                           "lp": 5,
-                          "Pytanie": "Końcowy poziom istotności wykonawczej dla konkretnej grupy transakcji, sald kont lub ujawnień (jeśli dotyczy)",
+                          "pytanie": "Końcowy poziom istotności wykonawczej dla konkretnej grupy transakcji, sald kont lub ujawnień (jeśli dotyczy)",
                           "odpowiedz": null,
                           "author": null,
                           "approver": null,
@@ -4222,34 +4220,34 @@
                       "type": "CUSTOM",
                       "columns": [
                         {
-                          "name": "lp",
-                          "type": "number"
+                          "label": "Lp.",
+                          "type": "no"
                         },
                         {
-                          "name": "Pytanie",
+                          "label": "Pytanie",
                           "type": "description"
                         },
                         {
-                          "name": "Odpowiedz",
+                          "label": "Odpowiedź",
                           "type": "yes_no"
                         },
                         {
-                          "name": "Komentarz",
-                          "type": "text"
+                          "label": "Komentarz",
+                          "type": "comment"
                         },
                         {
-                          "name": "Sporządzil",
+                          "label": "Sporządzil",
                           "type": "author"
                         },
                         {
-                          "name": "Zatwierdzil",
+                          "label": "Zatwierdzil",
                           "type": "author"
                         }
                       ],
                       "rows": [
                         {
                           "lp": 1,
-                          "Pytanie": "Czy dokonano zmiany istotności?",
+                          "pytanie": "Czy dokonano zmiany istotności?",
                           "odpowiedz": null,
                           "komentarz": "Podaj powód zmiany",
                           "author": null,
@@ -4259,7 +4257,7 @@
                         },
                         {
                           "lp": 2,
-                          "Pytanie": "Czy zmiana(y) istotności i powiązanej z nią istotności wykonawczej zostały udokumentowane?",
+                          "pytanie": "Czy zmiana(y) istotności i powiązanej z nią istotności wykonawczej zostały udokumentowane?",
                           "odpowiedz": null,
                           "komentarz": null,
                           "author": null,
@@ -4269,7 +4267,7 @@
                         },
                         {
                           "lp": 3,
-                          "Pytanie": "Czy wpływ zmian w całkowitej i wykonawczej istotności został uwzględniony w ocenach ryzyka oraz w rodzaju i czasie przeprowadzenia dalszych wymaganych procedur badania?",
+                          "pytanie": "Czy wpływ zmian w całkowitej i wykonawczej istotności został uwzględniony w ocenach ryzyka oraz w rodzaju i czasie przeprowadzenia dalszych wymaganych procedur badania?",
                           "odpowiedz": null,
                           "komentarz": null,
                           "author": null,
@@ -4610,152 +4608,146 @@
                       "title:": "Notatka - planowanie",
                       "type": "CUSTOM",
                       "columns": [
-                        {
-                          "name": "Pytanie",
-                          "type": "description"
-                        },
-                        {
-                          "name": "odpowiedz",
-                          "type": "text",
-                          "description": "Pole tekstowe na odpowiedź"
-                        },
-                        {
-                          "name": "sporządzil",
-                          "type": "author"
-                        },
-                        {
-                          "name": "zatwierdzil",
-                          "type": "author"
-                        }
+                        { "label": "Pytanie", "type": "description" },
+                        { "label": "Odpowiedz", "type": "comment" },
+                        { "label": "Załącznik", "type": "file" },
+                        { "label": "Sporządził", "type": "author" },
+                        { "label": "Zatwierdził", "type": "author" }
                       ],
                       "rows": [
                         {
-                          "Pytanie": "Notatka ze spotkania z klientem na etapie planowania",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Data spotkania",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Uczestnicy spotkania",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Potwierdzenie, że występują warunki wstępne badania",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Przegląd/aktualizacja wiedzy nt. działalności gospodarczej jednostki",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Oceny ryzyka: a) cele i strategie",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Oceny ryzyka: b) ryzyko działalności gospodarczej i procedury łagodzenia ryzyka",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Oceny ryzyka: c) ryzyko oszustwa i procedury łagodzenia ryzyka",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Oceny ryzyka: d) zaistniałe, potencjalne lub domniemane przypadki oszustwa w trakcie roku",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Oceny ryzyka: e) podmioty powiązane (w tym procedury kontrolne umożliwiające identyfikację stron i transakcji)",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Oceny ryzyka: f) zgodność z przepisami prawnymi i regulacyjnymi",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Rodzaj i zakres zlecenia: a) harmonogram (rozłożenie w czasie)",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Rodzaj i zakres zlecenia: b) personel",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Rodzaj i zakres zlecenia: c) forma i ramy czasowe komunikacji",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Rodzaj i zakres zlecenia: d) przewidywane sprawozdanie biegłego rewidenta",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Rodzaj i zakres zlecenia: e) wynagrodzenie",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
+                          "sections": [
+                            {
+                              "type": "section",
+                              "name": "Notatka",
+                              "questions": [
+                                {
+                                  "pytanie": "Notatka ze spotkania z klientem na etapie planowania",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "Data spotkania",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "Uczestnicy spotkania",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                }
+                              ]
+                            },
+                            {
+                              "type": "section",
+                              "name": "Oceny ryzyka",
+                              "questions": [
+                                {
+                                  "pytanie": "a) cele i strategie",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "b) ryzyko działalności gospodarczej i procedury łagodzenia ryzyka",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "c) ryzyko oszustwa i procedury łagodzenia ryzyka",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "d) zaistniałe, potencjalne lub domniemane przypadki oszustwa w trakcie roku",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "e) podmioty powiązane (w tym procedury kontrolne umożliwiające identyfikację stron i transakcji)",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "f) zgodność z przepisami prawnymi i regulacyjnymi",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                }
+                              ]
+                            },
+                            {
+                              "type": "section",
+                              "name": "Rodzaj i zakres zlecenia",
+                              "questions": [
+                                {
+                                  "pytanie": "a) harmonogram (rozłożenie w czasie)",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "b) personel",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "c) forma i ramy czasowe komunikacji",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "d) przewidywane sprawozdanie biegłego rewidenta",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "e) wynagrodzenie",
+                                  "odpowiedz": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                }
+                              ]
+                            }
+                          ]
                         }
                       ]
                     },
@@ -4763,144 +4755,55 @@
                       "title:": "Notatka - zespół",
                       "type": "CUSTOM",
                       "columns": [
-                        {
-                          "name": "Pytanie",
-                          "type": "description"
-                        },
-                        {
-                          "name": "odpowiedz",
-                          "type": "text",
-                          "description": "Pole tekstowe na odpowiedź"
-                        },
-                        {
-                          "name": "sporządzil",
-                          "type": "author"
-                        },
-                        {
-                          "name": "zatwierdzil",
-                          "type": "author"
-                        }
+                        { "label": "Pytanie", "type": "description" },
+                        { "label": "Odpowiedź", "type": "comment", "description": "Pole tekstowe na odpowiedź" },
+                        { "label": "Załącznik", "type": "file" },
+                        { "label": "Sporządził", "type": "author" },
+                        { "label": "Zatwierdził", "type": "author" }
                       ],
                       "rows": [
                         {
-                          "Pytanie": "Data spotkania",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Uczestnicy",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Podstawowe informacje/wiedza na temat jednostki i jej działalności",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Ocena ryzyka",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Ryzyko oszustwa",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Istotność (w tym uzasadnienie wybranych poziomów)",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Przepisy prawne i regulacyjne",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Podmioty powiązane",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Kontynuacja działalności",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Strategia badania",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Kwestie administracyjne: a) kluczowe osoby kontaktowe",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Kwestie administracyjne: b) harmonogram/terminy",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Kwestie administracyjne: c) budżety",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Kwestie administracyjne: d) role i zadania personelu",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "Pytanie": "Podpisy członków zespołu badającego",
-                          "odpowiedz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
+                          "sections": [
+                            {
+                              "type": "section",
+                              "name": "Informacje podstawowe",
+                              "questions": [
+                                { "pytanie": "Data spotkania", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "Uczestnicy", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "Podstawowe informacje/wiedza na temat jednostki i jej działalności", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null }
+                              ]
+                            },
+                            {
+                              "type": "section",
+                              "name": "Ocena ryzyka",
+                              "questions": [
+                                { "pytanie": "Ocena ryzyka", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "Ryzyko oszustwa", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "Istotność (w tym uzasadnienie wybranych poziomów)", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "Przepisy prawne i regulacyjne", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "Podmioty powiązane", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "Kontynuacja działalności", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "Strategia badania", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null }
+                              ]
+                            },
+                            {
+                              "type": "section",
+                              "name": "Kwestie administracyjne",
+                              "questions": [
+                                { "pytanie": "a) kluczowe osoby kontaktowe", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "b) harmonogram/terminy", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "c) budżety", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
+                                { "pytanie": "d) role i zadania personelu", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null }
+                              ]
+                            },
+                            {
+                              "type": "section",
+                              "name": "Podpisy zespołu",
+                              "questions": [
+                                { "pytanie": "Podpisy członków zespołu badającego", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null }
+                              ]
+                            }
+                          ]
                         }
                       ]
                     },
@@ -5131,23 +5034,23 @@
                       "type": "CUSTOM",
                       "columns": [
                         {
-                          "name": "Lp.",
+                          "label": "Lp.",
                           "type": "no"
                         },
                         {
-                          "name": "Dokument",
+                          "label": "Dokument",
                           "type": "description"
                         },
                         {
-                          "name": "Zatwierdź",
+                          "label": "Zatwierdź",
                           "type": "check"
                         },
                         {
-                          "name": "Załącznik",
+                          "label": "Załącznik",
                           "type": "file"
                         },
                         {
-                          "name": "Zatwierdzil",
+                          "label": "Zatwierdził",
                           "type": "author"
                         }
                       ],
@@ -5688,7 +5591,8 @@
                         },
                         {
                           "type": "select",
-                          "label": "Ryzyko"
+                          "label": "Ryzyko",
+                          "options": ["Wysokie", "Srednie", "Niskie"]
                         },
                         {
                           "type": "comment",
@@ -7052,22 +6956,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -7078,11 +6986,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -7290,24 +7193,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -7316,10 +7224,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -7598,10 +7502,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -7871,22 +7775,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -7897,11 +7805,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -8109,24 +8012,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -8135,10 +8043,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -8434,10 +8338,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -8872,22 +8776,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -8898,11 +8806,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -9110,24 +9013,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -9136,10 +9044,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -9453,10 +9357,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -9825,22 +9729,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -9851,11 +9759,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -10063,24 +9966,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -10089,10 +9997,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -10415,10 +10319,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -11116,22 +11020,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -11142,11 +11050,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -11354,24 +11257,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -11380,10 +11288,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -11684,10 +11588,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -12078,22 +11982,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -12104,11 +12012,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -12316,24 +12219,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -12342,10 +12250,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -12619,10 +12523,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -12870,22 +12774,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -12896,11 +12804,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -13108,24 +13011,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -13134,10 +13042,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -13402,10 +13306,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -13653,22 +13557,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -13679,11 +13587,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -13891,24 +13794,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -13917,10 +13825,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -14185,10 +14089,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -14469,22 +14373,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -14495,11 +14403,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -14707,24 +14610,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -14733,10 +14641,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -15023,10 +14927,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -15295,22 +15199,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -15321,11 +15229,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -15533,24 +15436,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -15559,10 +15467,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -15862,10 +15766,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -16267,22 +16171,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -16293,11 +16201,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -16505,24 +16408,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -16531,10 +16439,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -16812,10 +16716,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -17162,22 +17066,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -17188,11 +17096,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -17400,24 +17303,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -17426,10 +17334,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -17707,10 +17611,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -18057,22 +17961,26 @@
                     {
                       "key": "I",
                       "type": "dynamic",
-                      "label": "I"
+                      "label": "I",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
-                      "label": "PiO"
+                      "label": "PiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
-                      "label": "WiP"
+                      "label": "WiP",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "key": "komentarz",
@@ -18083,11 +17991,6 @@
                       "key": "sporzadzil",
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "key": "data",
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "key": "plik",
@@ -18295,24 +18198,29 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "type": "comment",
+                      "type": "description",
                       "label": "Pytanie"
                     },
-                    {
+                    {"key": "WoPiO",
                       "type": "dynamic",
-                      "label": "WoPiO"
+                      "label": "WoPiO",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "Ko",
                       "type": "dynamic",
-                      "label": "Ko"
+                      "label": "Ko",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
-                    {
+                    {"key": "KiZ",
                       "type": "dynamic",
-                      "label": "KiZ"
+                      "label": "KiZ",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
+
                     },
-                    {
+                    {"key": "DiW",
                       "type": "dynamic",
-                      "label": "DiW"
+                      "label": "DiW",
+                      "options": ["Wysokie", "Średnie", "Niskie"]
                     },
                     {
                       "type": "comment",
@@ -18321,10 +18229,6 @@
                     {
                       "type": "author",
                       "label": "Sporządził"
-                    },
-                    {
-                      "type": "date",
-                      "label": "Data"
                     },
                     {
                       "type": "file",
@@ -18578,10 +18482,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -18869,10 +18773,10 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Nr"
+                      "label": "Lp."
                     },
                     {
-                      "type": "comment",
+                      "type": "text",
                       "label": "Nazwa procedury"
                     },
                     {
@@ -20077,7 +19981,7 @@
                   "columns": [
                     {
                       "type": "no",
-                      "label": "Lp"
+                      "label": "Lp."
                     },
                     {
                       "type": "description",
@@ -20106,193 +20010,200 @@
                   ],
                   "rows": [
                     {
-                      "sekcja": "Czynniki finansowe",
-                      "wiersze": [
+                      "sections": [
                         {
-                          "lp": "F1",
-                          "czynnik": "Czy zobowiązania przewyższają aktywa?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
+                          "type": "section",
+                          "name": "Czynniki finansowe",
+                          "questions": [
+                            {
+                              "id": "F1",
+                              "q": "Czy zobowiązania przewyższają aktywa?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "F2",
+                              "q": "Czy bieżące zobowiązania przekraczają aktywa obrotowe?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "F3",
+                              "q": "Czy umowa dotycząca niezbędnych środków finansujących działalność pozostaje wciąż do uzgodnienia z finansującym?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "F4",
+                              "q": "Czy jednostka nie wywiązuje się z zobowiązań lub narusza warunki jakichkolwiek umów lub porozumień?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "F5",
+                              "q": "Czy jednostka ma poważne problemy z płynnością lub przepływami pieniężnymi?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "F6",
+                              "q": "Czy po dniu bilansowym jednostka zanotowała straty lub problemy z przepływami pieniężnymi, które zagrażają dalszemu jej funkcjonowaniu?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "F7",
+                              "q": "Czy jednostka dokonała znaczącej sprzedaży środków trwałych, których zastąpienie nie jest planowane?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "F8",
+                              "q": "Czy jednostka negocjuje restrukturyzację kredytów?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "F9",
+                              "q": "Czy jednostce odmówiono standardowych warunków kredytu kupieckiego (albo je ograniczono)?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "F10",
+                              "q": "Czy jednostka ma znaczące zapadłe pożyczki bądź potrzebuje refinansowania?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            }
+                          ]
                         },
                         {
-                          "lp": "F2",
-                          "czynnik": "Czy bieżące zobowiązania przekraczają aktywa obrotowe?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
+                          "type": "section",
+                          "name": "Czynniki operacyjne",
+                          "questions": [
+                            {
+                              "lp": "O1",
+                              "q": "Czy jednostka doświadcza lub może doświadczyć fundamentalnych zmian rynkowych lub technologicznych, do których może nie być w stanie się dostosować w odpowiedni sposób?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "O2",
+                              "q": "Czy jednostka doświadczyła utraty kluczowych przedstawicieli kadry zarządzającej lub pracowników, albo ma trudności z personelem?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "O3",
+                              "q": "Czy jednostka jest uzależniona od kilku linii produkcyjnych, a rynek tych wyrobów przeżywa załamanie?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "O4",
+                              "q": "Czy jednostka straciła kluczowych dostawców, klientów lub rozwiązania techniczne, przez co jej flagowy produkt stał się przestarzały?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            }
+                          ]
                         },
                         {
-                          "lp": "F3",
-                          "czynnik": "Czy umowa dotycząca niezbędnych środków finansujących działalność pozostaje wciąż do uzgodnienia z finansującym?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "F4",
-                          "czynnik": "Czy jednostka nie wywiązuje się z zobowiązań lub narusza warunki jakichkolwiek umów lub porozumień?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "F5",
-                          "czynnik": "Czy jednostka ma poważne problemy z płynnością lub przepływami pieniężnymi?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "F6",
-                          "czynnik": "Czy po dniu bilansowym jednostka zanotowała straty lub problemy z przepływami pieniężnymi, które zagrażają dalszemu jej funkcjonowaniu?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "F7",
-                          "czynnik": "Czy jednostka dokonała znaczącej sprzedaży środków trwałych, których zastąpienie nie jest planowane?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "F8",
-                          "czynnik": "Czy jednostka negocjuje restrukturyzację kredytów?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "F9",
-                          "czynnik": "Czy jednostce odmówiono standardowych warunków kredytu kupieckiego (albo je ograniczono)?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "F10",
-                          "czynnik": "Czy jednostka ma znaczące zapadłe pożyczki bądź potrzebuje refinansowania?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        }
-                      ]
-                    },
-                    {
-                      "sekcja": "Czynniki operacyjne",
-                      "wiersze": [
-                        {
-                          "lp": "O1",
-                          "czynnik": "Czy jednostka doświadcza lub może doświadczyć fundamentalnych zmian rynkowych lub technologicznych, do których może nie być w stanie się dostosować w odpowiedni sposób?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "O2",
-                          "czynnik": "Czy jednostka doświadczyła utraty kluczowych przedstawicieli kadry zarządzającej lub pracowników, albo ma trudności z personelem?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "O3",
-                          "czynnik": "Czy jednostka jest uzależniona od kilku linii produkcyjnych, a rynek tych wyrobów przeżywa załamanie?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "O4",
-                          "czynnik": "Czy jednostka straciła kluczowych dostawców, klientów lub rozwiązania techniczne, przez co jej flagowy produkt stał się przestarzały?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        }
-                      ]
-                    },
-                    {
-                      "sekcja": "Inne czynniki",
-                      "wiersze": [
-                        {
-                          "lp": "I1",
-                          "czynnik": "Czy jednostka jest w sytuacji grożącej sporem prawnym prowadzącym potencjalnie do roszczeń, których jednostka prawdopodobnie nie byłaby w stanie zaspokoić?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
-                        },
-                        {
-                          "lp": "I2",
-                          "czynnik": "Czy jednostka jest w sytuacji prowadzącej potencjalnie do szerokiej gamy konsekwencji mających wpływ na zdolność jednostki do kontynuacji działalności?",
-                          "planowanie": null,
-                          "zakonczenie": null,
-                          "komentarz": null,
-                          "author": null,
-                          "approver": null,
-                          "date": null,
-                          "approvedAt": null
+                          "type": "section",
+                          "name": "Inne czynniki",
+                          "questions": [
+                            {
+                              "lp": "I1",
+                              "q": "Czy jednostka jest w sytuacji grożącej sporem prawnym prowadzącym potencjalnie do roszczeń, których jednostka prawdopodobnie nie byłaby w stanie zaspokoić?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            },
+                            {
+                              "lp": "I2",
+                              "q": "Czy jednostka jest w sytuacji prowadzącej potencjalnie do szerokiej gamy konsekwencji mających wpływ na zdolność jednostki do kontynuacji działalności?",
+                              "planowanie": null,
+                              "zakonczenie": null,
+                              "komentarz": null,
+                              "author": null,
+                              "approver": null,
+                              "date": null,
+                              "approvedAt": null
+                            }
+                          ]
                         }
                       ]
                     }
@@ -20362,26 +20273,26 @@
                   "type": "CUSTOM",
                   "columns": [
                     {
-                      "name": "Pytanie",
+                      "label": "Pytanie",
                       "type": "description"
                     },
                     {
-                      "name": "odpowiedz",
-                      "type": "text",
+                      "label": "Odpowiedź",
+                      "type": "comment",
                       "description": "Pole tekstowe na odpowiedź"
                     },
                     {
-                      "name": "sporządzil",
+                      "label": "Sporządził",
                       "type": "author"
                     },
                     {
-                      "name": "zatwierdzil",
+                      "label": "Zatwierdził",
                       "type": "author"
                     }
                   ],
                   "rows": [
                     {
-                      "Pytanie": "Wskazanie zagadnień wymagających konsultacji (opis – jeśli potrzebny)",
+                      "pytanie": "Wskazanie zagadnień wymagających konsultacji (opis – jeśli potrzebny)",
                       "odpowiedz": null,
                       "author": null,
                       "approver": null,
@@ -20389,7 +20300,7 @@
                       "approvedAt": null
                     },
                     {
-                      "Pytanie": "Imię i nazwisko, kwalifikacje osoby/jednostki, poproszonej o udzielenie konsultacji",
+                      "pytanie": "Imię i nazwisko, kwalifikacje osoby/jednostki, poproszonej o udzielenie konsultacji",
                       "odpowiedz": null,
                       "author": null,
                       "approver": null,
@@ -20397,7 +20308,7 @@
                       "approvedAt": null
                     },
                     {
-                      "Pytanie": "Zapis dyskusji/korespondencji w ramach konsultacji",
+                      "pytanie": "Zapis dyskusji/korespondencji w ramach konsultacji",
                       "odpowiedz": null,
                       "author": null,
                       "approver": null,
@@ -20405,7 +20316,7 @@
                       "approvedAt": null
                     },
                     {
-                      "Pytanie": "Uzasadnienie wyciągniętych wniosków",
+                      "pytanie": "Uzasadnienie wyciągniętych wniosków",
                       "odpowiedz": null,
                       "author": null,
                       "approver": null,
@@ -21968,70 +21879,126 @@
                       "label": "Opis"
                     },
                     {
-                      "type": "checkbox",
+                      "type": "check",
                       "label": "Zaznacz"
+                    },
+                    {
+                      "label": "Sporządził",
+                      "type": "author"
+                    },
+                    {
+                      "label": "Zatwierdził",
+                      "type": "author"
                     }
                   ],
                   "rows": [
                     {
                       "lp": "1",
                       "opis": "Jestem niezależną w stosunku do realizowanego zlecenia osobą dokonującą kontroli jakości przed podpisaniem sprawozdania biegłego rewidenta i dysponuję odpowiednim doświadczeniem i autorytetem potrzebnym do tego, aby pełnić rolę niezależnego biegłego rewidenta dokonującego kontroli",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "2",
                       "opis": "Nie brałem/am udziału w realizacji zlecenia badania ani innych usług oraz nie pełniłem/am żadnych innych funkcji na rzecz badanej jednostki bądź też jednostki należącej do tej samej grupy",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "3",
                       "opis": "Kontrola jakości wykonania zlecenia obejmowała co najmniej:",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "3.1",
                       "opis": "Dyskusję na temat znaczących spraw z partnerem odpowiedzialnym za zlecenie",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "3.2",
                       "opis": "Przegląd sprawozdania finansowego lub innych informacji o przedmiocie zlecenia i proponowanego sprawozdania z badania",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "3.3",
                       "opis": "Przegląd wybranej dokumentacji zlecenia dotyczącej znaczących osądów dokonanych przez zespół wykonujący zlecenie i sformułowanych wniosków",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "3.4",
                       "opis": "Ocenę wniosków sformułowanych podczas sporządzania sprawozdania oraz rozważenie czy zaproponowane sprawozdanie jest odpowiednie",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "4",
                       "opis": "Kontrola jakości wykonania zlecenia uwzględniała także rozważenie:",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "4.1",
                       "opis": "Oceny niezależności firmy w związku z określonym zleceniem, przeprowadzoną przez zespół wykonujący zlecenie",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "4.2",
                       "opis": "Czy przeprowadzono odpowiednie konsultacje w zakresie spraw, których dotyczą rozbieżne opinie bądź innych trudnych lub spornych spraw i wnioski wyciągnięte z przeprowadzonych konsultacji",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "4.3",
                       "opis": "Czy objęta przeglądem dokumentacja odzwierciedla wykonaną pracę związaną z dokonaniem znaczących osądów oraz czy potwierdza wyciągnięte wnioski",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     },
                     {
                       "lp": "5",
                       "opis": "Jestem przekonany/a, że wyżej wymienione cele mające zastosowanie do niniejszej kontroli jakości zostały osiągnięte",
-                      "zaznacz": false
+                      "zaznacz": false,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
                     }
                   ]
                 },

@@ -50,7 +50,7 @@ function KwestionariuszFull() {
 
     // Helper: get text for description columns
     const getText = (row) =>
-        row.q || row.pytanie || row.opis || row.MSB || row.nazwa || row.cele || row.stwierdzenie || row.obszary || row.test || row.question || "";
+        row.wskaz || row.q || row.pytanie || row.opis || row.nazwa || row.cele || row.stwierdzenie || row.obszary || row.test || row.question || "";
 
     // Unique key for rows per questionnaire
     const getRowKey = (row) => `${screenData.id}-${row.id || getText(row)}`;
@@ -74,10 +74,30 @@ function KwestionariuszFull() {
 
         switch (col.type) {
             case "no":
-                return <td key={col.label} style={tdCenter}>{row.id || row.lp || ""}</td>;
+                return <td key={col.label} style={tdCenter}>{row.id || row.lp || row.nr || ""}</td>;
             case "description":
             case "text":
+                if (col.label === "MSB") {
+                    return <td key={col.label} style={tdDescription}>{row.msb || ""}</td>;
+                }
+                if (col.label === "Powiązane obszary") {
+                    return (
+                        <td key={col.label} style={tdDescription}>
+                            {Array.isArray(row.obszary) ? row.obszary.join(", ") : row.obszary || ""}
+                        </td>
+                    );
+                }
+
+                if (col.label === "Osiągnięte cele") {
+                    return (
+                        <td key={col.label} style={tdDescription}>
+                            {Array.isArray(row.cele) ? row.cele.join(", ") : row.cele|| ""}
+                        </td>
+                    );
+                }
+
                 return <td key={col.label} style={tdDescription}>{getText(row)}</td>;
+
             case "yes_no": {
                 const value = answers[rowKey]?.choice ?? row.answer?.value ?? "NIE";
                 return (
@@ -102,6 +122,7 @@ function KwestionariuszFull() {
                     </td>
                 );
             }
+
             case "enum": {
                 const values = col.wartosci || [];
                 const value = (answers[rowKey]?.choice ?? row.answer?.value ?? values[0]) || "";
@@ -123,6 +144,44 @@ function KwestionariuszFull() {
                     </td>
                 );
             }
+
+            case "check": {
+                const value = answers[rowKey]?.check ?? row.check ?? false;
+                return (
+                    <td key={col.label} style={tdCenter}>
+                        <input
+                            type="checkbox"
+                            checked={value}
+                            onChange={(e) =>
+                                setAnswers((prev) => ({
+                                    ...prev,
+                                    [rowKey]: { ...prev[rowKey], check: e.target.checked },
+                                }))
+                            }
+                        />
+                    </td>
+                );
+            }
+
+            case "date": {
+                const value = answers[rowKey]?.date ?? row.date ?? "";
+                return (
+                    <td key={col.label} style={tdCenter}>
+                        <input
+                            type="date"
+                            className="form-control form-control-sm"
+                            value={value}
+                            onChange={(e) =>
+                                setAnswers((prev) => ({
+                                    ...prev,
+                                    [rowKey]: { ...prev[rowKey], date: e.target.value },
+                                }))
+                            }
+                        />
+                    </td>
+                );
+            }
+
             case "comment": {
                 const value = answers[rowKey]?.comment ?? row.comment ?? "";
                 return (
@@ -165,10 +224,44 @@ function KwestionariuszFull() {
                     </td>
                 );
             }
+
+            case "select": {
+                // Get the currently selected value from answers or fallback to row value
+                const value = answers[rowKey]?.[col.label] ?? row[col.label]?.value ?? "";
+
+                // Get options from column definition
+                const options = col.options || [];
+
+                return (
+                    <td key={col.label} style={tdCenter}>
+                        <select
+                            className="form-select form-select-sm"
+                            value={value}
+                            onChange={(e) =>
+                                setAnswers((prev) => ({
+                                    ...prev,
+                                    [rowKey]: {
+                                        ...prev[rowKey],
+                                        [col.label]: e.target.value,
+                                    },
+                                }))
+                            }
+                        >
+                            {options.map((opt) => (
+                                <option key={opt} value={opt}>
+                                    {opt}
+                                </option>
+                            ))}
+                        </select>
+                    </td>
+                );
+            }
+
             case "dynamic": {
                 const cell = row[col.key] || {};
+
                 if (cell.type === "checkbox") {
-                    const value = answers[rowKey]?.dynamic?.[col.key] ?? cell.value;
+                    const value = answers[rowKey]?.dynamic?.[col.key] ?? cell.value ?? false;
                     return (
                         <td key={col.label} style={tdCenter}>
                             <input
@@ -179,8 +272,11 @@ function KwestionariuszFull() {
                         </td>
                     );
                 }
+
                 if (cell.type === "select") {
-                    const value = answers[rowKey]?.dynamic?.[col.key] ?? cell.value ?? "";
+                    const options = Array.isArray(col.options) ? col.options : []; // use column options
+                    const value = answers[rowKey]?.dynamic?.[col.key] ?? cell.value ?? (options[0] || "");
+
                     return (
                         <td key={col.label} style={tdCenter}>
                             <select
@@ -188,7 +284,7 @@ function KwestionariuszFull() {
                                 value={value}
                                 onChange={(e) => handleDynamicChange(rowKey, col.key, e.target.value)}
                             >
-                                {(cell.options || []).map((opt) => (
+                                {options.map((opt) => (
                                     <option key={opt} value={opt}>
                                         {opt}
                                     </option>
@@ -197,8 +293,10 @@ function KwestionariuszFull() {
                         </td>
                     );
                 }
-                return <td key={col.label}>{cell.value ?? ""}</td>;
+
+                return <td key={col.label} style={tdCenter}>{cell.value ?? ""}</td>;
             }
+
             case "file": {
                 const file = answers[rowKey]?.file ?? row.file;
                 return (
@@ -234,24 +332,29 @@ function KwestionariuszFull() {
     };
 
     const renderTable = (tab) => {
-        let rows = [];
+        // Recursive function to flatten rows, sections, and subquestions
+        const flattenRows = (rows) => {
+            let result = [];
 
-        // Support tab.rows, screenData.rows, or nested sections
+            rows.forEach((row) => {
+                if (row.sections) {
+                    row.sections.forEach((section) => {
+                        result.push({ isSection: true, name: section.name });
+                        result.push(...flattenRows(section.questions || []));
+                    });
+                } else if (row.subquestions) {
+                    result.push(row); // include parent question
+                    result.push(...flattenRows(row.subquestions));
+                } else {
+                    result.push(row);
+                }
+            });
+
+            return result;
+        };
+
         const rawRows = tab.rows || screenData.rows || [];
-
-        rawRows.forEach((row) => {
-            if (row.sections) {
-                row.sections.forEach((section) => {
-                    rows.push({ isSection: true, name: section.name });
-                    section.questions?.forEach((q) => rows.push(q));
-                });
-            } else if (row.questions) {
-                rows.push({ isSection: true, name: row.name });
-                row.questions.forEach((q) => rows.push(q));
-            } else {
-                rows.push(row);
-            }
-        });
+        const rows = flattenRows(rawRows);
 
         if (!rows.length) return <div className="p-2">Brak danych do wyświetlenia</div>;
 
