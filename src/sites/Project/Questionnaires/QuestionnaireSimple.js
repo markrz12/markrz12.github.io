@@ -1,11 +1,14 @@
 import React, {useState} from "react";
-import { Sidebar, Topbar, InitialsAvatar } from "../../../ui/Common_project.js";
+import { Sidebar} from "../../../ui/Common_project.js";
+import {Topbar } from "../../../ui/Common.js";
 import { timeAgo, ProgressMeter } from "../../Functions";
 import FilesTable from "../Tabs/Files";
 import RequestsTable from "../Tabs/Request";
 import ActivityLog from "../Tabs/Activitylog";
 import TabNavigation from "../Tabs/TabNavigation";
 import Application from "../Tabs/Application";
+import { InitialsAvatar} from "../../../ui/common_function";
+
 
 function KwestionariuszFull() {
     const [activeTab, setActiveTab] = useState("Kwestionariusz");

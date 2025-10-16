@@ -1,107 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear, BsBell,} from "react-icons/bs";
-
-// 🔹 wspólny hook do obsługi dropdownów
-function useDropdown() {
-    const [open, setOpen] = useState(false);
-    const btnRef = useRef(null);
-    const menuRef = useRef(null);
-
-    useEffect(() => {
-        if (!open) return;
-        const handleClick = (e) => {
-            if (
-                menuRef.current &&
-                !menuRef.current.contains(e.target) &&
-                btnRef.current &&
-                !btnRef.current.contains(e.target)
-            ) {
-                setOpen(false);
-            }
-        };
-        const handleKey = (e) => e.key === "Escape" && setOpen(false);
-
-        document.addEventListener("mousedown", handleClick);
-        document.addEventListener("keydown", handleKey);
-        return () => {
-            document.removeEventListener("mousedown", handleClick);
-            document.removeEventListener("keydown", handleKey);
-        };
-    }, [open]);
-
-    return { open, setOpen, btnRef, menuRef };
-}
-
-// 🔹 Avatar z inicjałami
-export function InitialsAvatar({ name = "Jan Użytkownik", size = 26 }) {
-    const initials =
-        String(name || "")
-            .split(/\s|\.|-/)
-            .filter(Boolean)
-            .slice(0, 2)
-            .map((s) => s[0]?.toUpperCase())
-            .join("") || "?";
-
-    return (
-        <div
-            className="rounded-circle d-flex align-items-center justify-content-center"
-            style={{
-                width: size,
-                height: size,
-                background: "#e6edf5",
-                color: "#0f2a3d",
-                fontWeight: 600,
-                fontSize: size > 24 ? "0.8rem" : "0.7rem",
-                border: "1px solid #d7e3f2",
-            }}
-        >
-            {initials}
-        </div>
-    );
-}
-
-// 🔹 Dropdown powiadomień
-export function Notifications() {
-    const { open, setOpen, btnRef, menuRef } = useDropdown();
-
-    return (
-        <div className="position-relative me-2">
-            <button
-                ref={btnRef}
-                className="btn p-0 d-flex align-items-center justify-content-center border rounded-circle"
-                onClick={() => setOpen((v) => !v)}
-                style={{ width: 30, height: 30, background: "transparent" }}
-            >
-                <BsBell size={18} color="#fff" />
-            </button>
-
-            {open && (
-                <div
-                    ref={menuRef}
-                    className="card shadow-sm"
-                    style={{
-                        position: "absolute",
-                        right: 0,
-                        top: "100%",
-                        marginTop: "0.5rem",
-                        minWidth: 260,
-                        zIndex: 2000,
-                    }}
-                >
-                    <div className="card-header py-2">
-                        <strong>Powiadomienia</strong>
-                    </div>
-                    <div className="card-body p-0" style={{ maxHeight: 280, overflowY: "auto" }}>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item small">Brak nowych powiadomień</li>
-                        </ul>
-                    </div>
-                </div>
-            )}
-        </div>
-    );
-}
+import {BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear} from "react-icons/bs";
+import { InitialsAvatar, Notifications, } from "../ui/common_function";
 
 // 🔹 Sidebar
 export function Sidebar({ search, setSearch }) {
@@ -240,7 +140,7 @@ export function Topbar({ breadcrumb, onLogout }){
                             </li> ))}
                     </ol>
                 </nav>
-                <div className="d-flex align-items-center position-relative" style={{ gap:'0.25rem' }}>
+                <div className="d-flex align-items-center position-relative" style={{ gap:'0.3rem' }}>
                     <Notifications open={openNotifications} setOpen={setOpenNotifications} popRef={notificationsPopRef} btnRef={notificationsBtnRef} />
                     <button ref={accountBtnRef} className="btn p-0 border-0" aria-haspopup="menu" aria-expanded={showAccount? 'true':'false'} onClick={()=>setShowAccount(v=>!v)}
                             onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setShowAccount(v=>!v);} }} title="Konto"
@@ -250,7 +150,7 @@ export function Topbar({ breadcrumb, onLogout }){
                                 gap:6, background:'transparent' }}
                             onMouseOver={(e)=>{ e.currentTarget.style.background='rgba(255,255,255,0.12)'; }}
                             onMouseOut={(e)=>{ e.currentTarget.style.background='transparent'; }} >
-                        <InitialsAvatar name="Jan Użytkownik" size={26} />
+                        <InitialsAvatar name="Jan Użytkownik" size={31} />
                         <span aria-hidden="true"
                               style={{ fontSize:12, opacity:0.9, lineHeight:1, transform:'translateY(1px)' }}>▾
                         </span>
