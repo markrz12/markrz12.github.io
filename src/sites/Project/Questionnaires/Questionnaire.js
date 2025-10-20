@@ -6,6 +6,7 @@ import TabNavigation from "../Tabs/TabNavigation";
 import FilesTable from "../Tabs/Files";
 import RequestsTable from "../Tabs/Request";
 import ActivityLog from "../Tabs/Activitylog";
+import Application from "../Tabs/Application";
 
 function KwestionariuszFull() {
     const { project } = useOutletContext();
@@ -65,6 +66,20 @@ function KwestionariuszFull() {
                 dynamic: { ...(prev[rowKey]?.dynamic || {}), [key]: value },
             },
         }));
+    };
+
+    const getAllTabs = (screen) => {
+        let tabs = screen.tabs || [];
+        if (screen.sections) {
+            for (const section of screen.sections) {
+                if (section.screens) {
+                    for (const s of section.screens) {
+                        tabs = tabs.concat(getAllTabs(s));
+                    }
+                }
+            }
+        }
+        return tabs;
     };
 
     const renderCell = (col, row, tab) => {
@@ -721,15 +736,15 @@ function KwestionariuszFull() {
 
             // Scoped function to update answers for this member
             const handleAnswerChange = (rowLp, colKey, value) => {
-                setAnswers(prev => ({
+                setAnswers((prev) => ({
                     ...prev,
                     [memberKey]: {
                         ...(prev[memberKey] || {}),
                         [rowLp]: {
                             ...((prev[memberKey] || {})[rowLp] || {}),
-                            [colKey]: value
-                        }
-                    }
+                            [colKey]: value,
+                        },
+                    },
                 }));
             };
 
@@ -749,22 +764,38 @@ function KwestionariuszFull() {
 
                     {/* Questions table */}
                     <div className="table-responsive">
-                        <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize: "0.85rem" }}>
+                        <table
+                            className="table table-hover table-sm mb-0 align-middle"
+                            style={{ fontSize: "0.85rem" }}
+                        >
                             <thead className="table-light">
                             <tr>
-                                {visibleColumns.map(col => (
-                                    <th key={col.title} style={headerStyle}>{col.title}</th>
+                                {visibleColumns.map((col) => (
+                                    <th key={col.title} style={headerStyle}>
+                                        {col.title}
+                                    </th>
                                 ))}
                             </tr>
                             </thead>
                             <tbody>
-                            {rows.map((row) => (
-                                <tr key={`${memberKey}-${row.lp}`}>
-                                    {visibleColumns.map(col =>
-                                        renderCell(col, row, tab, memberAnswers, handleAnswerChange, member)
-                                    )}
-                                </tr>
-                            ))}
+                            {rows.map((row) => {
+                                const rowKey = `${memberKey}-${row.lp}`; // <-- member-scoped rowKey
+                                return (
+                                    <tr key={rowKey}>
+                                        {visibleColumns.map((col) =>
+                                            renderCell(
+                                                col,
+                                                row,
+                                                tab,
+                                                memberAnswers,
+                                                handleAnswerChange,
+                                                member,
+                                                rowKey // <-- pass the unique rowKey to renderCell
+                                            )
+                                        )}
+                                    </tr>
+                                );
+                            })}
                             </tbody>
                         </table>
                     </div>
@@ -774,8 +805,6 @@ function KwestionariuszFull() {
     };
 
 
-
-
     return (
         <div className="d-flex min-vh-100">
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: "hidden" }}>
@@ -783,9 +812,12 @@ function KwestionariuszFull() {
                 <SubHeader title={screenData.title} percent={screenData.percent} />
                 <TabNavigation tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
                 <div className="px-1 flex-grow-1 overflow-auto">
-                    {screenData.tabs.map((tab, i) => {
-                        const tabTitle = (tab.title || tab["title:"])?.replace(":", "");
-                        if (tabTitle !== activeTab) return null;
+                    {getAllTabs(screenData).map((tab, i) => {
+                        const tabTitle = (tab.title || "").trim().replace(/:$/, "");
+                        const normalizedActiveTab = (activeTab || "").trim().replace(/:$/, "");
+                        if (tabTitle !== normalizedActiveTab) return null;
+
+
 
                         switch (tab.type) {
                             case "CUSTOM":
@@ -800,6 +832,8 @@ function KwestionariuszFull() {
                                 return <FilesTable key={i} files={[]} setFiles={() => {}} />;
                             case "ACTIVITY_LOG":
                                 return <ActivityLog key={i} logs={[]} />;
+                            case "APPLICATION":
+                                return <Application key={i} initialSubmission={tab} />;
                             default:
                                 return <div key={i}>Tab "{tabTitle}" not implemented</div>;
                         }

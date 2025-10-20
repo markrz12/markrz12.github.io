@@ -1,86 +1,94 @@
-import React, { useState } from "react";
+import React from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function Application() {
-    const [expandedStep, setExpandedStep] = useState(1); // Krok 1 domyślnie rozwinięty
 
+export default function Application({ initialSubmission }) {
     const [submission, setSubmission] = useState({
-        id: 1,
-        title: "Wniosek audytowy - przykładowy",
-        description: `Jestem przekonany/a, że:
-1. Wszyscy członkowie zespołu zlecenia badania przestrzegają kodeksu etyki zawodowej, w szczególności wymogów dotyczących niezależności.
-2. Niezależność firmy audytorskiej została pozytywnie zweryfikowana.
-3. Wszystkie zagrożenia dla niezależności i obiektywizmu, a także środki zaradcze zostały wskazane i udokumentowane.
-4. Osoby sprawujące nadzór zostały we właściwy sposób poinformowane o wszystkich znaczących faktach i kwestiach związanych z wszelkimi zagrożeniami dla naszej niezależności i obiektywizmu.
-5. Nie ma żadnych powodów, z racji których firma audytorska nie powinna przyjąć zlecenia lub kontynuować zlecenie.
-6. Zastosowano odpowiednie procedury dotyczące akceptacji i kontynuacji współpracy z danym klientem oraz zleceń badania oraz ustalono w związku z tym właściwe wnioski (MSB 220.12).
-7. Nie uzyskano informacji, które, gdyby były wcześniej znane, wpłynęłyby na odmowę przyjęcia zlecenia badania (MSB 220.13).
-Oświadczam, że kluczowy biegły rewident i firma audytorska przeznaczają wystarczającą ilość czasu i odpowiednie zasoby w celu właściwej realizacji zlecenia.
-Ponadto oświadczam, że przed przyjęciem lub kontynuowaniem zlecenia badania oceniłem i udokumentowałem, że spełnione zostały wymogi, o których mowa w art. 74 ust. 1 ustawy o biegłych rewidentach.`,
-        keyAuditor: "",
-        date: "",
-        file: null
+        description: initialSubmission?.description || "",
+        members: (initialSubmission?.roles || []).map(role => ({ role, name: "", date: "" })),
+        file: null,
     });
 
-    const handleFileChange = (file) => setSubmission(prev => ({ ...prev, file }));
 
-    const toggleStep = (step) => setExpandedStep(expandedStep === step ? null : step);
+    const [isOpen, setIsOpen] = useState(true);
 
-    const StepCard = ({ step, title, children }) => (
-        <div className="card shadow-sm mb-1">
-            <div
-                className="card-header fw-semibold d-flex justify-content-between align-items-center"
-                style={{ backgroundColor: "#0a2b4c", color: "#fff", cursor: "pointer", padding: "0.75rem" }}
-                onClick={() => toggleStep(step)}
-            >
-                <span>{step}. {title}</span>
-                <span>{expandedStep === step ? "▲" : "▼"}</span>
-            </div>
-            {expandedStep === step && (
-                <div className="card-body">{children}</div>
-            )}
-        </div>
-    );
+    const toggleOpen = () => setIsOpen(prev => !prev);
+
+    const handleFileChange = (file) => {
+        setSubmission(prev => ({ ...prev, file }));
+    };
+
+    function AutoResizeTextarea({ value }) {
+        const textareaRef = useRef(null);
+        const [height, setHeight] = useState("auto");
+
+        useEffect(() => {
+            if (textareaRef.current) {
+                textareaRef.current.style.height = "auto"; // reset height
+                textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`; // set to scrollHeight
+            }
+        }, [value]);
+
+        return (
+            <textarea
+                ref={textareaRef}
+                className="form-control"
+                style={{ fontSize: "0.9rem", whiteSpace: "pre-wrap", overflow: "hidden" }}
+                value={value}
+                readOnly
+            />
+        );
+    }
 
     return (
-        <div>
-            {/* Krok 1 */}
-            <StepCard step={1} title="Podgląd i pobranie wniosku">
-                <div className="form-control mb-3" style={{fontSize: "0.9rem", whiteSpace: "pre-wrap", backgroundColor: "#f9fafb", border: "1px solid #dee2e6" }}>
-                    {submission.description}
+        <div className="container">
+            <div className="card mb-3 shadow-sm">
+                <div
+                    className="card-header fw-semibold d-flex justify-content-between align-items-center"
+                    style={{ cursor: "pointer", backgroundColor: "#0a2b4c", color: "#fff" }}
+                    onClick={toggleOpen}
+                >
+                    <span>Podgląd wniosku</span>
+                    <span>{isOpen ? "▲" : "▼"}</span>
                 </div>
 
-                <div className="d-flex align-items-center gap-3 mb-3">
-                    <span className="fw-semibold" style = {{fontSize: "0.9rem"}}>Kluczowy biegły rewident:</span>
-                    <div className="form-control flex-grow-1" style={{ height:"37px", width: "300px", backgroundColor: "#f9fafb", border: "1px solid #dee2e6" }}>
-                        {submission.keyAuditor || ""}
-                    </div>
-                    <span className="fw-semibold" style = {{fontSize: "0.9rem"}}>Data:</span>
-                    <div className="form-control" style={{ height:"37px", width: "150px", backgroundColor: "#f9fafb", border: "1px solid #dee2e6" }}>
-                        {submission.date || ""}
-                    </div>
-                </div>
+                {isOpen && (
+                    <div className="card-body">
+                        <div className="mb-3">
+                            <AutoResizeTextarea value={submission.description} />
 
-                <div className="d-flex align-items-center gap-3 mb-2">
-                    <span className="fw-semibold" style = {{fontSize: "0.9rem"}}>Osoba reprezentująca firmę audytorską:</span>
-                    <div className="form-control flex-grow-1" style={{ height:"37px", width: "300px", backgroundColor: "#f9fafb", border: "1px solid #dee2e6" }}>
-                        {submission.keyAuditor || ""}
+                        </div>
+
+                        {submission.members.map((member, index) => (
+                            <div key={index} className="row mb-3 g-3">
+                                <div className="col-md-6">
+                                    <label className="form-label fw-semibold">{member.role}:</label>
+                                    <input
+                                        className="form-control"
+                                        value={member.name || ""}
+                                        placeholder=""
+                                        readOnly
+                                    />
+                                </div>
+                                <div className="col-md-3">
+                                    <label className="form-label fw-semibold">Data:</label>
+                                    <input
+                                        className="form-control"
+                                        value={member.date || ""}
+                                        placeholder=""
+                                        readOnly
+                                    />
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                    <span className="fw-semibold" style = {{fontSize: "0.9rem"}}>Data:</span>
-                    <div className="form-control" style={{ height:"37px", width: "150px", backgroundColor: "#f9fafb", border: "1px solid #dee2e6" }}>
-                        {submission.date || ""}
-                    </div>
-                </div>
+                )}
+            </div>
 
-                <button className="btn btn-primary mb-1 mt-1">📄 Pobierz PDF</button>
-            </StepCard>
+            <div className="mb-3">
+                <button className="btn btn-primary mb-3 me-3">📄 Pobierz PDF</button>
 
-            {/* Krok 2 */}
-            <StepCard step={2} title="Podpisanie dokumentu">
-                <p>Zeskanuj i podpisz pobrany dokument ręcznie lub elektronicznie.</p>
-            </StepCard>
-
-            {/* Krok 3 */}
-            <StepCard step={3} title="Załaduj podpisany dokument">
+                <label className="form-label fw-semibold d-block mb-1">Załaduj podpisany dokument:</label>
                 {!submission.file ? (
                     <div
                         className="border border-2 border-dashed p-4 text-center rounded"
@@ -94,7 +102,7 @@ Ponadto oświadczam, że przed przyjęciem lub kontynuowaniem zlecenia badania o
                             id="fileInput"
                             className="d-none"
                             accept="application/pdf"
-                            onChange={e => handleFileChange(e.target.files[0])}
+                            onChange={(e) => handleFileChange(e.target.files[0])}
                         />
                     </div>
                 ) : (
@@ -103,11 +111,11 @@ Ponadto oświadczam, że przed przyjęciem lub kontynuowaniem zlecenia badania o
                         <span className="badge bg-success">Załadowano</span>
                     </div>
                 )}
-            </StepCard>
+            </div>
 
-            <div className="text-end mb-4 mt-3">
+            <div className="text-end">
                 <button className="btn btn-success px-4" disabled={!submission.file}>
-                     Zapisz i zakończ
+                    Zapisz i zakończ
                 </button>
             </div>
         </div>

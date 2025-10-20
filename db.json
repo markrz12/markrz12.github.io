@@ -3049,28 +3049,28 @@
                       "questions": [
                         {
                           "lp": 1.1,
-                          "question": "Czy spełnia wymogi niezależności? (załącz test niezależności)",
+                          "question": "1.1 Czy spełnia wymogi niezależności? (załącz test niezależności)",
                           "answer": null,
                           "comment": null,
                           "attachment": null
                         },
                         {
                           "lp": 1.2,
-                          "question": "Czy posiada odpowiednie doświadczenie zawodowe w specyfice działalności klienta badania?",
+                          "question": "1.2 Czy posiada odpowiednie doświadczenie zawodowe w specyfice działalności klienta badania?",
                           "answer": null,
                           "comment": null,
                           "attachment": null
                         },
                         {
                           "lp": 1.3,
-                          "question": "Czy dysponuje odpowiednią ilością czasu?",
+                          "question": "1.3 Czy dysponuje odpowiednią ilością czasu?",
                           "answer": null,
                           "comment": null,
                           "attachment": null
                         },
                         {
                           "lp": 1.4,
-                          "question": "Czy będzie zdolny do przestrzegania wszystkich zasad etyki zawodowej?",
+                          "question": "1.4 Czy będzie zdolny do przestrzegania wszystkich zasad etyki zawodowej?",
                           "answer": null,
                           "comment": null,
                           "attachment": null
@@ -3093,7 +3093,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Jestem przekonany/a, że:\n1. Wszyscy członkowie zespołu zlecenia badania przestrzegają kodeksu etyki zawodowej, w szczególności wymogów dotyczących niezależności.\n2. Niezależność firmy audytorskiej została pozytywnie zweryfikowana.\n3. Wszystkie zagrożenia dla niezależności i obiektywizmu, a także środki zaradcze zostały wskazane i udokumentowane.\n4. Osoby sprawujące nadzór zostały we właściwy sposób poinformowane o wszystkich znaczących faktach i kwestiach związanych z wszelkimi zagrożeniami dla naszej niezależności i obiektywizmu.\n5. Nie ma żadnych powodów, z racji których firma audytorska nie powinna przyjąć zlecenia lub kontynuować zlecenie.\n6. Zastosowano odpowiednie procedury dotyczące akceptacji i kontynuacji współpracy z danym klientem oraz zleceń badania oraz ustalono w związku z tym właściwe wnioski (MSB 220.12).\n7. Nie uzyskano informacji, które, gdyby były wcześniej znane, wpłynęłyby na odmowę przyjęcia zlecenia badania (MSB 220.13).\nOświadczam, że kluczowy biegły rewident i firma audytorska przeznaczają wystarczającą ilość czasu i odpowiednie zasoby w celu właściwej realizacji zlecenia.\nPonadto oświadczam, że przed przyjęciem lub kontynuowaniem zlecenia badania oceniłem i udokumentowałem, że spełnione zostały wymogi, o których mowa w art. 74 ust. 1 ustawy o biegłych rewidentach.",
+                  "roles": [
+                    "Kluczowy biegły rewident",
+                    "Asystent"
+                  ]
                 }
               ]
             }
@@ -3524,8 +3529,14 @@
                     },
                     {
                       "title": "Wniosek",
-                      "type": "APPLICATION"
+                      "type": "APPLICATION",
+                      "description": "Cele badania MSB 200(16-21) MSB 220(14) MSB 300(7-11)\n\n1. Ustalenie, że występują wstępne warunki badania.\n2. Określenie planowanych środków, przy pomocy których mają być zrealizowane cele badania.\n3. Sformułowanie ogólnej strategii badania określającej zakres, ramy czasowe i kierunek badania i będącej podstawą sporządzenia planu badania.\n4. Upewnienie się, że praca została przydzielona członkom zespołu badającego o odpowiednim przeszkoleniu, doświadczeniu i kompetencjach.\n5. Upewnienie się, że wszyscy członkowie zespołu badającego znają swoje zadania oraz cele procedur, jakie mają wykonać.\n6. Upewnienie się, że przeprowadzono oszacowanie ryzyka badania.\n7. Upewnienie się, że zwrócono uwagę na aspekty badania o krytycznym znaczeniu.\n8. Upewnienie się co do sprawnego przebiegu badania.\n\nWniosek:\nJestem przekonany/a, że wyżej wymienione cele zostały osiągnięte. W przeciwnym razie, stosowne informacje zostały przekazane do wiadomości osoby dokonującej przeglądu.",
+                      "roles": [
+                        "Sporządził",
+                        "Sprawdził"
+                      ]
                     }
+
                   ]
                 },
                 {
@@ -3961,7 +3972,12 @@
                     },
                     {
                       "title": "Wniosek",
-                      "type": "APPLICATION"
+                      "type": "APPLICATION",
+                      "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii cele badania wskazane powyżej zostały osiągnięte.",
+                      "roles": [
+                        "Sporządził",
+                        "Zatwierdził"
+                      ]
                     }
                   ]
                 },
@@ -4069,8 +4085,13 @@
                     },
                     {
                       "title": "Wniosek",
-                      "type": "APPLICATION"
+                      "type": "APPLICATION",
+                      "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii:\n- uzyskano właściwą znajomość klienta, jego działalności, branży, w której działa oraz zmian, jakie zaszły od poprzedniego badania, tj. obszarów potencjalnego ryzyka.\n- uzyskano wystarczające i odpowiednie dowody badania na temat zasadności przyjętego przez kierownictwo założenia kontynuacji działalności przy sporządzaniu i prezentacji sprawozdania finansowego lub stwierdzenia, czy istnieje istotna niepewność co do zdolności jednostki do kontynuacji działalności.\nNiezbędny wymagany zakres i rodzaje procedur badania zostały uwzględnione w ogólnym planie badania/dostosowanych programach badania zgodnie z tym, co zapisano w Memorandum planowania badania.",
+                      "roles": [
+                        "Kluczowy biegły rewident"
+                      ]
                     }
+
                   ]
                 },
                 {
@@ -4301,8 +4322,13 @@
                     },
                     {
                       "title": "Wniosek",
-                      "type": "APPLICATION"
+                      "type": "APPLICATION",
+                      "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii cele badania wskazane powyżej zostały osiągnięte.",
+                      "roles": [
+                        "Kluczowy biegły rewident"
+                      ]
                     }
+
                   ]
                 },
                 {
@@ -4464,7 +4490,12 @@
                     },
                     {
                       "title": "Wniosek",
-                      "type": "APPLICATION"
+                      "type": "APPLICATION",
+                      "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii cele badania wskazane powyżej zostały osiągnięte.",
+                      "roles": [
+                        "Sporządził",
+                        "Sprawdził"
+                      ]
                     }
                   ]
                 },
@@ -4605,7 +4636,12 @@
                     },
                     {
                       "title": "Wniosek",
-                      "type": "APPLICATION"
+                      "type": "APPLICATION",
+                      "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano pewność wystarczającą do tego, aby stwierdzić, że właściwie i odpowiednio zidentyfikowano i dokonano oceny ryzyka istotnego zniekształcenia sprawozdania finansowego spowodowanego oszustwem.",
+                      "roles": [
+                        "Sporządził",
+                        "Sprawdził"
+                      ]
                     }
                   ]
                 },
@@ -6247,10 +6283,6 @@
                     {
                       "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
-                    },
-                    {
-                      "title": "Wniosek",
-                      "type": "APPLICATION"
                     }
                   ]
                 },
@@ -6270,10 +6302,6 @@
                     {
                       "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
-                    },
-                    {
-                      "title": "Wniosek",
-                      "type": "APPLICATION"
                     }
                   ]
                 }
@@ -6401,6 +6429,15 @@
                     {
                       "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
+                    },
+                    {
+                      "title": "Wniosek",
+                      "type": "APPLICATION",
+                      "description": "Cele badania:\n1. Potwierdzenie wiedzy biegłego rewidenta na temat stosowanych systemów księgowych i systemu kontroli wewnętrznej na drodze przeglądu zgromadzonej przez biegłego rewidenta dokumentacji tych systemów,\n2. Ocena kontroli wewnętrznej jednostki w odniesieniu do planowanej strategii badania.\n\nWniosek:\nZ zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii cele badania wskazane powyżej zostały osiągnięte.",
+                      "roles": [
+                        "Sporządził",
+                        "Kluczowy biegły rewident"
+                      ]
                     }
                   ]
                 },
@@ -6786,7 +6823,11 @@
                     },
                     {
                       "title": "Wniosek",
-                      "type": "APPLICATION"
+                      "type": "APPLICATION",
+                      "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano pewność wystarczającą do tego, aby stwierdzić, że właściwie i odpowiednio zidentyfikowano i dokonano oceny ryzyka istotnego zniekształcenia na poziomie stwierdzeń dla grup transakcji, sald kont i ujawnień.",
+                      "roles": [
+                        "Kluczowy biegły rewident"
+                      ]
                     }
                   ]
                 }
@@ -7765,6 +7806,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -8766,6 +8816,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -9719,6 +9778,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -11010,6 +11078,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -11972,6 +12049,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -12764,6 +12850,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -13547,6 +13642,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -14363,6 +14467,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -15189,6 +15302,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -16161,6 +16283,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -17056,6 +17187,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -17951,6 +18091,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -18734,6 +18883,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -18937,6 +19095,15 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
+                },
+                {
+                  "title": "Wniosek",
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie tej pozycji (obszaru sprawozdania finansowego). MSB 330(28).",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             }
@@ -19057,7 +19224,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Cele badania\nPrzeprowadzenie procedur wiarygodności dotyczących procesu sporządzenia sprawozdań finansowych polegających na zbadaniu zgodności lub uzgodnieniu sprawozdań finansowych ze stanowiącymi ich podstawę zapisami księgowymi, a także spełnienie innych wymogów wynikających ze standardów oraz zgromadzenie odpowiedniej dokumentacji w tym zakresie.\n\nWniosek: W mojej ocenie został osiągnięty wskazany powyżej cel.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -19304,7 +19476,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie podmiotów powiązanych i transakcji z tymi podmiotami.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -19562,7 +19739,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Z zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii uzyskano wystarczającą pewność, aby stwierdzić, iż w sprawozdaniu finansowym nie ma istotnych zniekształceń w zakresie wymogów dotyczących przestrzegania prawa i regulacji.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -19774,8 +19956,14 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Cele badania (MSB 560)\nBiegły rewident jest odpowiedzialny za uzyskanie i udokumentowanie wystarczających i odpowiednich dowodów badania na temat:\n1. Zidentyfikowania wszystkich istotnych późniejszych zdarzeń;\n2. Klasyfikacji zaistniałych późniejszych zdarzeń (do odpowiedniej kategorii – typ a) lub typ b)) i oceny ich wpływu na badane sprawozdanie finansowe (konieczność ujęcia, odzwierciedlenia, skorygowania lub ujawnienia skutków);\n3. Oceny czy zidentyfikowane, sklasyfikowane i ocenione późniejsze zdarzenia zostały właściwie uwzględnione w sprawozdaniu finansowym (zgodnie z mającymi zastosowanie ramowymi założeniami sprawozdawczości finansowej).\n\nBiegły rewident jest ponadto odpowiedzialny za zaprojektowanie właściwej reakcji na fakty, o których dowiaduje się po dacie sprawozdania biegłego rewidenta, a które, gdyby były mu znane na ten dzień, mogłyby sprawić, że wprowadziłby zmiany do swojego sprawozdania.\n\nUwaga! Wpływ na dokumentację z badania tego obszaru mają zarówno MSB jak i stosowane przez jednostkę badaną ramowe założenia sprawozdawczości finansowej – Ustawa o rachunkowości, MSR/MSSF lub inne (wiążą się z tym różne zakresy czasowe jakie pojawiają się w definicjach poszczególnych wytycznych).\n\nWniosek\nZ zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii cele badania wskazane powyżej zostały osiągnięte.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
+
               ]
             },
             {
@@ -20241,8 +20429,14 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Cele badania (MSB 570) to:\n1. Uzyskanie wystarczających i odpowiednich dowodów badania wskazujących na zasadność przyjęcia przez kierownika jednostki założenia kontynuacji działalności przy sporządzaniu sprawozdania finansowego.\n2. Rozważenie, w oparciu o uzyskane dowody badania, czy istnieje istotna niepewność dotycząca zdarzeń lub uwarunkowań, które mogą budzić poważne wątpliwości co do zdolności jednostki do kontynuacji działalności.\n3. Określenie wpływu powyższych zagadnień na sprawozdanie biegłego rewidenta.\n\nWniosek\nZ zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii osiągnięte zostały cele badania wskazane powyżej.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
+
               ]
             },
             {
@@ -20252,18 +20446,29 @@
               "tabs": [
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Cele badania (MSB 501, 540):\n1. Potwierdzenie, że ujawnienia zawarte w sprawozdaniu finansowym są rzetelne i zgodne ze stosownymi przepisami prawa oraz przyjętymi do stosowania przez badaną jednostkę zasadami rachunkowości.\n2. Potwierdzenie, że ujawnienia zawarte w sprawozdaniu finansowym są prawidłowe i kompletne w świetle uzyskanych dowodów badania.\n3. Potwierdzenie, że dane porównawcze są we wszystkich istotnych aspektach zbieżne z ramowymi założeniami sprawozdawczości finansowej mającymi zastosowanie do badanego sprawozdania finansowego.\n\nWniosek\nZ zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii cele badania wskazane powyżej zostały osiągnięte.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
+
               ]
             },
             {
               "id": 7,
-              "title": "IV.7 Sprawozdanie z działalności,",
+              "title": "IV.7 Sprawozdanie z działalności",
               "percent": 0,
               "tabs": [
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Cele badania:\n1. Potwierdzenie zgodności informacji zawartych w sprawozdaniu z działalności z informacjami zawartymi w sprawozdaniu finansowym.\n2. Potwierdzenie uwzględnienia w sprawozdaniu z działalności postanowień art. 49 ustawy o rachunkowości dotyczących badanej jednostki.\n3. Potwierdzenie rozważenia, w oparciu o wiedzę o jednostce i jej otoczeniu uzyskaną w trakcie badania sprawozdania finansowego, czy sprawozdanie z działalności nie zawiera istotnych zniekształceń.\n4. Potwierdzenie, że ewentualne dodatkowe wymogi dotyczące zakresu informacji zawartych w sprawozdaniu z działalności zostały wypełnione.\n\nWniosek\nZ zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii cele badania wskazane powyżej zostały osiągnięte.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             }
@@ -20355,7 +20560,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Potwierdzam, że rodzaj, zakres i wnioski wynikające z przeprowadzonych konsultacji zostały uzgodnione z konsultowaną stroną oraz udokumentowane i wdrożone.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -20474,7 +20684,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Procedury analityczne należy zastosować pod koniec badania, na etapie formułowania ogólnego wniosku co do tego, czy sprawozdanie finansowe jako całość jest zgodne z wiedzą biegłego rewidenta na temat jednostki.\n\nCele badania:\n1. Uzyskanie dodatkowych zapewnień co do kompletności, dokładności i poprawności istotnych transakcji zarejestrowanych w okresie rozliczeniowym i sald na koniec okresu.\n2. Zapewnienie wsparcia dla wniosków wyciągniętych w wyniku innych czynności badania.\n3. Ocena ogólnej spójności sprawozdania finansowego jako całości z wiedzą na temat klienta.\n\nWniosek:\nPotwierdzam, że uzyskano wystarczającą pewność, aby stwierdzić, że sprawozdanie finansowe jako całość jest spójne i zgodne z wiedzą na temat badanej jednostki.\nPotwierdzam, że otrzymane informacje i wyjaśnienia znajdują odzwierciedlenie w dowodach badania.\nZ zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii osiągnięte zostały cele badania wskazane powyżej.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -20497,7 +20712,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Cele badania (MSB 450):\n1. Upewnienie się, że wszelkie zniekształcenia i odchylenia rozpoznane podczas badania zostały zidentyfikowane i udokumentowane.\n2. Upewnienie się, że uzgodnione korekty zostały wprowadzone.\n3. Upewnienie się, że kierownictwo badanej jednostki zostało poinformowane o zniekształceniach i odchyleniach zidentyfikowanych w trakcie badania i zaakceptowało nieskorygowane zniekształcenia, potwierdzając, że ich wpływ pojedynczo i łącznie, na sprawozdanie finansowe jako całość jest nieistotny.\n4. Upewnienie się, że o nieskorygowanych zniekształceniach w odpowiednim terminie poinformowano osoby sprawujące nadzór (jeśli jest to wymagane - wnioskowano o korektę).\n\nWnioski:\nZwrócono się do klienta z wnioskiem o dokonanie korekty wszystkich zniekształceń oprócz tych oznaczonych jako „oczywiście nieznaczące”.\nW przypadku, gdy korekta nie została wprowadzona, stosowną informację zawarto w pisemnym oświadczeniu (Część V.4).\nZ zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii osiągnięte zostały cele badania wskazane powyżej.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -20671,7 +20891,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Cele badania (MSB 580): \nPisemne oświadczenia kierownictwa pełnią rolę wspierającą i uzupełniającą w stosunku do pozostałych dowodów, ale same nie stanowią wystarczających dowodów z badania. Przykładowy projekt pisemnego oświadczenia znajduje się w Załączniku nr 7 do Przewodnika MSB.\n\nCele badania:\n1. Uzyskanie pisemnych oświadczeń od kierownictwa (oraz gdzie to odpowiednie, od osób sprawujących nadzór), że osoby te są przekonane, iż wywiązały się ze swojej odpowiedzialności za sporządzenie sprawozdania finansowego oraz kompletność informacji przekazanych biegłemu rewidentowi.\n2. Wsparcie innych dowodów badania dotyczących sprawozdania finansowego lub określonych stwierdzeń w nim zawartych za pomocą pisemnych oświadczeń, jeżeli biegły rewident uzna to za konieczne lub wynika to z innych MSB.\n3. Właściwa reakcja na złożone przez kierownictwo (oraz/lub, gdzie to odpowiednie, przez osoby sprawujące nadzór) pisemne oświadczenia lub niezłożenie przez kierownictwo (oraz/lub, gdzie to odpowiednie, przez osoby sprawujące nadzór) pisemnych oświadczeń, o które prosi biegły rewident.\n\nWniosek:\nZ zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii osiągnięte zostały cele badania wskazane powyżej.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -20781,7 +21006,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Cel badania:\nUpewnienie się, że sprawozdanie biegłego rewidenta zostało prawidłowo sporządzone zgodnie z przepisami krajowymi, MSB i innymi zawodowymi wytycznymi w tym zakresie, oraz że odzwierciedla wnioski z wykonanych czynności badania.\n\nWniosek:\nZ zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii osiągnięte zostały cele badania wskazane powyżej.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -21061,7 +21291,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Cele badania (MSB 260, 265):\n1. Upewnienie się, że w trakcie badania komunikowanie się z osobami sprawującymi nadzór w sprawach związanych z odpowiedzialnością biegłego rewidenta oraz przeglądem zaplanowanego zakresu i czasu przeprowadzenia badania odbywało się w jasny sposób.\n2. Upewnienie się, że uzyskano od osób sprawujących nadzór informacje ważne dla badania.\n3. Upewnienie się, że przekazano osobom sprawującym nadzór bez zbędnej zwłoki znaczące i związane z odpowiedzialnością tych osób za nadzorowanie procesu sprawozdawczości finansowej spostrzeżenia, jakie pojawiły się w trakcie badania.\n4. Upewnienie się, że w procesie badania promowano skuteczne dwustronne komunikowanie się pomiędzy biegłym rewidentem a osobami sprawującymi nadzór.\n5. Upewnienie się, że w trakcie badania następowało odpowiednie informowanie osób sprawujących nadzór i kierownictwa o słabości(ach) kontroli wewnętrznej, którą(e) biegły rewident rozpoznał i która(e), zgodnie z jego zawodowym osądem, ma(ją) na tyle duże znaczenie, że zasługuje(ą) na poświęcenie jej(im) uwagi.\n\nWniosek:\nZ zastrzeżeniem spraw przekazanych osobie dokonującej przeglądu, w mojej opinii osiągnięte zostały cele badania wskazane powyżej.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             },
@@ -21595,7 +21830,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Jako osoba odpowiedzialna za badanie potwierdzam, że:\n1. Zachowałem(am) niezależność w czasie przeprowadzania badania.\n2. Upewniłem(am) się, że potrzeba zachowania profesjonalnego sceptycyzmu została zakomunikowana zespołowi przeprowadzającemu badanie i że podjęto odpowiednią komunikację dotyczącą okoliczności, które mogą wskazywać na ryzyko wystąpienia istotnej nieprawidłowości wynikającej z nadużycia lub błędu.\n3. Ocena ryzyka oraz dalsze procedury badania były wystarczające, aby obniżyć ryzyko badania do akceptowalnego poziomu.\n4. Przejrzałem(am) dokumenty ukończenia badania, które adekwatnie odzwierciedlają istotne wyniki i kwestie zidentyfikowane podczas badania oraz sposób, w jaki zostały zaadresowane.\n5. Nie zgłaszam uwag do przebiegu badania z zastrzeżeniem wyjątków, które zostały wymienione w sprawozdaniu z badania.\n6. Badanie zostało przeprowadzone zgodnie z MSB i wewnętrznymi procedurami firmy audytorskiej oraz nie wymuszono na nas żadnych ograniczeń zakresu.\n7. Dowody pozyskane podczas badania są wystarczające i odpowiednie, aby stanowić podstawę naszej opinii z badania.\n8. Sprawozdanie finansowe przedstawia jasno we wszystkich istotnych aspektach sytuację finansową badanej jednostki i zostało przygotowane zgodnie z mającymi zastosowanie przepisami i przyjętymi zasadami (polityką) rachunkowości.\n9. Sprawozdanie z badania jest odpowiednio sformułowane.",
+                  "roles": [
+                    "Kluczowy biegły rewident"
+                  ]
+
                 }
               ]
             },
@@ -22029,10 +22269,6 @@
                 {
                   "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
-                },
-                {
-                  "title": "Wniosek",
-                  "type": "APPLICATION"
                 }
               ]
             },
@@ -22107,7 +22343,12 @@
                 },
                 {
                   "title": "Wniosek",
-                  "type": "APPLICATION"
+                  "type": "APPLICATION",
+                  "description": "Potwierdzam, że spisałem/am wszystkie zmiany i zagadnienia istotne z perspektywy przyszłego roku, a także zidentyfikowałem/am wszystkie obszary, w których wykonano zbędną pracę bądź też zastosowano metodologię nieoptymalną z punktu widzenia efektywności kosztowej.",
+                  "roles": [
+                    "Sporządził",
+                    "Sprawdził"
+                  ]
                 }
               ]
             }
