@@ -67,10 +67,10 @@ function KwestionariuszFull() {
         }));
     };
 
-    const renderCell = (col, row) => {
+    const renderCell = (col, row, tab) => {
         const rowKey = getRowKey(row);
-        const tdCenter = { textAlign: "center", border: "1px solid #dee2e6",padding: "0.40rem", };
-        const tdDescription = { border: "1px solid #dee2e6", fontSize: "0.85rem", paddingLeft: "1rem", paddingTop:"0.5rem", paddingBottom:"0.5rem", maxWidth: "45rem" };
+        const tdCenter = { textAlign: "center", border: "1px solid #dee2e6", padding: "0.40rem", };
+        const tdDescription = { border: "1px solid #dee2e6", fontSize: "0.85rem", paddingLeft: "0.8rem", paddingRight: "0.8rem", paddingTop:"0.5rem", paddingBottom:"0.5rem", maxWidth: "45rem" };
 
         switch (col.type) {
             case "no":
@@ -125,22 +125,37 @@ function KwestionariuszFull() {
 
             case "enum": {
                 const values = col.wartosci || [];
-                const value = (answers[rowKey]?.choice ?? row.answer?.value ?? values[0]) || "";
+                const value = answers[rowKey]?.choice ?? row.answer?.value ?? "";
+
                 return (
-                    <td key={col.label} style={tdCenter}>
-                        <select
-                            className="form-select form-select-sm"
-                            value={value}
-                            onChange={(e) =>
-                                setAnswers((prev) => ({ ...prev, [rowKey]: { ...prev[rowKey], choice: e.target.value } }))
-                            }
+                    <td key={col.label} style={{ border: "1px solid #dee2e6", padding: "0.8rem" }}>
+                        <div
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                height: "100%",
+                                gap: "0.7rem",
+                            }}
                         >
                             {values.map((v) => (
-                                <option key={v} value={v}>
-                                    {v}
-                                </option>
+                                <div className="form-check" key={v}>
+                                    <input
+                                        className="form-check-input"
+                                        type="radio"
+                                        name={`enum-${rowKey}-${col.label}`}
+                                        checked={value === v}
+                                        onChange={() =>
+                                            setAnswers((prev) => ({
+                                                ...prev,
+                                                [rowKey]: { ...prev[rowKey], choice: v },
+                                            }))
+                                        }
+                                    />
+                                    <label className="form-check-label">{v}</label>
+                                </div>
                             ))}
-                        </select>
+                        </div>
                     </td>
                 );
             }
@@ -183,48 +198,188 @@ function KwestionariuszFull() {
             }
 
             case "comment": {
-                const commentKey = getCommentKey(row, col);
-                const value = answers[commentKey]?.comment ?? row.komentarz ?? "";
+                const commentKey = getCommentKey(row, col); // unique per row/col
+                const ans = answers[commentKey] || {};
+                const predefinedComments = Array.isArray(col.predefinedComments) ? col.predefinedComments : [];
+
+                const addCommentToDatabase = (newComment) => {
+                    console.log("Saving comment to DB:", newComment);
+                };
 
                 return (
-                    <td key={col.label} style={tdCenter}>
-                        <input
-                            type="text"
-                            className="form-control form-control-sm"
-                            placeholder={col.label}
-                            value={value}
-                            onChange={(e) =>
-                                setAnswers(prev => ({
-                                    ...prev,
-                                    [commentKey]: { ...prev[commentKey], comment: e.target.value }
-                                }))
-                            }
-                        />
+                    <td style={{ border: "1px solid #dee2e6", minWidth: 150, padding: "0.5rem", textAlign: "center" }}>
+                        {ans.comment && !ans.editing ? (
+                            <div className="d-flex flex-column align-items-center" style={{ gap: "0.5rem" }}>
+                    <span
+                        className="badge bg-light text-dark text-break"
+                        style={{ whiteSpace: 'pre-wrap',wordBreak: "break-word",
+                             fontWeight: 400, fontSize: "0.85rem", padding: "0.4rem 0.6rem" }}
+                    >
+                        {ans.comment}
+                    </span>
+                                <div className="d-flex gap-2 flex-wrap justify-content-center">
+                                    <button
+                                        className="btn btn-sm btn-outline-secondary"
+                                        onClick={() =>
+                                            setAnswers(prev => ({
+                                                ...prev,
+                                                [commentKey]: { ...prev[commentKey], editing: true }
+                                            }))
+                                        }
+                                    >
+                                        Edytuj
+                                    </button>
+                                    <button
+                                        className="btn btn-sm btn-outline-danger"
+                                        onClick={() =>
+                                            setAnswers(prev => ({
+                                                ...prev,
+                                                [commentKey]: { choice: prev[commentKey]?.choice || "NIE", comment: "", editing: false }
+                                            }))
+                                        }
+                                    >
+                                        Usuń
+                                    </button>
+                                </div>
+                            </div>
+                        ) : ans.editing ? (
+                            <div className="d-flex flex-column align-items-center" style={{ gap: "0.5rem" }}>
+                                {predefinedComments.length > 0 && (
+                                    <select
+                                        className="form-select form-select-sm"
+                                        value={ans.comment || ""}
+                                        onChange={(e) =>
+                                            setAnswers(prev => ({
+                                                ...prev,
+                                                [commentKey]: { ...prev[commentKey], comment: e.target.value }
+                                            }))
+                                        }
+                                    >
+                                        <option value="">Wybierz komentarz...</option>
+                                        {predefinedComments.map((c) => (
+                                            <option key={c} value={c}>{c}</option>
+                                        ))}
+                                    </select>
+                                )}
+                                <textarea
+                                    className="form-control form-control-sm"
+                                    placeholder="Wpisz komentarz"
+                                    value={ans.comment || ""}
+                                    onChange={(e) =>
+                                        setAnswers(prev => ({
+                                            ...prev,
+                                            [commentKey]: { ...prev[commentKey], comment: e.target.value }
+                                        }))
+                                    }
+                                />
+                                {ans.comment && !predefinedComments.includes(ans.comment) && (
+                                    <button
+                                        className="btn btn-sm btn-outline-success"
+                                        onClick={() => addCommentToDatabase(ans.comment)}
+                                    >
+                                        Dodaj do bazy
+                                    </button>
+                                )}
+                                <div className="d-flex gap-2 justify-content-center">
+                                    <button
+                                        className="btn btn-sm btn-success"
+                                        onClick={() =>
+                                            setAnswers(prev => ({
+                                                ...prev,
+                                                [commentKey]: { ...prev[commentKey], editing: false }
+                                            }))
+                                        }
+                                    >
+                                        Zapisz
+                                    </button>
+                                    <button
+                                        className="btn btn-sm btn-outline-danger"
+                                        onClick={() =>
+                                            setAnswers(prev => ({
+                                                ...prev,
+                                                [commentKey]: { choice: prev[commentKey]?.choice || "NIE", comment: "", editing: false }
+                                            }))
+                                        }
+                                    >
+                                        Anuluj
+                                    </button>
+                                </div>
+                            </div>
+                        ) : (
+                            <button
+                                className="btn btn-sm btn-outline-primary"
+                                style={{ display: "block", margin: "0 auto" }}
+                                onClick={() =>
+                                    setAnswers(prev => ({
+                                        ...prev,
+                                        [commentKey]: { choice: prev[commentKey]?.choice || "NIE", editing: true }
+                                    }))
+                                }
+                            >
+                                Dodaj komentarz
+                            </button>
+                        )}
                     </td>
                 );
             }
 
             case "author": {
-                const author = answers[rowKey]?.author ?? row.author;
-                const date = answers[rowKey]?.date ?? row.date;
+                const rowKey = `${screenData.id}-${tab?.title || tab?.["title:"] || "unknown"}-${row.id || row.lp}`;
+                const isApprover = col.label === "Zatwierdził";
+
+                const person = isApprover
+                    ? answers[rowKey]?.approver ?? row.approver
+                    : answers[rowKey]?.author ?? row.author;
+
+                const timestamp = isApprover
+                    ? answers[rowKey]?.approvedAt ?? row.approvedAt
+                    : answers[rowKey]?.date ?? row.date;
+
+                const buttonColor = isApprover ? "success" : "primary";
+                const avatarColor = isApprover ? "#198754" : "#0d6efd";
+                const buttonLabel = isApprover ? "Zatwierdź" : "Sporządź";
+
+                const handleClick = () => {
+                    setAnswers((prev) => ({
+                        ...prev,
+                        [rowKey]: {
+                            ...prev[rowKey],
+                            ...(isApprover
+                                ? {
+                                    approver: "Anna Nowak",
+                                    approvedAt: new Date().toISOString(),
+                                }
+                                : {
+                                    author: "Jan Kowalski",
+                                    date: new Date().toISOString(),
+                                }),
+                        },
+                    }));
+                };
+
                 return (
                     <td key={col.label} style={tdCenter}>
-                        {author ? (
+                        {person ? (
                             <div className="d-flex align-items-center justify-content-center gap-2">
-                                <InitialsAvatar name={author} size={23} />
-                                <span className="text-muted small">{date ? timeAgo(new Date(date)) : ""}</span>
+                                <InitialsAvatar
+                                    name={person}
+                                    size={23}
+                                    style={{
+                                        backgroundColor: avatarColor,
+                                        color: "#fff",
+                                        fontWeight: 600,
+                                    }}
+                                />
+                                <span className="text-muted small">
+                        {timestamp ? timeAgo(new Date(timestamp)) : ""}
+                    </span>
                             </div>
                         ) : (
                             <button
-                                className="btn btn-sm btn-outline-primary"
-                                onClick={() =>
-                                    setAnswers((prev) => ({
-                                        ...prev,
-                                        [rowKey]: { ...prev[rowKey], author: "Jan Kowalski", date: new Date().toISOString() },
-                                    }))
-                                }
+                                className={`btn btn-sm btn-outline-${buttonColor}`}
+                                onClick={handleClick}
                             >
-                                Zatwierdź
+                                {buttonLabel}
                             </button>
                         )}
                     </td>
@@ -232,10 +387,8 @@ function KwestionariuszFull() {
             }
 
             case "select": {
-                // Get the currently selected value from answers or fallback to row value
                 const value = answers[rowKey]?.[col.label] ?? row[col.label]?.value ?? "";
 
-                // Get options from column definition
                 const options = col.options || [];
 
                 return (
@@ -306,7 +459,7 @@ function KwestionariuszFull() {
             case "file": {
                 const file = answers[rowKey]?.file ?? row.file;
                 return (
-                    <td key={col.label} style={tdCenter}>
+                    <td key={col.label} style={{...tdCenter, minWidth: "6rem"}}>
                         {!file ? (
                             <label className="btn btn-sm btn-outline-secondary mb-0">
                                 Dodaj plik
@@ -337,39 +490,37 @@ function KwestionariuszFull() {
         }
     };
 
-    function DynamicTable({ tab, answers, setAnswers }) {
-        const rows = tab.rows || [];
-
-        const flattenRows = (rows) => {
-            let result = [];
-            rows.forEach((row) => {
-                if (row.sections) {
-                    row.sections.forEach((section) => {
-                        result.push({ isSection: true, name: section.name });
-                        result.push(...flattenRows(section.questions || []));
-                    });
-                } else if (row.subquestions) {
-                    result.push(row);
-                    result.push(...flattenRows(row.subquestions));
-                } else {
-                    result.push(row);
-                }
-            });
-            return result;
-        };
+    const RenderTableDynamic = ({ tab, answers, setAnswers }) => {
+        const [rows, setRows] = React.useState(
+            (tab.rows || []).map((r, index) => ({ id: index + 1, ...r }))
+        );
 
         const addRow = () => {
-            const newRow = { id: Date.now(), zagadnienie: "", komentarz: "", author: null, date: null };
-            tab.rows = [...tab.rows, newRow];
-            setAnswers((prev) => ({ ...prev })); // trigger re-render
+            setRows(prev => [
+                ...prev,
+                {
+                    id: prev.length + 1,
+                    zagrozenie: "",
+                    srodek: "",
+                    author: "",
+                    approver: "",
+                    date: null,
+                    approvedAt: null
+                }
+            ]);
         };
 
-        const removeRow = (rowId) => {
-            tab.rows = tab.rows.filter(r => r.id !== rowId);
-            setAnswers((prev) => ({ ...prev })); // trigger re-render
+        const removeRow = (id) => {
+            setRows(prev => prev.filter(r => r.id !== id));
         };
 
-        const flattened = flattenRows(tab.rows);
+        const updateCell = (rowId, field, value) => {
+            setRows(prev =>
+                prev.map(r => (r.id === rowId ? { ...r, [field]: value } : r))
+            );
+        };
+
+        if (!rows.length) return <div className="p-2">Brak danych do wyświetlenia</div>;
 
         return (
             <div>
@@ -377,49 +528,100 @@ function KwestionariuszFull() {
                     <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize: "0.85rem" }}>
                         <thead className="table-light" style={{ position: "sticky", top: 0, zIndex: 5 }}>
                         <tr>
-                            {tab.columns.map((col) => (
-                                <th key={col.label} style={headerStyle}>{col.label}</th>
-                            ))}
-                            <th style={headerStyle}>Akcje</th>
+                            {tab.columns.map(col => <th style ={headerStyle} key={col.label}>{col.label}</th>)}
+                            <th style ={headerStyle}>Akcje</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {flattened.map((row, i) =>
-                            row.isSection ? (
-                                <tr key={`section-${i}`}>
-                                    <td colSpan={tab.columns.length + 1} style={{ backgroundColor: "#005679", color: "#fff", textAlign: "center", fontWeight: "bold", padding: "0.75rem" }}>
-                                        {row.name}
-                                    </td>
-                                </tr>
-                            ) : (
-                                <tr key={row.id || i}>
-                                    {tab.columns.map((col, colIndex) => {
-                                        if (col.type === "no") {
-                                            const lp = flattened.slice(0, i).filter(r => !r.isSection).length + 1;
-                                            return <td key={col.label} style={{ textAlign: "center", border: "1px solid #dee2e6", padding: "0.4rem" }}>{lp}</td>;
-                                        }
-                                        return renderCell(col, row);
-                                    })}
-                                    <td style={{ textAlign: "center" }}>
-                                        <button className="btn btn-sm btn-outline-danger" onClick={() => removeRow(row.id)}>Usuń</button>
-                                    </td>
-                                </tr>
-                            )
-                        )}
+                        {rows.map(row => (
+                            <tr key={row.id}>
+                                {tab.columns.map(col => {
+                                    if (col.type === "no") {
+                                        return <td key={col.label} style={{ textAlign: "center" }}>{row.id}</td>;
+                                    }
+
+                                    if (col.type === "comment") {
+                                        return (
+                                            <td key={col.label}>
+                                                <textarea
+                                                    className="form-control form-control-sm"
+                                                    value={row[col.label.toLowerCase()] || ""}
+                                                    onChange={e =>
+                                                        updateCell(row.id, col.label.toLowerCase(), e.target.value)
+                                                    }
+                                                />
+                                            </td>
+                                        );
+                                    }
+
+                                    if (col.type === "author") {
+                                        const isApprover = col.label === "Zatwierdził";
+                                        const fieldName = isApprover ? "approver" : "author";
+                                        const dateName = isApprover ? "approvedAt" : "date";
+                                        const buttonColor = isApprover ? "success" : "primary";
+                                        const buttonLabel = isApprover ? "Zatwierdź" : "Sporządź";
+
+                                        return (
+                                            <td key={col.label} style={{ textAlign: "center" }}>
+                                                {row[fieldName] ? (
+                                                    <div className="d-flex align-items-center justify-content-center gap-2">
+                                                        <InitialsAvatar
+                                                            name={row[fieldName]}
+                                                            size={23}
+                                                            style={{
+                                                                backgroundColor: isApprover ? "#198754" : "#0d6efd",
+                                                                color: "#fff",
+                                                                fontWeight: 600,
+                                                            }}
+                                                        />
+                                                        <div>
+                                                            {row[dateName] && (
+                                                                <small className="text-muted">{timeAgo(new Date(row[dateName]))}</small>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <button
+                                                        className={`btn btn-sm btn-outline-${buttonColor}`}
+                                                        onClick={() => {
+                                                            const now = new Date().toISOString();
+                                                            updateCell(row.id, fieldName, isApprover ? "Anna Nowak" : "Jan Kowalski");
+                                                            updateCell(row.id, dateName, now); // <--- set timestamp here
+                                                        }}
+                                                    >
+                                                        {buttonLabel}
+                                                    </button>
+                                                )}
+                                            </td>
+                                        );
+                                    }
+
+
+                                    return <td key={col.label}>{row[col.label.toLowerCase()] || ""}</td>;
+                                })}
+                                <td>
+                                    <button
+                                        className="btn btn-sm btn-outline-danger"
+                                        onClick={() => removeRow(row.id)}
+                                    >
+                                        Usuń
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
                         </tbody>
                     </table>
                 </div>
-                <div className="mt-2">
-                    <button className="btn btn-sm btn-outline-success" onClick={addRow}>+ Dodaj wiersz</button>
-                </div>
+                <button className="btn btn-sm btn-outline-success mt-2" onClick={addRow}>
+                    + Dodaj wiersz
+                </button>
             </div>
         );
-    }
+    };
 
 
 
     const renderTable = (tab) => {
-        // Recursive function to flatten rows, sections, and subquestions
         const flattenRows = (rows) => {
             let result = [];
 
@@ -442,6 +644,7 @@ function KwestionariuszFull() {
 
         const rawRows = tab.rows || screenData.rows || [];
         const rows = flattenRows(rawRows);
+
 
         if (!rows.length) return <div className="p-2">Brak danych do wyświetlenia</div>;
 
@@ -476,7 +679,7 @@ function KwestionariuszFull() {
                             </tr>
                         ) : (
                             <tr key={i}>
-                                {tab.columns.map((col) => renderCell(col, row))}
+                                {tab.columns.map((col) => renderCell(col, row, tab))}
                             </tr>
                         )
                     )}
@@ -485,6 +688,93 @@ function KwestionariuszFull() {
             </div>
         );
     };
+
+    const renderTeamTable = (tab, answers = {}, setAnswers) => {
+        // Flatten rows including subquestions
+        const flattenRows = (rows) => {
+            let result = [];
+            rows.forEach((row) => {
+                result.push(row);
+                if (row.subquestions) {
+                    result.push(...flattenRows(row.subquestions));
+                }
+            });
+            return result;
+        };
+
+        if (!tab.members || tab.members.length === 0)
+            return <div className="p-2">Brak danych</div>;
+
+        return tab.members.map((member, mIndex) => {
+            const rows = flattenRows(member.questions || []);
+
+            // Columns visible for this member
+            const visibleColumns = tab.columns.filter((col) => {
+                if (["Rola", "Imię i nazwisko"].includes(col.title)) return false;
+                if (col.title === "Numer identyfikacyjny") return member.role === "Kierownik";
+                return true;
+            });
+
+            // Unique key for member
+            const memberKey = member.imieNazwisko || `${member.role}-${mIndex}`;
+            const memberAnswers = answers[memberKey] || {};
+
+            // Scoped function to update answers for this member
+            const handleAnswerChange = (rowLp, colKey, value) => {
+                setAnswers(prev => ({
+                    ...prev,
+                    [memberKey]: {
+                        ...(prev[memberKey] || {}),
+                        [rowLp]: {
+                            ...((prev[memberKey] || {})[rowLp] || {}),
+                            [colKey]: value
+                        }
+                    }
+                }));
+            };
+
+            return (
+                <div key={memberKey} className="mb-4">
+                    {/* Member header */}
+                    <div className="mb-0 p-2" style={headerStyle}>
+                        <div>
+                            <strong>Imię i nazwisko:</strong> {member.imieNazwisko || "-"}
+                        </div>
+                        {member.role === "Kluczowy biegły rewident" && (
+                            <div>
+                                <strong>Numer identyfikacyjny:</strong> {member.idNumber || "-"}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Questions table */}
+                    <div className="table-responsive">
+                        <table className="table table-hover table-sm mb-0 align-middle" style={{ fontSize: "0.85rem" }}>
+                            <thead className="table-light">
+                            <tr>
+                                {visibleColumns.map(col => (
+                                    <th key={col.title} style={headerStyle}>{col.title}</th>
+                                ))}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {rows.map((row) => (
+                                <tr key={`${memberKey}-${row.lp}`}>
+                                    {visibleColumns.map(col =>
+                                        renderCell(col, row, tab, memberAnswers, handleAnswerChange, member)
+                                    )}
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            );
+        });
+    };
+
+
+
 
     return (
         <div className="d-flex min-vh-100">
@@ -500,8 +790,10 @@ function KwestionariuszFull() {
                         switch (tab.type) {
                             case "CUSTOM":
                                 return <div key={i}>{renderTable(tab)}</div>;
+                            case "Team":
+                                return <div key={i}>{renderTeamTable(tab)}</div>;
                             case "DYNAMIC":
-                                return <DynamicTable key={i} tab={tab} answers={answers} setAnswers={setAnswers} />;
+                                return <RenderTableDynamic key={i} tab={tab} answers={answers} setAnswers={setAnswers} />;
                             case "REQUEST":
                                 return <RequestsTable key={i} requests={[]} setRequests={() => {}} />;
                             case "FILES":

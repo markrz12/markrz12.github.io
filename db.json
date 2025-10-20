@@ -1136,7 +1136,7 @@
               "percent": 100,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -1153,7 +1153,12 @@
                     },
                     {
                       "type": "comment",
-                      "label": "Komentarz"
+                      "label": "Komentarz",
+                      "predefinedComments": [
+                        "Komentarz 1",
+                        "Komentarz 2",
+                        "Komentarz 3"
+                      ]
                     },
                     {
                       "type": "author",
@@ -1784,15 +1789,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -1803,7 +1808,7 @@
               "percent": 70,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -2240,15 +2245,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -2259,7 +2264,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -2867,15 +2872,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -2886,7 +2891,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "DYNAMIC",
                   "columns": [
                     {
@@ -2907,29 +2912,31 @@
                     },
                     {
                       "type": "author",
-                      "label": "Zatwierdź"
+                      "label": "Zatwierdził"
                     }
                   ],
                   "rows": [
                     {
-                    "lp": "1",
-                    "zagrozenie": null,
-                    "srodek": null,
-                    "author": null,
-                    "date": null
-                  }
+                      "lp": "1",
+                      "zagrozenie": null,
+                      "srodek": null,
+                      "author": null,
+                      "approver": null,
+                      "date": null,
+                      "approvedAt": null
+                    }
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -2940,7 +2947,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "Team",
                   "columns": [
                     {
@@ -3041,28 +3048,28 @@
                       "imieNazwisko": null,
                       "questions": [
                         {
-                          "lp": 1,
+                          "lp": 1.1,
                           "question": "Czy spełnia wymogi niezależności? (załącz test niezależności)",
                           "answer": null,
                           "comment": null,
                           "attachment": null
                         },
                         {
-                          "lp": 2,
+                          "lp": 1.2,
                           "question": "Czy posiada odpowiednie doświadczenie zawodowe w specyfice działalności klienta badania?",
                           "answer": null,
                           "comment": null,
                           "attachment": null
                         },
                         {
-                          "lp": 3,
+                          "lp": 1.3,
                           "question": "Czy dysponuje odpowiednią ilością czasu?",
                           "answer": null,
                           "comment": null,
                           "attachment": null
                         },
                         {
-                          "lp": 4,
+                          "lp": 1.4,
                           "question": "Czy będzie zdolny do przestrzegania wszystkich zasad etyki zawodowej?",
                           "answer": null,
                           "comment": null,
@@ -3073,19 +3080,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -3105,7 +3112,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -3121,12 +3128,8 @@
                           "label": "MSB"
                         },
                         {
-                          "type": "enum",
-                          "label": "Odpowiedź",
-                          "wartosci": [
-                            "tak",
-                            "nie"
-                          ]
+                          "type": "yes_no",
+                          "label": "Odpowiedź"
                         },
                         {
                           "type": "file",
@@ -3508,15 +3511,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     },
                     {
@@ -3531,7 +3534,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -3550,9 +3553,9 @@
                           "type": "enum",
                           "label": "Odpowiedź",
                           "wartosci": [
-                            "tak",
-                            "nie",
-                            "nd"
+                            "Tak",
+                            "Nie",
+                            "N/D"
                           ]
                         },
                         {
@@ -3830,15 +3833,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     }
                   ]
@@ -3849,7 +3852,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -3868,9 +3871,9 @@
                           "type": "enum",
                           "label": "Odpowiedź",
                           "wartosci": [
-                            "tak",
-                            "nie",
-                            "nd"
+                            "Tak",
+                            "Nie",
+                            "N/D"
                           ]
                         },
                         {
@@ -3945,15 +3948,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     },
                     {
@@ -3968,7 +3971,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -3987,9 +3990,9 @@
                           "type": "enum",
                           "label": "Odpowiedź",
                           "wartosci": [
-                            "tak",
-                            "nie",
-                            "nd"
+                            "Tak",
+                            "Nie",
+                            "N/D"
                           ]
                         },
                         {
@@ -4053,15 +4056,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     },
                     {
@@ -4076,7 +4079,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -4092,12 +4095,12 @@
                           "type": "comment"
                         },
                         {
-                          "label": "Sporządzil",
-                          "type": "author"
+                          "type": "author",
+                          "label": "Sporządził"
                         },
                         {
-                          "label": "Zatwierdzil",
-                          "type": "author"
+                          "type": "author",
+                          "label": "Zatwierdził"
                         }
                       ],
                       "rows": [
@@ -4149,7 +4152,7 @@
                       ]
                     },
                     {
-                      "title:": "Zmiany poziomów istotności",
+                      "title": "Zmiany poziomów istotności",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -4223,7 +4226,7 @@
                       ]
                     },
                     {
-                      "title:": "Zakończenie badania",
+                      "title": "Zakończenie badania",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -4285,15 +4288,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     },
                     {
@@ -4308,7 +4311,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -4327,9 +4330,9 @@
                           "type": "enum",
                           "label": "Odpowiedź",
                           "wartosci": [
-                            "tak",
-                            "nie",
-                            "nd"
+                            "Tak",
+                            "Nie",
+                            "N/D"
                           ]
                         },
                         {
@@ -4448,15 +4451,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     },
                     {
@@ -4471,7 +4474,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -4490,9 +4493,9 @@
                           "type": "enum",
                           "label": "Odpowiedź",
                           "wartosci": [
-                            "tak",
-                            "nie",
-                            "nd"
+                            "Tak",
+                            "Nie",
+                            "N/D"
                           ]
                         },
                         {
@@ -4589,15 +4592,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     },
                     {
@@ -4612,7 +4615,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Notatka - planowanie",
+                      "title": "Notatka - planowanie",
                       "type": "CUSTOM",
                       "columns": [
                         { "label": "Pytanie", "type": "description" },
@@ -4759,7 +4762,7 @@
                       ]
                     },
                     {
-                      "title:": "Notatka - zespół",
+                      "title": "Notatka - zespół",
                       "type": "CUSTOM",
                       "columns": [
                         { "label": "Pytanie", "type": "description" },
@@ -4815,15 +4818,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     }
                   ]
@@ -4834,7 +4837,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -5018,15 +5021,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     }
                   ]
@@ -5037,7 +5040,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -5561,15 +5564,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     }
                   ]
@@ -5585,7 +5588,7 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -6234,15 +6237,15 @@
                       }
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     },
                     {
@@ -6257,15 +6260,15 @@
                   "percent": 0,
                   "tabs": [
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     },
                     {
@@ -6285,7 +6288,7 @@
                   "title": "II.3.1 Program badania",
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -6304,9 +6307,9 @@
                           "type": "enum",
                           "label": "Odpowiedź",
                           "wartosci": [
-                            "tak",
-                            "nie",
-                            "nd"
+                            "Tak",
+                            "Nie",
+                            "N/D"
                           ]
                         },
                         {
@@ -6388,15 +6391,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     }
                   ]
@@ -6406,7 +6409,7 @@
                   "title": "II.3.2 Dokumentacja zrozumienia kontroli wewnętrznej jednostki",
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -6425,9 +6428,9 @@
                           "type": "enum",
                           "label": "Odpowiedź",
                           "wartosci": [
-                            "tak",
-                            "nie",
-                            "nd"
+                            "Tak",
+                            "Nie",
+                            "N/D"
                           ]
                         },
                         {
@@ -6561,15 +6564,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     }
                   ]
@@ -6579,7 +6582,7 @@
                   "title": "II.3.3 Opis kluczowych procesów i działań kontrolnych",
                   "tabs": [
                     {
-                      "title:": "Kwestionariusz",
+                      "title": "Kwestionariusz",
                       "type": "CUSTOM",
                       "columns": [
                         {
@@ -6594,9 +6597,9 @@
                           "type": "enum",
                           "label": "Odpowiedź",
                           "wartosci": [
-                            "tak",
-                            "nie",
-                            "nd"
+                            "Tak",
+                            "Nie",
+                            "N/D"
                           ]
                         },
                         {
@@ -6692,15 +6695,15 @@
                       ]
                     },
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     }
                   ]
@@ -6710,15 +6713,15 @@
                   "title": "II.3.4 Przegląd kontroli wewnętrznej",
                   "tabs": [
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     }
                   ]
@@ -6728,15 +6731,15 @@
                   "title": "II.3.5 Testy kontroli wewnętrznej",
                   "tabs": [
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     }
                   ]
@@ -6746,15 +6749,15 @@
                   "title": "II.3.6 Ocena kontroli wewnętrznej",
                   "tabs": [
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     }
                   ]
@@ -6770,19 +6773,19 @@
                   "title": "II.4 Macierz ryzyk",
                   "tabs": [
                     {
-                      "title:": "Zapotrzebowanie",
+                      "title": "Zapotrzebowanie",
                       "type": "REQUEST"
                     },
                     {
-                      "title:": "Pliki",
+                      "title": "Pliki",
                       "type": "FILES"
                     },
                     {
-                      "title:": "Dziennik zdarzeń",
+                      "title": "Dziennik zdarzeń",
                       "type": "ACTIVITY_LOG"
                     },
                     {
-                      "title:": "Wniosek",
+                      "title": "Wniosek",
                       "type": "APPLICATION"
                     }
                   ]
@@ -6801,7 +6804,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -6933,15 +6936,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -6952,7 +6955,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -7196,7 +7199,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -7433,7 +7436,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -7504,7 +7507,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -7752,15 +7755,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -7771,7 +7774,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -8015,7 +8018,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -8252,7 +8255,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -8340,7 +8343,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -8753,15 +8756,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -8772,7 +8775,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -9016,7 +9019,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -9253,7 +9256,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -9359,7 +9362,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -9706,15 +9709,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -9725,7 +9728,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -9969,7 +9972,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -10206,7 +10209,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -10321,7 +10324,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -10690,7 +10693,7 @@
                   ]
                 },
                 {
-                  "title:": "Obserwacje",
+                  "title": "Obserwacje",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -10705,9 +10708,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -10997,15 +11000,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -11016,7 +11019,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -11260,7 +11263,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -11497,7 +11500,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -11590,7 +11593,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -11959,15 +11962,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -11978,7 +11981,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -12222,7 +12225,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -12459,7 +12462,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -12525,7 +12528,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -12751,15 +12754,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -12770,7 +12773,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -13014,7 +13017,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -13251,7 +13254,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -13308,7 +13311,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -13534,15 +13537,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -13553,7 +13556,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -13797,7 +13800,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -14034,7 +14037,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -14091,7 +14094,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -14350,15 +14353,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -14369,7 +14372,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -14613,7 +14616,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -14850,7 +14853,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -14929,7 +14932,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -15176,15 +15179,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -15195,7 +15198,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -15439,7 +15442,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -15676,7 +15679,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -15768,7 +15771,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -16148,15 +16151,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -16167,7 +16170,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -16411,7 +16414,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -16648,7 +16651,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -16718,7 +16721,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -17043,15 +17046,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -17062,7 +17065,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -17306,7 +17309,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -17543,7 +17546,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -17613,7 +17616,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -17938,15 +17941,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -17957,7 +17960,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Salda kont",
+                  "title": "Salda kont",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -18201,7 +18204,7 @@
                   ]
                 },
                 {
-                  "title:": "Prezentacja i ujawnienia",
+                  "title": "Prezentacja i ujawnienia",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -18438,7 +18441,7 @@
                   ]
                 },
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -18484,7 +18487,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -18721,15 +18724,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -18740,7 +18743,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Cele badania",
+                  "title": "Cele badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -18775,7 +18778,7 @@
                   ]
                 },
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -18924,15 +18927,15 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 }
               ]
@@ -18949,7 +18952,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -18968,9 +18971,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -19041,19 +19044,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -19064,7 +19067,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -19083,9 +19086,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -19288,19 +19291,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -19311,7 +19314,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -19330,9 +19333,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -19546,19 +19549,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -19569,7 +19572,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -19588,9 +19591,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -19758,19 +19761,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -19781,7 +19784,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Program badania",
+                  "title": "Program badania",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -19800,9 +19803,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -19983,7 +19986,7 @@
                   ]
                 },
                 {
-                  "title:": "Kontynuacja działalności",
+                  "title": "Kontynuacja działalności",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -20217,7 +20220,7 @@
                   ]
                 },
                 {
-                  "title:": "Ocena końcowa",
+                  "title": "Ocena końcowa",
                   "type": "CUSTOM",
                   "description": "W sytuacji, gdy rozpoznano konkretne rodzaje ryzyka, należy je w pełni udokumentować i opisać wpływ na ocenę kontynuacji działalności. Wnioski biegłego rewidenta powinny zostać udokumentowane, nawet jeśli biegły dojdzie do wniosku, że nie występują problemy w zakresie zdolności do kontynuacji działalności.",
                   "value": null,
@@ -20225,19 +20228,19 @@
                   "date": null
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -20248,7 +20251,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -20259,7 +20262,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -20276,7 +20279,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -20286,7 +20289,13 @@
                     {
                       "label": "Odpowiedź",
                       "type": "comment",
-                      "description": "Pole tekstowe na odpowiedź"
+                      "description": "Pole tekstowe na odpowiedź",
+                      "predefinedComments": [
+                        "Komentarz 1",
+                        "Komentarz 2",
+                        "Komentarz 3"
+                      ]
+
                     },
                     {
                       "label": "Sporządził",
@@ -20333,19 +20342,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -20356,7 +20365,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -20375,9 +20384,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -20452,19 +20461,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -20475,19 +20484,19 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -20498,7 +20507,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -20517,9 +20526,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -20649,19 +20658,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -20672,7 +20681,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -20687,9 +20696,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -20759,19 +20768,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -20782,7 +20791,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -20801,9 +20810,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -20999,7 +21008,7 @@
                   ]
                 },
                 {
-                  "title:": "Daty",
+                  "title": "Daty",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -21039,19 +21048,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -21062,7 +21071,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Załączniki",
+                  "title": "Załączniki",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -21180,7 +21189,7 @@
                   ]
                 },
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -21199,9 +21208,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -21573,19 +21582,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -21596,7 +21605,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz - kluczowy biegły rewident",
+                  "title": "Kwestionariusz - kluczowy biegły rewident",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -21615,9 +21624,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -21780,7 +21789,7 @@
                   ]
                 },
                 {
-                  "title:": "Kwestionariusz - weryfikator jakości",
+                  "title": "Kwestionariusz - weryfikator jakości",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -21799,9 +21808,9 @@
                       "type": "enum",
                       "label": "Odpowiedź",
                       "wartosci": [
-                        "tak",
-                        "nie",
-                        "nd"
+                        "Tak",
+                        "Nie",
+                        "N/D"
                       ]
                     },
                     {
@@ -21843,7 +21852,7 @@
                   ]
                 },
                 {
-                  "title:": "Rozważane kwestie oraz uwagi weryfikatora",
+                  "title": "Rozważane kwestie oraz uwagi weryfikatora",
                   "type": "DYNAMIC",
                   "columns": [
                     {
@@ -21874,7 +21883,7 @@
                   ]
                 },
                 {
-                  "title:": "Potwierdzenie kontroli jakości",
+                  "title": "Potwierdzenie kontroli jakości",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -22010,19 +22019,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
@@ -22033,7 +22042,7 @@
               "percent": 0,
               "tabs": [
                 {
-                  "title:": "Kwestionariusz",
+                  "title": "Kwestionariusz",
                   "type": "CUSTOM",
                   "columns": [
                     {
@@ -22085,19 +22094,19 @@
                   ]
                 },
                 {
-                  "title:": "Zapotrzebowanie",
+                  "title": "Zapotrzebowanie",
                   "type": "REQUEST"
                 },
                 {
-                  "title:": "Pliki",
+                  "title": "Pliki",
                   "type": "FILES"
                 },
                 {
-                  "title:": "Dziennik zdarzeń",
+                  "title": "Dziennik zdarzeń",
                   "type": "ACTIVITY_LOG"
                 },
                 {
-                  "title:": "Wniosek",
+                  "title": "Wniosek",
                   "type": "APPLICATION"
                 }
               ]
