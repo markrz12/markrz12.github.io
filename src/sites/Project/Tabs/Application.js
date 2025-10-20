@@ -20,7 +20,6 @@ export default function Application({ initialSubmission }) {
 
     function AutoResizeTextarea({ value }) {
         const textareaRef = useRef(null);
-        const [height, setHeight] = useState("auto");
 
         useEffect(() => {
             if (textareaRef.current) {
@@ -41,7 +40,7 @@ export default function Application({ initialSubmission }) {
     }
 
     return (
-        <div className="container">
+        <div className="container p-0">
             <div className="card mb-3 shadow-sm">
                 <div
                     className="card-header fw-semibold d-flex justify-content-between align-items-center"
