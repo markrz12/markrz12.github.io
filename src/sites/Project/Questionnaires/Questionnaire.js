@@ -54,7 +54,26 @@ function KwestionariuszFull() {
         row.zagadnienie || row.wskaz || row.q || row.pytanie || row.opis || row.nazwa || row.cele || row.stwierdzenie || row.obszary || row.test || row.question || "";
 
     // Unique key for rows per questionnaire
-    const getRowKey = (row) => `${screenData.id}-${row.id || getText(row)}`;
+    const hashString = (str) => {
+        let hash = 0;
+        if (!str) return "0";
+        for (let i = 0; i < str.length; i++) {
+            hash = (hash << 5) - hash + str.charCodeAt(i);
+            hash |= 0;
+        }
+        return hash.toString(36);
+    };
+
+// Universal row key generator
+    const getRowKey = (row, tab) => {
+        const rowId = (row.id ?? row.lp ?? hashString(JSON.stringify(row))).toString();
+        const tabId = (tab?.title || tab?.["title:"] || "unknown").replace(/\s+/g, "_");
+        const screenId = screenData?.title ? hashString(screenData.title) : "screen"; // hash of screen title
+        return `${screenId}-${tabId}-${rowId}`;
+    };
+
+
+
     const getCommentKey = (row, col) => `${screenData.id}-${row.id || getText(row)}-comment-${col.label}`;
 
     // Handle dynamic / checkbox / select changes
@@ -93,7 +112,7 @@ function KwestionariuszFull() {
             case "description":
             case "text":
                 if (col.label === "MSB") {
-                    return <td key={col.label} style={tdDescription}>{row.msb || ""}</td>;
+                    return <td key={col.label} style={{...tdDescription, maxWidth: "120px"}}>{row.msb || ""}</td>;
                 }
                 if (col.label === "Powiązane obszary") {
                     return (
@@ -339,7 +358,7 @@ function KwestionariuszFull() {
             }
 
             case "author": {
-                const rowKey = `${screenData.id}-${tab?.title || tab?.["title:"] || "unknown"}-${row.id || row.lp}`;
+                const rowKey = getRowKey(row, tab);
                 const isApprover = col.label === "Zatwierdził";
 
                 const person = isApprover
@@ -816,8 +835,6 @@ function KwestionariuszFull() {
                         const tabTitle = (tab.title || "").trim().replace(/:$/, "");
                         const normalizedActiveTab = (activeTab || "").trim().replace(/:$/, "");
                         if (tabTitle !== normalizedActiveTab) return null;
-
-
 
                         switch (tab.type) {
                             case "CUSTOM":

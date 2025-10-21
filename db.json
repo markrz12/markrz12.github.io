@@ -1791,15 +1791,18 @@
                 },
                 {
                   "title": "Zapotrzebowanie",
-                  "type": "REQUEST"
+                  "type": "REQUEST",
+                  "Zapotrzebowania": []
                 },
                 {
                   "title": "Pliki",
-                  "type": "FILES"
+                  "type": "FILES",
+                  "Pliki": []
                 },
                 {
                   "title": "Dziennik zdarzeń",
-                  "type": "ACTIVITY_LOG"
+                  "type": "ACTIVITY_LOG",
+                  "Zdarzenia": []
                 }
               ]
             },
@@ -3363,7 +3366,7 @@
                         {
                           "lp": "20",
                           "pytanie": "Udokumentuj zrozumienie biegłego rewidenta co do środowiska kontroli ustanowionego przez kierownictwo w celu rozpoznania, ujęcia i ujawnienia powiązań i transakcji z podmiotami powiązanymi. Zadaj pytania dotyczące identyfikacji podmiotów powiązanych, rodzaju powiązań oraz informacji o transakcjach i ocen ryzyka nieujawnionych powiązań.",
-                          "msb": "550(3-14), II.1/9, KLIENT OKRES SPRAWOZDAWCZY II.1/1",
+                          "msb": "550(3-14), II.1/9, II.1/1",
                           "odpowiedz": null,
                           "zalacznik": null,
                           "author": null,
