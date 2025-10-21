@@ -15,11 +15,6 @@ import ProjectDashboard from "../sites/Project/ProjectDashboard";
 import Project from "../sites/Project/Project";
 import ProjectSettings from "../sites/Project/ProjectSettings";
 import Questionnaire from "../sites/Project/Questionnaires/Questionnaire";
-import QuestionnaireSimple from "../sites/Project/Questionnaires/QuestionnaireSimple";
-import QuestionnaireDynamic from "../sites/Project/Questionnaires/QuestionnaireDynamic";
-import QuestionnaireText from "../sites/Project/Questionnaires/QuestionnaireText";
-import QuestionnaireCheck from "../sites/Project/Questionnaires/QuestionnaireCheck";
-import QuestionnaireTable from "../sites/Project/Questionnaires/QuestionnaireTable";
 import InformationMSB from "../sites/Project/Questionnaires/InformationMSB";
 
 function App() {
@@ -45,11 +40,6 @@ function App() {
                     <Route path="uzytkownicy" element={<ProjectSettings />} />
                     <Route path="informacjeMSB" element={<InformationMSB />} />
                     <Route path="kwestionariusz/:screenTitle" element={<Questionnaire/>} />
-                    <Route path="kwestionariusz-prosty" element={<QuestionnaireSimple />} />
-                    <Route path="kwestionariusz-dynamiczny" element={<QuestionnaireDynamic />} />
-                    <Route path="kwestionariusz-tekstowy" element={<QuestionnaireText />} />
-                    <Route path="kwestionariusz-check" element={<QuestionnaireCheck />} />
-                    <Route path="kwestionariusz-tabela" element={<QuestionnaireTable />} />
                 </Route>
 
                 {/* Catch-all */}

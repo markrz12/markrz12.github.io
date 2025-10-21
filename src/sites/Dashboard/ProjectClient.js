@@ -14,7 +14,6 @@ function ProjectClient() {
             <div className="flex-grow-1 d-flex flex-column">
                 <Topbar
                     breadcrumb={[
-                        { label: "Home", to: "/" },
                         { label: "Workspace", to: "/workspace" },
                         { label: "Projekty", to: "/projekty" },
                         { label: "Projekt: Klient", active: true },

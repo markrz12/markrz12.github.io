@@ -41,7 +41,7 @@ function RenderSection({ section, level = 0 }) {
     const { project } = useOutletContext(); // project passed from parent
     const projectBase = project ? `/projekty/${encodeURIComponent(project.name)}` : "";
     const getScreenUrl = (screenTitle) =>
-        `${projectBase}/kwestionariusz/${encodeURIComponent(screenTitle)}`;
+        `${projectBase}${encodeURIComponent(screenTitle)}`;
 
     return (
         <div style={{ marginBottom: 4 }}>
@@ -106,7 +106,7 @@ export default function ProjectDashboard() {
 
     const projectBase = project ? `/projekty/${encodeURIComponent(project.name)}` : "";
     const getScreenUrl = (screenTitle) =>
-        `${projectBase}/kwestionariusz/${encodeURIComponent(screenTitle)}`;
+        `${projectBase}${encodeURIComponent(screenTitle)}`;
 
 
     return (

@@ -15,7 +15,7 @@ function useBreadcrumb(project) {
     const breadcrumb = [];
 
     // Add "Home"
-    breadcrumb.push({ label: "Home", to: "/" });
+    breadcrumb.push({ label: "Workspace", to: "/workspace" },);
 
     // Add "Projects"
     breadcrumb.push({ label: "Projects", to: "/projekty" });
@@ -28,16 +28,30 @@ function useBreadcrumb(project) {
         });
     }
 
-    // Add deeper paths dynamically (e.g., /kwestionariusz / Sekcja 1)
+    // Add deeper paths dynamically (e.g., / Sekcja 1)
     for (let i = 2; i < pathParts.length; i++) {
         const segment = decodeURIComponent(pathParts[i]);
+
+        if (segment.toLowerCase() === "kwestionariusz") continue;
+
         const label = segment
             .replace(/-/g, " ")
-            .replace(/\b\w/g, (l) => l.toUpperCase());
+            .replace(/\s+/g, " ")
+            .trim()
+            .replace(/^([Vv]\.\d+)\s*(.*)$/i, (_, num, rest) => {
+                const fixed =
+                    rest
+                        .toLowerCase()
+                        .replace(/^./, (l) => l.toUpperCase()); // capitalize only first letter of text
+                return `${num} ${fixed}`;
+            })
+            .replace(/^./, (l) => l.toUpperCase());
+
 
         const path = "/" + pathParts.slice(0, i + 1).join("/");
         breadcrumb.push({ label, to: path });
     }
+
 
     // Mark last breadcrumb as active
     if (breadcrumb.length) {

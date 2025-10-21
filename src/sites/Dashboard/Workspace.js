@@ -122,7 +122,6 @@ function Workspace() {
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: "hidden" }}>
                 <Topbar
                     breadcrumb={[
-                        { label: "Home", to: "/" },
                         { label: "Workspace", to: "/workspace" },
                     ]}
                 />

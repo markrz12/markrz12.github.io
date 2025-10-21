@@ -87,7 +87,7 @@ function Templates(){
       {/* Main column */}
       <div className="flex-grow-1 d-flex flex-column" style={{ overflow:'hidden' }}>
         <Topbar
-          breadcrumb={[{label:'Home', to:'/'},{label:'Workspace', to:'/workspace'},{label:'Szablony', active:true}]}
+          breadcrumb={[{label:'Workspace', to:'/workspace'},{label:'Szablony', active:true}]}
         />
 
         {/* Content */}

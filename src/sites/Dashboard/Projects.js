@@ -75,6 +75,8 @@ function Projects() {
     const itemsPerPage = 12;
     const [clients, setClients] = useState([]);
     const [modal, setModal] = useState({ type: null, target: null });
+    const [showClientSuggestions, setShowClientSuggestions] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
     const [form, setForm] = useState({
         name: "",
         klient: "",
@@ -113,11 +115,6 @@ function Projects() {
             .map((u) => u.trim())
             .filter(Boolean);
 
-        if (usersList.length === 0) {
-            window.alert("Dodaj przynajmniej kierownika projektu!");
-            return;
-        }
-
         const clientExists = clients.some(
             (c) => c.name?.toLowerCase() === form.klient?.trim().toLowerCase()
         );
@@ -152,6 +149,9 @@ function Projects() {
             JSON.stringify([...projects, newProject])
         );
         setModal({ type: null, target: null });
+        setShowSuccess(true);
+        setTimeout(() => setShowSuccess(false), 2500); // hides after 2.5s
+
     };
 
     const deleteProject = () => {
@@ -223,13 +223,165 @@ function Projects() {
         [projects, selectedId]
     );
 
+    const closeModal = () => setModal({ type: null, target: null });
+
+    const renderModal = () => {
+        if (!modal.type) return null;
+
+        // --- ADD or EDIT ---
+        if (modal.type === "add") {
+            return (
+                <div
+                    className="modal fade show d-block"
+                    tabIndex="-1"
+                    style={{ backgroundColor: "#00000055" }}
+                    onClick={closeModal}
+                >
+                    <div
+                        className="modal-dialog modal-dialog-centered"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="modal-content">
+                            <div className="modal-header bg-primary text-white">
+                                <h5 className="modal-title">
+                                    {"Utwórz nowy projekt"}
+                                </h5>
+                                <button
+                                    type="button"
+                                    className="btn-close"
+                                    onClick={closeModal}
+                                ></button>
+                            </div>
+                            <div className="modal-body">
+                                <div className="mb-3 position-relative">
+                                    <label className="form-label">Klient</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="Wpisz nazwę klienta"
+                                        value={form.klient}
+                                        onChange={(e) => setForm({ ...form, klient: e.target.value })}
+                                        onFocus={() => setShowClientSuggestions(true)}
+                                        onBlur={() => setTimeout(() => setShowClientSuggestions(false), 150)}
+                                    />
+
+                                    {/* Sugestie klientów */}
+                                    {showClientSuggestions && form.klient.trim() && (
+                                        <ul
+                                            className="list-group position-absolute w-100 shadow-sm"
+                                            style={{
+                                                maxHeight: "160px",
+                                                overflowY: "auto",
+                                                zIndex: 1000,
+                                            }}
+                                        >
+                                            {clients
+                                                .filter((c) =>
+                                                    c.name.toLowerCase().includes(form.klient.toLowerCase())
+                                                )
+                                                .slice(0, 8)
+                                                .map((c) => (
+                                                    <li
+                                                        key={c.id}
+                                                        className="list-group-item list-group-item-action"
+                                                        style={{ cursor: "pointer" }}
+                                                        onMouseDown={() => {
+                                                            setForm({ ...form, klient: c.name });
+                                                            setShowClientSuggestions(false);
+                                                        }}
+                                                    >
+                                                        {c.name}
+                                                    </li>
+                                                ))}
+
+                                            {clients.filter((c) =>
+                                                c.name.toLowerCase().includes(form.klient.toLowerCase())
+                                            ).length === 0 && (
+                                                <li className="list-group-item text-muted small">
+                                                    Brak wyników
+                                                </li>
+                                            )}
+                                        </ul>
+                                    )}
+                                </div>
+
+                            </div>
+                            <div className="modal-footer">
+                                <button
+                                    className="btn btn-secondary"
+                                    onClick={closeModal}
+                                >
+                                    Anuluj
+                                </button>
+                                <button
+                                    className="btn btn-primary"
+                                    onClick={saveProject}
+                                >
+                                    { "Utwórz projekt"}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // --- DELETE CONFIRMATION ---
+        if (modal.type === "delete") {
+            return (
+                <div
+                    className="modal fade show d-block"
+                    tabIndex="-1"
+                    style={{ backgroundColor: "#00000055" }}
+                    onClick={closeModal}
+                >
+                    <div
+                        className="modal-dialog modal-dialog-centered"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="modal-content">
+                            <div className="modal-header bg-danger text-white">
+                                <h5 className="modal-title">Usuń projekt</h5>
+                                <button
+                                    type="button"
+                                    className="btn-close"
+                                    onClick={closeModal}
+                                ></button>
+                            </div>
+                            <div className="modal-body">
+                                Czy na pewno chcesz usunąć projekt{" "}
+                                <strong>{modal.target?.name}</strong>?
+                            </div>
+                            <div className="modal-footer">
+                                <button
+                                    className="btn btn-secondary"
+                                    onClick={closeModal}
+                                >
+                                    Anuluj
+                                </button>
+                                <button
+                                    className="btn btn-danger"
+                                    onClick={deleteProject}
+                                >
+                                    Usuń
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        return null;
+    };
+
+
     return (
         <div className="d-flex min-vh-100">
             <Sidebar search={search} setSearch={setSearch} />
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: "hidden" }}>
                 <Topbar
                     breadcrumb={[
-                        { label: "Home", to: "/" },
                         { label: "Workspace", to: "/workspace" },
                         { label: "Projekty", active: true },
                     ]}
@@ -462,7 +614,7 @@ function Projects() {
                                             contactEmail: "",
                                             contactPhone: "",
                                         });
-                                        setModal({ type: "add", target: null });
+                                        setModal({ type: "add", target: null })
                                     }}
                                 >
                                     Utwórz projekt
@@ -505,12 +657,6 @@ function Projects() {
                                                 </div>
                                                 <div className="d-flex flex-wrap" style={{ gap: "0.5rem" }}>
                                                     <button
-                                                        className="btn btn-sm btn-outline-primary"
-                                                        onClick={() => openModal("edit", selected)}
-                                                    >
-                                                        Edytuj projekt
-                                                    </button>
-                                                    <button
                                                         className="btn btn-sm btn-outline-danger"
                                                         onClick={() => openModal("delete", selected)}
                                                     >
@@ -540,10 +686,13 @@ function Projects() {
 
                                             <button
                                                 className="btn btn-sm btn-outline-primary"
-                                                onClick={() => navigate("/projekt-konfiguracja")}
+                                                onClick={() =>
+                                                    navigate(`/projekty/${encodeURIComponent(selected.name)}/uzytkownicy`)
+                                                }
                                             >
                                                 Konfiguruj użytkowników
                                             </button>
+
                                         </div>
 
                                         <hr />
@@ -560,6 +709,20 @@ function Projects() {
                     </div>
                 </div>
             </div>
+            {showSuccess && (
+                <div
+                    className="position-fixed top-0 start-50 translate-middle-x mt-3 alert alert-success shadow"
+                    style={{
+                        zIndex: 2000,
+                        minWidth: "240px",
+                        textAlign: "center",
+                        fontWeight: 500,
+                    }}
+                >
+                    ✅ Projekt dodany pomyślnie!
+                </div>
+            )}
+            {renderModal()}
         </div>
     );
 }

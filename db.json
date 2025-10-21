@@ -1117,7 +1117,8 @@
         "asystenci": [
           "Piotr Zieliński",
           "Tomasz Kamiński",
-          "Robert Górski"
+          "Robert Górski",
+          "Ewa Majewska"
         ]
       },
       "contact": {
@@ -1168,7 +1169,7 @@
                   "rows": [
                     {
                       "id": "1",
-                      "q":"Czy posiadasz (lub czerpiesz istotne i bezpośrednie korzyści finansowe)\ninstrumenty finansowe, w tym udziały w kapitale własnym, papiery wartościowe\nw rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie instrumentami\nfinansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym prawa i obowiązki\ndo nabycia tych instrumentów finansowych oraz instrumentów pochodnych\nbezpośrednio powiązanych z tymi instrumentami finansowymi, wyemitowane przez\nbadaną jednostkę?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.\nNie dotyczy również kredytów lub pożyczek udzielonych na warunkach\nrynkowych w ramach zwykłej działalności przez badane jednostki, uprawnione\ndo udzielania kredytów na podstawie odrębnych przepisów.\n",
+                      "q": "Czy posiadasz (lub czerpiesz istotne i bezpośrednie korzyści finansowe)\ninstrumenty finansowe, w tym udziały w kapitale własnym, papiery wartościowe\nw rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r. o obrocie instrumentami\nfinansowymi, kredyty, pożyczki lub inne instrumenty dłużne, w tym prawa i obowiązki\ndo nabycia tych instrumentów finansowych oraz instrumentów pochodnych\nbezpośrednio powiązanych z tymi instrumentami finansowymi, wyemitowane przez\nbadaną jednostkę?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.\nNie dotyczy również kredytów lub pożyczek udzielonych na warunkach\nrynkowych w ramach zwykłej działalności przez badane jednostki, uprawnione\ndo udzielania kredytów na podstawie odrębnych przepisów.\n",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1180,7 +1181,7 @@
                     },
                     {
                       "id": "2",
-                      "q":"Czy osoby blisko z Tobą związane posiadają (lub czerpią istotne i bezpośrednie\nkorzyści finansowe) instrumenty finansowe, w tym udziały w kapitale własnym,\npapiery wartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r.\no obrocie instrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne,\nw tym prawa i obowiązki do nabycia tych instrumentów finansowych oraz\ninstrumentów pochodnych bezpośrednio powiązanych z tymi instrumentami\nfinansowymi, wyemitowane przez badaną jednostkę?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.\nNie dotyczy również kredytów lub pożyczek udzielonych na warunkach\nrynkowych w ramach zwykłej działalności przez badane jednostki, uprawnione\ndo udzielania kredytów na podstawie odrębnych przepisów.",
+                      "q": "Czy osoby blisko z Tobą związane posiadają (lub czerpią istotne i bezpośrednie\nkorzyści finansowe) instrumenty finansowe, w tym udziały w kapitale własnym,\npapiery wartościowe w rozumieniu art. 3 pkt. 1 ustawy z dnia 29 lipca 2005 r.\no obrocie instrumentami finansowymi, kredyty, pożyczki lub inne instrumenty dłużne,\nw tym prawa i obowiązki do nabycia tych instrumentów finansowych oraz\ninstrumentów pochodnych bezpośrednio powiązanych z tymi instrumentami\nfinansowymi, wyemitowane przez badaną jednostkę?\nUwaga! Nie dotyczy takich, które posiadane są pośrednio poprzez udział\nw zdywersyfikowanych programach zbiorowego inwestowania, w szczególności\nfunduszach emerytalnych, funduszach inwestycyjnych oraz ubezpieczeniowych\nfunduszach kapitałowych oferowanych przez zakłady ubezpieczeń, o ile\nprogramy te nie są kontrolowane przez Ciebie lub osoby blisko z Tobą związane,\nlub w stosunku do tych programów nie są podejmowane decyzje inwestycyjne,\nna które wpływ masz Ty lub osoby blisko z Tobą związane.\nNie dotyczy również kredytów lub pożyczek udzielonych na warunkach\nrynkowych w ramach zwykłej działalności przez badane jednostki, uprawnione\ndo udzielania kredytów na podstawie odrębnych przepisów.",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -1336,7 +1337,7 @@
                     },
                     {
                       "id": "15",
-                      "q":"Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w sporządzaniu sprawozdań finansowych badanej jednostki?\n",
+                      "q": "Czy osoby blisko z Tobą związane uczestniczą / uczestniczyły w okresach określonych\nw pkt. 10 w sporządzaniu sprawozdań finansowych badanej jednostki?\n",
                       "answer": {
                         "value": "Nie",
                         "comment": null
@@ -3536,7 +3537,6 @@
                         "Sprawdził"
                       ]
                     }
-
                   ]
                 },
                 {
@@ -4091,7 +4091,6 @@
                         "Kluczowy biegły rewident"
                       ]
                     }
-
                   ]
                 },
                 {
@@ -4328,7 +4327,6 @@
                         "Kluczowy biegły rewident"
                       ]
                     }
-
                   ]
                 },
                 {
@@ -4654,11 +4652,26 @@
                       "title": "Notatka - planowanie",
                       "type": "CUSTOM",
                       "columns": [
-                        { "label": "Pytanie", "type": "description" },
-                        { "label": "Odpowiedz", "type": "comment" },
-                        { "label": "Załącznik", "type": "file" },
-                        { "label": "Sporządził", "type": "author" },
-                        { "label": "Zatwierdził", "type": "author" }
+                        {
+                          "label": "Pytanie",
+                          "type": "description"
+                        },
+                        {
+                          "label": "Odpowiedz",
+                          "type": "comment"
+                        },
+                        {
+                          "label": "Załącznik",
+                          "type": "file"
+                        },
+                        {
+                          "label": "Sporządził",
+                          "type": "author"
+                        },
+                        {
+                          "label": "Zatwierdził",
+                          "type": "author"
+                        }
                       ],
                       "rows": [
                         {
@@ -4801,11 +4814,27 @@
                       "title": "Notatka - zespół",
                       "type": "CUSTOM",
                       "columns": [
-                        { "label": "Pytanie", "type": "description" },
-                        { "label": "Odpowiedź", "type": "comment", "description": "Pole tekstowe na odpowiedź" },
-                        { "label": "Załącznik", "type": "file" },
-                        { "label": "Sporządził", "type": "author" },
-                        { "label": "Zatwierdził", "type": "author" }
+                        {
+                          "label": "Pytanie",
+                          "type": "description"
+                        },
+                        {
+                          "label": "Odpowiedź",
+                          "type": "comment",
+                          "description": "Pole tekstowe na odpowiedź"
+                        },
+                        {
+                          "label": "Załącznik",
+                          "type": "file"
+                        },
+                        {
+                          "label": "Sporządził",
+                          "type": "author"
+                        },
+                        {
+                          "label": "Zatwierdził",
+                          "type": "author"
+                        }
                       ],
                       "rows": [
                         {
@@ -4814,39 +4843,159 @@
                               "type": "section",
                               "name": "Informacje podstawowe",
                               "questions": [
-                                { "pytanie": "Data spotkania", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "Uczestnicy", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "Podstawowe informacje/wiedza na temat jednostki i jej działalności", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null }
+                                {
+                                  "pytanie": "Data spotkania",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "Uczestnicy",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "Podstawowe informacje/wiedza na temat jednostki i jej działalności",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                }
                               ]
                             },
                             {
                               "type": "section",
                               "name": "Ocena ryzyka",
                               "questions": [
-                                { "pytanie": "Ocena ryzyka", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "Ryzyko oszustwa", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "Istotność (w tym uzasadnienie wybranych poziomów)", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "Przepisy prawne i regulacyjne", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "Podmioty powiązane", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "Kontynuacja działalności", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "Strategia badania", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null }
+                                {
+                                  "pytanie": "Ocena ryzyka",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "Ryzyko oszustwa",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "Istotność (w tym uzasadnienie wybranych poziomów)",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "Przepisy prawne i regulacyjne",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "Podmioty powiązane",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "Kontynuacja działalności",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "Strategia badania",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                }
                               ]
                             },
                             {
                               "type": "section",
                               "name": "Kwestie administracyjne",
                               "questions": [
-                                { "pytanie": "a) kluczowe osoby kontaktowe", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "b) harmonogram/terminy", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "c) budżety", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null },
-                                { "pytanie": "d) role i zadania personelu", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null }
+                                {
+                                  "pytanie": "a) kluczowe osoby kontaktowe",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "b) harmonogram/terminy",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "c) budżety",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                },
+                                {
+                                  "pytanie": "d) role i zadania personelu",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                }
                               ]
                             },
                             {
                               "type": "section",
                               "name": "Podpisy zespołu",
                               "questions": [
-                                { "pytanie": "Podpisy członków zespołu badającego", "odpowiedz": null, "file": null, "author": null, "approver": null, "date": null, "approvedAt": null }
+                                {
+                                  "pytanie": "Podpisy członków zespołu badającego",
+                                  "odpowiedz": null,
+                                  "file": null,
+                                  "author": null,
+                                  "approver": null,
+                                  "date": null,
+                                  "approvedAt": null
+                                }
                               ]
                             }
                           ]
@@ -5638,7 +5787,11 @@
                         {
                           "type": "select",
                           "label": "Ryzyko",
-                          "options": ["Wysokie", "Srednie", "Niskie"]
+                          "options": [
+                            "Wysokie",
+                            "Srednie",
+                            "Niskie"
+                          ]
                         },
                         {
                           "type": "comment",
@@ -7008,25 +7161,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -7247,26 +7416,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -7836,25 +8024,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -8075,26 +8279,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -8846,25 +9069,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -9085,26 +9324,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -9808,25 +10066,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -10047,26 +10321,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -11108,25 +11401,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -11347,26 +11656,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -12079,25 +12407,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -12318,26 +12662,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -12880,25 +13243,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -13119,26 +13498,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -13672,25 +14070,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -13911,26 +14325,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -14497,25 +14930,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -14736,26 +15185,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -15332,25 +15800,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -15571,26 +16055,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -16313,25 +16816,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -16552,26 +17071,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -17217,25 +17755,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -17456,26 +18010,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -18121,25 +18694,41 @@
                       "key": "I",
                       "type": "dynamic",
                       "label": "I",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "PiO",
                       "type": "dynamic",
                       "label": "PiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "WiP",
                       "type": "dynamic",
                       "label": "WiP",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "key": "komentarz",
@@ -18360,26 +18949,45 @@
                       "type": "description",
                       "label": "Pytanie"
                     },
-                    {"key": "WoPiO",
+                    {
+                      "key": "WoPiO",
                       "type": "dynamic",
                       "label": "WoPiO",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "Ko",
+                    {
+                      "key": "Ko",
                       "type": "dynamic",
                       "label": "Ko",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "KiZ",
+                    {
+                      "key": "KiZ",
                       "type": "dynamic",
                       "label": "KiZ",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
-
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
-                    {"key": "DiW",
+                    {
+                      "key": "DiW",
                       "type": "dynamic",
                       "label": "DiW",
-                      "options": ["Wysokie", "Średnie", "Niskie"]
+                      "options": [
+                        "Wysokie",
+                        "Średnie",
+                        "Niskie"
+                      ]
                     },
                     {
                       "type": "comment",
@@ -19963,7 +20571,6 @@
                     "Sprawdził"
                   ]
                 }
-
               ]
             },
             {
@@ -20436,7 +21043,6 @@
                     "Sprawdził"
                   ]
                 }
-
               ]
             },
             {
@@ -20453,7 +21059,6 @@
                     "Sprawdził"
                   ]
                 }
-
               ]
             },
             {
@@ -20500,7 +21105,6 @@
                         "Komentarz 2",
                         "Komentarz 3"
                       ]
-
                     },
                     {
                       "label": "Sporządził",
@@ -21835,7 +22439,6 @@
                   "roles": [
                     "Kluczowy biegły rewident"
                   ]
-
                 }
               ]
             },

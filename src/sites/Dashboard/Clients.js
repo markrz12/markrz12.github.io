@@ -150,7 +150,7 @@ function Clients() {
         <div className="d-flex min-vh-100">
             <Sidebar search={search} setSearch={setSearch} />
             <div className="flex-grow-1 d-flex flex-column" style={{ overflow: 'hidden' }}>
-                <Topbar breadcrumb={[{ label: 'Home', to: '/' }, { label: 'Workspace', to: '/workspace' }, { label: 'Klienci', active: true }]} />
+                <Topbar breadcrumb={[{ label: 'Workspace', to: '/workspace' }, { label: 'Klienci', active: true }]} />
 
                 <div className="flex-grow-1 d-flex flex-column pt-2 px-2" style={{ minHeight: 0 }}>
                     <div className="flex-grow-1 d-flex h-100" style={{ minHeight: 0 }}>
