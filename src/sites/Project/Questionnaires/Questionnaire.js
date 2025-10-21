@@ -112,7 +112,7 @@ function KwestionariuszFull() {
             case "description":
             case "text":
                 if (col.label === "MSB") {
-                    return <td key={col.label} style={{...tdDescription, maxWidth: "120px"}}>{row.msb || ""}</td>;
+                    return <td key={col.label} style={{...tdDescription, maxWidth: "140px"}}>{row.msb || ""}</td>;
                 }
                 if (col.label === "Powiązane obszary") {
                     return (

@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useMemo } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Sidebar, Topbar } from "../../ui/Common";
 import { BsSearch, BsFileText, BsDashSquare, BsPeople, BsGeoAlt, BsEnvelope, BsXLg } from "react-icons/bs";
+
+const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 
 function ProjectClient() {
     const [search, setSearch] = useState("");
@@ -15,13 +18,13 @@ function ProjectClient() {
                 <Topbar
                     breadcrumb={[
                         { label: "Workspace", to: "/workspace" },
-                        { label: "Projekty", to: "/projekty" },
-                        { label: "Projekt: Klient", active: true },
+                        { label: "Klienci", to: "/klienci" },
+                        { label: "Moduł dodawania klienta", active: true },
                     ]}
                 />
 
                 <div className="flex-grow-1 bg-light d-flex pt-3 px-3">
-                    <ProjectClientForm onCreate={() => navigate("/projekty")} />
+                    <ProjectClientForm onCreate={() => navigate("/klienci")} />
                 </div>
 
                 <div className="px-3 py-2 text-end small text-muted">
@@ -42,132 +45,54 @@ function ProjectClientForm({ onCreate }) {
         contact: false,
         repr: false,
     });
-
     const [selected, setSelected] = useState(null);
     const [suggestions, setSuggestions] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
 
-    const toggle = (key) => setOpen((prev) => ({ ...prev, [key]: !prev[key] }));
+    const toggle = (key) => setOpen(prev => ({ ...prev, [key]: !prev[key] }));
 
-    // Mock danych KRS
-    const DATA = useMemo(
-        () => [
-            {
-                name: "Acme Retail Sp. z o.o. (DEMO)",
-                reg: "Rejestr Przedsiębiorców",
-                krs: "0000000001",
-                nip: "0000000000",
-                regon: "00000000000000",
-                form: "SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
-                rps: { wpis: "01.01.2020", wykreslenie: "-", ostatniaZmiana: "01.06.2025" },
-                zaw: { od: "-", do: "-" },
-                addr: {
-                    kraj: "POLSKA",
-                    woj: "lubelskie",
-                    powiat: "Nowy Powiat",
-                    gmina: "Nowa Gmina",
-                    miejscowosc: "Nowe Miasto",
-                    ulica: "ul. Przykładowa",
-                    nrDomu: "1",
-                    kod: "00-000",
-                },
-                contact: {
-                    email: "kontakt@example.com",
-                    phone: "+48 11 111 11 11",
-                    www: "www.example.com",
-                },
-                repr: [{ name: "Jan Demo", role: "Prezes Zarządu", sposob: "samodzielnie" }],
-            },
-            {
-                name: "Tech Solutions Demo Sp. z o.o.",
-                reg: "Rejestr Przedsiębiorców",
-                krs: "0000000002",
-                nip: "0000000001",
-                regon: "00000000000001",
-                form: "SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
-                rps: { wpis: "12.03.2020", wykreslenie: "-", ostatniaZmiana: "10.01.2025" },
-                zaw: { od: "01.02.2020", do: "31.05.2020" },
-                addr: {
-                    kraj: "POLSKA",
-                    woj: "mazowieckie",
-                    powiat: "m.st. Warszawa",
-                    gmina: "Warszawa",
-                    miejscowosc: "Warszawa",
-                    ulica: "ul. Prosta",
-                    nrDomu: "51",
-                    kod: "00-838",
-                },
-                contact: {
-                    email: "biuro@example.com",
-                    phone: "+48 22 123 45 67",
-                    www: "www.example.com",
-                },
-                repr: [
-                    { name: "Anna Przykład", role: "Prezes Zarządu", sposob: "samodzielnie" },
-                    { name: "Marek Wzór", role: "Członek Zarządu", sposob: "łącznie z Prezesem" },
-                ],
-            },
-            {
-                name: "Alfa Energia Demo S.A.",
-                reg: "Rejestr Przedsiębiorców",
-                krs: "0000000003",
-                nip: "0000000002",
-                regon: "000000002",
-                form: "SPÓŁKA AKCYJNA",
-                rps: { wpis: "21.11.2021", wykreslenie: "-", ostatniaZmiana: "03.06.2025" },
-                zaw: { od: "-", do: "-" },
-                addr: {
-                    kraj: "POLSKA",
-                    woj: "śląskie",
-                    powiat: "Katowice",
-                    gmina: "Katowice",
-                    miejscowosc: "Katowice",
-                    ulica: "al. Korfantego",
-                    nrDomu: "2",
-                    kod: "40-004",
-                },
-                contact: {
-                    email: "kontakt@example.com",
-                    phone: "+48 32 222 11 00",
-                    www: "www.example.com",
-                },
-                repr: [
-                    { name: "Tomasz Próbny", role: "Prezes", sposob: "samodzielnie" },
-                    { name: "Ewa Testowa", role: "Wiceprezes", sposob: "łącznie z Prezesem" },
-                ],
-            },
-        ],
-        []
-    );
-
+    // Pobieranie sugestii z API
     useEffect(() => {
-        if (!selected) setSelected(DATA[0]);
-    }, [selected, DATA]);
+        const fetchSuggestions = async () => {
+            const q = krsQuery.trim();
+            if (!q) return setSuggestions([]);
+            setLoading(true);
+            setError("");
+            try {
+                const res = await axios.get(`${API_BASE}/Clients`, { params: { query: q } });
+                setSuggestions(res.data.slice(0, 5));
+            } catch (err) {
+                console.error(err);
+                setError("Nie udało się pobrać danych z API.");
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    useEffect(() => {
-        const q = krsQuery.trim().toLowerCase();
-        if (!q) return setSuggestions([]);
-        const res = DATA.filter((e) =>
-            [e.name, e.nip, e.krs, e.regon].some((v) =>
-                String(v).toLowerCase().includes(q)
-            )
-        ).slice(0, 5);
-        setSuggestions(res);
-    }, [krsQuery, DATA]);
+        fetchSuggestions();
+    }, [krsQuery]);
 
-    const fetchFromKRS = () => {
+    const fetchFromKRS = async () => {
         if (suggestions.length > 0) return setSelected(suggestions[0]);
-        const idx = selected ? (DATA.findIndex((d) => d === selected) + 1) % DATA.length : 0;
-        setSelected(DATA[idx]);
+        if (!krsQuery) return;
+
+        setLoading(true);
+        setError("");
+        try {
+            const res = await axios.get(`${API_BASE}/Clients/${krsQuery}`);
+            setSelected(res.data);
+        } catch (err) {
+            console.error(err);
+            setError("Nie udało się pobrać danych klienta.");
+        } finally {
+            setLoading(false);
+        }
     };
 
-    const entity = selected || DATA[0];
-
     const createProject = () => {
-        const year = new Date().getFullYear();
-        const random = Math.floor(Math.random() * 900000 + 100000);
-        const projectCode = `DR/${year}/${random}`;
-        alert(`Projekt utworzony: ${projectCode}`);
-        onCreate(projectCode);
+        if (!selected) return alert("Wybierz klienta!");
+
     };
 
     return (
@@ -176,11 +101,9 @@ function ProjectClientForm({ onCreate }) {
                 <div className="card-body">
                     {/* Wyszukiwanie klienta */}
                     <div className="mt-2">
-                        <h5 className="fw-semibold mb-2" style={{paddingLeft: "0.2rem"}}>
-                            Moduł dodawania klienta
-                        </h5>
-                        <div className="d-flex flex-column flex-sm-row align-items-start gap-3 mt-3">
-                            <div className="position-relative w-100 " style={{ maxWidth: 520 }}>
+                        <h5 className="fw-semibold p-2">Moduł dodawania klienta</h5>
+                        <div className="d-flex flex-column flex-sm-row align-items-start gap-3 mt-1">
+                            <div className="position-relative w-100" style={{ maxWidth: 520 }}>
                                 <div className="input-group">
                                     <span className="input-group-text"><BsSearch /></span>
                                     <input
@@ -188,7 +111,7 @@ function ProjectClientForm({ onCreate }) {
                                         className="form-control"
                                         placeholder="Podaj nazwę firmy, NIP lub KRS lub REGON"
                                         value={krsQuery}
-                                        onChange={(e) => setKrsQuery(e.target.value)}
+                                        onChange={e => setKrsQuery(e.target.value)}
                                     />
                                 </div>
                                 {suggestions.length > 0 && (
@@ -208,36 +131,38 @@ function ProjectClientForm({ onCreate }) {
                                 )}
                             </div>
                             <span className="text-muted d-none d-sm-inline mt-1">lub</span>
-                            <button className="btn btn-outline-secondary" onClick={fetchFromKRS}>
-                                Pobierz dane z KRS
+                            <button className="btn btn-outline-secondary" onClick={fetchFromKRS} disabled={loading}>
+                                {loading ? "Ładowanie..." : "Pobierz dane z KRS"}
                             </button>
                         </div>
+                        {error && <div className="text-danger mt-2">{error}</div>}
                     </div>
 
                     <hr />
 
-                    {/* Sekcje danych */}
-                    {[
-                        { key: "rps", title: <><BsFileText className="me-2"/> Dane podmiotu</>, content: (
-                                <>
-                                    <Row label="Nazwa" value={entity.name} />
-                                    <Row label="Rejestr" value={entity.reg} />
-                                    <Row label="Numer KRS" value={entity.krs} label2="NIP" value2={entity.nip} />
-                                    <Row label="REGON" value={entity.regon} label2="Forma prawna" value2={entity.form} />
-                                </>
-                            ) },
-                        { key: "wyk", title: <><BsXLg className="me-2"/> "Wykreślenie z KRS"</>,
-                            content: <Row label="Data wykreślenia" value={entity.rps.wykreslenie || "-"} /> },
-                        { key: "zaw", title: <><BsDashSquare className="me-2"/> "Zawieszenie / wznowienie działalności"</>, content: <Row label="Zawieszenie od" value={entity.zaw.od || "-"} label2="Wznowienie od" value2={entity.zaw.do || "-"} /> },
-                        { key: "addr", title: <><BsGeoAlt className="me-2"/> Siedziba i adres</>, content: Object.entries(entity.addr).map(([k,v]) => <Row key={k} label={k.charAt(0).toUpperCase() + k.slice(1)} value={v} />) },
-                        { key: "contact", title: <><BsEnvelope className="me-2"/> Dane kontaktowe</>, content: (
-                                <>
-                                    <Row label="Email" value={<a href={`mailto:${entity.contact.email}`}>{entity.contact.email}</a>} />
-                                    <Row label="Telefon" value={entity.contact.phone} />
-                                    <Row label="WWW" value={<a href={`https://${entity.contact.www}`} target="_blank" rel="noreferrer">{entity.contact.www}</a>} />
-                                </>
-                            ) },
-                        { key: "repr", title: <><BsPeople className="me-2"/> Członkowie reprezentacji</>, content: (
+                    {/* Wyświetlanie danych klienta */}
+                    {selected && (
+                        <>
+                            <Section key="rps" open={open.rps} title={<><BsFileText className="me-2"/> Dane podmiotu</>} toggle={() => toggle('rps')}>
+                                <Row label="Nazwa" value={selected.name} />
+                                <Row label="Rejestr" value={selected.reg} />
+                                <Row label="KRS" value={selected.krs} label2="NIP" value2={selected.nip} />
+                                <Row label="REGON" value={selected.regon} label2="Forma prawna" value2={selected.form} />
+                            </Section>
+
+                            <Section key="addr" open={open.addr} title={<><BsGeoAlt className="me-2"/> Adres</>} toggle={() => toggle('addr')}>
+                                {Object.entries(selected.addr).map(([k,v]) => (
+                                    <Row key={k} label={k.charAt(0).toUpperCase() + k.slice(1)} value={v} />
+                                ))}
+                            </Section>
+
+                            <Section key="contact" open={open.contact} title={<><BsEnvelope className="me-2"/> Kontakt</>} toggle={() => toggle('contact')}>
+                                <Row label="Email" value={<a href={`mailto:${selected.contact.email}`}>{selected.contact.email}</a>} />
+                                <Row label="Telefon" value={selected.contact.phone} />
+                                <Row label="WWW" value={<a href={`https://${selected.contact.www}`} target="_blank" rel="noreferrer">{selected.contact.www}</a>} />
+                            </Section>
+
+                            <Section key="repr" open={open.repr} title={<><BsPeople className="me-2"/> Reprezentacja</>} toggle={() => toggle('repr')}>
                                 <table className="table table-hover mt-2">
                                     <thead className="table-dark">
                                     <tr>
@@ -247,7 +172,7 @@ function ProjectClientForm({ onCreate }) {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {entity.repr.map((p,i) => (
+                                    {selected.repr.map((p,i) => (
                                         <tr key={i}>
                                             <td>{p.name}</td>
                                             <td>{p.role}</td>
@@ -256,14 +181,24 @@ function ProjectClientForm({ onCreate }) {
                                     ))}
                                     </tbody>
                                 </table>
-                            ) },
-                    ].map(sec => <Section key={sec.key} open={open[sec.key]} title={sec.title} toggle={() => toggle(sec.key)}>{sec.content}</Section>)}
+                            </Section>
+                        </>
+                    )}
 
                     <div className="text-center mt-3">
-                        <button className="btn btn-primary px-4" onClick={createProject}>
-                            Utwórz projekt
+                        <button
+                            className="btn btn-primary px-4 me-2"
+                            onClick={createProject}
+                        >
+                            Dodaj klienta
+                        </button>
+                        <button
+                            className="btn btn-outline-primary px-4"
+                        >
+                            Zaktualizuj dane klienta
                         </button>
                     </div>
+
                 </div>
             </div>
         </div>
