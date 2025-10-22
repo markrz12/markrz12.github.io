@@ -242,13 +242,14 @@ function Projects() {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="modal-content">
-                            <div className="modal-header bg-primary text-white">
-                                <h5 className="modal-title">
+                            <div className="modal-header">
+                                <h5 className="modal-title" style={{fontSize: "1.1rem"}}>
                                     {"Utwórz nowy projekt"}
                                 </h5>
                                 <button
                                     type="button"
                                     className="btn-close"
+                                    style={{ width: "0.8rem", height: "0.8rem", padding: 0, marginRight:"0.5rem" }}
                                     onClick={closeModal}
                                 ></button>
                             </div>
@@ -340,11 +341,12 @@ function Projects() {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="modal-content">
-                            <div className="modal-header bg-danger text-white">
-                                <h5 className="modal-title">Usuń projekt</h5>
+                            <div className="modal-header ">
+                                <h5 className="modal-title" style={{fontSize: "1.1rem"}}>Usuń projekt</h5>
                                 <button
                                     type="button"
                                     className="btn-close"
+                                    style={{ width: "0.8rem", height: "0.8rem", padding: 0, marginRight:"0.5rem" }}
                                     onClick={closeModal}
                                 ></button>
                             </div>

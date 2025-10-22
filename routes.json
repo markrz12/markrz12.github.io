@@ -1,7 +1,0 @@
-{
-  "/projects/list": "/projects",
-  "/projects/get/:id": "/projects/:id",
-  "/projects/create": "/projects",
-  "/projects/update/:id": "/projects/:id",
-  "/projects/delete/:id": "/projects/:id"
-}

@@ -72,8 +72,6 @@ function KwestionariuszFull() {
         return `${screenId}-${tabId}-${rowId}`;
     };
 
-
-
     const getCommentKey = (row, col) => `${screenData.id}-${row.id || getText(row)}-comment-${col.label}`;
 
     // Handle dynamic / checkbox / select changes
@@ -162,7 +160,7 @@ function KwestionariuszFull() {
                 const value = answers[rowKey]?.choice ?? row.answer?.value ?? "";
 
                 return (
-                    <td key={col.label} style={{ border: "1px solid #dee2e6", padding: "0.8rem" }}>
+                    <td key={col.label} style={{ border: "1px solid #dee2e6", padding: "0.8rem"}}>
                         <div
                             style={{
                                 display: "flex",
@@ -653,8 +651,6 @@ function KwestionariuszFull() {
         );
     };
 
-
-
     const renderTable = (tab) => {
         const flattenRows = (rows) => {
             let result = [];
@@ -678,7 +674,6 @@ function KwestionariuszFull() {
 
         const rawRows = tab.rows || screenData.rows || [];
         const rows = flattenRows(rawRows);
-
 
         if (!rows.length) return <div className="p-2">Brak danych do wyświetlenia</div>;
 
@@ -785,8 +780,7 @@ function KwestionariuszFull() {
                     <div className="table-responsive">
                         <table
                             className="table table-hover table-sm mb-0 align-middle"
-                            style={{ fontSize: "0.85rem" }}
-                        >
+                            style={{ fontSize: "0.85rem" }}>
                             <thead className="table-light">
                             <tr>
                                 {visibleColumns.map((col) => (

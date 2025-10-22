@@ -38,10 +38,10 @@ function ProgressMini({ value }) {
 function RenderSection({ section, level = 0 }) {
     const [open, setOpen] = useState(false);
     const indent = { marginLeft: `${level * 20}px` };
-    const { project } = useOutletContext(); // project passed from parent
+    const { project } = useOutletContext();
     const projectBase = project ? `/projekty/${encodeURIComponent(project.name)}` : "";
     const getScreenUrl = (screenTitle) =>
-        `${projectBase}${encodeURIComponent(screenTitle)}`;
+        `${projectBase}/kwestionariusz/${encodeURIComponent(screenTitle)}`;
 
     return (
         <div style={{ marginBottom: 4 }}>
@@ -106,7 +106,7 @@ export default function ProjectDashboard() {
 
     const projectBase = project ? `/projekty/${encodeURIComponent(project.name)}` : "";
     const getScreenUrl = (screenTitle) =>
-        `${projectBase}${encodeURIComponent(screenTitle)}`;
+        `${projectBase}/kwestionariusz/${encodeURIComponent(screenTitle)}`;
 
 
     return (
