@@ -53,19 +53,20 @@ export default function ProjektKonfiguracja() {
             .catch((err) => console.error("Błąd pobierania użytkowników:", err));
     }, []);
 
-    // 🔹 Extract questionnaires from phases recursively
+    // 🔹 Extract questionnaires from phases recursively (with label)
     const extractQuestionnaires = (phases) => {
         const items = [];
-        const walk = (node) => {
-            if (node.screens) node.screens.forEach((s) =>
-                items.push({ title: s.title, percent: s.percent || 0 })
-            );
-            if (node.sections) node.sections.forEach(walk);
+        const walk = (node, currentLabel = "") => {
+            const label = node.label || currentLabel;
+            if (node.screens)
+                node.screens.forEach((s) =>
+                    items.push({ title: s.title, percent: s.percent || 0, label })
+                );
+            if (node.sections) node.sections.forEach((child) => walk(child, label));
         };
-        phases.forEach(walk);
+        phases.forEach((p) => walk(p));
         return items;
     };
-
 
     // 🔹 Initialize project and questionnaires
     useEffect(() => {
@@ -81,7 +82,6 @@ export default function ProjektKonfiguracja() {
             let assigned = [];
             let automatic = false;
 
-            // Auto-assigned using project values directly
             if (q.title.includes("I.1 Test niezależności kluczowego biegłego rewidenta")) {
                 automatic = true;
                 assigned = kierownik ? [kierownik] : [];
@@ -94,6 +94,7 @@ export default function ProjektKonfiguracja() {
                 id: q.title,
                 title: q.title,
                 percent: q.percent || 0,
+                label: q.label,
                 assigned,
                 automatic,
             };
@@ -101,7 +102,6 @@ export default function ProjektKonfiguracja() {
 
         setQuestionnaires(qList);
     }, [project]);
-
 
     // 🔹 Update project users in backend
     const updateProjectUsers = async (newManager, newAssistants) => {
@@ -171,22 +171,156 @@ export default function ProjektKonfiguracja() {
     const getScreenUrl = (screenTitle) =>
         `${projectBase}/kwestionariusz/${encodeURIComponent(screenTitle)}`;
 
-
     if (!project) return <div className="p-4 text-muted">Ładowanie projektu...</div>;
+
+    // 🔹 Group questionnaires by label
+    const grouped = questionnaires.reduce((acc, q) => {
+        const label = q.label || "Inne";
+        if (!acc[label]) acc[label] = [];
+        acc[label].push(q);
+        return acc;
+    }, {});
 
     return (
         <div className="p-4">
             <h5 className="mb-4 mt-1">
                 Konfiguracja użytkowników projektu:{" "}
                 <strong>{project.name}</strong>{" "}
-                <span className="text-muted">({project.klient})</span>
+                <span className="text-muted" style={{ fontWeight: 400}}>({project.klient})</span>
             </h5>
 
             <div className="row g-4">
+                {/* Przypisane kwestionariusze */}
+                <div className="col-12 col-lg-8">
+                    <div className="card shadow-sm h-100">
+                        <label
+                            className="form-label mb-0 text-white fw-bold d-flex"
+                            style={{
+                                backgroundColor: "#0a2b4c",
+                                padding: "0.6rem 1rem",
+                                borderTopLeftRadius: "0.25rem",
+                                borderBottomLeftRadius: "0.25rem",
+                            }}
+                        >
+                            Przypisane kwestionariusze
+                        </label>
+                        <div className="card-body p-0">
+                            <table className="table table-sm table-hover mb-0 align-middle">
+                                <thead>
+                                <tr>
+                                    <th style={headerStyle}>Nazwa</th>
+                                    <th style={headerStyle}>Użytkownicy</th>
+                                    <th style={headerStyle}>Akcja</th>
+                                    <th style={headerStyle}>Postęp</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {Object.entries(grouped).map(([label, items]) => (
+                                    <React.Fragment key={label}>
+                                        <tr>
+                                            <td colSpan="4" style={{
+                                                backgroundColor: "#005679",
+                                                color: "white",
+                                                fontWeight: "bold",
+                                                padding: "0.6rem 1rem",
+                                                fontSize: "0.9rem",
+                                            }}>
+                                                {label}
+                                            </td>
+                                        </tr>
+
+                                        {items.map((q) => (
+                                            <tr key={q.id}>
+                                                <td style={tdDescription}>
+                                                    <Link
+                                                        to={getScreenUrl(q.title)}
+                                                        style={{
+                                                            textDecoration: "underline",
+                                                            color: "#0a2b4c",
+                                                        }}
+                                                    >
+                                                        {q.title}
+                                                    </Link>
+                                                </td>
+                                                <td style={{ ...tdDescription, width: "30%" }}>
+                                                    {editId === q.id ? (
+                                                        <div className="d-flex flex-wrap gap-2">
+                                                            {projectUsersForAssignment.length ? (
+                                                                projectUsersForAssignment.map((name) => (
+                                                                    <label
+                                                                        key={name}
+                                                                        className="form-check-label small"
+                                                                    >
+                                                                        <input
+                                                                            type="checkbox"
+                                                                            className="form-check-input me-1"
+                                                                            checked={tempAssigned.includes(name)}
+                                                                            onChange={() => toggleTempUser(name)}
+                                                                        />
+                                                                        {name}
+                                                                    </label>
+                                                                ))
+                                                            ) : (
+                                                                <span className="text-muted small">
+                                                                        Brak użytkowników w projekcie
+                                                                    </span>
+                                                            )}
+                                                        </div>
+                                                    ) : q.assigned.length ? (
+                                                        q.assigned.join(", ")
+                                                    ) : (
+                                                        ""
+                                                    )}
+                                                </td>
+                                                <td style={tdCenter}>
+                                                    {editId === q.id ? (
+                                                        <div className="d-flex gap-2 justify-content-center">
+                                                            <button
+                                                                className="btn btn-sm btn-primary"
+                                                                onClick={() => saveAssignment(q.id)}
+                                                            >
+                                                                Zapisz
+                                                            </button>
+                                                            <button
+                                                                className="btn btn-sm btn-outline-secondary"
+                                                                onClick={() => setEditId(null)}
+                                                            >
+                                                                Anuluj
+                                                            </button>
+                                                        </div>
+                                                    ) : (
+                                                        <div className="d-flex justify-content-center">
+                                                            <button
+                                                                className="btn btn-sm btn-outline-primary"
+                                                                onClick={() =>
+                                                                    startEdit(q.id, q.assigned)
+                                                                }
+                                                                disabled={!projectUsersForAssignment.length}
+                                                            >
+                                                                {q.assigned.length
+                                                                    ? "Edytuj"
+                                                                    : "Przypisz"}
+                                                            </button>
+                                                        </div>
+                                                    )}
+                                                </td>
+                                                <td style={tdDescription}>
+                                                    <ProgressMini value={q.percent || 0} />
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </React.Fragment>
+                                ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Kierownik + Asystenci */}
-                <div className="col-12 col-lg-5 d-flex flex-column gap-3">
+                <div className="col-12 col-lg-4 d-flex flex-column gap-3">
                     {/* Kierownik */}
-                    <div className=" d-flex align-items-stretch">
+                    <div className="d-flex align-items-stretch">
                         <label
                             className="form-label mb-0 text-white fw-bold d-flex align-items-center justify-content-center"
                             style={{
@@ -194,7 +328,7 @@ export default function ProjektKonfiguracja() {
                                 padding: "0.5rem 1rem",
                                 borderTopLeftRadius: "0.25rem",
                                 borderBottomLeftRadius: "0.25rem",
-                                minWidth: "130px",
+                                minWidth: "110px",
                                 textAlign: "center",
                             }}
                         >
@@ -235,18 +369,33 @@ export default function ProjektKonfiguracja() {
 
                     {/* Asystenci */}
                     <div className="card shadow-sm">
-                        <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c" }}>
-                            <strong>Asystenci</strong>
-                        </div>
+                        <label
+                            className="form-label mb-0 text-white fw-bold d-flex"
+                            style={{
+                                backgroundColor: "#0a2b4c",
+                                padding: "0.6rem 1rem",
+                                borderTopLeftRadius: "0.25rem",
+                                borderBottomLeftRadius: "0.25rem",
+                            }}
+                        >
+                            Asystenci
+                        </label>
                         <div className="card-body d-flex flex-column gap-2">
                             {assistants.length ? (
                                 <ul className="list-group list-group-flush mt-0">
                                     {assistants.map((a) => (
-                                        <li key={a} className="list-group-item d-flex justify-content-between align-items-center p-1">
+                                        <li
+                                            key={a}
+                                            className="list-group-item d-flex justify-content-between align-items-center p-1 mt-0"
+                                        >
                                             <span style={{ fontSize: "0.9rem" }}>{a}</span>
                                             <button
                                                 className="btn btn-sm btn-outline-danger"
-                                                onClick={() => setAssistants((prev) => prev.filter((x) => x !== a))}
+                                                onClick={() =>
+                                                    setAssistants((prev) =>
+                                                        prev.filter((x) => x !== a)
+                                                    )
+                                                }
                                             >
                                                 Usuń
                                             </button>
@@ -254,7 +403,9 @@ export default function ProjektKonfiguracja() {
                                     ))}
                                 </ul>
                             ) : (
-                                <p className="text-muted small mb-0">Brak asystentów</p>
+                                <p className="text-muted small mb-0">
+                                    Brak asystentów
+                                </p>
                             )}
                             <div className="d-flex gap-2">
                                 <select
@@ -262,18 +413,23 @@ export default function ProjektKonfiguracja() {
                                     value={""}
                                     onChange={(e) => {
                                         const val = e.target.value;
-                                        if (val) setAssistants((prev) => [...prev, val]);
+                                        if (val)
+                                            setAssistants((prev) => [...prev, val]);
                                     }}
                                     style={{ flex: 1.5 }}
                                 >
                                     <option value="">— wybierz —</option>
                                     {assistantCandidates.map((name) => (
-                                        <option key={name} value={name}>{name}</option>
+                                        <option key={name} value={name}>
+                                            {name}
+                                        </option>
                                     ))}
                                 </select>
                                 <button
                                     className="btn btn-success btn-sm"
-                                    onClick={() => updateProjectUsers(manager, assistants)}
+                                    onClick={() =>
+                                        updateProjectUsers(manager, assistants)
+                                    }
                                 >
                                     Zatwierdź
                                 </button>
@@ -281,106 +437,25 @@ export default function ProjektKonfiguracja() {
                         </div>
                     </div>
                 </div>
-
-                {/* Przypisane kwestionariusze */}
-                <div className="col-12 col-lg-7">
-                    <div className="card shadow-sm h-100">
-                        <div className="card-header text-white" style={{ backgroundColor: "#0a2b4c" }}>
-                            <strong>Przypisane kwestionariusze</strong>
-                        </div>
-                        <div className="card-body p-0">
-                            <table className="table table-sm table-hover mb-0 align-middle">
-                                <thead>
-                                <tr>
-                                    <th style={headerStyle}>Nazwa</th>
-                                    <th style={headerStyle}>Użytkownicy</th>
-                                    <th style={headerStyle}>Akcja</th>
-                                    <th style={headerStyle}>Postęp</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {questionnaires.map((q) => (
-                                    <tr key={q.id}>
-                                        <td style={tdDescription}>
-                                            <Link
-                                                to={getScreenUrl(q.title)}
-                                                style={{ textDecoration: "underline", color: "#0a2b4c" }}
-                                            >
-                                                {q.title}
-                                            </Link>
-                                        </td>
-                                        <td style={tdDescription}>
-                                            {editId === q.id ? (
-                                                <div className="d-flex flex-wrap gap-2">
-                                                    {projectUsersForAssignment.length ? (
-                                                        projectUsersForAssignment.map((name) => (
-                                                            <label key={name} className="form-check-label small">
-                                                                <input
-                                                                    type="checkbox"
-                                                                    className="form-check-input me-1"
-                                                                    checked={tempAssigned.includes(name)}
-                                                                    onChange={() => toggleTempUser(name)}
-                                                                />
-                                                                {name}
-                                                            </label>
-                                                        ))
-                                                    ) : (
-                                                        <span className="text-muted small">
-                Brak użytkowników w projekcie
-              </span>
-                                                    )}
-                                                </div>
-                                            ) : q.assigned.length ? (
-                                                q.assigned.join(", ")
-                                            ) : (
-                                                "—"
-                                            )}
-                                        </td>
-                                        <td style={tdCenter}>
-                                            {editId === q.id ? (
-                                                <div className="d-flex gap-2 justify-content-center">
-                                                    <button
-                                                        className="btn btn-sm btn-primary"
-                                                        onClick={() => saveAssignment(q.id)}
-                                                    >
-                                                        Zapisz
-                                                    </button>
-                                                    <button
-                                                        className="btn btn-sm btn-outline-secondary"
-                                                        onClick={() => setEditId(null)}
-                                                    >
-                                                        Anuluj
-                                                    </button>
-                                                </div>
-                                            ) : (
-                                                <div className="d-flex justify-content-center">
-                                                    <button
-                                                        className="btn btn-sm btn-outline-primary"
-                                                        onClick={() => startEdit(q.id, q.assigned)}
-                                                        disabled={!projectUsersForAssignment.length}
-                                                    >
-                                                        {q.assigned.length ? "Edytuj" : "Przypisz"}
-                                                    </button>
-                                                </div>
-                                            )}
-                                        </td>
-                                        <td style={tdDescription}> <ProgressMini value={q.percent || 0} />
-                                        </td>
-
-                                    </tr>
-                                ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-
     );
 }
 
-const tdDescription = { border: "1px solid #dee2e6", fontSize: "0.85rem", paddingLeft: "0.8rem", paddingRight: "0.8rem", paddingTop:"0.5rem", paddingBottom:"0.5rem", maxWidth: "45rem" };
-const tdCenter = { border: "1px solid #dee2e6", padding: "0.8rem", };
-const headerStyle = {border: "1px solid #dee2e6", backgroundColor: "#0a2b4c", color: "#ffffff", padding: "0.7rem", fontSize: "0.9rem"};
-
+const tdDescription = {
+    border: "1px solid #dee2e6",
+    fontSize: "0.85rem",
+    paddingLeft: "0.8rem",
+    paddingRight: "0.8rem",
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
+    maxWidth: "45rem",
+};
+const tdCenter = { border: "1px solid #dee2e6", padding: "0.8rem" };
+const headerStyle = {
+    border: "1px solid #dee2e6",
+    backgroundColor: "#0a2b4c",
+    color: "#ffffff",
+    padding: "0.7rem",
+    fontSize: "0.9rem",
+};
