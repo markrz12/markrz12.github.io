@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/markrz12.github.io/static/css/main.1249838a.css",
+    "main.js": "/markrz12.github.io/static/js/main.f81328ca.js",
+    "index.html": "/markrz12.github.io/index.html",
+    "main.1249838a.css.map": "/markrz12.github.io/static/css/main.1249838a.css.map",
+    "main.f81328ca.js.map": "/markrz12.github.io/static/js/main.f81328ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1249838a.css",
+    "static/js/main.f81328ca.js"
+  ]
+}

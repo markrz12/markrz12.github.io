@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <meta http-equiv="refresh" content="0; url=index.html" />
+  <script>
+    (function() {
+      var l = window.location;
+      // Redirect to index in the same directory (works for root and project pages) while preserving the path
+      var newUrl = "index.html?p=" + encodeURIComponent(l.pathname + l.search + l.hash);
+      window.location.replace(newUrl);
+    })();
+  </script>
+</head>
+<body></body>
+</html>
