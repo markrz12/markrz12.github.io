@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDropdown, InitialsAvatar, Notifications, CloseX} from "../../../ui/common_function";
+import { InitialsAvatar} from "../../../ui/common_function";
 
 
 export default function ActivityLog({ logs }) {

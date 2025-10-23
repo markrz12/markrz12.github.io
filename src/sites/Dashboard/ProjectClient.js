@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect,  } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Sidebar, Topbar } from "../../ui/Common";
-import { BsSearch, BsFileText, BsDashSquare, BsPeople, BsGeoAlt, BsEnvelope, BsXLg } from "react-icons/bs";
+import { BsSearch, BsFileText, BsPeople, BsGeoAlt, BsEnvelope } from "react-icons/bs";
 
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5171";
 

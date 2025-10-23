@@ -74,8 +74,6 @@ function Clients() {
     const [form, setForm] = useState({ name: "", nip: "", krs: "", regon: "", city: "" });
     const [editClient, setEditClient] = useState(null);
     const [deleteClient, setDeleteClient] = useState(null);
-
-    const [showAdd, setShowAdd] = useState(false);
     const [showEdit, setShowEdit] = useState(false);
     const [showDelete, setShowDelete] = useState(false);
 
@@ -96,16 +94,6 @@ function Clients() {
             .finally(() => alive && setLoading(false));
         return () => { alive = false };
     }, []);
-
-    async function handleAdd() {
-        if (!form.name.trim()) return;
-        try {
-            const res = await axios.post(`${API_BASE}/Clients`, form);
-            setClients(prev => [...prev, res.data]);
-            setForm({ name: "", nip: "", krs: "", regon: "", city: "" });
-            setShowAdd(false);
-        } catch (err) { console.error(err); alert("Nie udało się dodać klienta."); }
-    }
 
     async function handleSaveEdit() {
         if (!editClient) return;
