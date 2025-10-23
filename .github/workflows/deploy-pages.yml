@@ -33,7 +33,11 @@ jobs:
       - run: npm install
 
       # 4. Build React app
-      - run: npm run build
+      - name: Build React app
+        run: npm run build
+        env:
+          REACT_APP_API_BASE: ${{ secrets.REACT_APP_API_BASE }}
+
 
       # 5. Prepare GitHub Pages
       - uses: actions/configure-pages@v5
