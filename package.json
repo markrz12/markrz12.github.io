@@ -2,7 +2,6 @@
   "name": "ndr",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://markrz12.github.io/markrz12.github.io",
   "engines": {
     "node": ">=20.0.0",
     "npm": ">=10.0.0"
