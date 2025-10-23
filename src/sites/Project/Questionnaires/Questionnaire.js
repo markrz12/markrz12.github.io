@@ -522,7 +522,7 @@ function KwestionariuszFull() {
         }
     };
 
-    const RenderTableDynamic = ({ tab, answers, setAnswers }) => {
+    const RenderTableDynamic = ({ tab}) => {
         const [rows, setRows] = React.useState(
             (tab.rows || []).map((r, index) => ({ id: index + 1, ...r }))
         );
@@ -690,9 +690,9 @@ function KwestionariuszFull() {
                     </tr>
                     </thead>
                     <tbody>
-                    {rows.map((row, i) =>
+                    {rows.map((row) =>
                         row.isSection ? (
-                            <tr key={`section-${i}`}>
+                            <tr key={`section-${row.name || row.id}`}>
                                 <td
                                     style={{
                                         backgroundColor: "#005679",
@@ -707,7 +707,7 @@ function KwestionariuszFull() {
                                 </td>
                             </tr>
                         ) : (
-                            <tr key={i}>
+                            <tr key={getRowKey(row, tab)}>
                                 {tab.columns.map((col) => renderCell(col, row, tab))}
                             </tr>
                         )

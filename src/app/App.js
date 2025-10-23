@@ -17,15 +17,12 @@ import ProjectSettings from "../sites/Project/ProjectSettings";
 import Questionnaire from "../sites/Project/Questionnaires/Questionnaire";
 import InformationMSB from "../sites/Project/Questionnaires/InformationMSB";
 
-function App() {
-    // Derive basename for GitHub Pages or subfolder deployment
-    let baseName = new URL(document.baseURI).pathname;
-    baseName = baseName === "/" ? "" : baseName.replace(/\/$/, "");
+const basename = process.env.PUBLIC_URL || "/";
 
+function App() {
     return (
-        <Router basename={baseName}>
+        <Router basename={basename}>
             <Routes>
-                {/* Public / main routes */}
                 <Route path="/" element={<Login />} />
                 <Route path="/workspace" element={<Workspace />} />
                 <Route path="/klienci" element={<Clients />} />
@@ -34,15 +31,13 @@ function App() {
                 <Route path="/projekty" element={<Projects />} />
                 <Route path="/projekt-klient" element={<ProjectClient />} />
 
-                {/* Project dynamic layout */}
                 <Route path="/projekty/:projectName" element={<Project />}>
                     <Route index element={<ProjectDashboard />} />
                     <Route path="uzytkownicy" element={<ProjectSettings />} />
                     <Route path="informacjeMSB" element={<InformationMSB />} />
-                    <Route path="kwestionariusz/:screenTitle" element={<Questionnaire/>} />
+                    <Route path="kwestionariusz/:screenTitle" element={<Questionnaire />} />
                 </Route>
 
-                {/* Catch-all */}
                 <Route path="*" element={<div>Page not found</div>} />
             </Routes>
         </Router>
