@@ -20,14 +20,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 1. Checkout the repo
       - uses: actions/checkout@v4
+
+      # 2. Setup Node.js 20
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: npm
-      - run: npm ci
+
+      # 3. Install dependencies (use npm install instead of npm ci)
+      - run: npm install
+
+      # 4. Build React app
       - run: npm run build
+
+      # 5. Prepare GitHub Pages
       - uses: actions/configure-pages@v5
+
+      # 6. Upload build folder
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
