@@ -2,35 +2,38 @@
   "name": "ndr",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://markrz12.github.io/markrz12.github.io",
   "engines": {
     "node": ">=20.0.0",
     "npm": ">=10.0.0"
   },
   "dependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@testing-library/jest-dom": "^6.8.0",
-    "@testing-library/dom": "^10.4.1",
     "axios": "^1.12.2",
     "bootstrap": "^5.3.8",
     "lucide-react": "^0.544.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-bootstrap": "^2.10.10",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "6.14",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "json-server": "^1.0.0-beta.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "mock": "json-server --watch public/db.json --port 5171"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

@@ -50,7 +50,6 @@ export default function ProjektKonfiguracja() {
         axios
             .get(`${API_BASE}/Users`)
             .then((res) => setAllUsers(res.data))
-            .catch((err) => console.error("Błąd pobierania użytkowników:", err));
     }, []);
 
     // 🔹 Extract questionnaires from phases recursively (with label)
@@ -118,7 +117,6 @@ export default function ProjektKonfiguracja() {
             alert("Zapisano zmiany!");
         } catch (err) {
             console.error("Error updating project:", err);
-            alert("Nie udało się zapisać projektu.");
         }
     };
 
