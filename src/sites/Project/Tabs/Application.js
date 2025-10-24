@@ -34,7 +34,6 @@ export default function Application({ initialSubmission }) {
                 className="form-control"
                 style={{ fontSize: "0.9rem", whiteSpace: "pre-wrap", overflow: "hidden" }}
                 value={value}
-                readOnly
             />
         );
     }

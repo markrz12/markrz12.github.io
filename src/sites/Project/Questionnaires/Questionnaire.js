@@ -527,7 +527,6 @@ function KwestionariuszFull() {
 
         return (
             <div className="mt-3 p-3 border rounded bg-light">
-                <h6 className="mb-3">Komentarze</h6>
                 {tab.comments.map((comment, idx) => (
                     <div key={idx} className="mb-3">
                         <label className="form-label" style={{ fontWeight: 500 }}>
