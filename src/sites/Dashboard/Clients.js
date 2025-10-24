@@ -233,7 +233,7 @@ function Clients() {
                         <div className="d-none d-lg-block" style={{ width: 360, paddingLeft: 12 }}>
                             <div className="card shadow-sm h-100 d-flex flex-column">
                                 <div className="text-center mb-2">
-                                    <button className="btn btn-success w-100" onClick={() => navigate("/projekt-klient")}>
+                                    <button className="btn btn-success w-100" onClick={() => navigate("/projekt-klient", { state: { mode: "add" } })}>
                                         Dodaj klienta
                                     </button>
                                 </div>
@@ -261,7 +261,7 @@ function Clients() {
                                             <div className="d-flex flex-wrap gap-2">
                                                 <button
                                                     className="btn btn-sm btn-outline-primary"
-                                                    onClick={() => { setEditClient(selectedClient); setForm({ ...selectedClient }); setShowEdit(true); }}
+                                                    onClick={() => navigate("/projekt-klient", { state: { mode: "edit", clientData: selectedClient } })}
                                                 >
                                                     Edytuj klienta
                                                 </button>
