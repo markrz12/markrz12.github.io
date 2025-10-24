@@ -128,9 +128,6 @@ function Clients() {
     const totalPages = Math.ceil(filtered.length / itemsPerPage);
     const selectedClient = clients.find(c => c.id === selectedId) || null;
 
-    if (loading) return <div className="p-3">Ładowanie klientów...</div>;
-    if (error) return <div className="p-3 text-danger">{error}</div>;
-
     return (
         <div className="d-flex min-vh-100">
             <Sidebar search={search} setSearch={setSearch} />
@@ -182,15 +179,36 @@ function Clients() {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        {paginatedClients.map(c => (
-                                            <tr key={c.id} onClick={() => setSelectedId(c.id)} style={{...tdDescription, cursor: "pointer", backgroundColor: c.id === selectedId ? "#e7f1ff" : undefined }}>
-                                                <td style={tdDescription}>{c.name}</td>
-                                                <td style={tdDescription}>{c.nip}</td>
-                                                <td style={tdDescription}>{c.krs}</td>
-                                                <td style={tdDescription}>{c.regon}</td>
+                                        {loading ? (
+                                            <tr>
+                                                <td colSpan={4} className="text-center py-4">Ładowanie klientów...</td>
                                             </tr>
-                                        ))}
-                                        {filtered.length === 0 && <tr><td colSpan={4} className="text-center text-muted py-4">Brak wyników</td></tr>}
+                                        ) : error ? (
+                                            <tr>
+                                                <td colSpan={4} className="text-center text-danger py-4">{error}</td>
+                                            </tr>
+                                        ) : filtered.length === 0 ? (
+                                            <tr>
+                                                <td colSpan={4} className="text-center text-muted py-4">Brak wyników</td>
+                                            </tr>
+                                        ) : (
+                                            paginatedClients.map(c => (
+                                                <tr
+                                                    key={c.id}
+                                                    onClick={() => setSelectedId(c.id)}
+                                                    style={{
+                                                        ...tdDescription,
+                                                        cursor: "pointer",
+                                                        backgroundColor: c.id === selectedId ? "#e7f1ff" : undefined,
+                                                    }}
+                                                >
+                                                    <td style={tdDescription}>{c.name}</td>
+                                                    <td style={tdDescription}>{c.nip}</td>
+                                                    <td style={tdDescription}>{c.krs}</td>
+                                                    <td style={tdDescription}>{c.regon}</td>
+                                                </tr>
+                                            ))
+                                        )}
                                         </tbody>
                                     </table>
                                     <div style={{ marginTop: 5}}>
