@@ -522,6 +522,38 @@ function KwestionariuszFull() {
         }
     };
 
+    const renderCommentsSection = (tab) => {
+        if (!tab.comments || tab.comments.length === 0) return null;
+
+        return (
+            <div className="mt-3 p-3 border rounded bg-light">
+                <h6 className="mb-3">Komentarze</h6>
+                {tab.comments.map((comment, idx) => (
+                    <div key={idx} className="mb-3">
+                        <label className="form-label" style={{ fontWeight: 500 }}>
+                            {comment.question}
+                        </label>
+                        <textarea
+                            className="form-control form-control-sm"
+                            rows={3}
+                            value={answers[`comment-${tab.title}-${idx}`]?.answer || comment.answer || ""}
+                            onChange={(e) =>
+                                setAnswers((prev) => ({
+                                    ...prev,
+                                    [`comment-${tab.title}-${idx}`]: {
+                                        ...prev[`comment-${tab.title}-${idx}`],
+                                        answer: e.target.value,
+                                    },
+                                }))
+                            }
+                        />
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
+
     const RenderTableDynamic = ({ tab}) => {
         const [rows, setRows] = React.useState(
             (tab.rows || []).map((r, index) => ({ id: index + 1, ...r }))
@@ -832,7 +864,12 @@ function KwestionariuszFull() {
 
                         switch (tab.type) {
                             case "CUSTOM":
-                                return <div key={i}>{renderTable(tab)}</div>;
+                                return (
+                                    <div key={i}>
+                                        {renderTable(tab)}
+                                        {renderCommentsSection(tab)}
+                                    </div>
+                                );
                             case "Team":
                                 return <div key={i}>{renderTeamTable(tab)}</div>;
                             case "DYNAMIC":
