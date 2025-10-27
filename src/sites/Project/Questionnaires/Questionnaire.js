@@ -7,6 +7,9 @@ import FilesTable from "../Tabs/Files";
 import RequestsTable from "../Tabs/Request";
 import ActivityLog from "../Tabs/Activitylog";
 import Application from "../Tabs/Application";
+import msbDescriptions from "./msbDescriptions.json";
+
+
 
 function KwestionariuszFull() {
     const { project } = useOutletContext();
@@ -110,8 +113,52 @@ function KwestionariuszFull() {
             case "description":
             case "text":
                 if (col.label === "MSB") {
-                    return <td key={col.label} style={{...tdDescription, maxWidth: "140px"}}>{row.msb || ""}</td>;
+                    const msbList = Array.isArray(row.msb) ? row.msb : [row.msb];
+
+                    return (
+                        <td
+                            key={col.label}
+                            style={{
+                                ...tdDescription,
+                                maxWidth: "200px",
+                                wordBreak: "break-word",
+                                verticalAlign: "top",
+                            }}
+                        >
+                            <div>
+                                {msbList
+                                    .filter(Boolean)
+                                    .map((item, index) => {
+                                        const ref = typeof item === "string" ? item : item.ref;
+                                        const desc =
+                                            msbDescriptions.msb.find(d => d.ref === ref)?.desc || "Brak opisu";
+
+                                        return (
+                                            <span
+                                                key={index}
+                                                title={desc}
+                                                style={{
+                                                    display: "inline-block",
+                                                    margin: "2px 4px",
+                                                    padding: "2px 6px",
+                                                    backgroundColor: "#ebf8ff",
+                                                    color: "#2b6cb0",
+                                                    border: "1px solid #bee3f8",
+                                                    borderRadius: "4px",
+                                                    fontSize: "0.8rem",
+                                                    cursor: "help",
+                                                }}
+                                            >
+                  {ref}
+                </span>
+                                        );
+                                    })}
+                            </div>
+                        </td>
+                    );
                 }
+
+
                 if (col.label === "Powiązane obszary") {
                     return (
                         <td key={col.label} style={tdDescription}>
