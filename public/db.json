@@ -19105,7 +19105,15 @@
                       "nr": 2,
                       "nazwa": "Jeżeli dopiero nawiązałeś współpracę z klientem i po raz pierwszy badasz jego sprawozdanie finansowe, w związku z twoją odpowiedzialnością względem stanów początkowych, wykonaj odpowiednie do oceny ryzyka i specyfiki pozycji procedury, które pozwolą ci upewnić się, że: a) stany początkowe nie zawierają zniekształceń, które istotnie wpływają na sprawozdanie finansowe za bieżący rok, b) zostały zastosowane prawidłowe zasady (polityka) rachunkowości do stanów początkowych i były one stosowane w sposób ciągły przy sporządzaniu sprawozdania finansowego za rok bieżący, lub jeżeli dokonano zmian w tym zakresie, to czy zostały one prawidłowo rozliczone i odpowiednio zaprezentowane zgodnie z mającymi zastosowanie zasadami rachunkowości. Pamiętaj, że jeżeli sprawozdanie finansowe zawiera porównawcze informacje finansowe, zastosowanie mają także wymogi i wytyczne zawarte w MSB 710.",
                       "cele": "1",
-                      "msb": "510(3,5-9), 710(5)",
+                      "msb": [
+                        "510(3)",
+                        "510(5)",
+                        "510(6)",
+                        "510(7)",
+                        "510(8)",
+                        "510(9)",
+                        "710(5)"
+                      ],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -19117,7 +19125,14 @@
                       "nr": 3,
                       "nazwa": "W zależności od specyfiki pozycji zaprojektuj i przeprowadź procedury badania odpowiadające ocenie ryzyka istotnego zniekształcenia spowodowanego oszustwem na poziomie stwierdzeń. W tym celu możesz posłużyć się załącznikiem nr 2 do MSB 240 zawierającym przykłady procedur badania. Kierownictwo może popełnić oszustwo poprzez manipulowanie zapisami i obchodzenie kontroli, dlatego ryzyko uznaje się za znaczące.",
                       "cele": "1",
-                      "msb": "330(6), 240(30-33), 330(21)",
+                      "msb": [
+                        "330(6)",
+                        "240(30)",
+                        "240(31)",
+                        "240(32)",
+                        "240(33)",
+                        "330(21)"
+                      ],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -19129,7 +19144,11 @@
                       "nr": 4,
                       "nazwa": "Przygotuj tabelę wiodącą kont księgowych i uzgodnij ją z rachunkiem zysków i strat.",
                       "cele": "1",
-                      "msb": "330(20,30), 710(7)",
+                      "msb": [
+                        "330(20)",
+                        "330(30)",
+                        "710(7)"
+                      ],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -19141,7 +19160,11 @@
                       "nr": 5,
                       "nazwa": "Sprawdź poziom kosztów poniesionych przez jednostkę w danym okresie do analogicznego okresu w roku poprzednim i wyjaśnij istotne odchylenia od trendu.",
                       "cele": "2, 3",
-                      "msb": "330(20), 520(5,7)",
+                      "msb": [
+                        "330(20)",
+                        "520(5)",
+                        "520(7)"
+                      ],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -19153,7 +19176,11 @@
                       "nr": 6,
                       "nazwa": "W badaniu kosztów bardzo użyteczne jest przeprowadzenie różnego rodzaju analitycznych procedur wiarygodności. Zastanów się, przy uwzględnieniu specyfiki działalności twojego klienta, jakie procedury mógłbyś zaprojektować, aby uzyskać z nich wystarczające zapewnienie do zbadania wybranych stwierdzeń związanych z kosztami i powiązanych z nimi zobowiązań. Możesz np. wykonać test analityczny kosztów korelujących ze sprzedażą, kosztów rodzajowych w ujęciu miesięcznym.",
                       "cele": "2, 3, 6",
-                      "msb": "330(20), 520(5,7)",
+                      "msb": [
+                        "330(20)",
+                        "520(5)",
+                        "520(7)"
+                      ],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -19189,7 +19216,7 @@
                       "nr": 9,
                       "nazwa": "Poprzez analizę zapisów na kontach dotyczących usług prawnych zweryfikuj kompletność listy kancelarii prawnych, które zostały objęte procedurą niezależnych bezpośrednich potwierdzeń.",
                       "cele": "2",
-                      "msb": "330(20), 501(9)",
+                      "msb": ["330(20)","501(9)"],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -19225,7 +19252,22 @@
                       "nr": 12,
                       "nazwa": "W przypadku realizacji przez klienta kontraktów długoterminowych przetestuj wybrane kontrakty pod kątem poprawności ich rozliczenia (przychodów, kosztów, innych rozliczeń a także rezerw na przewidywane straty) z uwzględnieniem wybranych przez klienta zasad ich wyceny.",
                       "cele": "1, 2, 3, 4, 5, 6",
-                      "msb": "330(20), 520(5,7), 540(12-22)",
+                      "msb": [
+                        "330(20)",
+                        "520(5)",
+                        "520(7)",
+                        "540(12)",
+                        "540(13)",
+                        "540(14)",
+                        "540(15)",
+                        "540(16)",
+                        "540(17)",
+                        "540(18)",
+                        "540(19)",
+                        "540(20)",
+                        "540(21)",
+                        "540(22)"
+                      ],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -19237,7 +19279,11 @@
                       "nr": 13,
                       "nazwa": "Przeanalizuj poziom kosztów wynagrodzeń oraz związane z nimi koszty ubezpieczeń społecznych i inne świadczenia. Porównaj wyniki do poprzednich lat i budżetów. Sprawdź politykę wynagrodzeń, wypłaty jednorazowe, ogólny poziom podwyżek wynagrodzeń.",
                       "cele": "2, 3, 4, 6",
-                      "msb": "330(20), 520(5,7)",
+                      "msb": [
+                        "330(20)",
+                        "520(5)",
+                        "520(7)"
+                      ],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -19321,7 +19367,7 @@
                       "nr": 20,
                       "nazwa": "Ustal wartość transakcji z jednostkami powiązanymi.",
                       "cele": "2, 3, 5",
-                      "msb": "330(20), 330(19), 550(20)",
+                      "msb": ["330(20)","330(19)","550(20)"],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -19345,7 +19391,7 @@
                       "nr": 22,
                       "nazwa": "Uzgodnij obszar z innymi powiązanymi obszarami: bilansu, rachunku przepływów pieniężnych, informacją dodatkową, podatkiem dochodowym od osób prawnych oraz podatkiem odroczonym.",
                       "cele": "7",
-                      "msb": "330(20,30)",
+                      "msb": ["330(20)", "330(30)"],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -19381,7 +19427,7 @@
                       "nr": 25,
                       "nazwa": "Jeżeli uznasz to za odpowiednie przeprowadź dodatkowe testy, aby uzyskać pewność, że zostały spełnione wytyczne wyznaczone na etapie planowania oraz cele badania.",
                       "cele": null,
-                      "msb": "330(28), 500(6)",
+                      "msb": ["330(28)","500(6)"],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -20056,7 +20102,14 @@
                       "nr": 2,
                       "nazwa": "Jesteś odpowiedzialny za zachowanie postawy zawodowego sceptycyzmu w trakcie całego badania, rozważ więc ryzyko oszustw, w tym możliwość obejścia kontroli przez kierownictwo, oraz fakt, że procedury badania, które są efektywne w wykrywaniu błędów, mogą być nieefektywne w wykrywaniu oszustw. W zależności od specyfiki pozycji (obszaru sprawozdania finansowego) zaprojektuj i przeprowadź procedury badania odpowiadające ocenie ryzyka istotnego zniekształcenia spowodowanego oszustwem na poziomie stwierdzeń. W tym celu możesz posłużyć się załącznikiem nr 2 do MSB 240 zawierającym przykłady procedur badania. Kierownictwo jest w wyjątkowej sytuacji, która umożliwia mu popełnienie oszustwa z racji możliwości manipulowania zapisami księgowymi i sporządzania nacechowanych oszustwem sprawozdań finansowych poprzez obchodzenie kontroli, które w innych sytuacjach wydają się działać skutecznie. O ile poziom ryzyka obchodzenia kontroli przez kierownictwo będzie różny w poszczególnych jednostkach, ryzyko to tym niemniej występuje we wszystkich jednostkach. Z uwagi na trudny do przewidzenia sposób obejścia tych kontroli, jest to ryzyko wystąpienia istotnego zniekształcenia powstałego w wyniku oszustwa, dlatego uznaje się je za ryzyko znaczące. W związku z tym, pamiętaj o odpowiednim zaprojektowaniu i przeprowadzeniu odpowiednich w danych okolicznościach procedur badania.",
                       "cele": "1",
-                      "msb": " 330(6), 240(30-33), 330(21)",
+                      "msb": [
+                        "330(6)",
+                        "240(30)",
+                        "240(31)",
+                        "240(32)",
+                        "240(33)",
+                        "330(21)"
+                      ],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -20068,7 +20121,11 @@
                       "nr": 3,
                       "nazwa": "Przygotuj tabelę wiodącą kont księgowych i uzgodnij ją z rachunkiem zysków i strat.",
                       "cele": "1",
-                      "msb": "330(20,30), 710(7)",
+                      "msb": [
+                        "330(20)",
+                        "330(30)",
+                        "710(7)"
+                      ],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -20188,7 +20245,11 @@
                       "nr": 13,
                       "nazwa": "Dokonaj uzgodnienia efektywnej stopy podatkowej i wyjaśnij wszelkie jej odchylenia od stopy ustawowej.",
                       "cele": "2, W, Ko, D, R, Kl",
-                      "msb": "330(20), 520(5,7)",
+                      "msb": [
+                        "330(20)",
+                        "520(5)",
+                        "520(7)"
+                      ],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -20200,7 +20261,7 @@
                       "nr": 14,
                       "nazwa": "Uzgodnij obszar z innymi powiązanymi obszarami: bilansu, rachunku przepływów pieniężnych, informacją dodatkową.",
                       "cele": "3, WoPiO, Ko, KiZ, DiW",
-                      "msb": "330(20,30)",
+                      "msb": ["330(20)","330(30)"],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -20432,7 +20493,7 @@
                       "nr": 6,
                       "nazwa": "Uzgodnij obszar z innymi powiązanymi obszarami: bilansu, rachunku zysków i strat, informacją dodatkową.",
                       "cele": "2, WoPiO, Ko, KiZ, DiW",
-                      "msb": "330(20,30)",
+                      "msb": ["330(20)","330(30)"],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -20468,7 +20529,7 @@
                       "nr": 9,
                       "nazwa": "Jeżeli uznasz to za odpowiednie przeprowadź dodatkowe testy, aby uzyskać pewność, że zostały spełnione wytyczne wyznaczone na etapie planowania oraz cele badania.",
                       "cele": "",
-                      "msb": "330(28), 500(6)",
+                      "msb": ["330(28)","500(6)"],
                       "komentarz": "",
                       "zalaczniki": null,
                       "author": null,
@@ -20594,7 +20655,7 @@
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
-                      "msb": "510(6), 710(7)",
+                      "msb": ["510(6)","710(7)"],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -20606,7 +20667,7 @@
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
-                      "msb": "240(35,36)",
+                      "msb": ["240(35)","240(36)"],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -20630,7 +20691,7 @@
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
-                      "msb": "330(26), 500(6)",
+                      "msb": ["330(26)","500(6)"],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -20729,7 +20790,11 @@
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
-                      "msb": "550(11,13,28)",
+                      "msb": [
+                        "550(11)",
+                        "550(13)",
+                        "550(28)"
+                      ],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -20765,7 +20830,7 @@
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
-                      "msb": "550(11), 240(30)",
+                      "msb": ["550(11)","240(30)"],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -20777,7 +20842,11 @@
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
-                      "msb": "550(16,18,23)",
+                      "msb": [
+                        "550(16)",
+                        "550(18)",
+                        "550(23)"
+                      ],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -20801,7 +20870,11 @@
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
-                      "msb": "550(21,22,17)",
+                      "msb": [
+                        "550(21)",
+                        "550(22)",
+                        "550(17)"
+                      ],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -20861,7 +20934,7 @@
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
-                      "msb": "330(20,30)",
+                      "msb": ["330(20)","330(30)"],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -20897,7 +20970,7 @@
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
-                      "msb": "330(28), 500(6)",
+                      "msb": ["330(28)","500(6)"],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -21020,7 +21093,7 @@
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
-                      "msb": "250(13,14)",
+                      "msb": ["250(13)","250(14)"],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -21140,7 +21213,11 @@
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
-                      "msb": "250(22,23,24)",
+                      "msb": [
+                        "250(22)",
+                        "250(23)",
+                        "250(24)"
+                      ],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -21188,7 +21265,7 @@
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
-                      "msb": "330(28), 500(6)",
+                      "msb": ["330(28)","500(6)"],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -21379,7 +21456,13 @@
                               },
                               "komentarz": "",
                               "attachment": null,
-                              "msb": "560(4-7), 560(8)",
+                              "msb": [
+                                "560(4)",
+                                "560(5)",
+                                "560(6)",
+                                "560(7)",
+                                "560(8)"
+                              ],
                               "author": null,
                               "approver": null,
                               "date": null,
@@ -21433,7 +21516,14 @@
                               },
                               "komentarz": "",
                               "attachment": null,
-                              "msb": "560(12–17)",
+                              "msb": [
+                                "560(12)",
+                                "560(13)",
+                                "560(14)",
+                                "560(15)",
+                                "560(16)",
+                                "560(17)"
+                              ],
                               "author": null,
                               "approver": null,
                               "date": null,
@@ -21524,7 +21614,13 @@
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
-                      "msb": "570(10–14)",
+                      "msb": [
+                        "570(10)",
+                        "570(11)",
+                        "570(12)",
+                        "570(13)",
+                        "570(14)"
+                      ],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -21656,7 +21752,7 @@
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
-                      "msb": "570(21–22)",
+                      "msb": ["570(21)","570(22)"],
                       "author": null,
                       "approver": null,
                       "date": null,
@@ -22305,7 +22401,7 @@
                     {
                       "lp": "1",
                       "pytanie": "Upewnij się, że kierownictwo przekazało podpisane pisemne oświadczenie końcowe w dacie możliwie najbliższej dacie podpisania sprawozdania biegłego rewidenta (praktycznie powinna być to tożsama data). Jeżeli pisemne oświadczenie jest datowane ze znacznym wyprzedzeniem w stosunku do daty podpisania sprawozdania biegłego rewidenta należy uzyskać potwierdzenie, że pisemne oświadczenie zostałoby przez kierownictwo podpisane w takim samym brzmieniu w późniejszej dacie.",
-                      "msb": "580(13,14)",
+                      "msb": ["580(13)", "580(14)"],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -22353,7 +22449,7 @@
                     {
                       "lp": "5",
                       "pytanie": "Upewnij się, że kierownictwo potwierdziło w pisemnym oświadczeniu swoją odpowiedzialność w następującym zakresie: (i) sporządzenie sprawozdania finansowego zgodnie z mającymi zastosowanie ramowymi założeniami sprawozdawczości finansowej; (ii) przedstawienie biegłemu rewidentowi wszystkich odnośnych informacji i umożliwienie dostępu zgodnie z warunkami zlecenia badania; (iii) zapewnienie, że wszystkie transakcje zostały zaksięgowane i odzwierciedlone w sprawozdaniu finansowym.",
-                      "msb": "580(10,11)",
+                      "msb": ["580(10)","580(11)"],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -22365,7 +22461,13 @@
                     {
                       "lp": "6",
                       "pytanie": "Upewnij się, że pisemne oświadczenie zawiera: (i) potwierdzenie kierownictwa co do odpowiedzialności za kontrolę wewnętrzną służącą zapobieganiu i wykrywaniu oszustw; (ii) ujawnienie wyników oceny ryzyka oszustw; (iii) ujawnienie wiedzy o oszustwach lub podejrzeniach; (iv) ujawnienie zarzutów o oszustwo; (v) potwierdzenie kompletności ujawnień o podmiotach powiązanych; (vi) ujawnienie przypadków naruszenia prawa; (vii) ujawnienie wszystkich sporów i roszczeń; (viii) uwzględnienie zdarzeń po dniu bilansowym.",
-                      "msb": "240(39), 580, 550(26), 250(16), 501(12)",
+                      "msb": [
+                        "240(39)",
+                        "580",
+                        "550(26)",
+                        "250(16)",
+                        "501(12)"
+                      ],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -22377,7 +22479,7 @@
                     {
                       "lp": "7",
                       "pytanie": "Upewnij się, że pisemne oświadczenie obejmuje: (i) ocenę zdolności jednostki do kontynuacji działalności; (ii) zapewnienie odpowiednich ujawnień; (iii) odniesienie do okresu 12 miesięcy po dacie sprawozdania finansowego; (iv) potwierdzenie racjonalności założeń przy ustalaniu wartości szacunkowych.",
-                      "msb": "570(16), 540(22)",
+                      "msb": ["570(16)","540(22)"],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -22634,7 +22736,16 @@
                     {
                       "lp": "2",
                       "pytanie": "Rozważ czy pismo do osób sprawujących nadzór zawiera informacje dotyczące odpowiedzialności biegłego rewidenta, wszelkich ewentualnych słabości zidentyfikowanych w obszarze systemów księgowych, informacji dla kierownictwa i mechanizmów kontroli wewnętrznej. Rozważ, czy uwzględniono potencjalne problemy dotyczące przestrzegania przepisów o podatku VAT oraz o podatkach od wynagrodzeń (np. PIT, ZUS). Uwaga, niektóre kwestie mogą wymagać niezwłocznego zgłoszenia (tzn. zanim zostanie sporządzone lub wysłane zwyczajowe pismo).",
-                      "msb": "260(14,16), 240(40), 265(7-11)",
+                      "msb": [
+                        "260(14)",
+                        "260(16)",
+                        "240(40)",
+                        "265(7)",
+                        "265(8)",
+                        "265(9)",
+                        "265(10)",
+                        "265(11)"
+                      ],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -22670,7 +22781,13 @@
                     {
                       "lp": "5",
                       "pytanie": "Upewnij się, że w przypadku, gdy kluczowy biegły rewident rozpoznał oszustwo lub otrzymał informacje wskazujące na możliwość istnienia oszustwa, bądź też ma podejrzenia co do naruszenia przepisów i regulacji (albo naruszenie znaczące, albo umyślne), niezwłocznie poinformował osoby sprawujące nadzór, jeśli sprawa dotyczy kierownictwa, pracowników pełniących znaczące role w kontroli wewnętrznej lub innych osób, jeżeli oszustwo lub naruszenie prowadzi do istotnego zniekształcenia sprawozdania finansowego.",
-                      "msb": "240(40-41), 250A(22-24)",
+                      "msb": [
+                        "240(40)",
+                        "240(41)",
+                        "250A(22)",
+                        "250A(23)",
+                        "250A(24)"
+                      ],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -22682,7 +22799,11 @@
                     {
                       "lp": "6",
                       "pytanie": "Rozważ poziom istotności oszustwa lub słabości (np. biorąc pod uwagę wielkość jednostki, charakter działalności jednostki, potencjalne skutki słabości i utrudnień ujawnionych podczas badania) i zastanów się, czy dana sprawa powinna zostać poruszona w piśmie, czy raczej omówiona podczas dyskusji z kierownictwem.",
-                      "msb": "260(16), 240(41-42)",
+                      "msb": [
+                        "260(16)",
+                        "240(41)",
+                        "240(42)"
+                      ],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -22694,7 +22815,10 @@
                     {
                       "lp": "7",
                       "pytanie": "Zapisz wszelkie nieskorygowane zniekształcenia i braki zidentyfikowane w trakcie badania w zbiorczym zestawieniu nieprawidłowości i uwzględnij w piśmie do kierownictwa i/lub do osób sprawujących nadzór, stosownie do okoliczności.",
-                      "msb": "450(12-13)",
+                      "msb": [
+                        "450(12)",
+                        "450(13)"
+                      ],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -22706,7 +22830,10 @@
                     {
                       "lp": "8",
                       "pytanie": "Poinformuj kierownictwo o zidentyfikowanych zniekształceniach i upewnij się, że kierownictwo zdaje sobie sprawę z charakteru i wagi ujawnionych słabości. Omów potencjalne problemy i uzgodnij plan działań. (Znaczące słabości należy zgłosić na piśmie, a korekty muszą zostać zatwierdzone przez osoby sprawujące nadzór).",
-                      "msb": "450(12-13)",
+                      "msb": [
+                        "450(12)",
+                        "450(13)"
+                      ],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -22790,7 +22917,9 @@
                     {
                       "lp": "15",
                       "pytanie": "Dopilnuj, aby wymiana informacji na temat naruszeń przepisów i regulacji prowadzona z kierownictwem lub osobami sprawującymi nadzór była odpowiednio dokumentowana. Uwaga! W przypadku podejrzenia o pranie pieniędzy należy uważać, aby nie popełnić wykroczenia polegającego na przekazaniu „ostrzeżenia”.",
-                      "msb": "250A(22-24)",
+                      "msb": ["250A(22)",
+                      "250A(23)",
+                      "250A(24)"],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -23107,7 +23236,7 @@
                     {
                       "lp": "5",
                       "pytanie": "Potwierdź, że dokumentacja badania została sporządzona w sposób wskazujący rodzaj, czas i zakres procedur badania, wyniki oraz znaczące sprawy i wnioski.",
-                      "msb": "230(8), części I–V",
+                      "msb": "230(8)",
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
@@ -23131,7 +23260,7 @@
                     {
                       "lp": "7",
                       "pytanie": "Potwierdź, że istnieje wystarczająca dokumentacja, aby doświadczony biegły rewident mógł zrozumieć proces badania, procedury, ich rezultaty i wnioski.",
-                      "msb": "części III, IV",
+                      "msb": "",
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
@@ -23239,7 +23368,7 @@
                     {
                       "lp": "16",
                       "pytanie": "Potwierdź, że badanie zostało przeprowadzone z zachowaniem zawodowego sceptycyzmu, uwzględniając aspekt nieprzewidywalności.",
-                      "msb": "240(9), 200(15)",
+                      "msb": ["240(9)","200(15)"],
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
@@ -23251,7 +23380,7 @@
                     {
                       "lp": "17",
                       "pytanie": "Potwierdź, że kluczowy biegły rewident przejrzał i ocenił wnioski z dowodów badania stanowiących podstawę opinii.",
-                      "msb": "700(8–9)",
+                      "msb": ["700(8)","700(9)"],
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
@@ -23347,7 +23476,7 @@
                     {
                       "lp": "25",
                       "pytanie": "Potwierdź, że sprawozdanie z działalności jest spójne ze sprawozdaniem finansowym, spełnia wymogi prawa i nie zawiera istotnych zniekształceń.",
-                      "msb": "720(8), UoR art.65",
+                      "msb": ["720(8)","UoR art.65"],
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
@@ -23395,7 +23524,15 @@
                     {
                       "lp": "29",
                       "pytanie": "Potwierdź, że procedury kontroli jakości firmy audytorskiej zostały zachowane.",
-                      "msb": "220(19–20), MSKJ1(16–20)",
+                      "msb": [
+                        "220(19)",
+                        "220(20)",
+                        "MSKJ1(16)",
+                        "MSKJ1(17)",
+                        "MSKJ1(18)",
+                        "MSKJ1(19)",
+                        "MSKJ1(20)"
+                      ],
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
@@ -23407,7 +23544,13 @@
                     {
                       "lp": "30",
                       "pytanie": "Potwierdź, że nie zwracano się z prośbą o ograniczenie lub modyfikację zakresu badania; w przeciwnym razie wskaż miejsce dokumentacji.",
-                      "msb": "210(7), 210(14–17)",
+                      "msb": [
+                        "210(7)",
+                        "210(14)",
+                        "210(15)",
+                        "210(16)",
+                        "210(17)"
+                      ],
                       "odpowiedz": null,
                       "zalacznik": null,
                       "komentarz": "",
@@ -23551,7 +23694,7 @@
                     {
                       "lp": "4",
                       "pytanie": "Potwierdzam, że: i. uzyskałem/am i włączyłem/am do dokumentacji odpowiednie informacje z firmy lub z firm należących do sieci, stosownie do okoliczności, aby rozpoznać i ocenić uwarunkowania oraz powiązania stanowiące zagrożenie dla niezależności; ii. włączyłem/am do dokumentacji moją ocenę informacji dotyczących rozpoznanych przypadków naruszenia zasad i procedur firmy dotyczących niezależności, o ile takowe wystąpiły; iii. udokumentowałem/am stosowne działania eliminujące takie zagrożenia lub redukujące je do akceptowalnego poziomu poprzez zastosowanie zabezpieczeń; oraz niezwłocznie poinformowałem/am firmę audytorską o braku możliwości rozwiązania danej kwestii za pomocą odpowiednich działań. Stwierdzam zatem, że ja i firma audytorska postępowaliśmy zgodnie z przepisami prawa i Kodeksem etyki.",
-                      "msb": "220(10,11), Kodeks Etyki",
+                      "msb": ["220(10,11)","Kodeks Etyki"],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -23587,7 +23730,12 @@
                     {
                       "lp": "7",
                       "pytanie": "Potwierdzam, że w trakcie badania mojej uwagi nie zwróciło nic, co mogłoby sprawić, że w przyszłym roku nie zgodziłbym się ponownie przyjąć zlecenia badania.",
-                      "msb": "220(8,12,14), MSKJ1(26)",
+                      "msb": [
+                        "220(8)",
+                        "220(12)",
+                        "220(14)",
+                        "MSKJ1(26)"
+                      ],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -23611,7 +23759,7 @@
                     {
                       "lp": "9",
                       "pytanie": "Potwierdzam, że ja oraz członkowie zespołu wykonującego badanie przeprowadziliśmy odpowiednie konsultacje podczas badania, zarówno w ramach zespołu wykonującego badanie jak i między członkami zespołu a innymi osobami odpowiedniego szczebla z firmy audytorskiej lub spoza niej. Konsultacje zostały udokumentowane, a wnioski wdrożone.",
-                      "msb": "220(18,24)",
+                      "msb": ["220(18)","220(24)"],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -23716,7 +23864,7 @@
                     {
                       "lp": "1",
                       "pytanie": "Potwierdzam dokonanie oceny znaczących osądów wydanych przez zespół wykonujący badanie oraz wniosków wyciągniętych podczas sporządzania sprawozdania biegłego rewidenta, która obejmuje: i. dyskusję na temat znaczących spraw z kluczowym biegłym rewidentem odpowiedzialnym za badanie, ii. przegląd sprawozdania finansowego i zaproponowanego sprawozdania biegłego rewidenta, iii. przegląd wybranej dokumentacji badania dotyczącej znaczących osądów dokonanych przez zespół wykonujący badanie i sformułowanych przez niego wniosków, iv. ocenę wniosków sformułowanych podczas sporządzania sprawozdania biegłego rewidenta i rozważenie, czy zaproponowane sprawozdanie biegłego rewidenta jest odpowiednie.",
-                      "msb": "220(20), MSKJ1",
+                      "msb": ["220(20)","MSKJ1"],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
@@ -23728,7 +23876,7 @@
                     {
                       "lp": "2",
                       "pytanie": "Potwierdzam, że: i. przeprowadzono procedury wymagane przez politykę firmy dotyczącą kontroli jakości wykonania zlecenia badania, ii. kontrola jakości wykonania zlecenia badania została zakończona w dacie (lub przed datą) sprawozdania biegłego rewidenta oraz iii. nie są mi znane żadne nierozwiązane sprawy, które kazałyby sądzić, że znaczące osądy wydane przez zespół wykonujący badanie oraz wyciągnięte przez niego wnioski są nieodpowiednie.",
-                      "msb": "220(25), MSKJ1",
+                      "msb": ["220(25)","MSKJ1"],
                       "odpowiedz": null,
                       "komentarz": "",
                       "zalacznik": null,
