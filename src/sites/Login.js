@@ -41,6 +41,8 @@ function Login() {
                 console.log("Zalogowano pomyślnie:", data);
                 // Tutaj można zapisać token do Local Storage/Cookies
                 const token = data.token;
+                const returnedEmail = data.email || email;
+
 
                 if (token) {
                     // Zapis tokena w ciasteczkach. Token wygaśnie za 7 dni (expires: 7)
@@ -51,6 +53,16 @@ function Login() {
                     });
                     console.log("Token zapisany w cookies.");
                 }
+
+                if (returnedEmail) {
+                    Cookies.set("userEmail", returnedEmail, {
+                        expires: 7,
+                        secure: false,
+                        sameSite: "Strict",
+                    });
+                    console.log("Email zapisany w cookies:", returnedEmail);
+                }
+
                 // Przekierowanie po pomyślnym zalogowaniu
                 navigate("/workspace");
             } else {

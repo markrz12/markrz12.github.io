@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {BsHouse, BsPeople, BsFileText, BsFolder, BsPerson, BsGear} from "react-icons/bs";
 import { InitialsAvatar, Notifications, } from "../ui/common_function";
+import Cookies from "js-cookie";
+
 
 // 🔹 Sidebar
 export function Sidebar({ search, setSearch }) {
@@ -62,21 +64,26 @@ export function Sidebar({ search, setSearch }) {
 }
 
 // 🔹 Topbar
-export function Topbar({ breadcrumb, onLogout }){
+export function Topbar({ breadcrumb = [], onLogout }) {
     const [openNotifications, setOpenNotifications] = useState(false);
-
     const [showAccount, setShowAccount] = useState(false);
+    const [email, setEmail] = useState("");
+
     const accountBtnRef = useRef(null);
     const accountMenuRef = useRef(null);
-
-    const notificationsPopRef = useRef(null);
     const notificationsBtnRef = useRef(null);
+    const notificationsPopRef = useRef(null);
 
-    // obsługa powiadomień
+    // Load email from cookies
+    useEffect(() => {
+        const storedEmail = Cookies.get("userEmail");
+        if (storedEmail) setEmail(storedEmail);
+    }, []);
+
+    // Notifications dropdown
     useEffect(() => {
         if (!openNotifications) return;
-
-        const handleClick = (e) => {
+        const handleClickOutside = (e) => {
             if (
                 notificationsPopRef.current &&
                 !notificationsPopRef.current.contains(e.target) &&
@@ -86,25 +93,19 @@ export function Topbar({ breadcrumb, onLogout }){
                 setOpenNotifications(false);
             }
         };
-
-        const handleKey = (e) => {
-            if (e.key === "Escape") setOpenNotifications(false);
-        };
-
-        document.addEventListener("mousedown", handleClick);
+        const handleKey = (e) => e.key === "Escape" && setOpenNotifications(false);
+        document.addEventListener("mousedown", handleClickOutside);
         document.addEventListener("keydown", handleKey);
-
         return () => {
-            document.removeEventListener("mousedown", handleClick);
+            document.removeEventListener("mousedown", handleClickOutside);
             document.removeEventListener("keydown", handleKey);
         };
     }, [openNotifications]);
 
-// obsługa konta
+    // Account dropdown
     useEffect(() => {
         if (!showAccount) return;
-
-        const handleClick = (e) => {
+        const handleClickOutside = (e) => {
             if (
                 accountMenuRef.current &&
                 !accountMenuRef.current.contains(e.target) &&
@@ -114,70 +115,154 @@ export function Topbar({ breadcrumb, onLogout }){
                 setShowAccount(false);
             }
         };
-
-        const handleKey = (e) => {
-            if (e.key === "Escape") setShowAccount(false);
-        };
-
-        document.addEventListener("mousedown", handleClick);
+        const handleKey = (e) => e.key === "Escape" && setShowAccount(false);
+        document.addEventListener("mousedown", handleClickOutside);
         document.addEventListener("keydown", handleKey);
-
         return () => {
-            document.removeEventListener("mousedown", handleClick);
+            document.removeEventListener("mousedown", handleClickOutside);
             document.removeEventListener("keydown", handleKey);
         };
     }, [showAccount]);
 
+    // Logout
+    const handleLogout = () => {
+        Cookies.remove("authToken");
+        Cookies.remove("userEmail");
+        if (onLogout) onLogout();
+        // Przekieruj do strony logowania (root)
+        window.location.href = "http://localhost:3000/";}
 
     return (
-        <div className="shadow-sm" style={{ backgroundColor:'var(--ndr-bg-topbar)', padding:'0.5rem' }}>
+        <div className="shadow-sm" style={{ backgroundColor: "var(--ndr-bg-topbar)", padding: "0.5rem" }}>
             <div className="d-flex align-items-center justify-content-between px-4 py-2">
+
+                {/* Breadcrumb */}
                 <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb mb-0" style={{ color:'#fff', "--bs-breadcrumb-divider":"'/'", "--bs-breadcrumb-divider-color":'#fff' }}>
-                        {breadcrumb.map((item, idx)=> (
-                            <li key={idx} className={"breadcrumb-item" + (item.active? ' active':'')} aria-current={item.active? 'page': undefined}>
-                                {item.to && !item.active? (<Link to={item.to} style={{ color:'#fff', textDecoration:'underline' }}>{item.label}</Link>): (<span style={{ color:'#fff' }}>{item.label}</span>)}
-                            </li> ))}
+                    <ol
+                        className="breadcrumb mb-0"
+                        style={{
+                            color: "#fff",
+                            "--bs-breadcrumb-divider": "'/'",
+                            "--bs-breadcrumb-divider-color": "#fff",
+                        }}
+                    >
+                        {breadcrumb.map((item, idx) => (
+                            <li
+                                key={idx}
+                                className={`breadcrumb-item${item.active ? " active" : ""}`}
+                                aria-current={item.active ? "page" : undefined}
+                            >
+                                {item.to && !item.active ? (
+                                    <Link
+                                        to={item.to}
+                                        style={{ color: "#fff", textDecoration: "underline" }}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ) : (
+                                    <span style={{ color: "#fff" }}>{item.label}</span>
+                                )}
+                            </li>
+                        ))}
                     </ol>
                 </nav>
-                <div className="d-flex align-items-center position-relative" style={{ gap:'0.3rem' }}>
-                    <Notifications open={openNotifications} setOpen={setOpenNotifications} popRef={notificationsPopRef} btnRef={notificationsBtnRef} />
-                    <button ref={accountBtnRef} className="btn p-0 border-0" aria-haspopup="menu" aria-expanded={showAccount? 'true':'false'} onClick={()=>setShowAccount(v=>!v)}
-                            onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setShowAccount(v=>!v);} }} title="Konto"
-                            style={{ padding:'2px 8px', border:'1px solid rgba(255,255,255,0.35)',
-                                borderRadius:999, color:'#fff',
-                                display:'flex', alignItems:'center',
-                                gap:6, background:'transparent' }}
-                            onMouseOver={(e)=>{ e.currentTarget.style.background='rgba(255,255,255,0.12)'; }}
-                            onMouseOut={(e)=>{ e.currentTarget.style.background='transparent'; }} >
-                        <InitialsAvatar name="Jan Użytkownik" size={31} />
-                        <span aria-hidden="true"
-                              style={{ fontSize:12, opacity:0.9, lineHeight:1, transform:'translateY(1px)' }}>▾
+
+                {/* Right side */}
+                <div className="d-flex align-items-center position-relative" style={{ gap: "0.3rem" }}>
+                    <Notifications
+                        open={openNotifications}
+                        setOpen={setOpenNotifications}
+                        popRef={notificationsPopRef}
+                        btnRef={notificationsBtnRef}
+                    />
+
+                    <button
+                        ref={accountBtnRef}
+                        className="btn p-0 border-0"
+                        aria-haspopup="menu"
+                        aria-expanded={showAccount ? "true" : "false"}
+                        onClick={() => setShowAccount((v) => !v)}
+                        title="Konto"
+                        style={{
+                            padding: "2px 8px",
+                            border: "1px solid rgba(255,255,255,0.35)",
+                            borderRadius: 999,
+                            color: "#fff",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 6,
+                            background: "transparent",
+                        }}
+                        onMouseOver={(e) =>
+                            (e.currentTarget.style.background = "rgba(255,255,255,0.12)")
+                        }
+                        onMouseOut={(e) => (e.currentTarget.style.background = "transparent")}
+                    >
+                        <InitialsAvatar name={email || "Użytkownik"} size={31} />
+                        <span
+                            aria-hidden="true"
+                            style={{
+                                fontSize: 12,
+                                opacity: 0.9,
+                                lineHeight: 1,
+                                transform: "translateY(1px)",
+                            }}
+                        >
+                            ▾
                         </span>
                     </button>
-                    {showAccount && ( <div ref={accountMenuRef} className="card shadow-sm"
-                                           style={{ position:'absolute', right:0, top:'100%', marginTop:'0.5rem', minWidth:260,
-                                               zIndex:2000 }} role="menu" > <div className="card-body py-2">
-                        <div className="d-flex align-items-center mb-2" style={{ gap:'0.5rem' }}>
-                            <InitialsAvatar name="Jan Użytkownik" size={28} /> <div> <div className="text-muted small mb-1"
-                                                                                          style={{ lineHeight:1 }}>Zalogowano jako</div>
-                            <div className="fw-semibold mb-1" style={{ lineHeight:1.1 }}>Jan Użytkownik</div>
-                            <div className="text-muted small">jan@example.com</div> </div> </div> <hr className="my-2" />
-                        <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center"
-                                onClick={()=>setShowAccount(false)}> <span className="me-2">👤</span> Profil </button>
-                        <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 d-flex align-items-center"
-                                onClick={()=>setShowAccount(false)}> <span className="me-2">⚙️</span> Ustawienia </button>
-                        <hr className="my-2" /> {onLogout ? (
-                            <button role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" onClick={onLogout}>
-                                <span className="me-2">🚪</span> Wyloguj </button>) : (
-                                    <a role="menuitem" className="dropdown-item btn btn-link text-start w-100 px-0 text-danger d-flex align-items-center" href="/">
-                                        <span className="me-2">🚪</span> Wyloguj </a> )}
-                    </div>
-                    </div>
+
+                    {showAccount && (
+                        <div
+                            ref={accountMenuRef}
+                            className="card shadow-lg border-0"
+                            style={{
+                                position: "absolute",
+                                right: 0,
+                                top: "100%",
+                                marginTop: "0.5rem",
+                                minWidth: 260,
+                                zIndex: 2000,
+                                borderRadius: "1rem",
+                            }}
+                            role="menu"
+                        >
+                            <div className="card-body p-3">
+                                <div className="d-flex align-items-center mb-3" style={{ gap: "0.75rem" }}>
+                                    <InitialsAvatar name={email || "Użytkownik"} size={36} />
+                                    <div>
+                                        <div className="text-muted small">Zalogowano jako</div>
+                                        <div className="fw-semibold">{email || "Użytkownik"}</div>
+                                    </div>
+                                </div>
+
+                                <hr className="my-1" />
+
+                                <button
+                                    role="menuitem"
+                                    onClick={handleLogout}
+                                    className="w-100 text-start"
+                                    style={{
+                                        border: "none",
+                                        background: "transparent",
+                                        padding: "0.5rem 1rem",
+                                        borderRadius: "0.3rem",
+                                        color: "#dc3545",
+                                        fontWeight: 500,
+                                        cursor: "pointer",
+                                    }}
+                                    onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "rgba(220,53,69,0.1)")}
+                                    onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+                                >
+                                    Wyloguj
+                                </button>
+                            </div>
+                        </div>
                     )}
                 </div>
             </div>
         </div>
     );
 }
+
 
